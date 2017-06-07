@@ -1,0 +1,371 @@
+/*written by Amy Pham*/
+
+$blue: #1d2349
+$magenta: #AE0074
+$white: #FFF
+$black: #333
+$bgWhite: #FCFCFC
+$heading-font: 'Proxima Nova', sans-serif
+$body-font: 'Open Sans', sans-serif
+
+header, section
+	text-align: center
+	position: relative
+
+#headerInfo
+	padding: 80px 0
+	height: 170px
+	h1
+		color: $white
+		margin-bottom: 20px
+	h4
+		color: $magenta
+		margin: 20px 40px 0 40px
+		letter-spacing: 0.1ex
+		text-transform: uppercase
+
+.header-img
+	width: 100%
+
+#headerVid
+	width: 100%
+	height: 250px
+	position: absolute
+	top: 0
+	overflow: hidden
+	z-index: -1
+	video
+		width: 100%
+	&::before
+		display: block
+		position: absolute
+		content: ' '
+		width: 100%
+		height: 250px
+		background-color: #000
+		opacity: 0.4
+
+.beginningBlock
+	margin-top: 100px
+
+#gifs video
+	width: 50%
+	float: left
+
+.overview
+	p
+		display: inline-block
+		width: 45%
+		margin: 0
+		margin-right: 45px
+		text-align: justify
+
+	#message
+		width: 50%
+		float: right
+		font: 500 12pt/18pt $heading-font
+		margin: 0
+		color: $magenta
+
+.previewVid
+	video
+		width: auto
+		max-width: 1000px
+
+.wordblock
+	display: inline-block
+	width: 90%
+	max-width: 1000px
+	text-align: left
+	vertical-align: top
+
+#creations
+	min-width: 355px
+	width: 100%
+	margin: 5vw 0
+	img
+		max-height: 200px
+		height: 20vw
+		margin: 0 5vw
+
+#research
+	text-align: left
+	width: 90%
+	max-width: 1000px
+	margin: 0 auto
+
+	.comparison
+		margin-bottom: 40px
+		position: relative
+		.wordblock
+			display: inline-block
+			max-width: 425px
+			margin-right: 70px
+		img
+			display: inline-block
+			max-width: 500px
+	.inspo
+		display: inline-block
+		width: 49%
+		margin-top: 40px
+		img
+			max-width: 200px
+		.wordblock
+			width: 44%
+			margin-left: 40px
+
+.researchItem
+	display: inline-block
+	width: calc(50% - 35px)
+	margin: 30px 30px 0px 0
+	position: relative
+	vertical-align: top
+	&.barStat 
+		h4
+			font-weight: 700
+			color: $magenta
+			margin: 10px 0 40px 0
+		svg
+			width: auto
+			height: 230px
+			vertical-align: middle
+			margin-bottom: 50px
+			display: inline-block
+		.num
+			fill: $blue
+			font: 700 20pt $heading-font
+			&.multiline
+				font-size: 20pt
+		.wordblock
+			display: inline-block
+			max-width: 45%
+			margin-left: 50px
+			vertical-align: text-bottom
+		&.full
+			width: 100%
+	&.pieStat 
+		h4
+			color: $magenta
+			margin: 10px 0 40px 0
+		svg
+			width: auto
+			height: 200px
+			vertical-align: top
+			margin-bottom: 50px
+		.keyColor
+			display: inline-block
+			width: 20px
+			height: 20px
+			background-color: #D1D3D4
+			float: left
+		.wordblock
+			width: 47%
+			margin-left: 40px
+			position: relative
+		.num
+			width: auto
+			display: inline-block
+			fill: $blue
+			color: $blue
+			font: 500 13pt $heading-font
+			position: absolute
+			left: 30px
+			vertical-align: bottom
+			&.multiline
+				font-size: 20pt
+	&.course
+		h4
+			text-align: center
+			position: absolute
+			top: 0
+			left: 0
+			margin: 50px
+			letter-spacing: -0.07ex
+			transform: translateX(-46%) translateY(-52%)
+		p
+			display: block
+		svg
+			float: left
+			margin-right: 20px
+	ellipse
+		fill: none
+		stroke: $magenta
+		stroke-width: 8px
+		stroke-dashoffset: 30px
+	/*path
+		fill: none
+		stroke: $magenta
+		stroke-width: 8px
+		stroke-dasharray: 5,3,2
+		stroke-dashoffset: 30px*/
+	&.comparison
+		width: 55%
+		img
+			width: 200px
+			margin: 30px 30px 0 0 
+		&.first
+			width: 38%
+			img
+				width: 300px
+
+
+#wireframes
+	display: block
+	text-align: left
+	max-width: 1000px
+	margin-right: auto
+	margin-left: auto
+	.wordblock
+		max-width: 500px
+		margin-right: 100px
+		float: left
+	.pages
+		display: inline-block
+		vertical-align: top
+		margin: 0
+		li
+			display: inherit
+			margin-right: 20px
+			cursor: pointer
+			color: $magenta
+			font-family: $heading-font
+		.selected
+			color: $blue
+			cursor: default
+	p
+		display: none
+	.desc
+		color: $magenta
+	.wf
+		display: inline-block
+		max-width: 400px
+		position: relative
+		img
+			width: 100%
+
+		.hotspots
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 2
+			display: none
+		.hotspot
+			cursor: pointer
+			fill: rgba(0, 0, 0, 0)
+			stroke: #CF2790
+			stroke-width: 8
+	.selected, .hotspots.selected
+		display: inline-block
+
+	&.landscape
+		.wf
+			max-width: 560px
+			.hotspot
+				stroke-width: 5
+		.wordblock
+			max-width: 360px
+			margin-right: 70px
+
+#prototype
+	text-align: center
+
+/*slider*/
+.slider
+	position: relative
+	width: 100%
+	height: 545px
+	overflow: hidden
+	text-align: center
+
+.slider-control
+	position: absolute
+	transform: translateY(-50%)
+	z-index: 1
+	background: none
+	border: none
+	outline: none
+	&:hover
+		cursor: pointer
+
+.control-arrow
+	width: 7%
+	height: 100%
+	top: 50%
+	background: rgba(29, 35, 73, 0.8)
+	&:hover
+		background: rgba(29, 35, 73, 0.9)
+
+.control-next
+	right: 0
+
+.control-back
+	left: 0
+
+.pagination
+	left: 50%
+	transform: translateX(-50%)
+	top: 90%
+
+.control-page
+	content: '&nbsp;'
+	margin: 0 10px
+	padding: 7px
+	border-radius: 12px
+	background: #000
+	opacity: 0.55
+	border: none
+	outline: none
+	&:hover
+		cursor: pointer
+		opacity: 0.8
+
+#selected-page
+	border: solid 3px $magenta
+	padding: 4px
+	background: none
+	opacity: 1
+
+.slider img
+	display: inline-block
+
+.comp
+	position: absolute
+	left: 50%
+	transform: translateX(-50%)
+	transition: 0.8s cubic-bezier(.56,0,.4,1)
+	
+.fitWidth
+	max-width: 86%
+.fitHeight
+	max-height: 100%
+
+.prevComp
+	left: -100%
+	transform: none
+
+.nextComp
+	left: 100%
+	transform: none
+
+/*page transition*/
+@keyframes fadeInUp
+	0%
+		top: 12vh
+		opacity: 0
+	100%
+		top: 0
+		opacity: 1
+
+.scene_element
+	position: relative
+	animation-timing-function: ease-out
+	animation-fill-mode: both
+
+.scene_element--fadeInUp
+	animation-delay: 0.8s
+	animation-duration: 0.5s
+	animation-name: fadeInUp
+
+.is-exiting
+	.scene_element
+		animation-direction: alternate-reverse

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--Designed and developed by Amy Pham-->
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<link rel="stylesheet" type="text/css" href="styles/work.css">
+	<script src="js/slider.js"></script>
+	<script src="js/wireframeDisplay.js"></script>
+</head>
+<body>
+<div class="scene_element scene_element--slideInLeft">
+<header>
+	<div id="headerVid"><video autoplay loop><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video></div>
+	<div id="headerInfo">
+		<h1>myCourses Redesign</h1>
+		<h4>UX Design</h4>
+		<h4>UI Design</h4>
+		<h4>Prototype Animation</h4>
+	</div>
+</header>
+<main class="scene_element scene_element--fadeInUp">
+	<section class="overview">
+		<div class="wordblock">
+			<h3>Story</h3>
+			<p>myCourses is a site used by Rochester Institute of Technology to facilitate students’ progression through their coursework. It is the main interface through which professors and students work with assignments. Professors may post course material and grades for students to look over, and receive assignments through a dropbox feature.</p>
+			<p>The site covers basic needs, but its design could be improved to increase efficiency, supporting students in their coursework. Establishing a better hierarchy will enhance the experience of using myCourses by promoting helpful features that often go unnoticed. Streamlining actions and improving the overall organization will also allow students to save time that can be spent working on assignments.</p>
+		</div>
+	</section>
+	<section class="previewVid beginningBlock">
+		<video autoplay loop><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video>
+	</section>
+	<section class="beginningBlock">
+		<div id="research">
+		<h3>Research</h3>
+		<div class="researchItem barStat">
+			<h5>Number of visits a week</h5>
+			<h4>Multiple times a day</h4>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
+			<style type="text/css">  
+				.st0{fill:#4855A5;}
+				.st1{fill:#F36E23;}
+				.st2{fill:#A7A9AC;}
+				.st3{fill:#D1D3D4;}
+				.st4{fill:#636466;}
+				.st5{fill:#E1E2E3;}
+				.st6{fill:none;stroke:#E6E7E8;stroke-width:3;stroke-miterlimit:10;}
+			</style>
+			<text text-anchor="middle" x="536.7" y="320.15" class="num">7+</text>
+			<text text-anchor="middle" x="461.4" y="320.15" class="num">6</text>
+			<text text-anchor="middle" x="386.2" y="320.15" class="num">5</text>
+			<text text-anchor="middle" x="310.9" y="320.15" class="num">4</text>
+			<text text-anchor="middle" x="235.7" y="320.15" class="num">3</text>
+			<text text-anchor="middle" x="160.4" y="320.15" class="num">2</text>
+			<text text-anchor="middle" x="85.1" y="320.15" class="num">1</text>
+			<text text-anchor="middle" x="9.9" y="320.15" class="num">0</text>
+			<rect x="536.7" class="st1" width="34.1" height="261.4"/>
+			<rect x="461" y="87.1" class="st2" width="34.1" height="174.2"/>
+			<rect x="385.3" y="217.8" class="st3" width="34.1" height="43.6"/>
+			<rect x="235.3" y="217.8" class="st3" width="34.1" height="43.6"/>
+			<line class="st6" y1="280.7" x2="587.6" y2="280.7"/></svg>
+			<script type="text/javascript">
+				$('.num').attr('x', function(){return (parseInt($(this).attr('x')) + 15.15);});
+			</script>
+		</div>
+		<div class="researchItem barStat">
+			<h5>Approximate time per visit</h5>
+			<h4>5-10 minutes</h4>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
+			<style type="text/css">  
+				.st0{fill:#3E479D;}
+				.st1{fill:#D1D3D4;}
+				.st2{fill:#A7A9AC;}
+				.st3{fill:#F36E23;}
+				.st4{fill:#FBB03B;}
+			</style>
+			<text text-anchor="end" x="118.3" y="29.6" class="num">5 min</text>
+			<text text-anchor="end" x="118.3" y="96.6" class="num">10 min</text>
+			<text text-anchor="end" x="118.3" y="162.3" class="num">20 min</text>
+			<text text-anchor="end" x="118.3" y="228" class="num">Over 1 hr</text>
+			<rect x="150.2" y="197.1" class="st1" width="106" height="29.6"/>
+			<rect x="150.2" y="131.4" class="st2" width="212" height="29.6"/>
+			<rect x="150.2" y="65.7" class="st3" width="530" height="29.6"/>
+			<rect x="150.2" class="st4" width="424" height="29.6"/></svg>
+			<script type="text/javascript">
+				$('.barStat:eq(1)').find('.num').attr('y', function(){return (parseInt($(this).attr('y')) - 5);});
+			</script>
+		</div>
+		<h4>Percent of courses that use each feature</h4><br>
+		<div class="researchItem course">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<h4>67%</h4>
+			<h5>Posting Content</h5>
+			<p>Professors can post documents describing assignments, links, or any other information helpful to the course</p>
+		</div>
+		<div class="researchItem course">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			</svg>
+			<h4>100%</h4>
+			<h5>Due Dates</h5>
+			<p>Dropboxes are labeled with a deadline and can be closed at that time.</p>
+		</div>
+		<div class="researchItem course">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			</svg>	
+			<h4>100%</h4>
+			<h5>Dropbox</h5>
+			<p>An application for students to submit their assignments</p>
+		</div>
+		<div class="researchItem course">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			</svg>	
+			<h4>58%</h4>
+			<h5>Discussion</h5>
+			<p>Message boards opened by the professor for anyone to post and respond to messages</p>
+		</div>
+		<div class="researchItem course">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			</svg>
+			<h4>92%</h4>
+			<h5>Grades</h5>
+			<p>Updates on any grades from dropbox submissions or in-class assignments</p>
+		</div><br><br><br>
+		<h4>Comments on features</h4><br>
+		<div class="researchItem comparison first">
+			<div class="wordblock">
+				<h5>&ldquo;The dropdown list for courses shows old courses that clog it up.&rdquo;</h5>
+			</div>
+			<img src="projects/myCourses/dropdown.png" />
+		</div>
+		<div class="researchItem comparison">
+			<div class="wordblock">
+				<h5>&ldquo;It would be convenient to be able to read content while still [having] a navigation to open the other content sources.&rdquo;</h5>
+				<p>This feature does exist but is hard to notice.</p>
+			</div>
+			<img src="projects/myCourses/tab.png" />
+			<img src="projects/myCourses/openTab.png" />
+		</div>
+		</div>
+	</section>
+	<section id="wireframes" class="beginningBlock">
+		<div class="wordblock">
+		<h3>Wireframes</h3>
+		<ul class="pages">
+			<li class="selected">Home Page</li>
+			<li>Submit Assignment</li>
+			<li>Course Page</li>
+		</ul><br>
+		<p class="pageDesc selected">I took a lot of inspiration from dashboard interface designs, because they are designed to organize and clarify large amounts of data. As students typically log on to myCourses in short sessions throughout the day, they should be able to quickly complete their task and log off to work on their assignments.</p>
+		<p class="pageDesc">Clicking on the submit button of an assignment will open a Dropbox modal for students to submit a project without leaving the current page. This allows students to efficiently submit and go on to other tasks without disrupting their flow.</p>
+		<p class="pageDesc">Students should be able to generally find what they need from the home page. However, should they need additional information, course pages will contain all material, new and old, specific to a course.</p>
+		<p class="desc selected">Hover over a hotspot for more details</p>
+		<p class="desc">Early Alerts notify a student if they are failing a course. These are placed at the top of the page, so the student will notice them.</p>
+		<p class="desc">Updates and Due Dates are placed above the fold for immediate access, as these features are used most often.</p>
+		<p class="desc">The current semester will always be expanded in the navbar and display courses the student is currently taking.</p>
+		<p class="desc">Courses from past semesters are accessible in the navbar. Each semester can be expanded to navigate to its courses.</p>
+		<p class="desc">Students can save links to related sites to navigate to from myCourses.</p>
+		<p class="desc">In addition to seeing what is due for the week, students can navigate to see the original assignment post or submit directly from the home page.</p>
+		<p class="desc">News about myCourses are generally not pressing, but students will see notifications when they are posted and can read them here if they are interested.</p>
+		<p class="desc">Students can submit to other projects by navigating through the Project Browser.</p>
+		<p class="desc">If they want to see the posted content relating to the project, students can click here to review content.</p>
+		<p class="desc">Submitted projects are shown with a score if the professor has already graded it.</p>
+		<p class="desc">Submitted projects that haven't been graded yet can be edited or resubmitted.</p>
+		<p class="desc">To submit a project using a file browser, students can choose whether to find the file on their computer, their myCourses locker, or their myCourses Groups locker.</p>
+		<p class="desc">Students can add comments with each submission. When added, each comment can be removed or edited. Professors can also comment on submissions, and students can reply.</p>
+		<p class="desc">Secondary navbar holds pages relating to the course.</p>
+		<p class="desc">Grades are shown at the top of the page to give the student an idea of how they are doing in the course. Any missing assignments are also shown here to ensure the student knows they need to submit these.</p>
+		<p class="desc">Information about the course instructor and office hours are displayed here for quick reference. Students can also click on the instructor's name to email them directly.</p>
+		<p class="desc">Course news are less prominent here because they are not used very often and usually do not contain much content. Students will still see notifications when they are posted and see them here if they are interested.</p>
+		<p class="desc">Students can see the most recently posted content here or open the content browser. Course Outlines and Sources will be default folders and will always be visible.</p>
+		<p class="desc">School policies must be shown on all course pages to make certain that students know of them.</p>
+		</div>
+		<div class="wf">
+			<img src="projects/myCourses/WFhome.png">
+			<div class="hotspots selected">
+				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
+				<svg version="1.1"
+					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+					 x="0px" y="0px" width="400px" height="611px" viewBox="0 0 1200 1833"
+					 style="overflow:scroll;enable-background:new 0 0 1200 1833;" xml:space="preserve">
+				<circle class="hotspot" cx="409.5" cy="143" r="46.5"/>
+				<circle class="hotspot" cx="689.5" cy="240.5" r="46.5"/>
+				<circle class="hotspot" cx="95" cy="363.5" r="46.5"/>
+				<circle class="hotspot" cx="95" cy="620.5" r="46.5"/>
+				<circle class="hotspot" cx="437.5" cy="620.5" r="46.5"/>
+				<circle class="hotspot" cx="1102.5" cy="669.5" r="46.5"/>
+				<circle class="hotspot" cx="396.5" cy="1136.5" r="46.5"/>	
+				</svg>
+			</div>
+			<div class="hotspots">
+				<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="611px" viewBox="0 0 1200 1832">
+				<circle class="hotspot" cx="111.7" cy="207.2" r="46.5"/>
+				<circle class="hotspot" cx="988.8" cy="284.5" r="46.5"/>
+				<circle class="hotspot" cx="111.7" cy="357.6" r="46.5"/>
+				<circle class="hotspot" cx="288.2" cy="458.6" r="46.5"/>
+				<circle class="hotspot" cx="802.4" cy="482.6" r="46.5"/>
+				<circle class="hotspot" cx="495" cy="685.8" r="46.5"/>
+				</svg>
+			</div>
+			<div class="hotspots">
+				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
+				<svg version="1.1"
+					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+					 x="0px" y="0px" width="400px" height="768px" viewBox="0 0 1200 2304"
+					 style="overflow:scroll;enable-background:new 0 0 1200 2304;" xml:space="preserve">
+				<circle class="hotspot" cx="256.5" cy="139.9" r="46.5"/>
+				<circle class="hotspot" cx="1003.5" cy="230.5" r="46.5"/>
+				<circle class="hotspot" cx="586.5" cy="299.5" r="46.5"/>
+				<circle class="hotspot" cx="370.5" cy="921.5" r="46.5"/>
+				<circle class="hotspot" cx="899.5" cy="921.5" r="46.5"/>
+				<circle class="hotspot" cx="760.5" cy="1580.5" r="46.5"/>
+				</svg>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var wfSrcs = ['WFhome.png', 'WFdropbox.png', 'WFcourse.png'];
+			for(var i = 0; i < wfSrcs.length; i++){
+				wfSrcs[i] = 'projects/myCourses/' + wfSrcs[i];
+			}
+			setupWFDisplay(wfSrcs);
+		</script>
+	</section>
+	<section id="moodboard" class="beginningBlock" style="text-align: left;">
+		<img src="projects/myCourses/moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
+			<h3>Mood</h3>
+			<ul>
+				<li>sharp</li>
+				<li>precise</li>
+				<li>organized</li>
+				<li>polished</li>
+			</ul>
+		</div>
+	</section>
+	<section id="comps" class="beginningBlock">
+		<div class="wordblock">
+			<h3>Final Design</h3>
+		</div>
+		<div class="slider">
+			<button class="slider-control control-arrow control-next">
+				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
+				<svg version="1.1"
+					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
+					 xml:space="preserve">
+				<style type="text/css">
+					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+				</style>
+				<defs>
+				</defs>
+				<polyline class="st0" points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
+				</svg>
+			</button>
+			<button class="slider-control control-arrow control-back">
+				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
+				<svg version="1.1"
+					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
+					 xml:space="preserve">
+				<style type="text/css">
+					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+				</style>
+				<defs>
+				</defs>
+				<polyline class="st0" points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
+				</svg>
+			</button>
+			<div class="slider-control pagination">
+			</div>
+		</div>
+		<script type="text/javascript">
+			var compSrcs = ['home.png', 'course.png', 'submit1.png'];
+			for(var i = 0; i < compSrcs.length; i++){
+				compSrcs[i] = 'projects/myCourses/' + compSrcs[i];
+			}
+			createSlider(compSrcs);
+		</script>
+	</section>
+</main>
+</div>
+</body>
+</html>

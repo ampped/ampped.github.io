@@ -1,0 +1,358 @@
+/*written by Amy Pham*/
+
+$blue: #1d2349
+$magenta: #AE0074
+$green: #D4FF69
+/*$magenta: #CF2790*/
+$white: #FFF
+$black: #333
+$bgWhite: #FCFCFC
+$heading-font: 'Proxima Nova', sans-serif
+$body-font: 'Open Sans', sans-serif
+
+body
+	margin: 0
+	box-sizing: content-box
+	background-color: $bgWhite
+	color: $blue
+	font: 11pt/20pt $body-font
+	letter-spacing: 0.05ex
+	hanging-punctuation: first
+	overflow-x: hidden
+	overflow-y: scroll
+
+p
+	display: inline-block
+	margin-top: 0
+	vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	font-family: $heading-font
+	margin: 0
+
+h1
+	font-size: 28pt
+	font-weight: 500
+
+h2
+	font-size: 22pt
+	letter-spacing: 0.07ex
+
+h3
+	font-size: 23pt
+	letter-spacing: 0.15ex
+	margin-bottom: 45px
+	text-transform: uppercase
+
+h4
+	font-size: 18pt
+	font-weight: 700
+	display: inline-block
+	font-weight: 500
+
+h5
+	font-size: 14pt
+
+img
+	max-width: 100%
+
+a
+	text-decoration: none
+
+ul
+	font: 500 14pt/32pt $body-font
+	list-style: none
+	padding: 0
+
+nav
+	background-color: $bgWhite
+	box-sizing: border-box
+	position: fixed
+	top: -100px
+	width: 100%
+	padding: 14px 40px
+	text-align: right 
+	z-index: 5
+	transition: 0.2s ease-in-out
+	a
+		display: inline-block
+		margin: 0 30px
+		color: $blue
+		font: 500 14pt $heading-font
+		letter-spacing: 1px
+	&.showing
+		top: 0
+
+section
+	width: 100%
+
+
+input
+	width: 100%
+
+
+textarea
+	width: 100%
+	resize: none
+
+.letterPath
+	fill: none
+	stroke: $blue
+	stroke-width: 3
+	stroke-linecap: round
+	stroke-linejoin: round
+	stroke-miterlimit: 10
+
+/*general whole page classes*/
+.blue
+	background-color: $blue
+	color: $white
+
+.block
+	display: inline-block
+	width: 50%
+
+.info
+	padding: 5vw 7vw
+	box-sizing: border-box
+	vertical-align: top
+
+
+/*specific elements organized by part*/
+#about
+	height: 560px
+
+canvas
+	position: absolute
+	z-index: -1
+
+#aboutInfo
+	width: 50%
+	text-align: left
+	padding: 180px 0 50px 0
+	margin-left: 50%
+	position: relative
+	h1
+		display: inline-block
+		margin-bottom: 30px
+		font-size: 36pt
+		font-weight: 800
+		line-height: 36pt
+		border-bottom: solid 8px $green
+	p
+		font-size: 14pt
+		line-height: 26pt
+
+
+@keyframes slide
+	0%
+		left: -12%
+	
+	100%
+		left: 15%
+	
+
+.aspirations
+	height: 50px
+	text-align: center
+	margin-top: 30px
+
+	svg
+		position: absolute
+		left: 7%
+
+.animated
+	left: 8%
+	animation-name: slide
+	animation-duration: 2s
+	animation-timing-function: cubic-bezier(.07,.76,.8,.21)
+	/*animation-timing-function: cubic-bezier(.18, .92, .78, .13)*/
+	animation-iteration-count: 1
+
+#work
+	text-align: left
+	line-height: 0
+
+.project 
+	position: relative
+	height: 300px
+	margin: 0
+	overflow: hidden
+	video
+		position: absolute
+		z-index: -2
+
+	a
+		position: absolute
+
+
+	p
+		position: absolute
+		margin: 0
+		color: $white
+		font-size: 1.6em
+		font-weight: 600
+		top: 100%
+		left: 1em
+		z-index: 1
+		transition: 0.2s ease-in-out
+
+	&:hover p
+		top: 60%
+
+	&:hover::before
+		display: block
+		position: absolute
+		content: ' '
+		width: 100%
+		height: 100%
+		background-color: #000
+		opacity: 0.4
+		z-index: -1
+
+.form-group
+	width: 70%
+	position: relative
+	margin: 40px 0
+	border-bottom: 2px solid $blue
+
+.form-control
+	background: transparent
+	border: 0
+	&:focus
+		outline: 0
+
+.projectBlock
+	display: block
+	width: 100%
+	height: calc(100% - 26px)
+	position: fixed
+	top: 0
+	left: 100%
+	padding-top: 50px
+	background-color: $bgWhite
+	transition: 0.5s ease-in-out
+	z-index: 3
+	overflow-x: hidden
+	overflow-y: scroll
+	&.showing
+		left: 0
+.projectBack
+	position: fixed
+	top: 20px
+	left: 40px
+	z-index: 6
+	&:hover
+		cursor: pointer
+
+/*effects*/
+/*transition*/
+	/*for later implementation
+	animation-name: transitionUp
+	animation-duration: 0.5s
+	animation-timing-function: ease-in-out
+	animation-iteration-count: 1
+	transition: 1s ease-in-out*/
+.selectedWork
+	z-index: 4
+	width: 100%	
+	position: absolute
+	top: 30px !important
+	left: 0
+	& video
+		width: 100% !important
+	&:before
+		display: block
+		position: absolute
+		content: ' '
+		width: 100%
+		height: 100%
+		background-color: #000
+		opacity: 0.4
+		z-index: 4
+	&:hover p
+		top: 100%
+
+
+@keyframes transitionUp
+	0%
+		width: 50%
+	100%
+		width: 100%
+
+/*form*/
+.form-group::before 
+	content: ''
+	position: absolute
+
+
+.control-border
+	box-sizing: content-box
+	border-bottom: 3px solid $green
+	width: 0
+	height: 100%
+	position: absolute
+	top: 0
+	transition: width 0.6s ease-in-out
+
+.control-border.changed::before
+	width: 100%
+
+
+.label
+	font: 600 14pt $heading-font
+	width: 100%
+	height: 30px
+	position: absolute
+	top: 100%
+	overflow: hidden
+
+	label
+		position: absolute
+		bottom: 100%
+
+		transition: bottom .25s ease-in-out
+		-webkit-transition: bottom .25s ease-in-out
+		-moz-transition: bottom .25s ease-in-out
+		-o-transition: bottom .25s ease-in-out
+
+input:focus ~ .label label
+	bottom: 0
+
+textarea:focus ~ .label label
+	bottom: 0
+
+
+.placeholder
+	width: 100%
+	height: 100%
+	color: #999
+	position: absolute
+	top: 0
+	overflow: hidden
+	pointer-events: none
+
+	p
+		position: absolute
+		top: 0
+		margin: 0
+
+		transition: top .2s ease-in-out, bottom .2s ease-in-out
+		-webkit-transition: top .2s ease-in-out, bottom .2s ease-in-out
+		-moz-transition: top .2s ease-in-out, bottom .2s ease-in-out
+		-o-transition: top .2s ease-in-out, bottom .2s ease-in-out
+
+textarea ~ .placeholder p
+	top: auto
+	bottom: 0
+
+input:focus ~ .placeholder p
+	top: 100%
+
+textarea:focus ~ .placeholder p
+	bottom: -50%
+
+.placeholder.notEmpty p
+	top: 100%
+

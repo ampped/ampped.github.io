@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--Designed and developed by Amy Pham-->
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700|Montserrat:400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<title>Amy Pham</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="js/formEffect.js"></script>
+	<script src="js/stroke.js"></script>
+	<script src="js/transition.js"></script>
+	<script src="js/scrollEffect.js"></script>
+	<script src="js/overviewLines.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			strokeEffect();
+			formEffect();
+			project();
+			scrollEffect();
+			//interactiveLines();
+		}
+	</script>
+</head>
+<body>
+<nav class="showing">
+	<a href="#about">About</a>
+	<a href="#work">Work</a>
+	<a href="resume.pdf" target="_blank">Resume</a>
+	<a href="#contact">Contact</a>
+</nav>
+<main>
+	<section id="about">
+		<canvas></canvas>
+		<section id="aboutInfo">
+			<h1>Halloo! I'm Amy!</h1>
+			<p>I'm pretty close to finding my way in the world,<br>but right now I'm waving between my loves&mdash;</p>
+		</div>
+
+		<div class="aspirations">
+		<!-- UX Design  -->
+		<svg version="1.1"
+			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+			 x="0px" y="0px" width="184px" height="26.2px" viewBox="0 0 184 26.2"
+			 style="overflow:scroll;enable-background:new 0 0 184 26.2;" xml:space="preserve">
+		<style type="text/css">
+			.letterPath{fill:none;stroke-width:0}
+		</style>
+		<defs>
+		</defs>
+		<path class="letterPath" d="M1.5,1.8c0,6.9,0,11.5,0,14.3c0,5.5,4.2,8,8,8c3.9,0,8.1-2.7,8.1-8c0-3.9,0-10.5,0-14.3"/>
+		<path class="letterPath" d="M42.1,24.1L24.8,1.8"/>
+		<path class="letterPath" d="M24.4,24.7L42.1,1.9"/>
+		<path class="letterPath" d="M74.7,3.3c1.4,1,2.5,2.3,3.2,4c0.7,1.7,1.1,3.5,1.1,5.6s-0.4,4-1.1,5.6c-0.7,1.7-1.8,3-3.2,4
+			c-1.4,1-3.1,1.5-5.1,1.5h-8.5V1.8h8.5C71.5,1.8,73.2,2.3,74.7,3.3z"/>
+		<path class="letterPath" d="M100.1,24.1H87.2V2h12.9"/>
+		<path class="letterPath" d="M98.5,12.6H87.2"/>
+		<path class="letterPath" d="M120.7,3.9c-0.6-0.6-3-2.4-6.4-2.4c-3.5,0-7.2,1.4-7.2,5.3c0,3.9,3,4.9,7.3,5.9c4.9,1.1,6.8,3.1,6.8,5.7
+			c0,3-2.6,5.8-7.4,5.8c-4.3,0-6.1-1.9-7.4-3"/>
+		<path class="letterPath" d="M129.7,1.8v22.3"/>
+		<path class="letterPath" d="M165.4,24.2V1.8l17.2,22.4V1.8"/>
+		<path class="letterPath" d="M155.3,2.9c-1.6-0.9-4-1.4-5.5-1.4c-6.8,0-11.5,4.9-11.5,11.4c0,6.4,5.7,11.3,10.4,11.3c4.4,0,7-1.5,7.7-2.3V14
+			h-6.2"/>
+		</svg>
+
+		<!-- UI Design  -->
+		<svg version="1.1"
+			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+			 x="0px" y="0px" width="171.5px" height="25.7px" viewBox="0 0 171.5 25.7"
+			 style="overflow:scroll;enable-background:new 0 0 171.5 25.7;" xml:space="preserve">
+		<style type="text/css">
+			.letterPath{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+		</style>
+		<defs>
+		</defs>
+		<path class="letterPath" d="M1.5,1.8c0,6.9,0,11.5,0,14.3c0,5.5,4.2,8,8,8c3.9,0,8.1-2.7,8.1-8c0-3.9,0-10.5,0-14.3"/>
+		<path class="letterPath" d="M62.2,3.3c1.4,1,2.5,2.3,3.2,4C66,9,66.4,10.9,66.4,13s-0.4,4-1.1,5.6c-0.7,1.7-1.8,3-3.2,4
+			c-1.4,1-3.1,1.5-5.1,1.5h-8.5V1.8h8.5C59,1.8,60.7,2.3,62.2,3.3z"/>
+		<path class="letterPath" d="M87.6,24.1H74.7V2h12.9"/>
+		<path class="letterPath" d="M86,12.6H74.7"/>
+		<path class="letterPath" d="M108.2,3.9c-0.6-0.6-3-2.4-6.4-2.4c-3.5,0-7.2,1.4-7.2,5.3c0,3.9,3,4.9,7.3,5.9c4.9,1.1,6.8,3.1,6.8,5.7
+			c0,3-2.6,5.8-7.4,5.8c-4.3,0-6.1-1.9-7.4-3"/>
+		<path class="letterPath" d="M117.2,1.8v22.3"/>
+		<path class="letterPath" d="M152.9,24.2V1.8L170,24.2V1.8"/>
+		<path class="letterPath" d="M142.8,2.9c-1.6-0.9-4-1.4-5.5-1.4c-6.8,0-11.5,4.9-11.5,11.4c0,6.4,5.7,11.3,10.4,11.3c4.4,0,7-1.5,7.7-2.3V14
+			h-6.2"/>
+		<path class="letterPath" d="M27.4,24.1V1.8"/>
+		</svg>
+
+		<!-- Front-end Development  -->
+		<svg version="1.1"
+			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+			 x="0px" y="0px" width="471.5px" height="25.8px" viewBox="0 0 471.5 25.8"
+			 style="overflow:scroll;enable-background:new 0 0 471.5 25.8;" xml:space="preserve">
+		<style type="text/css">
+			.letterPath{fill:none;stroke-width:0;}
+		</style>
+		<defs>
+		</defs>
+		<path class="letterPath" d="M1.5,24V2.2 M13.7,2.2H1.5 M12.1,13H1.5"/>
+		<path class="letterPath" d="M194.6,3.4c1.4,1,2.5,2.3,3.2,4c0.7,1.7,1.1,3.5,1.1,5.6s-0.4,4-1.1,5.6c-0.7,1.7-1.8,3-3.2,4
+			c-1.4,1-3.1,1.5-5.1,1.5H181V1.9h8.5C191.4,1.9,193.2,2.4,194.6,3.4z"/>
+		<path class="letterPath" d="M232,3.4c1.4,1,2.5,2.3,3.2,4c0.7,1.7,1.1,3.5,1.1,5.6s-0.4,4-1.1,5.6c-0.7,1.7-1.8,3-3.2,4
+			c-1.4,1-3.1,1.5-5.1,1.5h-8.5V1.9h8.5C228.8,1.9,230.5,2.4,232,3.4z"/>
+		<path class="letterPath" d="M421.3,24h-12.9V1.9h12.9"/>
+		<path class="letterPath" d="M419.7,12.5h-11.3"/>
+		<path class="letterPath" d="M146.4,24h-12.9V1.9h12.9"/>
+		<path class="letterPath" d="M144.9,12.5h-11.3"/>
+		<path class="letterPath" d="M257.5,24h-12.9V1.9h12.9"/>
+		<path class="letterPath" d="M255.9,12.5h-11.3"/>
+		<path class="letterPath" d="M302.9,24H290V1.9h12.9"/>
+		<path class="letterPath" d="M301.3,12.5H290"/>
+		<path class="letterPath" d="M428.9,24V1.6L446.1,24V1.6"/>
+		<path class="letterPath" d="M154.1,24.3V1.9l17.2,22.4V1.9"/>
+		<path class="letterPath" d="M73.9,24.3V1.9L91,24.3V1.9"/>
+		<path class="letterPath" d="M378.4,24.1V1.6l10.2,15.8l10.2-15.8v22.5"/>
+		<path class="letterPath" d="M64.3,18.7c-0.9,1.7-2.2,3.1-3.8,4.1c-1.6,1-3.5,1.5-5.5,1.5c-2,0-3.9-0.5-5.5-1.5c-1.6-1-2.9-2.4-3.8-4.1
+			c-0.9-1.7-1.4-3.7-1.4-5.8c0-2.1,0.5-4.1,1.4-5.8C46.6,5.4,47.9,4,49.5,3c1.6-1,3.5-1.5,5.5-1.5c2,0,3.9,0.5,5.5,1.5
+			c1.6,1,2.9,2.4,3.8,4.1c0.9,1.7,1.4,3.7,1.4,5.8C65.7,15,65.2,16.9,64.3,18.7z"/>
+		<path class="letterPath" d="M347.5,18.7c-0.9,1.7-2.2,3.1-3.8,4.1c-1.6,1-3.5,1.5-5.5,1.5c-2,0-3.9-0.5-5.5-1.5c-1.6-1-2.9-2.4-3.8-4.1
+			c-0.9-1.7-1.4-3.7-1.4-5.8c0-2.1,0.5-4.1,1.4-5.8c0.9-1.7,2.2-3.1,3.8-4.1c1.6-1,3.5-1.5,5.5-1.5c2,0,3.9,0.5,5.5,1.5
+			c1.6,1,2.9,2.4,3.8,4.1c0.9,1.7,1.4,3.7,1.4,5.8C348.9,15,348.4,16.9,347.5,18.7z"/>
+		<path class="letterPath" d="M98.5,1.9h16.5"/>
+		<path class="letterPath" d="M106.7,1.9v22"/>
+		<path class="letterPath" d="M453.5,1.6H470"/>
+		<path class="letterPath" d="M461.8,1.6v22"/>
+		<path class="letterPath" d="M21.5,14.1c0,0,5.4,0,8.6,0c3.7,0,6.7-2.7,6.7-6.6c0-2.2-1.7-5.5-5.4-5.5c-3,0-9.9,0-9.9,0V24"/>
+		<path class="letterPath" d="M38.2,24c-0.7,0-2.3-1.2-2.3-4.4c0-2.8-0.7-5.5-5.8-5.5c-4.9,0-8.6,0-8.6,0"/>
+		<path class="letterPath" d="M357.2,24V1.9c0,0,5.1,0,8.2,0c3.8,0,5.4,3.4,5.4,6c0,4-2,6.1-6.7,6.1c-3.2,0-6.9,0-6.9,0"/>
+		<path class="letterPath" d="M282.6,1.9l-9.3,21.9c0,0-9.3-21.9-9.3-21.9"/>
+		<path class="letterPath" d="M322.8,24h-12.1V1.9"/>
+		<path class="letterPath" d="M125.1,15.4h-6.9"/>
+		</svg>
+
+		<!-- Motion Graphics  -->
+		<svg version="1.1"
+			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+			 x="0px" y="0px" width="326.5px" height="26px" viewBox="0 0 326.5 26"
+			 style="overflow:scroll;enable-background:new 0 0 326.5 26;" xml:space="preserve">
+		<style type="text/css">
+			.letterPath{fill:none000;stroke-width:0;}
+		</style>
+		<defs>
+		</defs>
+		<path class="letterPath" d="M1.5,24V1.5c0,0,10.2,15.8,10.2,15.8L21.9,1.5V24"/></path>
+		<path class="letterPath" d="M50,18.9c-0.9,1.7-2.2,3.1-3.8,4.1c-1.6,1-3.5,1.5-5.5,1.5c-2,0-3.9-0.5-5.5-1.5c-1.6-1-2.9-2.4-3.8-4.1
+			c-0.9-1.7-1.4-3.7-1.4-5.8c0-2.1,0.5-4.1,1.4-5.8c0.9-1.7,2.2-3.1,3.8-4.1c1.6-1,3.5-1.5,5.5-1.5c2,0,3.9,0.5,5.5,1.5
+			c1.6,1,2.9,2.4,3.8,4.1c0.9,1.7,1.4,3.7,1.4,5.8C51.4,15.3,50.9,17.2,50,18.9z"/></path>
+		<path class="letterPath" d="M108.4,18.9c-0.9,1.7-2.2,3.1-3.8,4.1c-1.6,1-3.5,1.5-5.5,1.5c-2,0-3.9-0.5-5.5-1.5c-1.6-1-2.9-2.4-3.8-4.1
+			c-0.9-1.7-1.4-3.7-1.4-5.8c0-2.1,0.5-4.1,1.4-5.8c0.9-1.7,2.2-3.1,3.8-4.1c1.6-1,3.5-1.5,5.5-1.5c2,0,3.9,0.5,5.5,1.5
+			c1.6,1,2.9,2.4,3.8,4.1c0.9,1.7,1.4,3.7,1.4,5.8C109.8,15.3,109.3,17.2,108.4,18.9z"/></path>
+		<path class="letterPath" d="M56,2h16.5"/></path>
+		<path class="letterPath" d="M64.3,2v22"/></path>
+		<path class="letterPath" d="M80.1,24.2V2"/></path>
+		<path class="letterPath" d="M278.2,24.2V2"/></path>
+		<path class="letterPath" d="M251.8,24.2V2"/></path>
+		<path class="letterPath" d="M268.3,24.2V2"/></path>
+		<path class="letterPath" d="M117.9,24.4V2L135,24.4V2"/></path>
+		<path  class="letterPath" d="M171.5,3.1c-1.6-0.9-4-1.4-5.5-1.4c-6.8,0-11.5,4.9-11.5,11.4c0,6.4,5.7,11.3,10.4,11.3c4.4,0,7-1.5,7.7-2.3
+			v-7.9h-6.2"/></path>
+		<path class="letterPath" d="M181.5,14.2c0,0,5.4,0,8.6,0c3.7,0,6.7-2.7,6.7-6.6c0-2.2-1.7-5.5-5.4-5.5c-3,0-9.9,0-9.9,0v22.1"/></path>
+		<path  class="letterPath" d="M198.2,24.1c-0.7,0-2.3-1.2-2.3-4.4c0-2.8-0.7-5.5-5.8-5.5c-4.9,0-8.6,0-8.6,0"/></path>
+		<path class="letterPath" d="M230.3,14.2c0,0,3.7,0,6.9,0c4.6,0,6.7-2.1,6.7-6.1c0-2.6-1.7-6-5.4-6c-3,0-8.2,0-8.2,0v22.1"/></path>
+		<path  class="letterPath" d="M324.4,4.2c-0.6-0.6-3-2.4-6.4-2.4c-3.5,0-7.2,1.4-7.2,5.3c0,3.9,3,4.9,7.3,5.9c4.9,1.1,6.8,3.1,6.8,5.7
+			c0,3-2.6,5.8-7.4,5.8c-4.3,0-6.1-1.9-7.4-3"/></path>
+		<path class="letterPath" d="M251.8,13h16.5"/></path>
+		<path class="letterPath" d="M204.8,24.1L213.9,2c0,0,9.1,22.1,9.1,22.1"/></path>
+		<path class="letterPath" d="M207.4,17.7h13.1"/></path>
+		<path class="letterPath" d="M303.6,23c-1.7,1-3.6,1.5-5.7,1.5c-2.1,0-4-0.5-5.7-1.5c-1.7-1-3-2.4-3.9-4.1c-0.9-1.7-1.4-3.7-1.4-5.8
+			c0-2.1,0.5-4.1,1.4-5.8c0.9-1.7,2.3-3.1,3.9-4.1c1.7-1,3.6-1.5,5.7-1.5c2.1,0,4,0.5,5.7,1.5"/></path>
+		</svg>
+
+		</div>
+		</section>
+	</section>
+	<section id="work">
+		<a href="javascript:;" data-link="projects/nest/nest.html" class="project block""><video style="width: 100%; top: -42px;" loop><source src="projects/nest/addNode.mp4" type="video/mp4"></video><p>Nest Schedule Redesign</p></a><!--
+		--><a href="javascript:;" class="project block" data-link="projects/myCourses/myCourses.html"><video><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video><p>MyCourses Redesign</p></a><!--
+		--><a href="javascript:;" class="project block" data-link="projects/selfCare/selfCare.html"><video style="width: 750px" loop><source src="projects/selfCare/landscapeStill.mp4" type="video/mp4"></video><p>The Importance of Self Care</p></a><!--
+		--><a href="javascript:;" data-link="projects/usatoday/usatoday.html" class="project block"><video style="width: 1200px; left: -200px; bottom: -120px;" loop><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video><p>USATODAY Mobile Experience</p></a>
+	</section>
+	<script type="text/javascript">
+		$('.project').hover(function(){
+			this.firstChild.play();
+		}, function(){
+			this.firstChild.pause();
+		});
+	</script>
+	<section id="contact">
+		<div id="contactInfo" class="info block">
+			<h2>Contact Me</h2>
+			<p>Lalalalalalalala</p>
+		</div><!--
+		--><form class="block" name="contactform" method="post" action="send_form_email.php">
+			<div class="form-group"><input type="text" name="name" placeholder="Name" class="form-control"></div>
+			<div class="form-group"><input type="text" name="email" placeholder="Email" class="form-control"></div>
+			<div class="form-group"><textarea name="comments" rows="3" placeholder="Message" class="form-control"></textarea></div>
+			<input type="submit" value="Submit">
+		</form>
+	</section>
+</main>
+<section class="projectBlock">
+</section>
+</body>
+</html>
