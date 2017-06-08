@@ -7,6 +7,8 @@ header, section {
   padding: 80px 0;
   height: 170px; }
   #headerInfo h1 {
+    display: block;
+    font-weight: 700;
     color: #FFF;
     margin-bottom: 20px; }
   #headerInfo h4 {
@@ -205,9 +207,10 @@ header, section {
   #wireframes .pages {
     display: inline-block;
     vertical-align: top;
-    margin: 0; }
+    margin: 0;
+    float: right; }
     #wireframes .pages li {
-      display: inherit;
+      display: inline;
       margin-right: 20px;
       cursor: pointer;
       color: #AE0074;
@@ -215,6 +218,9 @@ header, section {
     #wireframes .pages .selected {
       color: #1d2349;
       cursor: default; }
+  #wireframes h3 {
+    display: inline-block;
+    width: 500px; }
   #wireframes p {
     display: none; }
   #wireframes .desc {
@@ -242,7 +248,7 @@ header, section {
     max-width: 560px; }
     #wireframes.landscape .wf .hotspot {
       stroke-width: 5; }
-  #wireframes.landscape .wordblock {
+  #wireframes.landscape .wordblock, #wireframes.landscape h3 {
     max-width: 360px;
     margin-right: 70px; }
 

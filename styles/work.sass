@@ -15,7 +15,9 @@ header, section
 #headerInfo
 	padding: 80px 0
 	height: 170px
-	h1
+	h1	
+		display: block
+		font-weight: 700
 		color: $white
 		margin-bottom: 20px
 	h4
@@ -223,8 +225,9 @@ header, section
 		display: inline-block
 		vertical-align: top
 		margin: 0
+		float: right
 		li
-			display: inherit
+			display: inline
 			margin-right: 20px
 			cursor: pointer
 			color: $magenta
@@ -232,6 +235,9 @@ header, section
 		.selected
 			color: $blue
 			cursor: default
+	h3
+		display: inline-block
+		width: 500px
 	p
 		display: none
 	.desc
@@ -262,7 +268,7 @@ header, section
 			max-width: 560px
 			.hotspot
 				stroke-width: 5
-		.wordblock
+		.wordblock, h3
 			max-width: 360px
 			margin-right: 70px
 
