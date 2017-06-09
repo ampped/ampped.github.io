@@ -1,17 +1,17 @@
 //written by Amy Pham
 
 function project(){
-	$('.project').click(function(e){
-		$('body').css('overflow-y', 'hidden');
-		$('.projectBlock').addClass('showing');
-		$('.projectBlock').scrollTop(0);
+	jQuery('.project').click(function(e){
+		jQuery('body').css('overflow-y', 'hidden');
+		jQuery('.projectBlock').addClass('showing');
+		jQuery('.projectBlock').scrollTop(0);
 
-		$('.projectBlock').load($(this).attr('data-link'), function(){
-			$('.projectBlock').append('<div class="projectBack">&lt; Back to Projects</div>');
-			$('.projectBack').click(function(){
-				$('.projectBlock').removeClass('showing');
+		jQuery('.projectBlock').load(jQuery(this).attr('data-link'), function(){
+			jQuery('.projectBlock').append('<div class="projectBack">&lt; Back to Projects</div>');
+			jQuery('.projectBack').click(function(){
+				jQuery('.projectBlock').removeClass('showing');
 			    setTimeout(function(){
-					$('body').css('overflow-y', 'scroll');
+					jQuery('body').css('overflow-y', 'scroll');
 			    }, 500);
 			});
 		});

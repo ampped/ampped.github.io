@@ -5,82 +5,82 @@ function createSlider(imgs){
 	var current = 0;
 
 	//create html elements of slider
-	$('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp fitWidth currentComp">');
-	$('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
-	$('.slider').append('<img src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp fitWidth prevComp">');
-	$.each(imgSrcs, function(){
-		$('.pagination').append('<button class="control-page"></button>');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp fitWidth currentComp">');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp fitWidth prevComp">');
+	jQuery.each(imgSrcs, function(){
+		jQuery('.pagination').append('<button class="control-page"></button>');
 	});
-	$('.control-page:first').attr('id', 'selected-page');
+	jQuery('.control-page:first').attr('id', 'selected-page');
 
 	//set up next button
-	$('.control-next').click(function(){
+	jQuery('.control-next').click(function(){
 		if(current == imgSrcs.length-1)
 			current = 0;
 		else
 			current++;
 		nextComp();
-		$('#selected-page').attr('id', '');
-		$('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
+		jQuery('#selected-page').attr('id', '');
+		jQuery('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
 	});
 
 	//set up back button
-	$('.control-back').click(function(){
+	jQuery('.control-back').click(function(){
 		if(current == 0)
 			current = imgSrcs.length-1;
 		else
 			current--;
 		prevComp();
-		$('#selected-page').attr('id', '');
-		$('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
+		jQuery('#selected-page').attr('id', '');
+		jQuery('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
 	});
 
 	//set up pagination events
-	$('.control-page').click(function(e){
-		$('#selected-page').attr('id', '');
-		$(this).attr('id', 'selected-page');
-		if($(e.target).index() > current){
-			current = $(e.target).index();
-			$('.nextComp').attr('src', imgSrcs[(current)%imgSrcs.length]);
+	jQuery('.control-page').click(function(e){
+		jQuery('#selected-page').attr('id', '');
+		jQuery(this).attr('id', 'selected-page');
+		if(jQuery(e.target).index() > current){
+			current = jQuery(e.target).index();
+			jQuery('.nextComp').attr('src', imgSrcs[(current)%imgSrcs.length]);
 			nextComp();
 			
 			//set order of pics right
 			setTimeout(function(){
-				$('.prevComp').attr('src', imgSrcs[(current-1)%imgSrcs.length])
+				jQuery('.prevComp').attr('src', imgSrcs[(current-1)%imgSrcs.length])
 			}, 500);
 		}
-		else if($(e.target).index() < current){
-			current = $(e.target).index();
-			$('.prevComp').attr('src', imgSrcs[(current)%imgSrcs.length]);
+		else if(jQuery(e.target).index() < current){
+			current = jQuery(e.target).index();
+			jQuery('.prevComp').attr('src', imgSrcs[(current)%imgSrcs.length]);
 			prevComp();
 			
 			//set order of pics right
 			setTimeout(function(){
-				$('.nextComp').attr('src', imgSrcs[(current+1)%imgSrcs.length]);
+				jQuery('.nextComp').attr('src', imgSrcs[(current+1)%imgSrcs.length]);
 			}, 500);
 		}
 	});
 
 	//move to a later page
 	function nextComp(){
-		if($('.prevComp'))
-			$('.prevComp').remove();
+		if(jQuery('.prevComp'))
+			jQuery('.prevComp').remove();
 
-		$('.currentComp').addClass('prevComp').removeClass('currentComp');
-		$('.nextComp').addClass('currentComp').removeClass('nextComp');
+		jQuery('.currentComp').addClass('prevComp').removeClass('currentComp');
+		jQuery('.nextComp').addClass('currentComp').removeClass('nextComp');
 		
-		$('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
+		jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
 	}
 
 	//move to a previous page
 	function prevComp(){
-		if($('.nextComp'))
-			$('.nextComp').remove();
+		if(jQuery('.nextComp'))
+			jQuery('.nextComp').remove();
 
-		$('.currentComp').addClass('nextComp').removeClass('currentComp');
-		$('.prevComp').addClass('currentComp').removeClass('prevComp');
+		jQuery('.currentComp').addClass('nextComp').removeClass('currentComp');
+		jQuery('.prevComp').addClass('currentComp').removeClass('prevComp');
 
-		$('.slider').append('<img src=\"' + imgSrcs[(current-1 + imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
+		jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1 + imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
 	}
 }
 
@@ -89,92 +89,92 @@ function createVideoSlider(vids){
 	var current = 0;
 
 	//create html elements of slider
-	$('.slider').append('<video class="comp fitHeight currentComp" autoplay loop><source src=\"' + vidSrcs[current] + '\" type="video/mp4" class="comp fitHeight currentComp"></video>');
-	$('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '\" type="video/mp4"></video>');
-	$('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '\" type="video/mp4"></video>');
-	$.each(vidSrcs, function(){
-		$('.pagination').append('<button class="control-page"></button>');
+	jQuery('.slider').append('<video class="comp fitHeight currentComp" autoplay loop><source src=\"' + vidSrcs[current] + '\" type="video/mp4" class="comp fitHeight currentComp"></video>');
+	jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '\" type="video/mp4"></video>');
+	jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '\" type="video/mp4"></video>');
+	jQuery.each(vidSrcs, function(){
+		jQuery('.pagination').append('<button class="control-page"></button>');
 	});
-	$('.control-page:first').attr('id', 'selected-page');
+	jQuery('.control-page:first').attr('id', 'selected-page');
 
 	//set up next button
-	$('.control-next').click(function(){
+	jQuery('.control-next').click(function(){
 		if(current == vidSrcs.length-1)
 			current = 0;
 		else
 			current++;
 		nextComp();
-		$('#selected-page').attr('id', '');
-		$('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
+		jQuery('#selected-page').attr('id', '');
+		jQuery('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
 	});
 
 	//set up back button
-	$('.control-back').click(function(){
+	jQuery('.control-back').click(function(){
 		if(current == 0)
 			current = vidSrcs.length-1;
 		else
 			current--;
 		prevComp();
-		$('#selected-page').attr('id', '');
-		$('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
+		jQuery('#selected-page').attr('id', '');
+		jQuery('.control-page:nth-of-type(' + (current+1) + ')').attr('id', 'selected-page');
 	});
 
 	//set up pagination events
-	$('.control-page').click(function(e){
-		$('#selected-page').attr('id', '');
-		$(this).attr('id', 'selected-page');
-		if($(e.target).index() > current){
-			current = $(e.target).index();
+	jQuery('.control-page').click(function(e){
+		jQuery('#selected-page').attr('id', '');
+		jQuery(this).attr('id', 'selected-page');
+		if(jQuery(e.target).index() > current){
+			current = jQuery(e.target).index();
 			console.log(current + " " + vidSrcs[(current)%vidSrcs.length]);
-			$('.nextComp>source').attr('src', vidSrcs[(current)%vidSrcs.length]);
-			$('.nextComp').get(0).load();
+			jQuery('.nextComp>source').attr('src', vidSrcs[(current)%vidSrcs.length]);
+			jQuery('.nextComp').get(0).load();
 			nextComp();
 			
 			//set order of pics right
 			setTimeout(function(){
-				$('.prevComp>source').attr('src', vidSrcs[(current-1)%vidSrcs.length])
+				jQuery('.prevComp>source').attr('src', vidSrcs[(current-1)%vidSrcs.length])
 			}, 500);
 		}
-		else if($(e.target).index() < current){
-			current = $(e.target).index();
+		else if(jQuery(e.target).index() < current){
+			current = jQuery(e.target).index();
 			console.log(current + " " + vidSrcs[(current)%vidSrcs.length]);
-			$('.prevComp>source').attr('src', vidSrcs[(current)%vidSrcs.length]);
-			$('.prevComp').get(0).load();
+			jQuery('.prevComp>source').attr('src', vidSrcs[(current)%vidSrcs.length]);
+			jQuery('.prevComp').get(0).load();
 			prevComp();
 			
 			//set order of pics right
 			setTimeout(function(){
-				$('.nextComp>source').attr('src', vidSrcs[(current+1)%vidSrcs.length]);
+				jQuery('.nextComp>source').attr('src', vidSrcs[(current+1)%vidSrcs.length]);
 			}, 500);
 		}
 	});
 
 	//move to a later page
 	function nextComp(){
-		if($('.prevComp'))
-			$('.prevComp').remove();
+		if(jQuery('.prevComp'))
+			jQuery('.prevComp').remove();
 
 	
-		$('.currentComp').addClass('prevComp').removeClass('currentComp');
-		$('.nextComp').addClass('currentComp').removeClass('nextComp');
-		$('.currentComp').get(0).pause();
-		$('.currentComp').get(0).currentTime = 0;
-		$('.currentComp').get(0).play();
+		jQuery('.currentComp').addClass('prevComp').removeClass('currentComp');
+		jQuery('.nextComp').addClass('currentComp').removeClass('nextComp');
+		jQuery('.currentComp').get(0).pause();
+		jQuery('.currentComp').get(0).currentTime = 0;
+		jQuery('.currentComp').get(0).play();
 		
-		$('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '\" type="video/mp4"></video>');
+		jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '\" type="video/mp4"></video>');
 	}
 
 	//move to a previous page
 	function prevComp(){
-		if($('.nextComp'))
-			$('.nextComp').remove();
+		if(jQuery('.nextComp'))
+			jQuery('.nextComp').remove();
 
-		$('.currentComp').addClass('nextComp').removeClass('currentComp');
-		$('.prevComp').addClass('currentComp').removeClass('prevComp');
-		$('.currentComp').get(0).pause();
-		$('.currentComp').get(0).currentTime = 0;
-		$('.currentComp').get(0).play();
+		jQuery('.currentComp').addClass('nextComp').removeClass('currentComp');
+		jQuery('.prevComp').addClass('currentComp').removeClass('prevComp');
+		jQuery('.currentComp').get(0).pause();
+		jQuery('.currentComp').get(0).currentTime = 0;
+		jQuery('.currentComp').get(0).play();
 
-		$('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '\"></video>');
+		jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '\"></video>');
 	}
 }

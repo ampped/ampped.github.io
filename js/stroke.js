@@ -5,12 +5,12 @@ function strokeEffect(){
   //assign ids to paths to access
   var idNum = 0;
   var step = 0;
-  var groups = $('.aspirations>svg');
+  var groups = jQuery('.aspirations>svg');
   var paths = "";
 
   //set up ids
   for(var i = 0; i < groups.length; i++){
-    paths = $(groups[i]).children('path');
+    paths = jQuery(groups[i]).children('path');
     for(var j = 0; j < paths.length; j++){
       paths[j].setAttribute('id', step+"i"+j);
     }
@@ -19,7 +19,7 @@ function strokeEffect(){
 
   step = 0;
   function playAni(){
-    if(step == $('.aspirations>svg').length){
+    if(step == jQuery('.aspirations>svg').length){
       step = 0;
     }
 
@@ -36,7 +36,7 @@ function strokeEffect(){
     var path = new Array();
     var length = new Array();
 
-    $('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath animated');
+    jQuery('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath animated');
     
     var i = 0;
     while(document.getElementById(current+'i'+i)){
@@ -89,7 +89,7 @@ function strokeEffect(){
           path[j].setAttribute("class", "letterPath");
         }
         window.cancelAnimationFrame(handle);
-        $('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath');
+        jQuery('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath');
       }
     };
 

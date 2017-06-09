@@ -1,27 +1,27 @@
 //written by Amy Pham
 
 function setupWFDisplay(wfSrcs){
-	$('.pages>li').click(function(){
-		$('.pages>.selected').removeClass('selected');
-		$(this).addClass('selected');
+	jQuery('.pages>li').click(function(){
+		jQuery('.pages>.selected').removeClass('selected');
+		jQuery(this).addClass('selected');
 
-		selectItem('hotspots', $(this).index());
-		selectItem('pageDesc', $(this).index());
+		selectItem('hotspots', jQuery(this).index());
+		selectItem('pageDesc', jQuery(this).index());
 
-		$('.wf>img').attr('src', wfSrcs[$(this).index()]);
+		jQuery('.wf>img').attr('src', wfSrcs[jQuery(this).index()]);
 	})
 
-	$('.hotspot').hover(function(){
-		selectItem('desc', $(this).index('.hotspot') + 1);
+	jQuery('.hotspot').hover(function(){
+		selectItem('desc', jQuery(this).index('.hotspot') + 1);
 	});
 
-	$('.wf').mouseleave(function(){
+	jQuery('.wf').mouseleave(function(){
 		selectItem('desc', 0);
 	});
 }
 
 //helper function to add the selected class to the actual selected object
 function selectItem(className, i){
-	$('.' + className + '.selected').removeClass('selected');
-	$('.' + className + ':eq(' + i + ')').addClass('selected');
+	jQuery('.' + className + '.selected').removeClass('selected');
+	jQuery('.' + className + ':eq(' + i + ')').addClass('selected');
 }
