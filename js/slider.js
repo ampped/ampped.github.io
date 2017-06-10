@@ -3,6 +3,7 @@
 function createSlider(imgs){
 	var imgSrcs = imgs;
 	var current = 0;
+	var currentFull = 0;
 
 	//create html elements of slider
 	jQuery('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp fitWidth currentComp">');
@@ -68,6 +69,9 @@ function createSlider(imgs){
 
 		jQuery('.currentComp').addClass('prevComp').removeClass('currentComp');
 		jQuery('.nextComp').addClass('currentComp').removeClass('nextComp');
+		jQuery('.currentComp').click(function(){
+			openFull();
+		});
 		
 		jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
 	}
@@ -79,8 +83,65 @@ function createSlider(imgs){
 
 		jQuery('.currentComp').addClass('nextComp').removeClass('currentComp');
 		jQuery('.prevComp').addClass('currentComp').removeClass('prevComp');
+		jQuery('.currentComp').click(function(){
+			openFull();
+		});
 
 		jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1 + imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
+	}
+
+	//seeing full-size comp
+	//set up close button
+	jQuery('.control-close').click(function(){
+		jQuery('.fullComp').removeClass('showing');
+	});
+
+	//set up fullComp next button
+	jQuery('.nextFull').click(function(){
+		jQuery('.fullComp').scrollTop(0);
+		currentFull = (currentFull + 1) % imgSrcs.length;
+		nextFullComp();
+	});
+
+	//set up fullComp back button
+	jQuery('.prevFull').click(function(){
+		jQuery('.fullComp').scrollTop(0);
+		currentFull = (currentFull + imgSrcs.length - 1) % imgSrcs.length;
+		prevFullComp();
+	});
+
+	jQuery('.currentComp').click(function(){
+		openFull();
+	});
+
+	function openFull(){
+		currentFull = current;
+		jQuery('.currentFull').attr('src', imgSrcs[(currentFull)%imgSrcs.length]);
+		jQuery('.prevFullComp').attr('src', imgSrcs[(currentFull-1 + imgSrcs.length)%imgSrcs.length]);
+		jQuery('.nextFullComp').attr('src', imgSrcs[(currentFull+1)%imgSrcs.length]);
+		jQuery('.fullComp').addClass('showing')		
+	}
+
+	//move to a later page
+	function nextFullComp(){
+		if(jQuery('.prevFullComp'))
+			jQuery('.prevFullComp').remove();
+
+		jQuery('.currentFull').addClass('prevFullComp').removeClass('currentFull');
+		jQuery('.nextFullComp').addClass('currentFull').removeClass('nextFullComp');
+		
+		jQuery('.fullComp').append('<img src=\"' + imgSrcs[(currentFull+1)%imgSrcs.length] + '\" class="nextFullComp">');
+	}
+
+	//move to a previous page
+	function prevFullComp(){
+		if(jQuery('.nextFullComp'))
+			jQuery('.nextFullComp').remove();
+
+		jQuery('.currentFull').addClass('nextFullComp').removeClass('currentFull');
+		jQuery('.prevFullComp').addClass('currentFull').removeClass('prevFullComp');
+
+		jQuery('.fullComp').append('<img src=\"' + imgSrcs[(currentFull-1 + imgSrcs.length)%imgSrcs.length] + '\" class="prevFullComp">');
 	}
 }
 

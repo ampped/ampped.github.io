@@ -50,10 +50,16 @@ img {
   max-width: 100%; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  font: 500 14pt "Proxima Nova", sans-serif;
+  letter-spacing: 1px;
+  color: #1d2349;
+  box-sizing: border-box; }
+  a:hover {
+    border-bottom: solid 2px #E1AEFF; }
 
 ul {
-  font: 500 14pt/32pt "Open Sans", sans-serif;
+  font: 500 15pt/32pt "Proxima Nova", sans-serif;
   list-style: none;
   padding: 0; }
 
@@ -66,15 +72,12 @@ nav {
   padding: 14px 40px;
   text-align: right;
   z-index: 5;
-  transition: 0.2s ease-in-out; }
+  transition: 0.2s ease-in-out;
+  pointer-events: none; }
   nav a {
     display: inline-block;
     margin: 0 30px;
-    color: #1d2349;
-    font: 500 14pt "Proxima Nova", sans-serif;
-    letter-spacing: 1px; }
-    nav a:hover {
-      border-bottom: solid 2px #E1AEFF; }
+    color: #1d2349; }
   nav.showing {
     top: 0; }
 
@@ -91,6 +94,10 @@ textarea {
   resize: none;
   color: #1d2349;
   font: 12pt "Open Sans", sans-serif; }
+
+svg {
+  stroke-linecap: round;
+  stroke-linejoin: round; }
 
 .letterPath {
   fill: none;
@@ -122,7 +129,7 @@ textarea {
   width: auto;
   height: 250px;
   z-index: -1;
-  stroke-width: 1.3px;
+  stroke-width: 1px;
   fill: none;
   stroke: #E1AEFF;
   stroke-miterlimit: 10;
@@ -139,7 +146,7 @@ textarea {
     top: 150px;
     left: 20px;
     height: 250px;
-    stroke-width: 1.3px; }
+    stroke-width: 1px; }
   100% {
     top: 10px;
     left: 20px;
@@ -155,7 +162,7 @@ textarea {
     top: 150px;
     left: 20px;
     height: 250px;
-    stroke-width: 1.3px; } }
+    stroke-width: 1px; } }
 #aboutInfo {
   width: 35%;
   text-align: left;

@@ -13,15 +13,19 @@ function setupWFDisplay(wfSrcs){
 
 	jQuery('.hotspot').hover(function(){
 		selectItem('desc', jQuery(this).index('.hotspot') + 1);
+		jQuery('.hotspot.selected').attr('class', 'hotspot');
+		jQuery(this).attr('class', 'hotspot selected');
 	});
 
 	jQuery('.wf').mouseleave(function(){
 		selectItem('desc', 0);
+		jQuery('.hotspot.selected').attr('class', 'hotspot');
 	});
 }
 
 //helper function to add the selected class to the actual selected object
 function selectItem(className, i){
+	console.log(jQuery('.' + className + ':eq(' + i + ')'));
 	jQuery('.' + className + '.selected').removeClass('selected');
 	jQuery('.' + className + ':eq(' + i + ')').addClass('selected');
 }

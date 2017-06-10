@@ -1,7 +1,10 @@
 /*written by Amy Pham*/
 
 $blue: #1d2349
-$magenta: #AE0074
+$purple: #E1AEFF
+$midPurple: #BF78FF
+$darkerPurple: #972EFF
+$green: #D4FF69
 $white: #FFF
 $black: #333
 $bgWhite: #FCFCFC
@@ -20,11 +23,11 @@ header, section
 		font-weight: 700
 		color: $white
 		margin-bottom: 20px
+		border: none
 	h4
-		color: $magenta
+		color: $white
 		margin: 20px 40px 0 40px
 		letter-spacing: 0.1ex
-		text-transform: uppercase
 
 .header-img
 	width: 100%
@@ -44,7 +47,7 @@ header, section
 		content: ' '
 		width: 100%
 		height: 250px
-		background-color: #000
+		background-color: $darkerPurple
 		opacity: 0.4
 
 .beginningBlock
@@ -61,13 +64,19 @@ header, section
 		margin: 0
 		margin-right: 45px
 		text-align: justify
-
+	a
+		box-sizing: content-box
+		display: inline-block
+		margin-top: 15px
+		fill: none
+		stroke: $blue
+		stroke-width: 1px
 	#message
 		width: 50%
 		float: right
-		font: 500 12pt/18pt $heading-font
+		font: 500 13pt/18pt $heading-font
 		margin: 0
-		color: $magenta
+		color: $midPurple
 
 .previewVid
 	video
@@ -125,7 +134,7 @@ header, section
 	&.barStat 
 		h4
 			font-weight: 700
-			color: $magenta
+			color: $purple
 			margin: 10px 0 40px 0
 		svg
 			width: auto
@@ -147,7 +156,7 @@ header, section
 			width: 100%
 	&.pieStat 
 		h4
-			color: $magenta
+			color: $purple
 			margin: 10px 0 40px 0
 		svg
 			width: auto
@@ -191,12 +200,12 @@ header, section
 			margin-right: 20px
 	ellipse
 		fill: none
-		stroke: $magenta
+		stroke: $purple
 		stroke-width: 8px
 		stroke-dashoffset: 30px
 	/*path
 		fill: none
-		stroke: $magenta
+		stroke: $purple
 		stroke-width: 8px
 		stroke-dasharray: 5,3,2
 		stroke-dashoffset: 30px*/
@@ -210,6 +219,18 @@ header, section
 			img
 				width: 300px
 
+.st0
+	fill: $blue
+.st1
+	fill: $darkerPurple
+.st2
+	fill: $purple
+.st3
+	fill: #CCC
+.st4
+	fill: #DDD
+.st5
+	fill: #DCDCDC
 
 #wireframes
 	display: block
@@ -228,20 +249,28 @@ header, section
 		float: right
 		li
 			display: inline
-			margin-right: 20px
+			margin-left: 20px
 			cursor: pointer
-			color: $magenta
-			font-family: $heading-font
-		.selected
 			color: $blue
+			font-family: $heading-font
+			&:hover
+				border-bottom: solid 2px $purple
+		.selected
+			color: $midPurple
 			cursor: default
+			&:hover
+				border: none
 	h3
 		display: inline-block
 		width: 500px
 	p
 		display: none
 	.desc
-		color: $magenta
+		margin-top: 1em
+	hr
+		height: 2px
+		background-color: $green
+		border: none
 	.wf
 		display: inline-block
 		max-width: 400px
@@ -257,20 +286,33 @@ header, section
 			display: none
 		.hotspot
 			cursor: pointer
-			fill: rgba(0, 0, 0, 0)
-			stroke: #CF2790
-			stroke-width: 8
+			fill: $darkerPurple
+			opacity: 0.4
+			stroke-width: 0
+			&.selected
+				opacity: 1
+				stroke: $midPurple
+				stroke-width: 8
+				fill: rgba(0, 0, 0, 0)
 	.selected, .hotspots.selected
 		display: inline-block
 
 	&.landscape
 		.wf
 			max-width: 560px
-			.hotspot
+			.hotspot.selected
 				stroke-width: 5
 		.wordblock, h3
-			max-width: 360px
+			max-width: 370px
 			margin-right: 70px
+
+#moodboard
+	li
+		letter-spacing: 0.1ex
+		&::before
+			content: '\2014\00a0'
+			color: $green
+			font: 800 16pt $heading-font
 
 #prototype
 	text-align: center
@@ -290,8 +332,7 @@ header, section
 	background: none
 	border: none
 	outline: none
-	&:hover
-		cursor: pointer
+	cursor: pointer
 
 .control-arrow
 	width: 7%
@@ -300,6 +341,11 @@ header, section
 	background: rgba(29, 35, 73, 0.8)
 	&:hover
 		background: rgba(29, 35, 73, 0.9)
+
+.control-svg
+	fill: none
+	stroke: $white
+	stroke-width: 5px
 
 .control-next
 	right: 0
@@ -317,19 +363,25 @@ header, section
 	margin: 0 10px
 	padding: 7px
 	border-radius: 12px
-	background: #000
+	background: $blue
 	opacity: 0.55
 	border: none
 	outline: none
+	cursor: pointer
 	&:hover
-		cursor: pointer
 		opacity: 0.8
 
 #selected-page
-	border: solid 3px $magenta
+	border: solid 3px $midPurple
 	padding: 4px
 	background: none
 	opacity: 1
+
+.control-close
+	position: fixed
+	top: 0
+	right: 0
+	z-index: 11
 
 .slider img
 	display: inline-block
@@ -339,6 +391,7 @@ header, section
 	left: 50%
 	transform: translateX(-50%)
 	transition: 0.8s cubic-bezier(.56,0,.4,1)
+	cursor: pointer
 	
 .fitWidth
 	max-width: 86%
@@ -352,6 +405,51 @@ header, section
 .nextComp
 	left: 100%
 	transform: none
+
+.fullComp
+	box-sizing: content-box
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	overflow-x: hidden
+	overflow-y: auto
+	margin-right: -30px
+	padding-right: 30px
+	background-color: rgba(29, 35, 73, 0.8)
+	opacity: 0
+	transition: 0.25s ease-in-out
+	pointer-events: none
+	z-index: 10
+	cursor: pointer
+	&.showing
+		opacity: 1
+		pointer-events: initial
+	img
+		width: auto
+		max-width: 100%
+		height: auto
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+	.nextFullComp
+		left: 100%
+		transform: none
+	.prevFullComp
+		left: -100%
+		transform: none
+
+	.nextFull, .prevFull
+		display: block
+		width: 50%
+		height: 100%
+		position: fixed
+		top: 0
+		z-index: 11
+	.nextFull
+		left: 50%
+	.prevFull
+		left: 0
 
 /*page transition*/
 @keyframes fadeInUp
