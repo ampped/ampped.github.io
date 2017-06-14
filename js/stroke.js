@@ -7,6 +7,7 @@ function strokeEffect(){
   var step = 0;
   var groups = jQuery('.aspirations>svg');
   var paths = "";
+  var playing = true;
 
   //set up ids
   for(var i = 0; i < groups.length; i++){
@@ -24,10 +25,20 @@ function strokeEffect(){
     }
 
     play(step);
-    setTimeout(playAni, 1800);
+    if(playing)
+      setTimeout(playAni, 1800);
     step++;
+
+    jQuery(window).blur(function(){
+      playing = false;
+    });
   };
   playAni();
+
+  jQuery(window).focus(function(){
+    playing = true;
+    playAni();
+  });
 
   //code modified from http://codepen.io/arkwis/pen/chnop
   function play(current) {
@@ -58,6 +69,7 @@ function strokeEffect(){
         path[j].setAttribute("class", "letterPath");
         path[j].style.strokeWidth = 3;
       }
+
       handle = window.requestAnimationFrame(draw);
 
       //when finished
@@ -77,7 +89,7 @@ function strokeEffect(){
 
       //undraw paths
       for(var j=0; j<path.length;j++){
-        path[j].style.strokeDashoffset = length[j] * (1 + progress);
+        path[j].style.strokeDashoffset = Math.ceil(length[j] * (1 + progress));
         path[j].setAttribute("class", "letterPath");
       }
       handle = window.requestAnimationFrame(undraw);

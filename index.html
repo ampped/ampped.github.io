@@ -23,6 +23,9 @@
 				window.alert("Thanks for the message! I'll be sure to get back to you soon!");
 			}
 
+			if(jQuery(window).scrollTop() > (jQuery('#work').position().top/2))
+				jQuery('.logo').attr('class', 'logo shrink');
+
 			jQuery.noConflict();
 			strokeEffect();
 			formEffect();
@@ -75,7 +78,7 @@
 	</svg>
 		<section id="aboutInfo">
 			<h1>Halloo! I'm Amy!</h1>
-			<p>I'm an RIT New Media Design student close to finding my way in the world, but right now I'm waving between my loves&mdash;</p>
+			<p>I'm an RIT New Media Design student finding my way in the world, but right now I'm waving between my loves&mdash;</p>
 		</div>
 
 		<div class="aspirations">
@@ -216,9 +219,9 @@
 	</section>
 	<section id="work">
 		<a href="javascript:;" data-link="projects/nest/nest.html" class="project block""><video style="width: 100%; top: -42px;" loop><source src="projects/nest/addNode.mp4" type="video/mp4"></video><p>Nest Schedule Redesign</p></a><!--
-		--><a href="javascript:;" class="project block" data-link="projects/myCourses/myCourses.html"><video><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video><p>MyCourses Redesign</p></a><!--
+		--><a href="javascript:;" class="project block" data-link="projects/myCourses/myCourses.html"><video loop><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video><p>MyCourses Redesign</p></a><!--
 		--><a href="javascript:;" class="project block" data-link="projects/selfCare/selfCare.html"><video style="width: 750px" loop><source src="projects/selfCare/landscapeStill.mp4" type="video/mp4"></video><p>The Importance of Self Care</p></a><!--
-		--><a href="javascript:;" data-link="projects/usatoday/usatoday.html" class="project block"><video style="width: 1200px; left: -200px; bottom: -120px;" loop><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video><p>USA TODAY Mobile Experience</p></a>
+		--><a href="javascript:;" data-link="projects/usatoday/usatoday.html" class="project block"><video style="width: 1200px; left: -200px; top: -350px;" loop><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video><p>USA TODAY Mobile Experience</p></a>
 	</section>
 	<script type="text/javascript">
 		jQuery('.project').hover(function(){
@@ -231,6 +234,7 @@
 		<div id="contactInfo" class="info block">
 			<h1>Contact Me</h1>
 			<p>If you want to have a chat about new, media-ish, design-y things or otherwise, drop me a line!</p><p>You can reach me at amysvk@gmail.com or with this handy-dandy form over here ></p>
+			<p class="footer">&copy; Designed &amp; developed by Amy Pham</p>
 		</div><!--
 		--><form id="contactForm" class="jotform-form block" action="https://submit.jotform.us/submit/71586415184158/" method="post" name="form_71586415184158" id="71586415184158" accept-charset="utf-8">
 		  <input type="hidden" name="formID" value="71586415184158" />
@@ -255,7 +259,7 @@
 		        <div id="cid_4" class="form-input-wide">
 		          <div style="text-align:right;" class="form-buttons-wrapper">
 		            <button id="input_4" type="submit" class="form-submit-button button" data-component="button">
-		              Submit
+		              Submit<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>
 		            </button>
 		          </div>
 		        </div>

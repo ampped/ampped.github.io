@@ -1,4 +1,6 @@
 /*written by Amy Pham */
+/*$darkerPurple: #972EFF */
+/*$green: #D4FF69 */
 body {
   margin: 0;
   box-sizing: border-box;
@@ -26,7 +28,7 @@ h1 {
   font-size: 36pt;
   font-weight: 800;
   line-height: 36pt;
-  border-bottom: solid 8px #D4FF69; }
+  border-bottom: solid 5px #D1f084; }
 
 h2 {
   font-size: 22pt;
@@ -49,22 +51,26 @@ h5 {
 img {
   max-width: 100%; }
 
-a {
+a, .button {
   text-decoration: none;
   font: 500 14pt "Proxima Nova", sans-serif;
   letter-spacing: 1px;
   color: #1d2349;
-  box-sizing: border-box; }
-  a:hover {
-    border-bottom: solid 2px #E1AEFF; }
+  box-sizing: border-box;
+  fill: none;
+  stroke: #1d2349;
+  stroke-width: 1px; }
+  a:hover, .button:hover {
+    border-bottom: solid 2px #A499F0; }
 
 ul {
   font: 500 15pt/32pt "Proxima Nova", sans-serif;
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
 nav {
-  background-color: none;
+  background-color: transparent;
   box-sizing: border-box;
   position: fixed;
   top: -100px;
@@ -77,7 +83,8 @@ nav {
   nav a {
     display: inline-block;
     margin: 0 30px;
-    color: #1d2349; }
+    color: #1d2349;
+    pointer-events: initial; }
   nav.showing {
     top: 0; }
 
@@ -99,14 +106,6 @@ svg {
   stroke-linecap: round;
   stroke-linejoin: round; }
 
-.letterPath {
-  fill: none;
-  stroke: #1d2349;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-
 /*general whole page classes */
 .blue {
   background-color: #1d2349;
@@ -117,21 +116,20 @@ svg {
   width: 50%; }
 
 .info {
-  padding: 5vw 7vw;
   box-sizing: border-box;
   vertical-align: top; }
 
 /*specific elements organized by part */
 .logo {
   position: fixed;
-  top: 150px;
+  top: 160px;
   left: 20px;
   width: auto;
-  height: 250px;
+  height: 205px;
   z-index: -1;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
   fill: none;
-  stroke: #E1AEFF;
+  stroke: #A499F0;
   stroke-miterlimit: 10;
   transition: 0.5s ease-in-out; }
   .logo.shrink {
@@ -143,10 +141,10 @@ svg {
 
 @keyframes shrinkLogo {
   0% {
-    top: 150px;
+    top: 160px;
     left: 20px;
-    height: 250px;
-    stroke-width: 1px; }
+    height: 205px;
+    stroke-width: 1.5px; }
   100% {
     top: 10px;
     left: 20px;
@@ -159,12 +157,12 @@ svg {
     height: 36px;
     stroke-width: 4px; }
   100% {
-    top: 150px;
+    top: 160px;
     left: 20px;
-    height: 250px;
-    stroke-width: 1px; } }
+    height: 205px;
+    stroke-width: 1.5px; } }
 #aboutInfo {
-  width: 35%;
+  width: 37%;
   text-align: left;
   margin-left: 50%;
   position: relative;
@@ -172,10 +170,19 @@ svg {
 
 .general {
   box-sizing: border-box;
-  height: 560px; }
+  min-height: 560px; }
   .general p {
-    font-size: 14pt;
-    line-height: 26pt; }
+    font-size: 13pt;
+    line-height: 26pt;
+    letter-spacing: 0.04ex; }
+
+.letterPath {
+  fill: none;
+  stroke: #1d2349;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10; }
 
 @keyframes slide {
   0% {
@@ -208,6 +215,8 @@ svg {
   margin: 0;
   overflow: hidden;
   text-align: center; }
+  .project:hover {
+    border: 0; }
   .project video {
     position: absolute;
     left: 0;
@@ -219,27 +228,34 @@ svg {
     margin: 0;
     color: #FFF;
     font: 500 2em "Proxima Nova", sans-serif;
-    top: 50%;
+    top: 52%;
     transform: translateY(-50%);
     z-index: 1;
-    visibility: hidden; }
+    opacity: 0;
+    transition: 0.2s ease-in-out; }
   .project:hover p {
-    visibility: visible; }
+    opacity: 1;
+    top: 50%; }
   .project:hover::before {
     display: block;
     position: absolute;
     content: " ";
     width: 100%;
     height: 100%;
-    background-color: #972EFF;
+    background-color: #902EFF;
     opacity: 0.4;
     z-index: -1; }
 
 #contact {
-  text-align: left; }
+  text-align: left;
+  padding-bottom: 100px;
+  position: relative; }
 
 #contactInfo {
-  padding-top: 130px; }
+  height: 576px;
+  padding: 0 7vw;
+  padding-top: 130px;
+  position: relative; }
 
 #contactForm {
   box-sizing: border-box;
@@ -261,14 +277,19 @@ form {
   .form-control:focus {
     outline: 0; }
 
+.footer {
+  font: 200 10pt "Open Sans", sans-serif !important;
+  color: #AAA;
+  position: absolute;
+  bottom: 0; }
+
 .projectBlock {
   display: block;
   width: 100%;
-  height: calc(100% - 26px);
+  height: 100%;
   position: fixed;
   top: 0;
   left: 100%;
-  padding-top: 50px;
   background-color: #FCFCFC;
   transition: 0.5s ease-in-out;
   z-index: 3;
@@ -325,7 +346,7 @@ form {
 
 .control-border {
   box-sizing: content-box;
-  border-bottom: 2px solid #E1AEFF;
+  border-bottom: 2px solid #A499F0;
   width: 0;
   height: 100%;
   position: absolute;
@@ -357,22 +378,11 @@ textarea:focus ~ .label label {
   bottom: 0; }
 
 .button {
-  box-sizing: content-box;
-  display: inline-block;
-  width: auto;
-  height: 40px;
-  padding: 0 25px;
-  background-color: transparent;
-  color: #1d2349;
+  padding: 0;
   outline: none;
-  border: solid 1px #1d2349;
-  border-radius: 8px;
-  font: 600 14pt "Proxima Nova", sans-serif;
-  position: relative;
+  border: none;
+  background: none;
   cursor: pointer; }
-  .button:hover {
-    padding: 0 24px;
-    border: solid 2px #E1AEFF; }
 
 .placeholder {
   width: 100%;
@@ -384,7 +394,7 @@ textarea:focus ~ .label label {
   pointer-events: none; }
   .placeholder p {
     color: #1d2349;
-    font-size: 12pt;
+    font: 13pt "Open Sans", sans-serif;
     position: absolute;
     top: 0;
     margin: 0;

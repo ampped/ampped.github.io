@@ -39,66 +39,52 @@
 			<h5>Number of visits a week</h5>
 			<h4>Multiple times a day</h4>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
-			<style type="text/css">  
-				.st0{fill:#4855A5;}
-				.st1{fill:#F36E23;}
-				.st2{fill:#A7A9AC;}
-				.st3{fill:#D1D3D4;}
-				.st4{fill:#636466;}
-				.st5{fill:#E1E2E3;}
-				.st6{fill:none;stroke:#E6E7E8;stroke-width:3;stroke-miterlimit:10;}
-			</style>
-			<text text-anchor="middle" x="536.7" y="320.15" class="num">7+</text>
-			<text text-anchor="middle" x="461.4" y="320.15" class="num">6</text>
-			<text text-anchor="middle" x="386.2" y="320.15" class="num">5</text>
-			<text text-anchor="middle" x="310.9" y="320.15" class="num">4</text>
-			<text text-anchor="middle" x="235.7" y="320.15" class="num">3</text>
-			<text text-anchor="middle" x="160.4" y="320.15" class="num">2</text>
-			<text text-anchor="middle" x="85.1" y="320.15" class="num">1</text>
-			<text text-anchor="middle" x="9.9" y="320.15" class="num">0</text>
-			<rect x="536.7" class="st1" width="34.1" height="261.4"/>
-			<rect x="461" y="87.1" class="st2" width="34.1" height="174.2"/>
-			<rect x="385.3" y="217.8" class="st3" width="34.1" height="43.6"/>
+			<text text-anchor="middle" x="536.7" y="305.15" class="num">7+</text>
+			<text text-anchor="middle" x="461.4" y="305.15" class="num">6</text>
+			<text text-anchor="middle" x="386.2" y="305.15" class="num">5</text>
+			<text text-anchor="middle" x="310.9" y="305.15" class="num">4</text>
+			<text text-anchor="middle" x="235.7" y="305.15" class="num">3</text>
+			<text text-anchor="middle" x="160.4" y="305.15" class="num">2</text>
+			<text text-anchor="middle" x="85.1" y="305.15" class="num">1</text>
+			<text text-anchor="middle" x="9.9" y="305.15" class="num">0</text>
+			<rect x="536.7" class="st0" width="34.1" height="261.4"/>
+			<rect x="461" y="87.1" class="st1" width="34.1" height="174.2"/>
+			<rect x="385.3" y="217.8" class="st2" width="34.1" height="43.6"/>
 			<rect x="235.3" y="217.8" class="st3" width="34.1" height="43.6"/>
-			<line class="st6" y1="280.7" x2="587.6" y2="280.7"/></svg>
+			</svg>
 			<script type="text/javascript">
-				$('.num').attr('x', function(){return (parseInt($(this).attr('x')) + 15.15);});
+				jQuery('.num').attr('x', function(){return (parseInt(jQuery(this).attr('x')) + 15.15);});
 			</script>
 		</div>
-		<div class="researchItem barStat">
+		<div class="researchItem barStat right">
 			<h5>Approximate time per visit</h5>
 			<h4>5-10 minutes</h4>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
-			<style type="text/css">  
-				.st0{fill:#3E479D;}
-				.st1{fill:#D1D3D4;}
-				.st2{fill:#A7A9AC;}
-				.st3{fill:#F36E23;}
-				.st4{fill:#FBB03B;}
-			</style>
 			<text text-anchor="end" x="118.3" y="29.6" class="num">5 min</text>
 			<text text-anchor="end" x="118.3" y="96.6" class="num">10 min</text>
 			<text text-anchor="end" x="118.3" y="162.3" class="num">20 min</text>
 			<text text-anchor="end" x="118.3" y="228" class="num">Over 1 hr</text>
-			<rect x="150.2" y="197.1" class="st1" width="106" height="29.6"/>
+			<rect x="150.2" class="st1" width="424" height="29.6"/>
+			<rect x="150.2" y="65.7" class="st0" width="530" height="29.6"/>
 			<rect x="150.2" y="131.4" class="st2" width="212" height="29.6"/>
-			<rect x="150.2" y="65.7" class="st3" width="530" height="29.6"/>
-			<rect x="150.2" class="st4" width="424" height="29.6"/></svg>
+			<rect x="150.2" y="197.1" class="st3" width="106" height="29.6"/>
+			</svg>
 			<script type="text/javascript">
-				$('.barStat:eq(1)').find('.num').attr('y', function(){return (parseInt($(this).attr('y')) - 5);});
+				jQuery('.barStat:eq(1)').find('.num').attr('y', function(){return (parseInt(jQuery(this).attr('y')) - 5);});
 			</script>
 		</div>
 		<h4>Percent of courses that use each feature</h4><br>
 		<div class="researchItem course">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
 			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
 			<h4>67%</h4>
 			<h5>Posting Content</h5>
 			<p>Professors can post documents describing assignments, links, or any other information helpful to the course</p>
 		</div>
-		<div class="researchItem course">
+		<div class="researchItem course right">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
 			</svg>
 			<h4>100%</h4>
 			<h5>Due Dates</h5>
@@ -106,15 +92,16 @@
 		</div>
 		<div class="researchItem course">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
 			</svg>	
 			<h4>100%</h4>
 			<h5>Dropbox</h5>
 			<p>An application for students to submit their assignments</p>
 		</div>
-		<div class="researchItem course">
+		<div class="researchItem course right">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
 			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
 			</svg>	
 			<h4>58%</h4>
 			<h5>Discussion</h5>
@@ -123,39 +110,55 @@
 		<div class="researchItem course">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
 			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
 			</svg>
 			<h4>92%</h4>
 			<h5>Grades</h5>
 			<p>Updates on any grades from dropbox submissions or in-class assignments</p>
-		</div><br><br><br>
+		</div>
+		<script type="text/javascript">
+			var pie = document.querySelectorAll('.course');
+			pie.forEach(function(item){
+				var p = item.querySelector('.pie');
+				console.dir(p);
+				var percent = item.querySelector('h4').innerText.replace('%','');
+				var l = p.getTotalLength();
+			    p.style.strokeDasharray = l + ' ' + l; 
+			    p.style.strokeDashoffset = l - (percent/100*l);
+			    p.style.transformOrigin = '50% 50%';
+			    p.style.transform = 'rotate(-90deg)';
+			});
+		</script>
+		<br><br><br>
 		<h4>Comments on features</h4><br>
 		<div class="researchItem comparison first">
 			<div class="wordblock">
 				<h5>&ldquo;The dropdown list for courses shows old courses that clog it up.&rdquo;</h5>
 			</div>
-			<img src="projects/myCourses/dropdown.png" />
+			<img src="projects/myCourses/dropdown.png"/>
 		</div>
-		<div class="researchItem comparison">
+		<div class="researchItem comparison right">
 			<div class="wordblock">
 				<h5>&ldquo;It would be convenient to be able to read content while still [having] a navigation to open the other content sources.&rdquo;</h5>
 				<p>This feature does exist but is hard to notice.</p>
 			</div>
 			<img src="projects/myCourses/tab.png" />
-			<img src="projects/myCourses/openTab.png" />
+			<img src="projects/myCourses/openTab.png" class="right"/>
 		</div>
 		</div>
 	</section>
 	<section id="wireframes" class="beginningBlock">
-		<h3>Wireframes</h3>
-		<ul class="pages">
+		<h3>Wireframes</h3><!--
+		--><ul class="pages">
 			<li class="selected">Home Page</li>
 			<li>Submit Assignment</li>
 			<li>Course Page</li>
 		</ul>
 		<div class="wordblock">
-		<p class="pageDesc selected">I took a lot of inspiration from dashboard interface designs, because they are designed to organize and clarify large amounts of data. As students typically log on to myCourses in short sessions throughout the day, they should be able to quickly complete their task and log off to work on their assignments.</p>
+		<p class="pageDesc selected">I took inspiration from dashboard interface, because they are designed to organize and clarify large amounts of data. As students typically log on to myCourses in short sessions throughout the day, they should be able to quickly complete their task and log off to work on their assignments.</p>
 		<p class="pageDesc">Clicking on the submit button of an assignment will open a Dropbox modal for students to submit a project without leaving the current page. This allows students to efficiently submit and go on to other tasks without disrupting their flow.</p>
 		<p class="pageDesc">Students should be able to generally find what they need from the home page. However, should they need additional information, course pages will contain all material, new and old, specific to a course.</p>
+		<hr>
 		<p class="desc selected">Hover over a hotspot for more details</p>
 		<p class="desc">Early Alerts notify a student if they are failing a course. These are placed at the top of the page, so the student will notice them.</p>
 		<p class="desc">Updates and Due Dates are placed above the fold for immediate access, as these features are used most often.</p>
@@ -180,11 +183,7 @@
 		<div class="wf">
 			<img src="projects/myCourses/WFhome.png">
 			<div class="hotspots selected">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="400px" height="611px" viewBox="0 0 1200 1833"
-					 style="overflow:scroll;enable-background:new 0 0 1200 1833;" xml:space="preserve">
+				<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="611px" viewBox="0 0 1200 1833">
 				<circle class="hotspot" cx="409.5" cy="143" r="46.5"/>
 				<circle class="hotspot" cx="689.5" cy="240.5" r="46.5"/>
 				<circle class="hotspot" cx="95" cy="363.5" r="46.5"/>
@@ -205,11 +204,7 @@
 				</svg>
 			</div>
 			<div class="hotspots">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="400px" height="768px" viewBox="0 0 1200 2304"
-					 style="overflow:scroll;enable-background:new 0 0 1200 2304;" xml:space="preserve">
+				<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="768px" viewBox="0 0 1200 2304">
 				<circle class="hotspot" cx="256.5" cy="139.9" r="46.5"/>
 				<circle class="hotspot" cx="1003.5" cy="230.5" r="46.5"/>
 				<circle class="hotspot" cx="586.5" cy="299.5" r="46.5"/>
@@ -244,32 +239,14 @@
 			<h3>Final Design</h3>
 		</div>
 		<div class="slider">
-			<button class="slider-control control-arrow control-next">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<style type="text/css">
-					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-				</style>
-				<defs>
-				</defs>
-				<polyline class="st0" points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
+			<button class="slider-control control-svg control-arrow control-next">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
+				<polyline points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
 				</svg>
 			</button>
-			<button class="slider-control control-arrow control-back">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<style type="text/css">
-					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-				</style>
-				<defs>
-				</defs>
-				<polyline class="st0" points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
+			<button class="slider-control control-svg control-arrow control-back">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
+				<polyline points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
 				</svg>
 			</button>
 			<div class="slider-control pagination">

@@ -1,10 +1,11 @@
 /*written by Amy Pham*/
 
 $blue: #1d2349
-$purple: #E1AEFF
-$midPurple: #BF78FF
-$darkerPurple: #972EFF
-$green: #D4FF69
+$purple: #A499F0
+$midPurple: #A078FF
+$darkerPurple: #902EFF
+/*$midPurple: #BF78FF*/
+$green: #D1f084
 $white: #FFF
 $black: #333
 $bgWhite: #FCFCFC
@@ -53,6 +54,9 @@ header, section
 .beginningBlock
 	margin-top: 100px
 
+.right
+	float: right
+
 #gifs video
 	width: 50%
 	float: left
@@ -68,9 +72,6 @@ header, section
 		box-sizing: content-box
 		display: inline-block
 		margin-top: 15px
-		fill: none
-		stroke: $blue
-		stroke-width: 1px
 	#message
 		width: 50%
 		float: right
@@ -85,7 +86,7 @@ header, section
 
 .wordblock
 	display: inline-block
-	width: 90%
+	width: 100%
 	max-width: 1000px
 	text-align: left
 	vertical-align: top
@@ -110,35 +111,35 @@ header, section
 		position: relative
 		.wordblock
 			display: inline-block
+			width: auto
 			max-width: 425px
-			margin-right: 70px
 		img
 			display: inline-block
-			max-width: 500px
+			max-width: calc(50% - 20px)
 	.inspo
-		display: inline-block
-		width: 49%
 		margin-top: 40px
 		img
 			max-width: 200px
 		.wordblock
-			width: 44%
+			width: calc(100% - 240px)
 			margin-left: 40px
+	.persona
+		max-width: 46% !important
 
 .researchItem
 	display: inline-block
-	width: calc(50% - 35px)
-	margin: 30px 30px 0px 0
+	width: calc(50% - 20px)
+	margin-top: 30px
 	position: relative
 	vertical-align: top
 	&.barStat 
 		h4
 			font-weight: 700
-			color: $purple
+			color: $midPurple
 			margin: 10px 0 40px 0
 		svg
-			width: auto
-			height: 230px
+			width: 93%
+			height: auto
 			vertical-align: middle
 			margin-bottom: 50px
 			display: inline-block
@@ -150,7 +151,7 @@ header, section
 		.wordblock
 			display: inline-block
 			max-width: 45%
-			margin-left: 50px
+			margin-left: 70px
 			vertical-align: text-bottom
 		&.full
 			width: 100%
@@ -167,7 +168,6 @@ header, section
 			display: inline-block
 			width: 20px
 			height: 20px
-			background-color: #D1D3D4
 			float: left
 		.wordblock
 			width: 47%
@@ -175,13 +175,15 @@ header, section
 			position: relative
 		.num
 			width: auto
+			max-width: calc(100% - 33px)
 			display: inline-block
 			fill: $blue
 			color: $blue
 			font: 500 13pt $heading-font
-			position: absolute
-			left: 30px
+			position: relative
+			left: 10px
 			vertical-align: bottom
+			margin-bottom: 12px
 			&.multiline
 				font-size: 20pt
 	&.course
@@ -191,46 +193,48 @@ header, section
 			top: 0
 			left: 0
 			margin: 50px
-			letter-spacing: -0.07ex
+			letter-spacing: 0.02ex
 			transform: translateX(-46%) translateY(-52%)
 		p
 			display: block
 		svg
 			float: left
 			margin-right: 20px
+		.ground
+			stroke: #CDCDCD
+		.pie
+			stroke: $purple
 	ellipse
 		fill: none
-		stroke: $purple
 		stroke-width: 8px
 		stroke-dashoffset: 30px
-	/*path
-		fill: none
-		stroke: $purple
-		stroke-width: 8px
-		stroke-dasharray: 5,3,2
-		stroke-dashoffset: 30px*/
 	&.comparison
-		width: 55%
-		img
-			width: 200px
-			margin: 30px 30px 0 0 
 		&.first
-			width: 38%
 			img
-				width: 300px
+				width: 360px !important
+				max-width: none !important
+		img
+			width: 220px
+			margin-top: 30px
 
 .st0
 	fill: $blue
+	background-color: $blue
 .st1
 	fill: $darkerPurple
+	background-color: $darkerPurple
 .st2
 	fill: $purple
+	background-color: $purple
 .st3
 	fill: #CCC
+	background-color: #CCC
 .st4
 	fill: #DDD
+	background-color: #DDD
 .st5
 	fill: #DCDCDC
+	background-color: #DCDCDC
 
 #wireframes
 	display: block
@@ -268,8 +272,8 @@ header, section
 	.desc
 		margin-top: 1em
 	hr
-		height: 2px
-		background-color: $green
+		height: 1px
+		background-color: $purple
 		border: none
 	.wf
 		display: inline-block
@@ -298,11 +302,13 @@ header, section
 		display: inline-block
 
 	&.landscape
+		h3
+			width: auto
 		.wf
 			max-width: 560px
 			.hotspot.selected
 				stroke-width: 5
-		.wordblock, h3
+		.wordblock
 			max-width: 370px
 			margin-right: 70px
 
@@ -363,13 +369,13 @@ header, section
 	margin: 0 10px
 	padding: 7px
 	border-radius: 12px
-	background: $blue
-	opacity: 0.55
+	background: $darkerPurple
+	opacity: 0.5
 	border: none
 	outline: none
 	cursor: pointer
 	&:hover
-		opacity: 0.8
+		opacity: 0.75
 
 #selected-page
 	border: solid 3px $midPurple
@@ -408,8 +414,8 @@ header, section
 
 .fullComp
 	box-sizing: content-box
-	width: 100%
-	height: 100%
+	width: 100vw
+	height: 100vh
 	position: fixed
 	top: 0
 	overflow-x: hidden
@@ -425,7 +431,7 @@ header, section
 	&.showing
 		opacity: 1
 		pointer-events: initial
-	img
+	img, video
 		width: auto
 		max-width: 100%
 		height: auto
@@ -440,10 +446,9 @@ header, section
 		transform: none
 
 	.nextFull, .prevFull
-		display: block
+		display: none
 		width: 50%
-		height: 100%
-		position: fixed
+		position: absolute
 		top: 0
 		z-index: 11
 	.nextFull

@@ -1,9 +1,11 @@
 /*written by Amy Pham*/
 
 $blue: #1d2349
-$purple: #E1AEFF
-$darkerPurple: #972EFF
-$green: #D4FF69
+$purple: #A499F0
+$darkerPurple: #902EFF
+$green: #D1f084
+/*$darkerPurple: #972EFF*/
+/*$green: #D4FF69*/
 $white: #FFF
 $black: #333
 $bgWhite: #FCFCFC
@@ -37,7 +39,7 @@ h1
 	font-size: 36pt
 	font-weight: 800
 	line-height: 36pt
-	border-bottom: solid 8px $green
+	border-bottom: solid 5px $green
 
 h2
 	font-size: 22pt
@@ -60,12 +62,15 @@ h5
 img
 	max-width: 100%
 
-a
+a, .button
 	text-decoration: none
 	font: 500 14pt $heading-font
 	letter-spacing: 1px
 	color: $blue
 	box-sizing: border-box
+	fill: none
+	stroke: $blue
+	stroke-width: 1px
 	&:hover
 		border-bottom: solid 2px $purple
 
@@ -73,9 +78,10 @@ ul
 	font: 500 15pt/32pt $heading-font
 	list-style: none
 	padding: 0
+	margin: 0
 
 nav
-	background-color: none
+	background-color: transparent
 	box-sizing: border-box
 	position: fixed
 	top: -100px
@@ -89,6 +95,7 @@ nav
 		display: inline-block
 		margin: 0 30px
 		color: $blue
+		pointer-events: initial
 	&.showing
 		top: 0
 
@@ -112,14 +119,6 @@ svg
 	stroke-linecap: round
 	stroke-linejoin: round
 
-.letterPath
-	fill: none
-	stroke: $blue
-	stroke-width: 3
-	stroke-linecap: round
-	stroke-linejoin: round
-	stroke-miterlimit: 10
-
 /*general whole page classes*/
 .blue
 	background-color: $blue
@@ -130,7 +129,6 @@ svg
 	width: 50%
 
 .info
-	padding: 5vw 7vw
 	box-sizing: border-box
 	vertical-align: top
 
@@ -138,12 +136,12 @@ svg
 /*specific elements organized by part*/
 .logo
 	position: fixed
-	top: 150px
+	top: 160px
 	left: 20px
 	width: auto
-	height: 250px
+	height: 205px
 	z-index: -1
-	stroke-width: 1px
+	stroke-width: 1.5px
 	fill: none
 	stroke: $purple
 	stroke-miterlimit: 10
@@ -157,10 +155,10 @@ svg
 
 @keyframes shrinkLogo
 	0%
-		top: 150px
+		top: 160px
 		left: 20px
-		height: 250px
-		stroke-width: 1px
+		height: 205px
+		stroke-width: 1.5px
 	100%
 		top: 10px
 		left: 20px
@@ -173,13 +171,13 @@ svg
 		height: 36px
 		stroke-width: 4px
 	100%
-		top: 150px
+		top: 160px
 		left: 20px
-		height: 250px
-		stroke-width: 1px
+		height: 205px
+		stroke-width: 1.5px
 
 #aboutInfo
-	width: 35%
+	width: 37%
 	text-align: left
 	margin-left: 50%
 	position: relative
@@ -187,11 +185,19 @@ svg
 
 .general
 	box-sizing: border-box
-	height: 560px
+	min-height: 560px
 	p
-		font-size: 14pt
+		font-size: 13pt
 		line-height: 26pt
+		letter-spacing: 0.04ex
 
+.letterPath
+	fill: none
+	stroke: $blue
+	stroke-width: 3
+	stroke-linecap: round
+	stroke-linejoin: round
+	stroke-miterlimit: 10
 
 @keyframes slide
 	0%
@@ -199,7 +205,6 @@ svg
 	
 	100%
 		left: 15%
-	
 
 .aspirations
 	height: 50px
@@ -228,6 +233,8 @@ svg
 	margin: 0
 	overflow: hidden
 	text-align: center
+	&:hover
+		border: 0
 	video
 		position: absolute
 		left: 0
@@ -236,19 +243,19 @@ svg
 	a
 		position: absolute
 
-
 	p
 		position: relative
 		margin: 0
 		color: $white
 		font: 500 2em $heading-font
-		top: 50%
+		top: 52%
 		transform: translateY(-50%)
 		z-index: 1
-		visibility: hidden
-
+		opacity: 0
+		transition: 0.2s ease-in-out
 	&:hover p
-		visibility: visible
+		opacity: 1
+		top: 50%
 
 	&:hover::before
 		display: block
@@ -262,9 +269,14 @@ svg
 
 #contact
 	text-align: left
+	padding-bottom: 100px
+	position: relative
 
 #contactInfo
+	height: 576px
+	padding: 0 7vw
 	padding-top: 130px
+	position: relative
 
 #contactForm
 	box-sizing: border-box
@@ -286,14 +298,19 @@ form
 	&:focus
 		outline: 0
 
+.footer
+	font: 200 10pt $body-font !important
+	color: #AAA
+	position: absolute
+	bottom: 0
+
 .projectBlock
 	display: block
 	width: 100%
-	height: calc(100% - 26px)
+	height: 100%
 	position: fixed
 	top: 0
 	left: 100%
-	padding-top: 50px
 	background-color: $bgWhite
 	transition: 0.5s ease-in-out
 	z-index: 3
@@ -387,22 +404,11 @@ textarea:focus ~ .label label
 	bottom: 0
 
 .button
-	box-sizing: content-box
-	display: inline-block
-	width: auto
-	height: 40px
-	padding: 0 25px
-	background-color: transparent
-	color: $blue
+	padding: 0
 	outline: none
-	border: solid 1px $blue
-	border-radius: 8px
-	font: 600 14pt $heading-font
-	position: relative
+	border: none
+	background: none
 	cursor: pointer
-	&:hover
-		padding: 0 24px
-		border: solid 2px $purple
 
 .placeholder
 	width: 100%
@@ -415,7 +421,7 @@ textarea:focus ~ .label label
 
 	p
 		color: $blue
-		font-size: 12pt
+		font: 13pt $body-font
 		position: absolute
 		top: 0
 		margin: 0

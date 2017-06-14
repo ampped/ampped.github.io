@@ -2,11 +2,15 @@
 
 function project(){
 	jQuery('.project').click(function(e){
-		jQuery('body').css('overflow-y', 'hidden');
-		jQuery('.projectBlock').addClass('showing');
-		jQuery('.projectBlock').scrollTop(0);
 
 		jQuery('.projectBlock').load(jQuery(this).attr('data-link'), function(){
+			jQuery('video').on('loadeddata', function(){
+				console.dir(jQuery('#headerVid>video'));
+				console.log('ready');
+				jQuery('body').css('overflow-y', 'hidden');
+				jQuery('.projectBlock').addClass('showing');
+				jQuery('.projectBlock').scrollTop(0);
+			});
 			jQuery('.projectBlock').append('<div class="projectBack">&lt; Back to Projects</div>');
 			jQuery('.projectBack').click(function(){
 				jQuery('.projectBlock').removeClass('showing');

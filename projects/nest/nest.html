@@ -36,7 +36,7 @@
 			</p>
 		</div>
 	<script type="text/javascript">
-		jQuery('a').append('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="12" viewBox="0 0 30 10"><line x1="8" y1="5" x2="28" y2="5"/><polyline points="24 9 28 5 24 1 "/></svg>');
+		jQuery('.overview').find('a').append('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>');
 	</script>
 	</section>
 	<section class="previewVid beginningBlock">
@@ -46,14 +46,14 @@
 		<div id="research">
 		<h3>Research</h3>
 		<div class="comparison">
-			<div class="wordblock">
+			<div class="wordblock" style="margin-right: 70px">
 			<h4>Current Interface</h4><br><br>
 			<p>The current schedule module for Nest requires the user to read the temperature of each target to know what it is. To know when the temperature is scheduled, users would have to visually draw a line from the target to the timeline. Even then, it may be hard to pinpoint, because targets can be scheduled on 15 minute intervals. Overall, it takes time to read and understand this schedule.</p>
 			</div>
-			<img src="projects/nest/nestCurrent.png" />
+			<img src="projects/nest/nestCurrent.png"/>
 		</div>
 		<div class="comparison">
-			<div class="wordblock">
+			<div class="wordblock" style="margin-right: 70px">
 			<h4>UI Inspiration</h4><br><br>
 			<p>Other thermostat schedule modules, such as Engie and Netatmo, take a more visual approach, displaying set temperatures as blocks of colors that make up a whole day. Users can also create temperature presets and connect them to colors.</p>
 			</div>
@@ -64,7 +64,7 @@
 			<div class="wordblock persona">
 			<p><span style="font-weight: 700; font-size: 12pt">Linda Jennings</span> is a mother with a 9:00 to 5:00 office job. She has a very regular daily schedule, driving kids to and from soccer practice after work and holding book club on the weekends. Every summer, her family goes on a month-long vacation. She already knows how to schedule her thermostat according to different daily routines. She would like a system that lets her build her thermostat schedule based on the types of days she has.</p>
 			</div><!--
-			--><div class="wordblock persona">
+			--><div class="wordblock persona right">
 			<p><span style="font-weight: 700; font-size: 12pt">Jon Wallace</span> is a bachelor living on his own. He lives in a place where the weather varies greatly day to day, but doesn't want to worry about changing his thermostat all the time. Paying for a house on his own is tough, so he tries to save where he can. This means not running the thermostat too much. However, his parents sometimes stay over for a few days, and he wants the house to be at a comfortable temperature when they do.</p>
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 		<p class="desc">Users can choose set schedules for individual thermostats throughout the house.</p>
 		<p class="desc">Current temperature and time are shown in the middle of the schedule.</p>
 		<p class="desc">A target will signal the thermostat to change the temperature at this time.</p>
-		<p class="desc">A triangle will signal visuallly which temperature the thermostat is currently set to.</p>
+		<p class="desc">A triangle will signal visually which temperature the thermostat is currently set to.</p>
 
 		<p class="desc">Along with the set time for target, users will also see the temperature outside to make an informed decision.</p>
 		<p class="desc">In addition to seeing what is due for the week, students can navigate to see the original assignment post or submit directly from the home page.</p>
@@ -167,39 +167,16 @@
 		</div>
 		<div class="slider">
 			<button class="slider-control control-svg control-arrow control-next">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<defs>
-				</defs>
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
 				<polyline points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
 				</svg>
 			</button>
 			<button class="slider-control control-svg control-arrow control-back">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<defs>
-				</defs>
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
 				<polyline points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
 				</svg>
 			</button>
 			<div class="slider-control pagination">
-			</div>
-			<div class="fullComp">
-				<img src="" class="currentFull">
-				<img src="" class="prevFullComp">
-				<img src="" class="nextFullComp">
-				<div class="prevFull"></div><!--
-				--><div class="nextFull"></div>
-				<svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
-					<line x1="39" y1="33" x2="3" y2="69"/>
-					<line x1="3" y1="33" x2="39" y2="69"/>
-				</svg>
 			</div>
 		</div>
 		<script type="text/javascript">

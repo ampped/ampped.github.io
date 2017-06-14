@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*written by Amy Pham */
+/*$midPurple: #BF78FF */
 header, section {
   text-align: center;
   position: relative; }
@@ -36,11 +37,14 @@ header, section {
     content: " ";
     width: 100%;
     height: 250px;
-    background-color: #972EFF;
+    background-color: #902EFF;
     opacity: 0.4; }
 
 .beginningBlock {
   margin-top: 100px; }
+
+.right {
+  float: right; }
 
 #gifs video {
   width: 50%;
@@ -55,16 +59,13 @@ header, section {
 .overview a {
   box-sizing: content-box;
   display: inline-block;
-  margin-top: 15px;
-  fill: none;
-  stroke: #1d2349;
-  stroke-width: 1px; }
+  margin-top: 15px; }
 .overview #message {
   width: 50%;
   float: right;
   font: 500 13pt/18pt "Proxima Nova", sans-serif;
   margin: 0;
-  color: #BF78FF; }
+  color: #A078FF; }
 
 .previewVid video {
   width: auto;
@@ -72,7 +73,7 @@ header, section {
 
 .wordblock {
   display: inline-block;
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   text-align: left;
   vertical-align: top; }
@@ -96,40 +97,34 @@ header, section {
     position: relative; }
     #research .comparison .wordblock {
       display: inline-block;
-      max-width: 425px;
-      margin-right: 70px; }
+      width: auto;
+      max-width: 425px; }
     #research .comparison img {
       display: inline-block;
-      max-width: 500px; }
+      max-width: calc(50% - 20px); }
   #research .inspo {
-    display: inline-block;
-    width: 49%;
     margin-top: 40px; }
     #research .inspo img {
       max-width: 200px; }
     #research .inspo .wordblock {
-      width: 44%;
+      width: calc(100% - 240px);
       margin-left: 40px; }
+  #research .persona {
+    max-width: 46% !important; }
 
 .researchItem {
   display: inline-block;
-  width: calc(50% - 35px);
-  margin: 30px 30px 0px 0;
+  width: calc(50% - 20px);
+  margin-top: 30px;
   position: relative;
-  vertical-align: top;
-  /*path
-   * fill: none
-   * stroke: $purple
-   * stroke-width: 8px
-   * stroke-dasharray: 5,3,2
-   * stroke-dashoffset: 30px */ }
+  vertical-align: top; }
   .researchItem.barStat h4 {
     font-weight: 700;
-    color: #E1AEFF;
+    color: #A078FF;
     margin: 10px 0 40px 0; }
   .researchItem.barStat svg {
-    width: auto;
-    height: 230px;
+    width: 93%;
+    height: auto;
     vertical-align: middle;
     margin-bottom: 50px;
     display: inline-block; }
@@ -141,12 +136,12 @@ header, section {
   .researchItem.barStat .wordblock {
     display: inline-block;
     max-width: 45%;
-    margin-left: 50px;
+    margin-left: 70px;
     vertical-align: text-bottom; }
   .researchItem.barStat.full {
     width: 100%; }
   .researchItem.pieStat h4 {
-    color: #E1AEFF;
+    color: #A499F0;
     margin: 10px 0 40px 0; }
   .researchItem.pieStat svg {
     width: auto;
@@ -157,7 +152,6 @@ header, section {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #D1D3D4;
     float: left; }
   .researchItem.pieStat .wordblock {
     width: 47%;
@@ -165,13 +159,15 @@ header, section {
     position: relative; }
   .researchItem.pieStat .num {
     width: auto;
+    max-width: calc(100% - 33px);
     display: inline-block;
     fill: #1d2349;
     color: #1d2349;
     font: 500 13pt "Proxima Nova", sans-serif;
-    position: absolute;
-    left: 30px;
-    vertical-align: bottom; }
+    position: relative;
+    left: 10px;
+    vertical-align: bottom;
+    margin-bottom: 12px; }
     .researchItem.pieStat .num.multiline {
       font-size: 20pt; }
   .researchItem.course h4 {
@@ -180,45 +176,51 @@ header, section {
     top: 0;
     left: 0;
     margin: 50px;
-    letter-spacing: -0.07ex;
+    letter-spacing: 0.02ex;
     transform: translateX(-46%) translateY(-52%); }
   .researchItem.course p {
     display: block; }
   .researchItem.course svg {
     float: left;
     margin-right: 20px; }
+  .researchItem.course .ground {
+    stroke: #CDCDCD; }
+  .researchItem.course .pie {
+    stroke: #A499F0; }
   .researchItem ellipse {
     fill: none;
-    stroke: #E1AEFF;
     stroke-width: 8px;
     stroke-dashoffset: 30px; }
-  .researchItem.comparison {
-    width: 55%; }
-    .researchItem.comparison img {
-      width: 200px;
-      margin: 30px 30px 0 0; }
-    .researchItem.comparison.first {
-      width: 38%; }
-      .researchItem.comparison.first img {
-        width: 300px; }
+  .researchItem.comparison.first img {
+    width: 360px !important;
+    max-width: none !important; }
+  .researchItem.comparison img {
+    width: 220px;
+    margin-top: 30px; }
 
 .st0 {
-  fill: #1d2349; }
+  fill: #1d2349;
+  background-color: #1d2349; }
 
 .st1 {
-  fill: #972EFF; }
+  fill: #902EFF;
+  background-color: #902EFF; }
 
 .st2 {
-  fill: #E1AEFF; }
+  fill: #A499F0;
+  background-color: #A499F0; }
 
 .st3 {
-  fill: #CCC; }
+  fill: #CCC;
+  background-color: #CCC; }
 
 .st4 {
-  fill: #DDD; }
+  fill: #DDD;
+  background-color: #DDD; }
 
 .st5 {
-  fill: #DCDCDC; }
+  fill: #DCDCDC;
+  background-color: #DCDCDC; }
 
 #wireframes {
   display: block;
@@ -242,9 +244,9 @@ header, section {
       color: #1d2349;
       font-family: "Proxima Nova", sans-serif; }
       #wireframes .pages li:hover {
-        border-bottom: solid 2px #E1AEFF; }
+        border-bottom: solid 2px #A499F0; }
     #wireframes .pages .selected {
-      color: #BF78FF;
+      color: #A078FF;
       cursor: default; }
       #wireframes .pages .selected:hover {
         border: none; }
@@ -256,8 +258,8 @@ header, section {
   #wireframes .desc {
     margin-top: 1em; }
   #wireframes hr {
-    height: 2px;
-    background-color: #D4FF69;
+    height: 1px;
+    background-color: #A499F0;
     border: none; }
   #wireframes .wf {
     display: inline-block;
@@ -273,21 +275,23 @@ header, section {
       display: none; }
     #wireframes .wf .hotspot {
       cursor: pointer;
-      fill: #972EFF;
+      fill: #902EFF;
       opacity: 0.4;
       stroke-width: 0; }
       #wireframes .wf .hotspot.selected {
         opacity: 1;
-        stroke: #BF78FF;
+        stroke: #A078FF;
         stroke-width: 8;
         fill: transparent; }
   #wireframes .selected, #wireframes .hotspots.selected {
     display: inline-block; }
+  #wireframes.landscape h3 {
+    width: auto; }
   #wireframes.landscape .wf {
     max-width: 560px; }
     #wireframes.landscape .wf .hotspot.selected {
       stroke-width: 5; }
-  #wireframes.landscape .wordblock, #wireframes.landscape h3 {
+  #wireframes.landscape .wordblock {
     max-width: 370px;
     margin-right: 70px; }
 
@@ -295,7 +299,7 @@ header, section {
   letter-spacing: 0.1ex; }
   #moodboard li::before {
     content: "— ";
-    color: #D4FF69;
+    color: #D1f084;
     font: 800 16pt "Proxima Nova", sans-serif; }
 
 #prototype {
@@ -347,16 +351,16 @@ header, section {
   margin: 0 10px;
   padding: 7px;
   border-radius: 12px;
-  background: #1d2349;
-  opacity: 0.55;
+  background: #902EFF;
+  opacity: 0.5;
   border: none;
   outline: none;
   cursor: pointer; }
   .control-page:hover {
-    opacity: 0.8; }
+    opacity: 0.75; }
 
 #selected-page {
-  border: solid 3px #BF78FF;
+  border: solid 3px #A078FF;
   padding: 4px;
   background: none;
   opacity: 1; }
@@ -393,8 +397,8 @@ header, section {
 
 .fullComp {
   box-sizing: content-box;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   overflow-x: hidden;
@@ -410,7 +414,7 @@ header, section {
   .fullComp.showing {
     opacity: 1;
     pointer-events: initial; }
-  .fullComp img {
+  .fullComp img, .fullComp video {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -424,10 +428,9 @@ header, section {
     left: -100%;
     transform: none; }
   .fullComp .nextFull, .fullComp .prevFull {
-    display: block;
+    display: none;
     width: 50%;
-    height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 11; }
   .fullComp .nextFull {
