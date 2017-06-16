@@ -36,8 +36,10 @@ function strokeEffect(){
   playAni();
 
   jQuery(window).focus(function(){
-    playing = true;
-    playAni();
+    if(!playing){
+      playing = true;
+      playAni();
+    }
   });
 
   //code modified from http://codepen.io/arkwis/pen/chnop

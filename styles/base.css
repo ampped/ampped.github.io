@@ -90,6 +90,8 @@ nav {
 
 section {
   width: 100%; }
+  section:focus {
+    outline: none; }
 
 input {
   width: 100%;
