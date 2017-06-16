@@ -30,11 +30,16 @@ jQuery('nav>a')
   // Remove links that don't actually link to anything
   .not('[href="resume.pdf"]')
   .click(function(event) {
-  	console.log(location.pathname.replace(/^\//, '') + " " + this.hostname);
+
+  	if(jQuery('.projectBlock showing')){
+		jQuery('.projectBlock').removeClass('showing');
+	    setTimeout(function(){
+			jQuery('body').css('overflow-y', 'scroll');
+	    }, 500);
+	}
     // On-page links
       // Figure out element to scroll to
       var target = jQuery(this).attr('data-link');
-      console.log(target);
       target = jQuery(target);
       // Does a scroll target exist?
       if (target.length) {

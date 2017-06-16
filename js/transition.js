@@ -5,8 +5,6 @@ function project(){
 
 		jQuery('.projectBlock').load(jQuery(this).attr('data-link'), function(){
 			jQuery('video').on('loadeddata', function(){
-				console.dir(jQuery('#headerVid>video'));
-				console.log('ready');
 				jQuery('body').css('overflow-y', 'hidden');
 				jQuery('.projectBlock').addClass('showing');
 				jQuery('.projectBlock').scrollTop(0);
