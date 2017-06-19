@@ -5,15 +5,21 @@
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles/base.css">
-	<link rel="stylesheet" type="text/css" href="styles/work.css">
-	<script src="js/slider.js"></script>
-	<script src="js/wireframeDisplay.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
+	<script src="../../js/addNav.js"></script>
+	<script src="../../js/slider.js"></script>
+	<script src="../../js/wireframeDisplay.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			addNav();
+		}
+	</script>
 </head>
 <body>
 <div class="scene_element scene_element--slideInLeft">
 <header>
-	<div id="headerVid"><video style="position: relative; bottom: 70%; z-index: -1" autoplay loop><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video>
+	<div id="headerVid"><video style="position: relative; bottom: 70%; z-index: -1" autoplay loop><source src="mockup.mp4" type="video/mp4"></video>
 	</div>
 	<div id="headerInfo">
 		<h1>USA TODAY Mobile Experience</h1>
@@ -26,12 +32,12 @@
 	<section class="overview">
 		<div class="wordblock">
 			<h3>Story</h3>
-			<p>USA TODAY presented to my class the problem of not being able to reach their younger target demographic of 22-35 year olds. This group is considered the "Entertain Me" audience, made of millennials. Using the newest technology, they seek information on trends and pop culture.</p>
+			<p>USA TODAY came to my class with a problem.  not being able to reach their younger target demographic of 22-35 year olds. This group is considered the "Entertain Me" audience, made of millennials. Using the newest technology, they seek information on trends and pop culture.</p>
 			<p>With news coming from an overwhelming amount of sources, such as social media, podcasts, and blogs, the USA TODAY brand just seems like another dry, factual newspaper that does not suit their interests. I worked with a partner to create a mobile-first experience that delivers news in a form that is more relevant to the millennial lifestyle.</p>
 		</div>
 	</section>
 	<section class="previewVid beginningBlock">
-		<video autoplay loop><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video>
+		<video autoplay loop><source src="mockup.mp4" type="video/mp4"></video>
 	</section>
 	<section class="beginningBlock">
 		<div id="research">
@@ -93,25 +99,25 @@
 				<h4>Current Interface</h4><br><br>
 				<p>To save an article in the current USA TODAY app, users tap the bookmark icon on each article. Tapping the icon again will unsave it. However, this icon is fairly small and can go unnoticed until the user taps it and it turns blue. The bookmarks page is nearly identical to the home feed, but unbookmarked articles are grayed out until the user leaves the page, at which point they are removed. Bookmarking in the app is extremely simple, but USA TODAY misses an opportunity to elaborate on the idea of bookmarking.</p>
 				</div>
-				<img src="projects/usatoday/current.png" class="right" />
-			</div>
+				<img src="current.png" class="right" />
+			</div><br>
 			<h4>UI + UX Inspiration</h4><br>
 			<div class="researchItem inspo">
-				<img src="projects/usatoday/inspirationSidebar.png"><!--
+				<img src="inspirationSidebar.png"><!--
 				--><div class="wordblock">
 					<h5>Sidebar</h5>
 					<p>Articles are posted in packages of five a day. This gives users an endpoint. They can complete their reading for the day and move on to other tasks.</p>
 				</div>
 			</div>
 			<div class="researchItem inspo right">
-				<img src="projects/usatoday/inspirationTodoist.png"><!--
+				<img src="inspirationTodoist.png"><!--
 				--><div class="wordblock">
 					<h5>Todoist</h5>
 					<p>Users feel a sense of progress as they check off a task. Once they have completed all their tasks, there is a strong feeling of accomplishment.</p>
 				</div>
 			</div>
 			<div class="researchItem inspo">
-				<img src="projects/usatoday/inspirationFlipboard.png"><!--
+				<img src="inspirationFlipboard.png"><!--
 				--><div class="wordblock">
 					<h5>Flipboard</h5>
 					<p>Articles are categorized into magazines. Magazines are collections of articles created by users. This organization component is the foundation of the app.</p>
@@ -150,7 +156,7 @@
 		<p class="desc">Users can drag articles over a list thumbnail to add it to that list.</p>
 		</div>
 		<div class="wf">
-			<img src="projects/usatoday/WFonboard.png">
+			<img src="WFonboard.png">
 			<div class="hotspots selected">
 				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
 				<circle class="hotspot" cx="266.5" cy="472.6" r="28.3"/>
@@ -181,7 +187,7 @@
 		<script type="text/javascript">
 			var wfSrcs = ['WFonboard.png', 'WFsetpoint.png', 'WFbookmark.png', 'WFlists.png'];
 			for(var i = 0; i < wfSrcs.length; i++){
-				wfSrcs[i] = 'projects/usatoday/' + wfSrcs[i];
+				wfSrcs[i] = '' + wfSrcs[i];
 			}
 			setupWFDisplay(wfSrcs);
 		</script>
@@ -207,7 +213,7 @@
 		<script type="text/javascript">
 			var compSrcs = ['onboardFull.mp4', 'setpointFull.mp4', 'bookmarkFull.mp4', 'openListFull.mp4', 'createListFull.mp4'];
 			for(var i = 0; i < compSrcs.length; i++){
-				compSrcs[i] = 'projects/usatoday/' + compSrcs[i];
+				compSrcs[i] = '' + compSrcs[i];
 			}
 			createVideoSlider(compSrcs);
 		</script>

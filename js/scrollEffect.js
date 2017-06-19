@@ -38,6 +38,8 @@ jQuery('nav>a')
 	    }, 500);
 	}
     // On-page links
+
+    //code modified from https://css-tricks.com/snippets/jquery/smooth-scrolling/
       // Figure out element to scroll to
       var target = jQuery(this).attr('data-link');
       target = jQuery(target);

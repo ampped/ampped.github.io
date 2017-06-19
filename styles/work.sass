@@ -12,6 +12,13 @@ $bgWhite: #FCFCFC
 $heading-font: 'Proxima Nova', sans-serif
 $body-font: 'Open Sans', sans-serif
 
+nav .logo
+	position: absolute
+	top: 10px
+	left: 20px
+	height: 36px
+	stroke-width: 4px
+
 header, section
 	text-align: center
 	position: relative
@@ -73,9 +80,8 @@ header, section
 		display: inline-block
 		margin-top: 15px
 	#message
-		width: 50%
-		float: right
-		font: 500 13pt/18pt $heading-font
+		width: 100%
+		font: 500 14pt/21pt $heading-font
 		margin: 0
 		color: $midPurple
 
@@ -446,7 +452,6 @@ header, section
 		transform: none
 
 	.nextFull, .prevFull
-		display: none
 		width: 50%
 		position: absolute
 		top: 0

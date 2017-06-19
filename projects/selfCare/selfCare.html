@@ -6,12 +6,19 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="../../js/addNav.js"></script>
 	<script src="../../js/slider.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			addNav();
+		}
+	</script>
 </head>
 <body>
 <div class="scene_element scene_element--slideInLeft">
 <header>
-	<div id="headerVid"><video autoplay loop><source src="projects/selfCare/landscapeStill.mp4" type="video/mp4"></video></div>
+	<div id="headerVid"><video autoplay loop><source src="landscapeStill.mp4" type="video/mp4"></video></div>
 	<div id="headerInfo">
 		<h1>The Importance of Self Care</h1>
 		<h4>Motion Graphics</h4>
@@ -22,27 +29,27 @@
 	<section class="overview">
 		<div class="wordblock">
 			<h3>Story</h3>
-			<p id="message">In a field like design, where the only effort we can put in is time, it’s hard to admit that sometimes we need to take a break. <br><br>We get exhausted and stressed over perfecting projects and how our futures depend on our work. But it’s ok to take a break and it’s absolutely important to take care of yourself. </p>
-			<p>Right before starting this project, I attended a talk about self care for artists and designers. The talk did well in covering basic care techniques, but when it came time for the Q &amp; A, the speaker couldn’t answer any of the questions asked. They were serious questions that probably everyone has asked from time to time, and I felt that they needed to be addressed.</p><br><br>
-			<p>After that experience, I became extremely aware of how much the people around me were stressed and doubting themselves. At the time, so many of my friends were pulling all-nighters, sometimes multiple in a row. I felt compelled to make this project to tell people this:</p>
+			<p>A few days before starting this project, I attended a talk about self care for artists and designers. The speaker did well in covering basic care techniques, but couldn’t answer any of the questions asked in the Q &amp; A. These were serious questions that everyone often asks themselves, and I felt that they needed to be addressed.</p>
+			<p>After that experience, I became extremely aware of how stressed and doubtful the people around me were. So many of my friends were pulling all-nighters, sometimes multiple in a row. I felt compelled to make this project to tell people that:</p><br><br>
+			<p id="message">In a field like design, where the only effort we can put in is time, it’s hard to admit that we need to take a break, sometimes. We get exhausted and stressed over perfecting projects and how our futures depend on our work. But it’s ok to take a break and it’s important to take care of yourself.</p>
 		</div>
 	</section>
 	<section id="video" class="beginningBlock">
 		<iframe src="https://player.vimeo.com/video/197560377?color=cf2790&title=0&byline=0&portrait=0" width="1000" height="563" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</section>
 	<section id="creations">
-		<img src="projects/selfCare/creation_orbit.gif" style="margin: 0 3vw">
-		<img src="projects/selfCare/creation_stripes.gif">
-		<img src="projects/selfCare/creation_diamond.gif">
+		<img src="creation_orbit.gif" style="margin: 0 3vw">
+		<img src="creation_stripes.gif">
+		<img src="creation_diamond.gif">
 	</section>
 	<section>
 		<div class="wordblock"><h3>Writing the Script</h3>
-		<p>To understand what exactly I needed to tell people, I interviewed my friends and classmates to find out what kind of doubts they have and what they need to feel better. Later that week, my interpersonal communication class happened to cover social support. I took this chance to interview my professor and learn how to better respond to the doubts I found.</p>
+		<p>To understand what exactly I needed to tell people, I interviewed my friends and classmates to find out what their doubts were and what they needed to feel better. Later that week, my interpersonal communication class happened to cover social support. I took this chance to interview my professor and learn how to better respond to the doubts I found.</p>
 		</div>
-		<img src="projects/selfCare/storyboard.png">
+		<img src="storyboard.png">
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<img src="projects/selfCare/moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
 		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
 			<h3>Mood</h3>
 			<ul>
@@ -58,52 +65,33 @@
 			<h3>Style Frames</h3>
 		</div>
 		<div class="slider">
-			<button class="slider-control control-arrow control-next">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<style type="text/css">
-					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-				</style>
-				<defs>
-				</defs>
-				<polyline class="st0" points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
+			<button class="slider-control control-svg control-arrow control-next">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
+				<polyline points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
 				</svg>
-			</button>
-			<button class="slider-control control-arrow control-back">
-				<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In  -->
-				<svg version="1.1"
-					 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-					 x="0px" y="0px" width="29px" height="52.8px" viewBox="0 0 29 52.8" style="overflow:scroll;enable-background:new 0 0 29 52.8;"
-					 xml:space="preserve">
-				<style type="text/css">
-					.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-				</style>
-				<defs>
-				</defs>
-				<polyline class="st0" points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
+			</button><!--
+			--><button class="slider-control control-svg control-arrow control-back">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
+				<polyline points="26.3,50.3 2.5,26.5 26.5,2.5 "/>
 				</svg>
-			</button>
-			<div class="slider-control pagination">
+			</button><!--
+			--><div class="slider-control pagination">
 			</div>
 		</div>
 		<script type="text/javascript">
 			var imgSrcs = ['school.png','work.png','computer.png','heart.png','preview.png'];
 			for(var i = 0; i < imgSrcs.length; i++){
-				imgSrcs[i] = 'projects/selfCare/' + imgSrcs[i];
+				imgSrcs[i] = '' + imgSrcs[i];
 			}
-			console.dir(imgSrcs);
 			createSlider(imgSrcs);
 		</script>
 	</section>
 	<section id="gifs">
 		<video autoplay loop>
-			<source src="projects/selfCare/jobs.mp4" type="video/mp4">
+			<source src="jobs.mp4" type="video/mp4">
 		</video>
 		<video autoplay loop>
-			<source src="projects/selfCare/landscapeStill.mp4" type="video/mp4">
+			<source src="landscapeStill.mp4" type="video/mp4">
 		</video>
 	</section>
 </main>

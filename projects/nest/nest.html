@@ -5,15 +5,21 @@
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles/base.css">
-	<link rel="stylesheet" type="text/css" href="styles/work.css">
-	<script src="js/slider.js"></script>
-	<script src="js/wireframeDisplay.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
+	<script src="../../js/addNav.js"></script>
+	<script src="../../js/slider.js"></script>
+	<script src="../../js/wireframeDisplay.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			addNav();
+		}
+	</script>
 </head>
 <body>
 <div class="scene_element scene_element--slideInLeft">
 <header>
-	<div id="headerVid"><video autoplay loop><source src="projects/nest/addNode.mp4" type="video/mp4"></video></div>
+	<div id="headerVid"><video autoplay loop><source src="addNode.mp4" type="video/mp4"></video></div>
 	<div id="headerInfo">
 		<h1>Nest Schedule Redesign</h1>
 		<h4>UX Design</h4>
@@ -29,7 +35,7 @@
 			<p>Nest's thermostat is a smart thermostat that learns when and how to adjust itself automatically to the user's preferences over time. The thermostat also has a scheduling module on the Nest website that lets the user schedule temperature targets for the week.</p>
 			<p>The current scheduling module takes some effort to use. Its functions are also very limited. The user can only set targets for the current week. This module should be redesigned with a more intuitive interface and features that will cater more to the user's needs to match the thermostat itself.</p><br><br><br>
 			<h4>Development</h4><br><br>
-			<p>In addition to designing, I have also developed this project as practice. The project works with a Nest thermostat simulator, the Nest API, and a weather API to gather real time data. This shows how my interface would basically work, but it does not contain all the features I had planned in the design. For now, I have made an Invision prototype to show how the features would connect.</p>
+			<p>I also developed this project as practice. The project works with a Nest thermostat simulator, the Nest API, and a weather API to gather real time data. This application shows the basic interactions, but it does not contain all the features I had planned in my design. For now, I have made an Invision prototype to show how the features would connect.</p>
 			<p>
 				<a href="https://thermostatschedulemaker.herokuapp.com/" target="_blank">See in-progress development</a><br><!--
 				--><a href="https://invis.io/7M76EQFTC#/153602641_VisualCompV3_04" target="_blank">See the prototype</a>
@@ -40,7 +46,7 @@
 	</script>
 	</section>
 	<section class="previewVid beginningBlock">
-		<video autoplay loop><source src="projects/nest/addNode.mp4" type="video/mp4"></video>
+		<video autoplay loop><source src="addNode.mp4" type="video/mp4"></video>
 	</section>
 	<section class="beginningBlock">
 		<div id="research">
@@ -48,24 +54,24 @@
 		<div class="comparison">
 			<div class="wordblock" style="margin-right: 70px">
 			<h4>Current Interface</h4><br><br>
-			<p>The current schedule module for Nest requires the user to read the temperature of each target to know what it is. To know when the temperature is scheduled, users would have to visually draw a line from the target to the timeline. Even then, it may be hard to pinpoint, because targets can be scheduled on 15 minute intervals. Overall, it takes time to read and understand this schedule.</p>
+			<p>The current schedule module for Nest requires the user to read the temperature of each target to know what it is. To know when the temperature is scheduled, users would have to visually draw a line from the target to the timeline. It may still be hard to pinpoint because targets can be scheduled on 15 minute intervals. Overall, it takes time to read and understand this schedule.</p>
 			</div>
-			<img src="projects/nest/nestCurrent.png"/>
+			<img src="nestCurrent.png"/>
 		</div>
 		<div class="comparison">
 			<div class="wordblock" style="margin-right: 70px">
 			<h4>UI Inspiration</h4><br><br>
-			<p>Other thermostat schedule modules, such as Engie and Netatmo, take a more visual approach, displaying set temperatures as blocks of colors that make up a whole day. Users can also create temperature presets and connect them to colors.</p>
+			<p>Other thermostat schedule modules, such as Engie and Netatmo, take a more visual approach by displaying set temperatures as blocks of colors that make up a whole day. Users can also create temperature presets and connect them to colors.</p>
 			</div>
-			<img src="projects/nest/inspiration.png">
+			<img src="inspiration.png">
 		</div>
 		<div class="comparison">
 			<h4>User Personas</h4><br><br>
 			<div class="wordblock persona">
-			<p><span style="font-weight: 700; font-size: 12pt">Linda Jennings</span> is a mother with a 9:00 to 5:00 office job. She has a very regular daily schedule, driving kids to and from soccer practice after work and holding book club on the weekends. Every summer, her family goes on a month-long vacation. She already knows how to schedule her thermostat according to different daily routines. She would like a system that lets her build her thermostat schedule based on the types of days she has.</p>
+			<p><span style="font-weight: 700; font-size: 12pt">Linda Jennings</span> is a mother with a 9:00 to 5:00 office job. She has a regular routine, driving kids to and from soccer practice after work and holding book club on the weekends. Her family goes on a month-long vacation every summer. She already knows how to schedule her thermostat according to different daily routines. She would like a system that lets her build her thermostat schedule based on the types of days she has.</p>
 			</div><!--
 			--><div class="wordblock persona right">
-			<p><span style="font-weight: 700; font-size: 12pt">Jon Wallace</span> is a bachelor living on his own. He lives in a place where the weather varies greatly day to day, but doesn't want to worry about changing his thermostat all the time. Paying for a house on his own is tough, so he tries to save where he can. This means not running the thermostat too much. However, his parents sometimes stay over for a few days, and he wants the house to be at a comfortable temperature when they do.</p>
+			<p><span style="font-weight: 700; font-size: 12pt">Jon Wallace</span> is a bachelor living on his own. He lives in a place where the weather varies greatly day to day, but he doesn't want to worry about changing his thermostat all the time. Paying for a house on his own is tough, so he tries to save where he can. This means not running the thermostat too much. However, his parents sometimes stay over for a few days, and he wants the house to be at a comfortable temperature when they do.</p>
 			</div>
 		</div>
 		</div>
@@ -83,30 +89,30 @@
 		<p class="pageDesc selected">I chose to go with a circular interface that represents a 24 hour clock with sections colored according to the set temperature. At a quick glance, users can see and get an idea of what their thermostat schedule looks like.</p>
 		<p class="pageDesc">Clicking on the ring will add a temperature target at that time.</p>
 		<p class="pageDesc">When users schedule other days, they can see how much energy the thermostat used if the day has already passed.</p>
-		<p class="pageDesc">Users, like Linda, who have regular schedules can set up templates of targets to follow on certain days.</p>
-		<p class="pageDesc">Users can set their thermostat to automatically adjust to the outdoor temperature. Users can also have multiple Smart Sets, so Jon can easily change to a different set when his parents come over.</p>
+		<p class="pageDesc">Users like Linda who have regular schedules can set up templates of targets to follow on certain days.</p>
+		<p class="pageDesc">Users can set their thermostat to automatically adjust to the outdoor temperature. They can also have multiple Smart Sets, so someone like Jon can easily change to a different set when their guests come over.</p>
 		<hr>
-		<p class="desc selected">Hover over a hotspot for more details</p>
+		<p class="desc selected">Hover over a highlighted area for more details</p>
 		<p class="desc">Users can choose set schedules for individual thermostats throughout the house.</p>
 		<p class="desc">Current temperature and time are shown in the middle of the schedule.</p>
 		<p class="desc">A target will signal the thermostat to change the temperature at this time.</p>
-		<p class="desc">A triangle will signal visually which temperature the thermostat is currently set to.</p>
+		<p class="desc">A triangle will signal which temperature the thermostat is currently set to.</p>
 
 		<p class="desc">Along with the set time for target, users will also see the temperature outside to make an informed decision.</p>
-		<p class="desc">In addition to seeing what is due for the week, students can navigate to see the original assignment post or submit directly from the home page.</p>
+		<p class="desc"></p>
 		<p class="desc">Users can save preset temperatures to easily set targets in the future.</p>
 
 		<p class="desc">The brightness of the inner ring shows how energy efficient the user's settings were at that time of day.</p>
 		<p class="desc">Current temperature and time are not displayed if the selected schedule is not for the current day.</p>
 
-		<p class="desc">Temperature targets act for templates as they do for normal scheduling.</p>
+		<p class="desc">Temperature targets in templates have the same function in normal scheduling.</p>
 		<p class="desc">Users can turn set their thermostat to turn off when they leave the house.</p>
 
 		<p class="desc">For example, when the weather outside is about 25 degrees to 65 degrees, this user wants to set their house to 75 degrees.</p>
 		<p class="desc">Users can turn their thermostats off at a certain outdoor temperature if they do not need the indoor temperature to be different from outside.</p>
 		</div><!--
 		--><div class="wf">
-			<img src="projects/nest/WFbase.png">
+			<img src="WFbase.png">
 			<div class="hotspots selected">
 				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
 				<circle class="hotspot" cx="487" cy="36.5" r="28.3"/>
@@ -144,13 +150,13 @@
 		<script type="text/javascript">
 			var wfSrcs = ['WFbase.png', 'WFadd.png', 'WFpast.png', 'WFtemplate.png', 'WFsmart.png'];
 			for(var i = 0; i < wfSrcs.length; i++){
-				wfSrcs[i] = 'projects/nest/' + wfSrcs[i];
+				wfSrcs[i] = '' + wfSrcs[i];
 			}
 			setupWFDisplay(wfSrcs);
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<img src="projects/nest/moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
 		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
 			<h3>Mood</h3>
 			<ul>
@@ -182,7 +188,7 @@
 		<script type="text/javascript">
 			var compSrcs = ['base.png', 'addNode.png', 'editNode.png', 'hoverPast.png', 'hoverSmart.png', 'smart.png', 'calendar.png', 'editTemplate.png'];
 			for(var i = 0; i < compSrcs.length; i++){
-				compSrcs[i] = 'projects/nest/' + compSrcs[i];
+				compSrcs[i] = '' + compSrcs[i];
 			}
 			createSlider(compSrcs);
 		</script>

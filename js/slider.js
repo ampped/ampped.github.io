@@ -289,8 +289,11 @@ function createVideoSlider(vids){
 		jQuery('.currentFull').attr('src', vidSrcs[(currentFull)%vidSrcs.length]);
 		jQuery('.prevFullComp').attr('src', vidSrcs[(currentFull-1 + vidSrcs.length)%vidSrcs.length]);
 		jQuery('.nextFullComp').attr('src', vidSrcs[(currentFull+1)%vidSrcs.length]);
-		jQuery('.fullComp').addClass('showing')		
-		setUpControls();
+
+		jQuery('.currentFull').on('loadeddata', function(){
+			jQuery('.fullComp').addClass('showing')		
+			setUpControls();
+		});
 	}
 
 	//move to a later page
