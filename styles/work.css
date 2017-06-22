@@ -61,18 +61,18 @@ header, section {
 
 .overview p {
   display: inline-block;
-  width: 45%;
+  width: 47%;
   margin: 0;
-  margin-right: 45px;
   text-align: justify; }
 .overview a {
   box-sizing: content-box;
   display: inline-block;
-  margin-top: 15px; }
+  margin-bottom: 14px; }
 .overview #message {
   width: 100%;
   font: 500 14pt/21pt "Proxima Nova", sans-serif;
   margin: 0;
+  margin-top: 20px;
   color: #A263FF; }
 
 .previewVid video {

@@ -65,9 +65,10 @@ a, .button {
   box-sizing: border-box;
   fill: none;
   stroke: #1d2349;
-  stroke-width: 1px; }
+  stroke-width: 1px;
+  border-bottom: solid 2px transparent; }
   a:hover, .button:hover {
-    border-bottom: solid 2px #B995F0; }
+    border-color: #B995F0; }
 
 ul {
   font: 500 15pt/32pt "Proxima Nova", sans-serif;
@@ -256,7 +257,8 @@ svg {
   height: 300px;
   margin: 0;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  border: none; }
   .project video {
     position: absolute;
     left: 0;

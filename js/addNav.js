@@ -1,5 +1,5 @@
 function addNav(){
-	jQuery('body').prepend("<nav class=\"showing\"><a href=\"../../index.html#about\">About</a><a href=\"../../index.html#work\">Work</a><a href=\"resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
+	jQuery('body').prepend("<nav class=\"showing\"><a href=\"../../index.html#about\">About</a><a href=\"../../index.html#work\">Work</a><a href=\"Pham_resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
 
 	jQuery('nav').prepend("<a href=\"../../index.html\"><svg class=\"logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"717\" height=\"196\" viewBox=\"0 0 717 196\">" +
 		"<path class=\"logoPath\" d=\"M297.9 92.3l-86.4 86.4c1.3 1.3 3 2.1 4.9 2.1h165.1c2.6 0 4.7-2.1 4.7-4.7V22c0-8-7.8-10.5-12.3-6L297.9 92.3\"/>" +
