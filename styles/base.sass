@@ -1,7 +1,7 @@
 /*written by Amy Pham*/
 
 $blue: #1d2349
-$purple: #A499F0
+$purple: #B995F0
 $darkerPurple: #902EFF
 $green: #D1f084
 /*$darkerPurple: #972EFF*/
@@ -46,21 +46,27 @@ h2
 	letter-spacing: 0.07ex
 
 h3
+	display: inline-block
 	font-size: 23pt
+	line-height: 24pt
 	letter-spacing: 0.06ex
 	margin-bottom: 45px
+	border-bottom: solid 3px $green
 
 h4
 	font-size: 18pt
-	font-weight: 700
+	font-weight: 600
 	display: inline-block
-	font-weight: 500
 
 h5
 	font-size: 14pt
 
 img
 	max-width: 100%
+
+video, img
+	transition: opacity 0.5s ease-in-out
+	opacity: 1
 
 a, .button
 	text-decoration: none
@@ -104,17 +110,13 @@ section
 	&:focus
 		outline: none
 
-input
-	width: 100%
-	color: $blue
-	font: 12pt $body-font
 
-
-textarea
+input, textarea
 	width: 100%
 	resize: none
 	color: $blue
-	font: 12pt $body-font
+	font: 13pt $body-font
+	letter-spacing: 0.03ex
 
 svg
 	stroke-linecap: round
@@ -129,10 +131,49 @@ svg
 	display: inline-block
 	width: 50%
 
+.loaderDiv
+	position: fixed
+	display: block
+	width: 100vw
+	height: 100vh
+	background-color: $bgWhite
+	opacity: 1
+	z-index: 10
+	transition: 0.2s ease-in-out
+.loader
+	width: 200px
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-47%, -50%)
+	img, video
+		opacity: 0
+		transform: scale(0.9, 0.9)
+		transition: 0.2s ease-in-out
+
+	#tri
+		animation: moveTri 2s infinite linear
+		transform-origin: 50% 63%
+
+@keyframes moveTri
+	0%
+		transform: translate(-30%, -12%) rotate(0deg)
+	100%
+		transform: translate(-30%, -12%) rotate(360deg)
+	
+
 .info
 	box-sizing: border-box
 	vertical-align: top
 
+.loadStroke
+	fill: none
+	stroke: $purple
+	stroke-width: 2
+	stroke-miterlimit: 10
+
+.loadBG
+	clip-path: url(#clipMask)
 
 /*specific elements organized by part*/
 .logo
@@ -142,7 +183,7 @@ svg
 	width: auto
 	height: 31.2%
 	z-index: -1
-	stroke-width: 1.2px
+	stroke-width: 1px
 	fill: none
 	stroke: $purple
 	stroke-miterlimit: 10
@@ -152,30 +193,30 @@ svg
 		animation: shrinkLogo 0.5s ease-in-out forwards
 	&.grow
 		position: fixed
-		animation: growLogo 0.5s ease-in-out  forwards
+		animation: growLogo 0.5s ease-in-out forwards
 
 @keyframes shrinkLogo
 	0%
 		top: 160px
 		left: 20px
 		height: 205px
-		stroke-width: 1.2px
+		stroke-width: 1px
 	100%
 		top: 10px
 		left: 20px
 		height: 36px
-		stroke-width: 4px
+		stroke-width: 3px
 @keyframes growLogo
 	0%
 		top: 10px
 		left: 20px
 		height: 36px
-		stroke-width: 4px
+		stroke-width: 3px
 	100%
 		top: 160px
 		left: 20px
 		height: 205px
-		stroke-width: 1.2px
+		stroke-width: 1px
 
 #aboutInfo
 	width: auto
@@ -190,7 +231,7 @@ svg
 	p
 		font-size: 13pt
 		line-height: 26pt
-		letter-spacing: 0.04ex
+		letter-spacing: 0.03ex
 
 .letterPath
 	fill: none
@@ -234,8 +275,6 @@ svg
 	margin: 0
 	overflow: hidden
 	text-align: center
-	&:hover
-		border: 0
 	video
 		position: absolute
 		left: 0
@@ -254,19 +293,22 @@ svg
 		z-index: 1
 		opacity: 0
 		transition: 0.2s ease-in-out
-	&:hover p
-		opacity: 1
-		top: 50%
-
-	&:hover::before
+	&::before
 		display: block
 		position: absolute
 		content: ' '
 		width: 100%
 		height: 100%
 		background-color: $darkerPurple
-		opacity: 0.4
+		opacity: 0
 		z-index: -1
+	&:hover
+		border: 0
+		& p
+			opacity: 1
+			top: 50%
+		&::before
+			opacity: 0.4
 
 #contact
 	text-align: left
@@ -378,6 +420,7 @@ form
 	position: absolute
 	top: 0
 	transition: width 0.6s ease-in-out
+	pointer-events: none
 
 .control-border.changed::before
 	width: 100%
@@ -426,7 +469,7 @@ textarea:focus ~ .label label
 		color: $blue
 		font: 13pt $body-font
 		position: absolute
-		top: 0
+		bottom: 10px
 		margin: 0
 
 		transition: top .2s ease-in-out, bottom .2s ease-in-out
@@ -436,10 +479,10 @@ textarea:focus ~ .label label
 
 textarea ~ .placeholder p
 	top: auto
-	bottom: 0
+	bottom: 10px
 
 input:focus ~ .placeholder p
-	top: 100%
+	bottom: -50%
 
 textarea:focus ~ .placeholder p
 	bottom: -50%

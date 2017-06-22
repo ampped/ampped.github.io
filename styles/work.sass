@@ -1,8 +1,8 @@
 /*written by Amy Pham*/
 
 $blue: #1d2349
-$purple: #A499F0
-$midPurple: #A078FF
+$purple: #B995F0
+$midPurple: #A263FF
 $darkerPurple: #902EFF
 /*$midPurple: #BF78FF*/
 $green: #D1f084
@@ -12,12 +12,14 @@ $bgWhite: #FCFCFC
 $heading-font: 'Proxima Nova', sans-serif
 $body-font: 'Open Sans', sans-serif
 
-nav .logo
-	position: absolute
-	top: 10px
-	left: 20px
-	height: 36px
-	stroke-width: 4px
+nav 
+	background-color: rgba(252,252,252,0.75)
+	.logo
+		position: absolute
+		top: 10px
+		left: 20px
+		height: 36px
+		stroke-width: 3px
 
 header, section
 	text-align: center
@@ -143,6 +145,7 @@ header, section
 			font-weight: 700
 			color: $midPurple
 			margin: 10px 0 40px 0
+			border: none
 		svg
 			width: 93%
 			height: auto
@@ -201,6 +204,7 @@ header, section
 			margin: 50px
 			letter-spacing: 0.02ex
 			transform: translateX(-46%) translateY(-52%)
+			border: none
 		p
 			display: block
 		svg
@@ -272,7 +276,6 @@ header, section
 				border: none
 	h3
 		display: inline-block
-		width: 500px
 	p
 		display: none
 	.desc
@@ -323,8 +326,8 @@ header, section
 		letter-spacing: 0.1ex
 		&::before
 			content: '\2014\00a0'
-			color: $green
-			font: 800 16pt $heading-font
+			color: $midPurple
+			font: 400 16pt $heading-font
 
 #prototype
 	text-align: center
@@ -394,20 +397,20 @@ header, section
 	top: 0
 	right: 0
 	z-index: 11
+	stroke: $purple
 
 .slider img
 	display: inline-block
 
 .comp
+	max-width: 86.2%
 	position: absolute
 	left: 50%
 	transform: translateX(-50%)
 	transition: 0.8s cubic-bezier(.56,0,.4,1)
 	cursor: pointer
 	
-.fitWidth
-	max-width: 86%
-.fitHeight
+video.comp
 	max-height: 100%
 
 .prevComp
@@ -426,8 +429,6 @@ header, section
 	top: 0
 	overflow-x: hidden
 	overflow-y: auto
-	margin-right: -30px
-	padding-right: 30px
 	background-color: rgba(29, 35, 73, 0.8)
 	opacity: 0
 	transition: 0.25s ease-in-out
@@ -447,9 +448,11 @@ header, section
 	.nextFullComp
 		left: 100%
 		transform: none
+		display: none
 	.prevFullComp
 		left: -100%
 		transform: none
+		display: none
 
 	.nextFull, .prevFull
 		width: 50%
@@ -460,6 +463,46 @@ header, section
 		left: 50%
 	.prevFull
 		left: 0
+
+.project
+	height: 200px
+	img
+		width: auto
+		max-width: none
+		height: 100%
+		position: absolute
+		left: 0
+		z-index: -2
+		float: right
+	.wordblock
+		width: auto
+		position: relative
+		top: 53%
+		transform: translateY(-50%)
+		opacity: 0
+		transition: 0.2s ease-in-out
+	h5
+		color: $white
+		font: 500 2em $heading-font
+	p
+		font: 500 14pt $heading-font
+	svg
+		stroke: $white
+	&::before
+		background-color: $white
+		opacity: 0.4
+
+	&:hover
+		& .wordblock
+			opacity: 1
+			top: 51%
+		&::before
+			background-color: $darkerPurple
+
+.footer
+	width: auto
+	position: static
+	padding: 40px 0 20px 0
 
 /*page transition*/
 @keyframes fadeInUp

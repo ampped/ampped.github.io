@@ -22,6 +22,12 @@ function formEffect(){
 	inputs.blur(function(){
 		//placeholder
 		var placeholder = jQuery(this).next();
+
+		//insert * to placeholder for required 
+		var placeholderString = placeholder.children('p').get(0).innerText;
+		if(placeholderString.charAt(placeholderString.length - 1) != "*")
+			jQuery(placeholder).children('p').append('*');
+
 		if(jQuery(this).val().length > 0)
 			placeholder.addClass('notEmpty');
 		else{

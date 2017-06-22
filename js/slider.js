@@ -6,9 +6,9 @@ function createSlider(imgs){
 	var currentFull = 0;
 
 	//create html elements of slider
-	jQuery('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp fitWidth currentComp">');
-	jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
-	jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp fitWidth prevComp">');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp currentComp">');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
+	jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
 	jQuery.each(imgSrcs, function(){
 		jQuery('.pagination').append('<button class="control-page"></button>');
 	});
@@ -73,7 +73,7 @@ function createSlider(imgs){
 			openFull();
 		});
 		
-		jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp fitWidth nextComp">');
+		jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
 	}
 
 	//move to a previous page
@@ -95,6 +95,7 @@ function createSlider(imgs){
 
 	//set up close button
 	jQuery('.control-close').click(function(){
+		enableScrolling();
 		jQuery('.fullComp').removeClass('showing');
 	});
 
@@ -117,6 +118,8 @@ function createSlider(imgs){
 	});
 
 	function openFull(){
+		disableScroll();
+		jQuery('nav.showing').removeClass('showing');
 		currentFull = current;
 		jQuery('.currentFull').attr('src', imgSrcs[(currentFull)%imgSrcs.length]);
 		jQuery('.prevFullComp').attr('src', imgSrcs[(currentFull-1 + imgSrcs.length)%imgSrcs.length]);
@@ -260,9 +263,10 @@ function createVideoSlider(vids){
 	}
 	//seeing full-size comp
 	jQuery('.slider').append('<div class="fullComp"><video class="currentFull" autoplay loop><source src=""></video><video class="prevFullComp" autoplay loop><source src=""></video><video class="nextFullComp" autoplay loop><source src=""></video><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
-	
+
 	//set up close button
 	jQuery('.control-close').click(function(){
+		enableScrolling();
 		jQuery('.fullComp').removeClass('showing');
 	});
 
@@ -285,6 +289,8 @@ function createVideoSlider(vids){
 	});
 
 	function openFull(){
+		disableScroll();
+		jQuery('nav.showing').removeClass('showing');
 		currentFull = current;
 		jQuery('.currentFull').attr('src', vidSrcs[(currentFull)%vidSrcs.length]);
 		jQuery('.prevFullComp').attr('src', vidSrcs[(currentFull-1 + vidSrcs.length)%vidSrcs.length]);
@@ -334,4 +340,14 @@ function createVideoSlider(vids){
 		jQuery('.nextFull').css('height', fullHeight);
 		jQuery('.prevFull').css('height', fullHeight);
 	}
+}
+
+//control page scroll for seeing full comps
+function disableScroll(){
+	var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+};
+function enableScrolling(){
+    window.onscroll=function(){};
 }
