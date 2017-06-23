@@ -7,8 +7,8 @@ $green: #D1f084
 /*$darkerPurple: #972EFF*/
 /*$green: #D4FF69*/
 $white: #FFF
-$black: #333
 $bgWhite: #FCFCFC
+$grey: #AAA
 $heading-font: 'Proxima Nova', sans-serif
 $body-font: 'Open Sans', sans-serif
 
@@ -505,7 +505,7 @@ form
 .footer
 	width: calc(100% - 14vw)
 	font: 200 10pt $body-font !important
-	color: #AAA
+	color: $grey
 	position: absolute
 	bottom: 0
 	left: 7vw
@@ -536,22 +536,11 @@ form
 /*transition*/
 	/*for later implementation
 	animation-name: transitionUp
-	-o-animation-name: transitionUp
-	-moz-animation-name: transitionUp
-	-webkit-animation-name: transitionUp
 	animation-duration: 0.5s
-	-o-animation-duration: 0.5s
-	-moz-animation-duration: 0.5s
-	-webkit-animation-duration: 0.5s
 	animation-timing-function: ease-in-out
-	-o-animation-timing-function: ease-in-out
-	-moz-animation-timing-function: ease-in-out
-	-webkit-animation-timing-function: ease-in-out
 	animation-iteration-count: 1
-	-o-animation-iteration-count: 1
-	-moz-animation-iteration-count: 1
-	-webkit-animation-iteration-count: 1
 	transition: 1s ease-in-out*/
+
 .selectedWork
 	z-index: 4
 	width: 100%	
@@ -663,4 +652,9 @@ textarea:focus ~ .placeholder p
 
 .placeholder.notEmpty p
 	top: 100%
+
+.disabled
+	color: $grey
+	stroke: $grey
+	pointer-events: none
 
