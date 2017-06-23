@@ -8,7 +8,6 @@ body {
   color: #1d2349;
   font: 11pt/20pt "Open Sans", sans-serif;
   letter-spacing: 0.05ex;
-  hanging-punctuation: first;
   overflow-x: hidden;
   overflow-y: scroll; }
 
@@ -135,20 +134,71 @@ svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-47%, -50%); }
+  transform: translate(-47%, -50%);
+  t-o-ransform: translate(-47%, -50%);
+  t-moz-ransform: translate(-47%, -50%);
+  t-webkit-ransform: translate(-47%, -50%); }
   .loader img, .loader video {
     opacity: 0;
     transform: scale(0.9, 0.9);
+    -o-transform: scale(0.9, 0.9);
+    -moz-transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
     transition: 0.2s ease-in-out; }
   .loader #tri {
     animation: moveTri 2s infinite linear;
-    transform-origin: 50% 63%; }
+    -o-animation: moveTri 2s infinite linear;
+    -moz-animation: moveTri 2s infinite linear;
+    -webkit-animation: moveTri 2s infinite linear;
+    transform-origin: 50% 63%;
+    -o-transform-origin: 50% 63%;
+    -moz-transform-origin: 50% 63%;
+    -webkit-transform-origin: 50% 63%; }
 
 @keyframes moveTri {
   0% {
-    transform: translate(-30%, -12%) rotate(0deg); }
+    transform: translate(-30%, -12%) rotate(0deg);
+    -o-transform: translate(-30%, -12%) rotate(0deg);
+    -moz-transform: translate(-30%, -12%) rotate(0deg);
+    -webkit-transform: translate(-30%, -12%) rotate(0deg); }
   100% {
-    transform: translate(-30%, -12%) rotate(360deg); } }
+    transform: translate(-30%, -12%) rotate(360deg);
+    -o-transform: translate(-30%, -12%) rotate(360deg);
+    -moz-transform: translate(-30%, -12%) rotate(360deg);
+    -webkit-transform: translate(-30%, -12%) rotate(360deg); } }
+@-webkit-keyframes moveTri {
+  0% {
+    transform: translate(-30%, -12%) rotate(0deg);
+    -o-transform: translate(-30%, -12%) rotate(0deg);
+    -moz-transform: translate(-30%, -12%) rotate(0deg);
+    -webkit-transform: translate(-30%, -12%) rotate(0deg); }
+  100% {
+    transform: translate(-30%, -12%) rotate(360deg);
+    -o-transform: translate(-30%, -12%) rotate(360deg);
+    -moz-transform: translate(-30%, -12%) rotate(360deg);
+    -webkit-transform: translate(-30%, -12%) rotate(360deg); } }
+@-moz-keyframes moveTri {
+  0% {
+    transform: translate(-30%, -12%) rotate(0deg);
+    -o-transform: translate(-30%, -12%) rotate(0deg);
+    -moz-transform: translate(-30%, -12%) rotate(0deg);
+    -webkit-transform: translate(-30%, -12%) rotate(0deg); }
+  100% {
+    transform: translate(-30%, -12%) rotate(360deg);
+    -o-transform: translate(-30%, -12%) rotate(360deg);
+    -moz-transform: translate(-30%, -12%) rotate(360deg);
+    -webkit-transform: translate(-30%, -12%) rotate(360deg); } }
+@-o-keyframes moveTri {
+  0% {
+    transform: translate(-30%, -12%) rotate(0deg);
+    -o-transform: translate(-30%, -12%) rotate(0deg);
+    -moz-transform: translate(-30%, -12%) rotate(0deg);
+    -webkit-transform: translate(-30%, -12%) rotate(0deg); }
+  100% {
+    transform: translate(-30%, -12%) rotate(360deg);
+    -o-transform: translate(-30%, -12%) rotate(360deg);
+    -moz-transform: translate(-30%, -12%) rotate(360deg);
+    -webkit-transform: translate(-30%, -12%) rotate(360deg); } }
 .info {
   box-sizing: border-box;
   vertical-align: top; }
@@ -160,6 +210,7 @@ svg {
   stroke-miterlimit: 10; }
 
 .loadBG {
+  clip-path: url(#clipMask);
   clip-path: url(#clipMask); }
 
 /*specific elements organized by part */
@@ -177,16 +228,55 @@ svg {
   transition: 0.5s ease-in-out; }
   .logo.shrink {
     position: fixed;
-    animation: shrinkLogo 0.5s ease-in-out forwards; }
+    animation: shrinkLogo 0.5s ease-in-out forwards;
+    -o-animation: shrinkLogo 0.5s ease-in-out forwards;
+    -moz-animation: shrinkLogo 0.5s ease-in-out forwards;
+    -webkit-animation: shrinkLogo 0.5s ease-in-out forwards; }
   .logo.grow {
     position: fixed;
-    animation: growLogo 0.5s ease-in-out forwards; }
+    animation: growLogo 0.5s ease-in-out forwards;
+    -o-animation: growLogo 0.5s ease-in-out forwards;
+    -moz-animation: growLogo 0.5s ease-in-out forwards;
+    -webkit-animation: growLogo 0.5s ease-in-out forwards; }
 
 @keyframes shrinkLogo {
   0% {
     top: 160px;
     left: 20px;
-    height: 205px;
+    height: 31.2%;
+    stroke-width: 1px; }
+  100% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; } }
+@-webkit-keyframes shrinkLogo {
+  0% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
+    stroke-width: 1px; }
+  100% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; } }
+@-moz-keyframes shrinkLogo {
+  0% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
+    stroke-width: 1px; }
+  100% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; } }
+@-o-keyframes shrinkLogo {
+  0% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
     stroke-width: 1px; }
   100% {
     top: 10px;
@@ -202,7 +292,40 @@ svg {
   100% {
     top: 160px;
     left: 20px;
-    height: 205px;
+    height: 31.2%;
+    stroke-width: 1px; } }
+@-webkit-keyframes growLogo {
+  0% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; }
+  100% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
+    stroke-width: 1px; } }
+@-moz-keyframes growLogo {
+  0% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; }
+  100% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
+    stroke-width: 1px; } }
+@-o-keyframes growLogo {
+  0% {
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    stroke-width: 3px; }
+  100% {
+    top: 160px;
+    left: 20px;
+    height: 31.2%;
     stroke-width: 1px; } }
 #aboutInfo {
   width: auto;
@@ -232,6 +355,21 @@ svg {
     left: -12%; }
   100% {
     left: 15%; } }
+@-webkit-keyframes slide {
+  0% {
+    left: -12%; }
+  100% {
+    left: 15%; } }
+@-moz-keyframes slide {
+  0% {
+    left: -12%; }
+  100% {
+    left: 15%; } }
+@-o-keyframes slide {
+  0% {
+    left: -12%; }
+  100% {
+    left: 15%; } }
 .aspirations {
   height: 50px;
   text-align: center;
@@ -243,10 +381,25 @@ svg {
 .animated {
   left: 8%;
   animation-name: slide;
+  -o-animation-name: slide;
+  -moz-animation-name: slide;
+  -webkit-animation-name: slide;
   animation-duration: 2s;
+  -o-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
   animation-timing-function: cubic-bezier(0.07, 0.76, 0.8, 0.21);
+  -o-animation-timing-function: cubic-bezier(0.07, 0.76, 0.8, 0.21);
+  -moz-animation-timing-function: cubic-bezier(0.07, 0.76, 0.8, 0.21);
+  -webkit-animation-timing-function: cubic-bezier(0.07, 0.76, 0.8, 0.21);
   /*animation-timing-function: cubic-bezier(.18, .92, .78, .13) */
-  animation-iteration-count: 1; }
+  /*-o-animation-timing-function: cubic-bezier(.18, .92, .78, .13) */
+  /*-moz-animation-timing-function: cubic-bezier(.18, .92, .78, .13) */
+  /*-webkit-animation-timing-function: cubic-bezier(.18, .92, .78, .13) */
+  animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1; }
 
 #work {
   text-align: left;
@@ -272,6 +425,9 @@ svg {
     font: 500 2em "Proxima Nova", sans-serif;
     top: 52%;
     transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     z-index: 1;
     opacity: 0;
     transition: 0.2s ease-in-out; }
@@ -358,9 +514,21 @@ form {
 /*transition*/
  * /*for later implementation
  * animation-name: transitionUp
+ * -o-animation-name: transitionUp
+ * -moz-animation-name: transitionUp
+ * -webkit-animation-name: transitionUp
  * animation-duration: 0.5s
+ * -o-animation-duration: 0.5s
+ * -moz-animation-duration: 0.5s
+ * -webkit-animation-duration: 0.5s
  * animation-timing-function: ease-in-out
+ * -o-animation-timing-function: ease-in-out
+ * -moz-animation-timing-function: ease-in-out
+ * -webkit-animation-timing-function: ease-in-out
  * animation-iteration-count: 1
+ * -o-animation-iteration-count: 1
+ * -moz-animation-iteration-count: 1
+ * -webkit-animation-iteration-count: 1
  * transition: 1s ease-in-out */
 .selectedWork {
   z-index: 4;
@@ -430,6 +598,7 @@ textarea:focus ~ .label label {
   padding: 0;
   outline: none;
   border: none;
+  border-bottom: solid 2px transparent;
   background: none;
   cursor: pointer; }
 

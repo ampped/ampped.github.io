@@ -67,7 +67,7 @@ header, section {
 .overview a {
   box-sizing: content-box;
   display: inline-block;
-  margin-bottom: 14px; }
+  margin-bottom: 10px; }
 .overview #message {
   width: 100%;
   font: 500 14pt/21pt "Proxima Nova", sans-serif;
