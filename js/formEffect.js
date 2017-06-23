@@ -8,12 +8,9 @@ function formEffect(){
 			if(jQuery(this).val().length > 0){
 				jQuery(this).next().addClass('notEmpty');
 				jQuery(this).offsetParent().removeAttr('style');
-				console.log('not empty');
 			}
 			else{
-				console.log('empty');
 				jQuery(this).next().removeClass('notEmpty');
-				jQuery(this).offsetParent().css('border-bottom', '2px solid #FF4B54');
 			}
 
 			//disable/enable submit button
@@ -50,6 +47,10 @@ function formEffect(){
 			jQuery(placeholder).children('p').append('*');
 			jQuery(placeholder.children('p').get(0)).css('color', '#FF4B54');
 		}
+
+		console.log(jQuery(this).val());
+		if(jQuery(this).val().length <= 0)
+			jQuery(this).offsetParent().css('border-bottom', '2px solid #FF4B54');
 
 		//border
 		var effect = jQuery(this).prev();

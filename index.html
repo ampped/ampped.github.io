@@ -20,7 +20,6 @@
 		var everythingLoaded = setInterval(function() {
 		  if (/loaded|complete/.test(document.readyState)) {
 		    clearInterval(everythingLoaded);
-		    console.log('loaded');
 		    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
 		    setTimeout(function(){
 		    	jQuery('.loaderDiv').remove();
@@ -301,7 +300,7 @@
 		      <li class="form-line" data-type="control_button" id="id_4">
 		        <div id="cid_4" class="form-input-wide">
 		          <div style="text-align:right;" class="form-buttons-wrapper">
-		            <button id="input_4" type="submit" class="form-submit-button button" data-component="button">
+		            <button id="input_4" type="submit" class="disabled form-submit-button button" data-component="button">
 		              Submit<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>
 		            </button>
 		          </div>
