@@ -196,7 +196,7 @@ header, section {
   .researchItem.course .ground {
     stroke: #CDCDCD; }
   .researchItem.course .pie {
-    stroke: #B995F0; }
+    stroke: #A263FF; }
   .researchItem ellipse {
     fill: none;
     stroke-width: 8px;
@@ -209,28 +209,28 @@ header, section {
     margin-top: 30px; }
 
 .st0 {
+  fill: #A263FF;
+  background-color: #A263FF; }
+
+.st1 {
   fill: #1d2349;
   background-color: #1d2349; }
 
-.st1 {
-  fill: #902EFF;
-  background-color: #902EFF; }
-
 .st2 {
-  fill: #B995F0;
-  background-color: #B995F0; }
+  fill: #D9B9FF;
+  background-color: #D9B9FF; }
 
 .st3 {
-  fill: #CCC;
-  background-color: #CCC; }
-
-.st4 {
   fill: #DDD;
   background-color: #DDD; }
 
+.st4 {
+  fill: #ECECEC;
+  background-color: #ECECEC; }
+
 .st5 {
-  fill: #DCDCDC;
-  background-color: #DCDCDC; }
+  fill: #F0F0F0;
+  background-color: #F0F0F0; }
 
 #wireframes {
   display: block;
