@@ -50,7 +50,7 @@ function formEffect(){
 
 		console.log(jQuery(this).val());
 		if(jQuery(this).val().length <= 0)
-			jQuery(this).offsetParent().css('border-bottom', '2px solid #FF4B54');
+			jQuery(this).offsetParent().css('border-bottom', '1px solid #FF4B54');
 
 		//border
 		var effect = jQuery(this).prev();
