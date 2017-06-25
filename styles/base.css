@@ -18,7 +18,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   margin: 0; }
 
 h1 {
@@ -58,7 +58,7 @@ video, img {
 
 a, .button {
   text-decoration: none;
-  font: 500 14pt "Proxima Nova", sans-serif;
+  font: 500 14pt "proxima-nova", sans-serif;
   letter-spacing: 1px;
   color: #1d2349;
   box-sizing: border-box;
@@ -70,7 +70,7 @@ a, .button {
     border-color: #B995F0; }
 
 ul {
-  font: 500 15pt/32pt "Proxima Nova", sans-serif;
+  font: 500 15pt/32pt "proxima-nova", sans-serif;
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -422,7 +422,7 @@ svg {
     position: relative;
     margin: 0;
     color: #FFF;
-    font: 500 2em "Proxima Nova", sans-serif;
+    font: 500 2em "proxima-nova", sans-serif;
     top: 52%;
     transform: translateY(-50%);
     -o-transform: translateY(-50%);
@@ -562,7 +562,7 @@ form {
   width: 100%; }
 
 .label {
-  font: 600 12pt "Proxima Nova", sans-serif;
+  font: 600 12pt "proxima-nova", sans-serif;
   width: 100%;
   height: 30px;
   position: absolute;
