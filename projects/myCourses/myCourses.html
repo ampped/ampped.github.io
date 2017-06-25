@@ -3,7 +3,12 @@
 <html>
 <head>
 	<title>Amy Pham - myCourses Redesign</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
+	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://use.typekit.net/fjl2lti.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
@@ -11,17 +16,6 @@
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
-		var everythingLoaded = setInterval(function() {
-		  if (/loaded|complete/.test(document.readyState)) {
-		    clearInterval(everythingLoaded);
-		    console.log('loaded');
-		    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
-		    setTimeout(function(){
-		    	jQuery('.loaderDiv').remove();
-		    },300);
-		  }
-		}, 10);
-
 		window.onload = function(){
 			addNav();
 		}
@@ -61,9 +55,48 @@
 		</g>
 	</svg>
 	</div>
-<div class="scene_element scene_element--slideInLeft">
+	<script type="text/javascript">
+		if(isChrome()){
+			var everythingLoaded = setInterval(function() {
+			  if (/loaded|complete/.test(document.readyState)) {
+			    clearInterval(everythingLoaded);
+			    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
+			    setTimeout(function(){
+			    	jQuery('.loaderDiv').remove();
+			    },300);
+			  }
+			}, 10);
+		}
+		else{
+			var loader = document.querySelector('.loaderDiv');
+			loader.parentNode.removeChild(loader);
+		}
+
+		function isChrome() {
+		  var isChromium = window.chrome,
+		    winNav = window.navigator,
+		    vendorName = winNav.vendor,
+		    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+		    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+		    isIOSChrome = winNav.userAgent.match("CriOS");
+
+		  if(isIOSChrome){
+		    return true;
+		  } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+		    return true;
+		  } else { 
+		    return false;
+		  }
+		}
+	</script>
+<div class="scene_element scene_element--fadeIn">
 <header>
-	<div id="headerVid"><video autoplay loop><source src="prototype.mp4" type="video/mp4"></video></div>
+	<div id="headerVid">
+		<video autoplay loop>
+			<source src="prototype.webm" type="video/webm">
+			<source src="prototype.mp4" type="video/mp4">
+			</video>
+	</div>
 	<div id="headerInfo">
 		<h1>myCourses Redesign</h1>
 		<h4>UX Design</h4>
@@ -80,7 +113,10 @@
 		</div>
 	</section>
 	<section class="previewVid beginningBlock">
-		<video autoplay loop><source src="prototype.mp4" type="video/mp4"></video>
+		<video autoplay loop>
+		<source src="prototype.webm" type="video/webm">
+		<source src="prototype.mp4" type="video/mp4">
+		</video>
 	</section>
 	<section class="beginningBlock">
 		<div id="research">
@@ -184,15 +220,15 @@
 			<div class="wordblock">
 				<h5>&ldquo;The dropdown list for courses shows old courses that clog it up.&rdquo;</h5>
 			</div>
-			<img src="dropdown.png"/>
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="dropdown.webp"/>
 		</div><!--
 		--><div class="researchItem comparison right">
 			<div class="wordblock">
 				<h5>&ldquo;It would be convenient to be able to read content while still [having] a navigation to open the other content sources.&rdquo;</h5>
 				<p>This feature does exist but it is hard to notice.</p>
 			</div>
-			<img src="tab.png" />
-			<img src="openTab.png" class="right"/>
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="tab.webp" />
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="openTab.webp" class="right"/>
 		</div>
 		</div>
 		<div class="overview comparison wordblock">
@@ -209,7 +245,7 @@
 			<li>Course Page</li>
 		</ul>
 		<div class="wordblock">
-		<p class="pageDesc selected">I took inspiration from dashboard interface because they are designed to organize and clarify large amounts of data. As students typically log on to myCourses in short sessions throughout the day, they should be able to quickly complete their task and log off to work on their assignments.</p>
+		<p class="pageDesc selected">I took inspiration from dashboard interfaces because they are designed to organize and clarify large amounts of data. As students typically log on to myCourses in short sessions throughout the day, they should be able to quickly complete their task and log off to work on their assignments.</p>
 		<p class="pageDesc">Clicking on the submit button of an assignment will open a Dropbox modal for students to submit a project without leaving the current page. This allows students to efficiently submit and go on to other tasks without disrupting their flow.</p>
 		<p class="pageDesc">Students should be able to generally find what they need from the home page. However, course pages will contain additional material specific to a course.</p>
 		<hr>
@@ -235,7 +271,7 @@
 		<p class="desc">School policies must be shown on all course pages to make certain that students know of them.</p>
 		</div>
 		<div class="wf">
-			<img src="WFhome.png">
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFhome.webp">
 			<div class="hotspots selected">
 				<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="611px" viewBox="0 0 1200 1833">
 				<circle class="hotspot" cx="409.5" cy="143" r="46.5"/>
@@ -269,7 +305,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var wfSrcs = ['WFhome.png', 'WFdropbox.png', 'WFcourse.png'];
+			var wfSrcs = ['WFhome.webp', 'WFdropbox.webp', 'WFcourse.webp'];
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
@@ -277,7 +313,7 @@
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<img src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
 		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
 			<h3>Mood</h3><br>
 			<ul>
@@ -307,16 +343,16 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var compSrcs = ['home.png', 'course.png', 'submit1.png'];
+			var compSrcs = ['home.webp', 'course.webp', 'submit1.webp'];
 			for(var i = 0; i < compSrcs.length; i++){
 				compSrcs[i] = '' + compSrcs[i];
 			}
 			createSlider(compSrcs);
 		</script>
 	</section>
-	<section class="goProject"><a href="../nest/nest.html" class="project block""><video style="top: -85px; left:-45%;" loop><source src="../nest/addNode.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>Nest Schedule Redesign<!--
+	<section class="goProject"><a href="../nest/nest.html" class="project block""><video style="top: -85px; left:-45%;" loop><source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>Nest Schedule Redesign<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a><!--
-		--><a href="../selfCare/selfCare.html" class="project block"><video style="height: 500px; left: auto; right: 0" loop><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>The Importance of Self Care<!--
+		--><a href="../selfCare/selfCare.html" class="project block"><video style="height: 500px; left: auto; right: 0" loop><source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>The Importance of Self Care<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a>
 	</section>
 	<section>

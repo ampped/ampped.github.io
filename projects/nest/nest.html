@@ -3,7 +3,12 @@
 <html>
 <head>
 	<title>Amy Pham - Nest Redesign</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
+	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://use.typekit.net/fjl2lti.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
@@ -11,17 +16,6 @@
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
-		var everythingLoaded = setInterval(function() {
-		  if (/loaded|complete/.test(document.readyState)) {
-		    clearInterval(everythingLoaded);
-		    console.log('loaded');
-		    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
-		    setTimeout(function(){
-		    	jQuery('.loaderDiv').remove();
-		    },300);
-		  }
-		}, 10);
-
 		window.onload = function(){
 			addNav();
 		}
@@ -61,9 +55,43 @@
 		</g>
 	</svg>
 	</div>
-<div class="scene_element scene_element--slideInLeft">
+	<script type="text/javascript">
+		if(isChrome()){
+			var everythingLoaded = setInterval(function() {
+			  if (/loaded|complete/.test(document.readyState)) {
+			    clearInterval(everythingLoaded);
+			    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
+			    setTimeout(function(){
+			    	jQuery('.loaderDiv').remove();
+			    },300);
+			  }
+			}, 10);
+		}
+		else{
+			var loader = document.querySelector('.loaderDiv');
+			loader.parentNode.removeChild(loader);
+		}
+
+		function isChrome() {
+		  var isChromium = window.chrome,
+		    winNav = window.navigator,
+		    vendorName = winNav.vendor,
+		    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+		    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+		    isIOSChrome = winNav.userAgent.match("CriOS");
+
+		  if(isIOSChrome){
+		    return true;
+		  } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+		    return true;
+		  } else { 
+		    return false;
+		  }
+		}
+	</script>
+<div class="scene_element scene_element--fadeIn">
 <header>
-	<div id="headerVid"><video autoplay loop><source src="addNode.mp4" type="video/mp4"></video></div>
+	<div id="headerVid"><video autoplay loop><source src="addNode.webm" type="video/webm"><source src="addNode.mp4" type="video/mp4"></video></div>
 	<div id="headerInfo">
 		<h1>Nest Schedule Redesign</h1>
 		<h4>UX Design</h4>
@@ -91,7 +119,7 @@
 	</script>
 	</section>
 	<section class="previewVid beginningBlock">
-		<video autoplay loop><source src="addNode.mp4" type="video/mp4"></video>
+		<video autoplay loop><source src="addNode.webm" type="video/webm"><source src="addNode.mp4" type="video/mp4"></video>
 	</section>
 	<section class="beginningBlock">
 		<div id="research">
@@ -101,14 +129,14 @@
 			<h4>Current Interface</h4><br><br>
 			<p>The current schedule module for Nest requires the user to read the temperature of each target to know what it is. To know when the temperature is scheduled, users would have to visually draw a line from the target to the timeline. It may still be hard to pinpoint because targets can be scheduled on 15 minute intervals. Overall, it takes time to read and understand this schedule.</p>
 			</div>
-			<img src="nestCurrent.png"/>
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="nestCurrent.webp" class="right"/>
 		</div>
 		<div class="comparison">
 			<div class="wordblock" style="margin-right: 70px">
 			<h4>UI Inspiration</h4><br><br>
 			<p>Other thermostat schedule modules, such as Engie and Netatmo, take a more visual approach by displaying set temperatures as blocks of colors that make up a whole day. Users can also create temperature presets and connect them to colors.</p>
 			</div>
-			<img src="inspiration.png">
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="inspiration.webp">
 		</div>
 		<div class="comparison">
 			<h4>User Personas</h4><br><br>
@@ -157,7 +185,7 @@
 		<p class="desc">Users can turn their thermostats off at a certain outdoor temperature if they do not need the indoor temperature to be different from outside.</p>
 		</div><!--
 		--><div class="wf">
-			<img src="WFbase.png">
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFbase.webp">
 			<div class="hotspots selected">
 				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
 				<circle class="hotspot" cx="487" cy="36.5" r="28.3"/>
@@ -193,7 +221,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var wfSrcs = ['WFbase.png', 'WFadd.png', 'WFpast.png', 'WFtemplate.png', 'WFsmart.png'];
+			var wfSrcs = ['WFbase.webp', 'WFadd.webp', 'WFpast.webp', 'WFtemplate.webp', 'WFsmart.webp'];
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
@@ -201,7 +229,7 @@
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<img src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
 		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
 			<h3>Mood</h3><br>
 			<ul>
@@ -231,16 +259,16 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var compSrcs = ['base.png', 'addNode.png', 'editNode.png', 'hoverPast.png', 'hoverSmart.png', 'smart.png', 'calendar.png', 'editTemplate.png'];
+			var compSrcs = ['base.webp', 'addNode.webp', 'editNode.webp', 'hoverPast.webp', 'hoverSmart.webp', 'smart.webp', 'calendar.webp', 'editTemplate.webp'];
 			for(var i = 0; i < compSrcs.length; i++){
 				compSrcs[i] = '' + compSrcs[i];
 			}
 			createSlider(compSrcs);
 		</script>
 	</section>
-	<section class="goProject"><a href="../usatoday/usatoday.html" class="project block"><video style="height: 500px; left: auto; right: 0; top: -46%" loop><source src="../usatoday/mockup.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>USA TODAY Mobile Experience<!--
+	<section class="goProject"><a href="../usatoday/usatoday.html" class="project block"><video style="height: 500px; left: auto; right: 0; top: -46%" loop><source src="../usatoday/mockup.webm" type="video/webm"><source src="../usatoday/mockup.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>USA TODAY Mobile Experience<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a><!--
-		--><a href="../myCourses/myCourses.html" class="project block""><video style="left: auto; right: -10%; top: auto; bottom: -20%" loop><source src="../myCourses/prototype.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>myCourses Redesign<!--
+		--><a href="../myCourses/myCourses.html" class="project block""><video style="left: auto; right: -10%; top: auto; bottom: -20%" loop><source src="../myCourses/prototype.webm" type="video/webm"><source src="../myCourses/prototype.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>myCourses Redesign<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a>
 	</section>
 	<section>

@@ -2,7 +2,10 @@
 /*written by Amy Pham */
 /*$midPurple: #BF78FF */
 nav {
-  background-color: rgba(252, 252, 252, 0.75); }
+  background-color: rgba(252, 252, 252, 0.75);
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-name: slideDown; }
   nav .logo {
     position: absolute;
     top: 10px;
@@ -491,15 +494,30 @@ video.comp {
   100% {
     top: 0;
     opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes slideDown {
+  0% {
+    top: -60px; }
+  100% {
+    top: 0; } }
 .scene_element {
   position: relative;
   animation-timing-function: ease-out;
   animation-fill-mode: both; }
 
 .scene_element--fadeInUp {
-  animation-delay: 0.8s;
+  animation-delay: 0.3s;
   animation-duration: 0.5s;
   animation-name: fadeInUp; }
+
+.scene_element--fadeIn {
+  animation-delay: 0s;
+  animation-duration: 0.7s;
+  animation-name: fadeIn; }
 
 .is-exiting .scene_element {
   animation-direction: alternate-reverse; }

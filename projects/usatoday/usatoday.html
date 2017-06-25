@@ -3,7 +3,12 @@
 <html>
 <head>
 	<title>Amy Pham - USA TODAY Mobile Experience</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
+	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://use.typekit.net/fjl2lti.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
@@ -11,17 +16,6 @@
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
-		var everythingLoaded = setInterval(function() {
-		  if (/loaded|complete/.test(document.readyState)) {
-		    clearInterval(everythingLoaded);
-		    console.log('loaded');
-		    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
-		    setTimeout(function(){
-		    	jQuery('.loaderDiv').remove();
-		    },300);
-		  }
-		}, 10);
-
 		window.onload = function(){
 			addNav();
 		}
@@ -61,7 +55,41 @@
 		</g>
 	</svg>
 	</div>
-<div class="scene_element scene_element--slideInLeft">
+	<script type="text/javascript">
+		if(isChrome()){
+			var everythingLoaded = setInterval(function() {
+			  if (/loaded|complete/.test(document.readyState)) {
+			    clearInterval(everythingLoaded);
+			    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
+			    setTimeout(function(){
+			    	jQuery('.loaderDiv').remove();
+			    },300);
+			  }
+			}, 10);
+		}
+		else{
+			var loader = document.querySelector('.loaderDiv');
+			loader.parentNode.removeChild(loader);
+		}
+
+		function isChrome() {
+		  var isChromium = window.chrome,
+		    winNav = window.navigator,
+		    vendorName = winNav.vendor,
+		    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+		    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+		    isIOSChrome = winNav.userAgent.match("CriOS");
+
+		  if(isIOSChrome){
+		    return true;
+		  } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+		    return true;
+		  } else { 
+		    return false;
+		  }
+		}
+	</script>
+<div class="scene_element scene_element--fadeIn">
 <header>
 	<div id="headerVid"><video style="position: relative; bottom: 70%; z-index: -1" autoplay loop><source src="mockup.webm" type="video/webm"><source src="mockup.mp4" type="video/mp4"></video>
 	</div>

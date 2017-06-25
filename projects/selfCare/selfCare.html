@@ -3,7 +3,12 @@
 <html>
 <head>
 	<title>Amy Pham - The Importane of Self Care</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
+	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://use.typekit.net/fjl2lti.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -11,20 +16,8 @@
 	<script src="../../js/loadMedia.js"></script>
 	<script src="../../js/slider.js"></script>
 	<script type="text/javascript">
-		var everythingLoaded = setInterval(function() {
-		  if (/loaded|complete/.test(document.readyState)) {
-		    clearInterval(everythingLoaded);
-		    console.log('loaded');
-		    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
-		    setTimeout(function(){
-		    	jQuery('.loaderDiv').remove();
-		    },300);
-		  }
-		}, 10);
-
 		window.onload = function(){
 			addNav();
-			setupLoading();
 		}
 	</script>
 </head>
@@ -62,9 +55,43 @@
 		</g>
 	</svg>
 	</div>
-<div class="scene_element scene_element--slideInLeft">
+	<script type="text/javascript">
+		if(isChrome()){
+			var everythingLoaded = setInterval(function() {
+			  if (/loaded|complete/.test(document.readyState)) {
+			    clearInterval(everythingLoaded);
+			    jQuery('.loaderDiv').css('opacity', '0'); // this is the function that gets called when everything is loaded
+			    setTimeout(function(){
+			    	jQuery('.loaderDiv').remove();
+			    },300);
+			  }
+			}, 10);
+		}
+		else{
+			var loader = document.querySelector('.loaderDiv');
+			loader.parentNode.removeChild(loader);
+		}
+
+		function isChrome() {
+		  var isChromium = window.chrome,
+		    winNav = window.navigator,
+		    vendorName = winNav.vendor,
+		    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+		    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+		    isIOSChrome = winNav.userAgent.match("CriOS");
+
+		  if(isIOSChrome){
+		    return true;
+		  } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+		    return true;
+		  } else { 
+		    return false;
+		  }
+		}
+	</script>
+<div class="scene_element scene_element--fadeIn">
 <header>
-	<div id="headerVid"><video autoplay loop><source src="landscapeStill.mp4" type="video/mp4"></video></div>
+	<div id="headerVid"><video autoplay loop><source src="landscapeStill.webm" type="video/webm"><source src="landscapeStill.mp4" type="video/mp4"></video></div>
 	<div id="headerInfo">
 		<h1>The Importance of Self Care</h1>
 		<h4>Motion Graphics</h4>
@@ -81,7 +108,7 @@
 		</div>
 	</section>
 	<section id="video" class="beginningBlock">
-		<iframe src="https://player.vimeo.com/video/197560377?color=cf2790&title=0&byline=0&portrait=0" width="1000" height="563" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<iframe src="https://player.vimeo.com/video/197560377?color=b995f0&title=0&byline=0&portrait=0" width="1000" height="563" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</section>
 	<section id="creations">
 		<img src="creation_orbit.gif" style="margin: 0 3vw">
@@ -92,10 +119,10 @@
 		<div class="wordblock"><h3>Writing the Script</h3><br>
 		<p>To understand what exactly I needed to tell people, I interviewed my friends and classmates to find out what their doubts were and what they needed to feel better. Later that week, my interpersonal communication class happened to cover social support. I took this chance to interview my professor and learn how to better respond to the doubts I found.</p>
 		</div>
-		<img src="storyboard.png">
+		<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="storyboard.webp">
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<img src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.jpg" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
 		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
 			<h3>Mood</h3><br>
 			<ul>
@@ -125,7 +152,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var imgSrcs = ['school.png','work.png','computer.png','heart.png','preview.png'];
+			var imgSrcs = ['school.webp','work.webp','computer.webp','heart.webp','preview.webp'];
 			for(var i = 0; i < imgSrcs.length; i++){
 				imgSrcs[i] = '' + imgSrcs[i];
 			}
@@ -134,15 +161,17 @@
 	</section>
 	<section id="gifs">
 		<video autoplay loop>
+			<source src="jobs.webm" type="video/webm">
 			<source src="jobs.mp4" type="video/mp4">
 		</video>
 		<video autoplay loop>
+			<source src="landscapeStill.webm" type="video/webm">
 			<source src="landscapeStill.mp4" type="video/mp4">
 		</video>
 	</section>
-	<section class="goProject"><a href="../myCourses/myCourses.html" class="project block""><video style="left: auto; right: -10%; top: auto; bottom: -20%" loop><source src="../myCourses/prototype.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>myCourses Redesign<!--
+	<section class="goProject"><a href="../myCourses/myCourses.html" class="project block""><video style="left: auto; right: -10%; top: auto; bottom: -20%" loop><source src="../myCourses/prototype.webm" type="video/webm"><source src="../myCourses/prototype.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>myCourses Redesign<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a><!--
-		--><a href="../usatoday/usatoday.html" class="project block"><video style="height: 500px; left: auto; right: 0; top: auto; bottom: -20%" loop><source src="../usatoday/mockup.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>USA TODAY Mobile Experience<!--
+		--><a href="../usatoday/usatoday.html" class="project block"><video style="height: 500px; left: auto; right: 0; top: auto; bottom: -20%" loop><source src="../usatoday/mockup.webm" type="video/webm"><source src="../usatoday/mockup.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>USA TODAY Mobile Experience<!--
 		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a>
 	</section>
 	<section>

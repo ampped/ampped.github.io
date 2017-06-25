@@ -25,7 +25,6 @@ function setupWFDisplay(wfSrcs){
 
 //helper function to add the selected class to the actual selected object
 function selectItem(className, i){
-	console.log(jQuery('.' + className + ':eq(' + i + ')'));
 	jQuery('.' + className + '.selected').removeClass('selected');
 	jQuery('.' + className + ':eq(' + i + ')').addClass('selected');
 }

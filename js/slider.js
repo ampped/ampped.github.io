@@ -6,9 +6,9 @@ function createSlider(imgs){
 	var currentFull = 0;
 
 	//create html elements of slider
-	jQuery('.slider').append('<img src=\"' + imgSrcs[current] + '\" class="comp currentComp">');
-	jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
-	jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
+	jQuery('.slider').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[current] + '\" class="comp currentComp">');
+	jQuery('.slider').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
+	jQuery('.slider').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(current-1+imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
 	jQuery.each(imgSrcs, function(){
 		jQuery('.pagination').append('<button class="control-page"></button>');
 	});
@@ -73,7 +73,7 @@ function createSlider(imgs){
 			openFull();
 		});
 		
-		jQuery('.slider').append('<img src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
+		jQuery('.slider').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(current+1)%imgSrcs.length] + '\" class="comp nextComp">');
 	}
 
 	//move to a previous page
@@ -87,11 +87,11 @@ function createSlider(imgs){
 			openFull();
 		});
 
-		jQuery('.slider').append('<img src=\"' + imgSrcs[(current-1 + imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
+		jQuery('.slider').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(current-1 + imgSrcs.length)%imgSrcs.length] + '\" class="comp prevComp">');
 	}
 
 	//seeing full-size comp
-	jQuery('.slider').append('<div class="fullComp"><img src="" class="currentFull"><img src="" class="prevFullComp"><img src="" class="nextFullComp"><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
+	jQuery('.slider').append('<div class="fullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="currentFull"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="prevFullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="nextFullComp"><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
 
 	//set up close button
 	jQuery('.control-close').click(function(){
@@ -136,7 +136,7 @@ function createSlider(imgs){
 		jQuery('.currentFull').addClass('prevFullComp').removeClass('currentFull');
 		jQuery('.nextFullComp').addClass('currentFull').removeClass('nextFullComp');
 		
-		jQuery('.fullComp').append('<img src=\"' + imgSrcs[(currentFull+1)%imgSrcs.length] + '\" class="nextFullComp">');
+		jQuery('.fullComp').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(currentFull+1)%imgSrcs.length] + '\" class="nextFullComp">');
 		setUpControls();
 	}
 
@@ -148,7 +148,7 @@ function createSlider(imgs){
 		jQuery('.currentFull').addClass('nextFullComp').removeClass('currentFull');
 		jQuery('.prevFullComp').addClass('currentFull').removeClass('prevFullComp');
 
-		jQuery('.fullComp').append('<img src=\"' + imgSrcs[(currentFull-1 + imgSrcs.length)%imgSrcs.length] + '\" class="prevFullComp">');
+		jQuery('.fullComp').append('<img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src=\"' + imgSrcs[(currentFull-1 + imgSrcs.length)%imgSrcs.length] + '\" class="prevFullComp">');
 		setUpControls();
 	}
 
