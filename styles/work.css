@@ -70,7 +70,7 @@ header, section {
   margin-bottom: 10px; }
 .overview #message {
   width: 100%;
-  font: 500 14pt/21pt "Proxima Nova", sans-serif;
+  font: 500 14pt/21pt "proxima-nova", sans-serif;
   margin: 0;
   margin-top: 20px;
   color: #A263FF; }
@@ -107,12 +107,12 @@ header, section {
       display: inline-block;
       width: auto;
       max-width: 425px; }
-    #research .comparison img {
+    #research .comparison img, #research .comparison picture {
       display: inline-block;
       max-width: calc(50% - 20px); }
   #research .inspo {
     margin-top: 40px; }
-    #research .inspo img {
+    #research .inspo img, #research .inspo picture {
       max-width: 200px; }
     #research .inspo .wordblock {
       width: calc(100% - 240px);
@@ -139,7 +139,7 @@ header, section {
     display: inline-block; }
   .researchItem.barStat .num {
     fill: #1d2349;
-    font: 700 20pt "Proxima Nova", sans-serif; }
+    font: 700 20pt "proxima-nova", sans-serif; }
     .researchItem.barStat .num.multiline {
       font-size: 20pt; }
   .researchItem.barStat .wordblock {
@@ -172,7 +172,7 @@ header, section {
     display: inline-block;
     fill: #1d2349;
     color: #1d2349;
-    font: 500 13pt "Proxima Nova", sans-serif;
+    font: 500 13pt "proxima-nova", sans-serif;
     position: relative;
     left: 10px;
     vertical-align: bottom;
@@ -252,7 +252,7 @@ header, section {
       margin-left: 20px;
       cursor: pointer;
       color: #1d2349;
-      font-family: "Proxima Nova", sans-serif; }
+      font-family: "proxima-nova", sans-serif; }
       #wireframes .pages li:hover {
         border-bottom: solid 2px #B995F0; }
     #wireframes .pages .selected {
@@ -309,7 +309,7 @@ header, section {
   #moodboard li::before {
     content: "— ";
     color: #A263FF;
-    font: 400 16pt "Proxima Nova", sans-serif; }
+    font: 400 16pt "proxima-nova", sans-serif; }
 
 #prototype {
   text-align: center; }
@@ -464,9 +464,9 @@ video.comp {
     transition: 0.2s ease-in-out; }
   .project h5 {
     color: #FFF;
-    font: 500 2em "Proxima Nova", sans-serif; }
+    font: 500 2em "proxima-nova", sans-serif; }
   .project p {
-    font: 500 14pt "Proxima Nova", sans-serif; }
+    font: 500 14pt "proxima-nova", sans-serif; }
   .project svg {
     stroke: #FFF; }
   .project::before {
