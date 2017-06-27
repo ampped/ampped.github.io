@@ -45,7 +45,6 @@ function formEffect(){
 		var placeholderString = placeholder.children('p').get(0).innerText;
 		if(placeholderString.charAt(placeholderString.length - 1) != "*"){
 			jQuery(placeholder).children('p').append('*');
-			jQuery(placeholder.children('p').get(0)).css('color', '#FF4B54');
 		}
 
 		console.log(jQuery(this).val());
