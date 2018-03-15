@@ -2,10 +2,11 @@
 /*written by Amy Pham */
 /*$midPurple: #BF78FF */
 nav {
-  background-color: rgba(252, 252, 252, 0.75);
+  background-color: #FFF;
   animation-delay: 0;
   animation-duration: 0.5s;
-  animation-name: slideDown; }
+  animation-name: slideDown;
+  box-shadow: 0 0 10px #902EFF; }
   nav .logo {
     position: absolute;
     top: 10px;

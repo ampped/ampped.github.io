@@ -1,7 +1,7 @@
 function addNav(){
 	jQuery('body').prepend("<nav class=\"showing\"><a href=\"../../index.html#about\">About</a><a href=\"../../index.html#work\">Work</a><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
 
-	jQuery('nav').prepend("<a href=\"../../index.html\"><svg class=\"logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"717\" height=\"196\" viewBox=\"0 0 717 196\">" +
+	jQuery('nav').prepend("<a href=\"../../index.html\"><!--svg class=\"logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"717\" height=\"196\" viewBox=\"0 0 717 196\">" +
 		"<path class=\"logoPath\" d=\"M297.9 92.3l-86.4 86.4c1.3 1.3 3 2.1 4.9 2.1h165.1c2.6 0 4.7-2.1 4.7-4.7V22c0-8-7.8-10.5-12.3-6L297.9 92.3\"/>" +
 		"<path class=\"logoPath\" d=\"M465.7 13.8c6.7 0 13.1 0 20.2 0 35.6 0 64.4 27.2 64.4 60.8s-28.8 60.8-64.4 60.8c-7.1 0-13.5 0-20.2 0\"/>" +
 		"<path class=\"logoPath\" d=\"M465.7 13.8h-37.4c-3.8 0-6.8 3-6.8 6.8v153.3c0 3.8 3 6.8 6.8 6.8h30.6c3.8 0 6.8-3 6.8-6.8V13.8z\"/>" +
@@ -32,7 +32,7 @@ function addNav(){
 		"<path class=\"logoPath\" d=\"M233.2 157c15.4 1.8 24.5-0.4 36.8-11.6 14.8-13.5 54.3-68.5 60-85.2\"/>" +
 		"<path class=\"logoPath\" d=\"M347.4 42.8c12-8.4 28.3-11 38.9 4.7\"/>" +
 		"<path class=\"logoPath\" d=\"M368.4 21.7c10.5-0.1 17.9 2.8 17.9 10\"/>" +
-	"</svg></a>");
+	"</svg--><img src=\"../../logo.svg\" class=\"logo\"></a>");
 
 	var lastScrollTop = 0;
 

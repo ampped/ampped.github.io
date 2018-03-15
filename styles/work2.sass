@@ -46,6 +46,9 @@ a
 	font-size: 12pt
 	border-bottom: solid 1px $blue
 
+.fullStretch
+	max-width: 100%
+
 #headerInfo
 	padding: 80px 0
 	height: 170px
@@ -202,6 +205,9 @@ a
 
 	.IAthemes
 		font-weight: bold
+	ul
+		li
+			line-height: 26pt
 	.inspo
 		margin-top: 40px
 		img, picture
@@ -285,7 +291,6 @@ a
 		svg
 			height: auto
 			vertical-align: middle
-			margin-bottom: 50px
 			display: inline-block
 		.num
 			fill: $blue
@@ -406,7 +411,6 @@ a
 			cursor: pointer
 			color: $midPurple
 			@include heading-font()
-			font-weight: 700
 			&:hover
 				border-bottom: solid 1px $midPurple
 		.selected
@@ -474,6 +478,7 @@ a
 	p
 		max-width: 24em
 	li
+		@include heading-font()
 		&::before
 			content: '\2014\00a0'
 			color: $midPurple
@@ -483,18 +488,20 @@ a
 	text-align: center
 
 #comps
-	text-align: center
+	text-align: left
 	max-width: 1000px
 	margin-left: auto
 	margin-right: auto
 .compImg
-	width: 80%
+	width: 100%
 	margin-bottom: 3vw
 	vertical-align: top
 	@include drop-shadow()
-	&.landscape
-		width: 100%
-		margin-right: 0
+	&.compMobile
+		box-shadow: none
+		width: 40%
+		margin: 0 5%
+		margin-bottom: 3vw
 
 /*slider*/
 .slider
@@ -712,13 +719,13 @@ video.comp
 	animation-fill-mode: both
 
 .scene_element--fadeInUp
-	animation-delay: 0.3s
-	animation-duration: 0.5s
+	animation-delay: 0.2s
+	animation-duration: 0.4s
 	animation-name: fadeInUp
 
 .scene_element--fadeIn
 	animation-delay: 0s
-	animation-duration: 0.7s
+	animation-duration: 2s
 	animation-name: fadeIn
 
 .is-exiting

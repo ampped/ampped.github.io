@@ -54,18 +54,28 @@ function createComps(compSrcs){
 		//compSrcs[currentFull] = '' + compSrcs[currentFull];
 		var fileFormat = compSrcs[i].split(".")[1];
 		if(fileFormat == 'png' || fileFormat == 'webp'){
-			jQuery('#comps').append('<img src="'+compSrcs[i]+'" class="compImg">');
+			if(compSrcs[i].includes('mobile')){
+				jQuery('#comps').append('<img src="'+compSrcs[i]+'" class="compImg compMobile" style="box-shadow:none">');
+			}
+			else{
+				jQuery('#comps').append('<img src="'+compSrcs[i]+'" class="compImg">');
+			}
 		}
 		else{
-			jQuery('#comps').append('<video class="compImg" autoplay loop><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
+			if(compSrcs[i].includes('mobile')){
+				jQuery('#comps').append('<video class="compImg compMobile" style="box-shadow: none;" autoplay loop><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
+			}
+			else{
+				jQuery('#comps').append('<video class="compImg" autoplay loop><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
+			}
 		}
 	}
-
-	jQuery('#comps').append('<div class="fullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="currentFull"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="prevFullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="nextFullComp"><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
-	setupFull();
 }
 
 function setupFull(){
+	jQuery('#comps').append('<div class="fullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="currentFull"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="prevFullComp"><img onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" src="" class="nextFullComp"><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>');
+
+	jQuery('.compImg').css('cursor', 'pointer');
 	var currentFull = 0;
 
 	//set up close button
@@ -90,8 +100,8 @@ function setupFull(){
 
 	//open fullComp on compImg click
 	jQuery('.compImg').click(function(){
-		//currentFull = jQuery(this).index('.compImg');
-		//openFull();
+		currentFull = jQuery(this).index('.compImg');
+		openFull();
 	});
 
 	function setUpControls(){

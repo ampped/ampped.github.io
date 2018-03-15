@@ -27,6 +27,9 @@ a {
   font-size: 12pt;
   border-bottom: solid 1px #1d2349; }
 
+.fullStretch {
+  max-width: 100%; }
+
 #headerInfo {
   padding: 80px 0;
   height: 170px; }
@@ -184,6 +187,8 @@ a {
       /*max-width: calc(50% - 20px) */ }
   #research .IAthemes {
     font-weight: bold; }
+  #research ul li {
+    line-height: 26pt; }
   #research .inspo {
     margin-top: 40px; }
     #research .inspo img, #research .inspo picture {
@@ -267,7 +272,6 @@ a {
   .surveyItem.barStat svg {
     height: auto;
     vertical-align: middle;
-    margin-bottom: 50px;
     display: inline-block; }
   .surveyItem.barStat .num {
     fill: #1d2349;
@@ -394,8 +398,7 @@ a {
       color: #A263FF;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      letter-spacing: 0;
-      font-weight: 700; }
+      letter-spacing: 0; }
       #wireframes .pages li:hover {
         border-bottom: solid 1px #A263FF; }
     #wireframes .pages .selected {
@@ -439,7 +442,7 @@ a {
         opacity: 1;
         stroke: #A263FF;
         stroke-width: 8;
-        fill: transparent; }
+        fill: rgba(0, 0, 0, 0); }
   #wireframes .selected, #wireframes .hotspots.selected {
     display: inline-block; }
   #wireframes.landscape .wf {
@@ -458,28 +461,34 @@ a {
   vertical-align: top; }
 #moodboard p {
   max-width: 24em; }
-#moodboard li::before {
-  content: "— ";
-  color: #A263FF;
-  font-size: 16pt; }
+#moodboard li {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0; }
+  #moodboard li::before {
+    content: "— ";
+    color: #A263FF;
+    font-size: 16pt; }
 
 #prototype {
   text-align: center; }
 
 #comps {
-  text-align: center;
+  text-align: left;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
 
 .compImg {
-  width: 80%;
+  width: 100%;
   margin-bottom: 3vw;
   vertical-align: top;
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
-  .compImg.landscape {
-    width: 100%;
-    margin-right: 0; }
+  .compImg.compMobile {
+    box-shadow: none;
+    width: 40%;
+    margin: 0 5%;
+    margin-bottom: 3vw; }
 
 /*slider */
 .slider {
@@ -689,13 +698,13 @@ video.comp {
   animation-fill-mode: both; }
 
 .scene_element--fadeInUp {
-  animation-delay: 0.3s;
-  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-duration: 0.4s;
   animation-name: fadeInUp; }
 
 .scene_element--fadeIn {
   animation-delay: 0s;
-  animation-duration: 0.7s;
+  animation-duration: 2s;
   animation-name: fadeIn; }
 
 .is-exiting .scene_element {
