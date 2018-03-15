@@ -6,18 +6,22 @@
 	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
 	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:600,700" rel="stylesheet">
 	<script src="https://use.typekit.net/fjl2lti.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
-	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../styles/base2.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/work2.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/toast/css/grid.css">
 	<script src="../../js/addNav.js"></script>
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
 		window.onload = function(){
 			addNav();
+			addSquiggles();
 		}
 	</script>
 </head>
@@ -89,118 +93,131 @@
 		  }
 		}
 	</script>
-<div class="scene_element scene_element--fadeIn">
-<header>
-	<div id="headerVid">
-		<video autoplay loop>
-			<source src="prototype.webm" type="video/webm">
-			<source src="prototype.mp4" type="video/mp4">
-			</video>
-	</div>
-	<div id="headerInfo">
-		<h1>myCourses Redesign</h1>
-		<h4>UX Design</h4>
-		<h4>UI Design</h4>
-		<h4>Prototype Animation</h4>
-	</div>
-</header>
+<div id="headerVid" class="scene_element--fadeIn">
+	<video autoplay loop>
+		<source src="prototype.webm" type="video/webm">
+		<source src="prototype.mp4" type="video/mp4">
+		</video>
+</div>
 <main class="scene_element scene_element--fadeInUp">
 	<section class="overview">
-		<div class="wordblock">
-			<h3>Story</h3><br>
-			<p>myCourses is a site used by Rochester Institute of Technology to facilitate students’ progression through their coursework. It is the main interface through which professors and students work with assignments. Professors may post course material and grades for students to look over, as well as receive assignments through a dropbox feature.</p>
-			<p class="right">The site covers basic needs, but its design could be improved to increase efficiency and better support students in their coursework. Establishing a better hierarchy will enhance the experience of using myCourses by promoting helpful features that often go unnoticed. Streamlining actions and improving the overall organization will also allow students to save time that can be spent working on assignments.</p>
-		</div>
+		<section class="overviewInfo">
+			<h1>myCourses Redesign</h1>
+			<div class="story">
+				<p>myCourses is a site used by Rochester Institute of Technology to facilitate students’ progression through their coursework. It is the main interface through which professors and students manage their classes.</p><br>
+				<p>The site covers basic needs, but its design could be improved to <strong>increase efficiency and better support students in their coursework.</strong> Streamlining actions and improving the overall organization will allow students to save time that can be spent working on assignments.</p>
+			</div>
+			<ul class="skills">
+				<li class="header">skills focused on</li>
+				<li>UX Design</li>
+				<li>UI Design</li>
+				<li>Prototype Animation</li>
+			</ul>
+		</section>
 	</section>
-	<section class="previewVid beginningBlock">
+	<section class="projectContent">
+	<section class="previewVid">
 		<video autoplay loop>
 		<source src="prototype.webm" type="video/webm">
 		<source src="prototype.mp4" type="video/mp4">
 		</video>
 	</section>
-	<section class="beginningBlock">
+	<section class="beginningBlock grid">
 		<div id="research">
 		<h3>Research</h3><br>
-		<div class="researchItem barStat">
-			<h5>Number of visits a week</h5>
-			<h4>At least once a day</h4>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
-			<text text-anchor="middle" x="536.7" y="305.15" class="num">7+</text>
-			<text text-anchor="middle" x="461.4" y="305.15" class="num">6</text>
-			<text text-anchor="middle" x="386.2" y="305.15" class="num">5</text>
-			<text text-anchor="middle" x="310.9" y="305.15" class="num">4</text>
-			<text text-anchor="middle" x="235.7" y="305.15" class="num">3</text>
-			<text text-anchor="middle" x="160.4" y="305.15" class="num">2</text>
-			<text text-anchor="middle" x="85.1" y="305.15" class="num">1</text>
-			<text text-anchor="middle" x="9.9" y="305.15" class="num">0</text>
-			<rect x="536.7" class="st0" width="34.1" height="261.4"/>
-			<rect x="461" y="87.1" class="st1" width="34.1" height="174.2"/>
-			<rect x="385.3" y="217.8" class="st2" width="34.1" height="43.6"/>
-			<rect x="235.3" y="217.8" class="st3" width="34.1" height="43.6"/>
+		<div class="surveyItem barStat">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3" class="grid__col grid__col--1-of-2">
+				<text text-anchor="middle" x="536.7" y="305.15" class="num">7+</text>
+				<text text-anchor="middle" x="461.4" y="305.15" class="num">6</text>
+				<text text-anchor="middle" x="386.2" y="305.15" class="num">5</text>
+				<text text-anchor="middle" x="310.9" y="305.15" class="num">4</text>
+				<text text-anchor="middle" x="235.7" y="305.15" class="num">3</text>
+				<text text-anchor="middle" x="160.4" y="305.15" class="num">2</text>
+				<text text-anchor="middle" x="85.1" y="305.15" class="num">1</text>
+				<text text-anchor="middle" x="9.9" y="305.15" class="num">0</text>
+				<rect x="536.7" class="st0" width="34.1" height="261.4"/>
+				<rect x="461" y="87.1" class="st1" width="34.1" height="174.2"/>
+				<rect x="385.3" y="217.8" class="st2" width="34.1" height="43.6"/>
+				<rect x="235.3" y="217.8" class="st3" width="34.1" height="43.6"/>
 			</svg>
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">Number of visits a week</p>
+				<p class="finding">At least once a day</p>
+			</div>
 			<script type="text/javascript">
 				jQuery('.num').attr('x', function(){return (parseInt(jQuery(this).attr('x')) + 15.15);});
 			</script>
 		</div>
-		<div class="researchItem barStat right">
-			<h5>Approximate time per visit</h5>
-			<h4>5-10 minutes</h4>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3">
-			<text text-anchor="end" x="118.3" y="29.6" class="num">5 min</text>
-			<text text-anchor="end" x="118.3" y="96.6" class="num">10 min</text>
-			<text text-anchor="end" x="118.3" y="162.3" class="num">20 min</text>
-			<text text-anchor="end" x="118.3" y="228" class="num">Over 1 hr</text>
-			<rect x="150.2" class="st1" width="424" height="29.6"/>
-			<rect x="150.2" y="65.7" class="st0" width="530" height="29.6"/>
-			<rect x="150.2" y="131.4" class="st2" width="212" height="29.6"/>
-			<rect x="150.2" y="197.1" class="st3" width="106" height="29.6"/>
+		<div class="surveyItem barStat">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 328.3" class="grid__col grid__col--1-of-2">
+				<text text-anchor="end" x="118.3" y="29.6" class="num">5 min</text>
+				<text text-anchor="end" x="118.3" y="96.6" class="num">10 min</text>
+				<text text-anchor="end" x="118.3" y="162.3" class="num">20 min</text>
+				<text text-anchor="end" x="118.3" y="228" class="num">Over 1 hr</text>
+				<rect x="150.2" class="st1" width="424" height="29.6"/>
+				<rect x="150.2" y="65.7" class="st0" width="530" height="29.6"/>
+				<rect x="150.2" y="131.4" class="st2" width="212" height="29.6"/>
+				<rect x="150.2" y="197.1" class="st3" width="106" height="29.6"/>
 			</svg>
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">Approximate time per visit</p>
+				<p class="finding">5-10 minutes</p>
+				<p class="topic conclusion">Students typically go on myCourses in short sessions to complete a specific task.</p>
+			</div>
 			<script type="text/javascript">
 				jQuery('.barStat:eq(1)').find('.num').attr('y', function(){return (parseInt(jQuery(this).attr('y')) - 5);});
 			</script>
 		</div>
-		<h4>Percent of courses that use each feature</h4><br>
-		<div class="researchItem course">
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
-			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
-			<h4>67%</h4>
-			<h5>Posting Content</h5>
-			<p>Professors can post documents describing assignments, links, or any other information helpful to the course</p>
-		</div>
-		<div class="researchItem course right">
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
-			</svg>
-			<h4>100%</h4>
-			<h5>Due Dates</h5>
-			<p>Dropboxes are labeled with a deadline and can be closed at that time</p>
-		</div>
-		<div class="researchItem course">
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
-			</svg>	
-			<h4>100%</h4>
-			<h5>Dropbox</h5>
-			<p>An application for students to submit their assignments</p>
-		</div>
-		<div class="researchItem course right">
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
-			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
-			</svg>	
-			<h4>58%</h4>
-			<h5>Discussion</h5>
-			<p>Message boards opened by the professor for anyone to post and respond to messages</p>
-		</div>
-		<div class="researchItem course">
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
-			<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
-			<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
-			</svg>
-			<h4>92%</h4>
-			<h5>Grades</h5>
-			<p>Shows grades on dropbox submissions or in-class assignments</p>
+		<div class="surveyItem">
+			<div class="grid__col grid__col--1-of-2">
+				<div class="surveyItem course">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+					<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+					<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
+					<h4>67%</h4>
+					<h5>Posting Content</h5>
+					<p>Professors can post documents describing assignments, links, or any other information helpful to the course</p>
+				</div>
+				<div class="surveyItem course">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+					<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
+					</svg>
+					<h4>100%</h4>
+					<h5>Due Dates</h5>
+					<p>Dropboxes are labeled with a deadline and can be closed at that time</p>
+				</div>
+				<div class="surveyItem course">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+					<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
+					</svg>	
+					<h4>100%</h4>
+					<h5>Dropbox</h5>
+					<p>An application for students to submit their assignments</p>
+				</div>
+				<div class="surveyItem course">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+					<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+					<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
+					</svg>	
+					<h4>58%</h4>
+					<h5>Discussion</h5>
+					<p>Message boards opened by the professor for anyone to post and respond to messages</p>
+				</div>
+				<!--div class="surveyItem course">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 126 126" class="undefined">
+					<ellipse class="ground" cx="63" cy="63" rx="57" ry="57"/>
+					<ellipse class="pie" cx="63" cy="63" rx="57" ry="57"/>
+					</svg>
+					<h4>92%</h4>
+					<h5>Grades</h5>
+					<p>Shows grades on dropbox submissions or in-class assignments</p>
+				</div-->
+			</div>
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">Features used the most</p>
+				<p class="finding">Dropbox and Due Dates</p>
+				<p class="topic conclusion">Both of these features focus on turning in assignments which shows that it is a high priority for students.</p>
+			</div>
 		</div>
 		<script type="text/javascript">
 			var pie = document.querySelectorAll('.course');
@@ -215,31 +232,26 @@
 			});
 		</script>
 		<br><br><br>
-		<h4>Comments on features</h4><br>
-		<div class="researchItem comparison first">
-			<div class="wordblock">
-				<h5>&ldquo;The dropdown list for courses shows old courses that clog it up.&rdquo;</h5>
-			</div>
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="dropdown.webp"/>
-		</div><!--
-		--><div class="researchItem comparison right">
-			<div class="wordblock">
-				<h5>&ldquo;It would be convenient to be able to read content while still [having] a navigation to open the other content sources.&rdquo;</h5>
-				<p>This feature does exist but it is hard to notice.</p>
-			</div>
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="tab.webp" />
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="openTab.webp" class="right"/>
+		<div class="surveyItem comparison grid__col grid__col--1-of-2">
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="dropdown.webp" class="shadow" />
+			<!--img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="tab.webp" class="shadow" style="width: 47.5%; margin-right: 5%"/><!
+			><img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="openTab.webp" class="shadow" style="width: 47.5%;"/-->
+			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="tabExplanation.png"/>
+			<p>This feature does exist but it is hard to notice.</p>
 		</div>
+		<div class="grid__col grid__col--1-of-2">
+			<p class="topic">Comments on features</p>
+			<p class="textData message">&ldquo;I enjoy how teachers can post lecture notes.&rdquo;</p>
+			<p class="textData message">&ldquo;It’s easy to submit files and a receipt is emailed to you.&rdquo;</p>
+			<p class="textData message">&ldquo;The dropdown list for courses shows old courses that clog it up.&rdquo;</p>
+			<p class="textData message">&ldquo;It would be convenient to be able to read content while still [having] a navigation to open the other content sources.&rdquo;</p>
+			<p class="topic conclusion">Students seem to be satisfied with the primary functions of the site, but some features have poor organization or affordance.</p>
 		</div>
-		<div class="overview comparison wordblock">
-			<h4>Survey Findings</h4><br><br>
-			<p>When I surveyed 12 RIT students, I found that most students log on daily for short 5 to 10 minute sessions. This would mean that students typically go on myCourses to complete a specific task.</p>
-			<p class="right">From the regular use of each feature, students seem to be satisfied with the primary functions of the site. However, some features have poor organization or affordance.</p>
 		</div>
 	</section>
 	<section id="wireframes" class="beginningBlock">
-		<h3>Wireframes</h3><!--
-		--><ul class="pages">
+		<h3>Wireframes</h3>
+		<ul class="pages">
 			<li class="selected">Home Page</li>
 			<li>Submit Assignment</li>
 			<li>Course Page</li>
@@ -313,9 +325,10 @@
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
+		<h3>Mood</h3>
 		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
-		<div style="width: 35%; height: 100%; padding: 100px 0 50px 70px; display: inline-block; vertical-align: top;">
-			<h3>Mood</h3><br>
+		<div style="width: 35%; height: 100%; padding: 0 0 50px 70px; display: inline-block; vertical-align: top;">
+			<p>myCourses should have the same feel as an office, a designated place to work that promotes productivity.</p>
 			<ul>
 				<li>sharp</li>
 				<li>precise</li>
@@ -325,10 +338,8 @@
 		</div>
 	</section>
 	<section id="comps" class="beginningBlock">
-		<div class="wordblock">
-			<h3>Final Design</h3><br>
-		</div>
-		<div class="slider">
+		<h3>Final Design</h3>
+		<!--div class="slider">
 			<button class="slider-control control-svg control-arrow control-next">
 				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
 				<polyline points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
@@ -341,19 +352,43 @@
 			</button>
 			<div class="slider-control pagination">
 			</div>
-		</div>
+		</div-->
 		<script type="text/javascript">
-			var compSrcs = ['home.webp', 'course.webp', 'submit1.webp'];
-			for(var i = 0; i < compSrcs.length; i++){
-				compSrcs[i] = '' + compSrcs[i];
-			}
-			createSlider(compSrcs);
+			var compSrcs = ['home.webp', 'submit1.webp', 'course.webp'];
+			createComps(compSrcs);
+			setupFull();
+			//createSlider(compSrcs);
 		</script>
 	</section>
-	<section class="goProject"><a href="../nest/nest.html" class="project block""><video style="top: -85px; left:-45%;" loop><source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>Nest Schedule Redesign<!--
-		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a><!--
-		--><a href="../selfCare/selfCare.html" class="project block"><video style="height: 500px; left: auto; right: 0" loop><source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>The Importance of Self Care<!--
-		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a>
+	<section class="conclusion beginningBlock">
+		<h3>Conclusion</h3>
+		<p class="wordblock">
+			It was interesting getting to redesign something I personally use almost everyday. I got to rethink functions that already exist. These functions were fairly complex, so with this project, I needed to focus on creating clarity through visuals.
+		</p>
+	</section>
+	</section>
+	<section class="goProject beginningBlock"> 
+		<a href="../nest/nest.html" class="otherProject block"">
+			<div class="mask">
+				<video style="top: -85px; left:-45%;" autoplay loop>
+					<source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4"></video>
+			</div>
+			<div class="wordblock">
+				<h5>Previous Project</h5>
+				Nest Schedule Redesign
+			</div>
+		</a>
+		<a href="../selfCare/selfCare.html" class="otherProject block">
+			<div class="mask">
+				<video style="height: 500px; left: auto; right: 0" autoplay loop>
+					<source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="wordblock">
+				<h5>Next Project</h5>
+				The Importance of Self Care
+			</div>
+		</a>
 	</section>
 	<section>
 		<p class="footer">
