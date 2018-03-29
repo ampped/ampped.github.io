@@ -18,7 +18,9 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
   margin: 0; }
 
 h1 {
@@ -26,8 +28,7 @@ h1 {
   margin-bottom: 30px;
   font-size: 36pt;
   font-weight: 800;
-  line-height: 36pt;
-  border-bottom: solid 5px #D1f084; }
+  line-height: 36pt; }
 
 h2 {
   font-size: 22pt;
@@ -58,19 +59,28 @@ video, img {
 
 a, .button {
   text-decoration: none;
-  font: 500 14pt "proxima-nova", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 14pt;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #1d2349;
   box-sizing: border-box;
   fill: none;
   stroke: #1d2349;
   stroke-width: 1px;
-  border-bottom: solid 2px transparent; }
+  border-bottom: solid 1px rgba(0, 0, 0, 0); }
   a:hover, .button:hover {
-    border-color: #B995F0; }
+    color: #A263FF;
+    border-color: #A263FF; }
 
 ul {
-  font: 500 15pt/32pt "proxima-nova", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 15pt;
+  line-height: 32pt;
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -91,11 +101,23 @@ nav {
     margin: 0 30px;
     color: #1d2349;
     pointer-events: initial; }
+    nav a:hover {
+      border-bottom: solid 1px #A263FF;
+      color: #A263FF; }
+  nav .mobileMenuButton {
+    display: none; }
   nav.showing {
     top: 0; }
+  nav.solidBG {
+    background-color: #FFF;
+    box-shadow: 0 0 10px #902EFF; }
+
+.mobileNav {
+  display: none; }
 
 section {
-  width: 100%; }
+  width: 100%;
+  box-sizing: border-box; }
   section:focus {
     outline: none; }
 
@@ -205,7 +227,7 @@ svg {
 
 .loadStroke {
   fill: none;
-  stroke: #B995F0;
+  stroke: #A263FF;
   stroke-width: 2;
   stroke-miterlimit: 10; }
 
@@ -216,22 +238,22 @@ svg {
 /*specific elements organized by part */
 .logo {
   position: fixed;
-  top: 160px;
-  left: 20px;
+  top: 1.7ex;
+  left: 2.5ex;
   width: auto;
-  height: 15vw;
-  z-index: -1;
+  height: 2.5em;
+  z-index: 3;
   stroke-width: 1px;
   fill: none;
-  stroke: #B995F0;
+  stroke: #A263FF;
   stroke-miterlimit: 10;
   transition: 0.5s ease-in-out; }
   .logo.shrink {
     position: fixed;
-    animation: shrinkLogo 0.5s ease-in-out forwards;
-    -o-animation: shrinkLogo 0.5s ease-in-out forwards;
-    -moz-animation: shrinkLogo 0.5s ease-in-out forwards;
-    -webkit-animation: shrinkLogo 0.5s ease-in-out forwards; }
+    /*animation: shrinkLogo 0.5s ease-in-out forwards */
+    /*-o-animation: shrinkLogo 0.5s ease-in-out forwards */
+    /*-moz-animation: shrinkLogo 0.5s ease-in-out forwards */
+    /*-webkit-animation: shrinkLogo 0.5s ease-in-out forwards */ }
   .logo.grow {
     position: fixed;
     animation: growLogo 0.5s ease-in-out forwards;
@@ -241,9 +263,9 @@ svg {
 
 @keyframes shrinkLogo {
   0% {
-    top: 160px;
-    left: 20px;
-    height: 15vw;
+    top: 12.5em;
+    left: 4vw;
+    height: 10vw;
     stroke-width: 1px; }
   100% {
     top: 10px;
@@ -257,16 +279,22 @@ svg {
     height: 36px;
     stroke-width: 3px; }
   100% {
-    top: 160px;
-    left: 20px;
-    height: 15vw;
+    top: 12.5em;
+    left: 4vw;
+    height: 10vw;
     stroke-width: 1px; } }
 #aboutInfo {
-  width: auto;
-  text-align: left;
-  margin-left: 50%;
+  text-align: center;
   position: relative;
-  padding: 180px 7vw 0 0; }
+  padding-top: 180px; }
+  #aboutInfo p {
+    font-size: 15pt;
+    display: block; }
+
+.nameLetter {
+  height: 1.5em;
+  transform: translateY(0.2ex);
+  margin-right: 0.25ex; }
 
 .general {
   box-sizing: border-box;
@@ -307,10 +335,13 @@ svg {
 .aspirations {
   height: 50px;
   text-align: center;
-  margin-top: 30px; }
+  width: 50%;
+  margin-left: 40%;
+  margin-top: 30px;
+  position: relative; }
   .aspirations svg {
     position: absolute;
-    left: 7%; }
+    left: 60%; }
 
 .animated {
   left: 8%;
@@ -346,6 +377,8 @@ svg {
   overflow: hidden;
   text-align: center;
   border: none; }
+  .project .mobileTN {
+    display: none; }
   .project video {
     position: absolute;
     left: 0;
@@ -356,7 +389,11 @@ svg {
     position: relative;
     margin: 0;
     color: #FFF;
-    font: 500 2em "proxima-nova", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0;
+    font-size: 2em;
+    line-height: 1.3em;
     top: 52%;
     transform: translateY(-50%);
     -o-transform: translateY(-50%);
@@ -484,7 +521,7 @@ form {
 
 .control-border {
   box-sizing: content-box;
-  border-bottom: 2px solid #B995F0;
+  border-bottom: 2px solid #A263FF;
   width: 0;
   height: 100%;
   position: absolute;
@@ -496,9 +533,13 @@ form {
   width: 100%; }
 
 .label {
-  font: 600 12pt "proxima-nova", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 12pt;
+  font-weight: 600;
   width: 100%;
-  height: 30px;
+  height: 30pt;
   position: absolute;
   top: 100%;
   overflow: hidden; }
@@ -560,5 +601,78 @@ textarea:focus ~ .placeholder p {
   color: #AAA;
   stroke: #AAA;
   pointer-events: none; }
+
+@media only screen and (max-width: 480px) {
+  nav {
+    background-color: #FFF;
+    height: 4.5em;
+    pointer-events: initial; }
+    nav a {
+      display: none; }
+    nav .mobileMenuButton {
+      display: inline-block;
+      height: 95%;
+      cursor: pointer; }
+
+  .mobileNav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    padding: 5em 4em;
+    z-index: 5; }
+    .mobileNav a {
+      display: inline-block;
+      font-size: 2em;
+      margin-bottom: 1em; }
+    .mobileNav.showing {
+      display: block; }
+    .mobileNav .mobileClose {
+      height: 2.4em;
+      position: absolute;
+      top: 2ex;
+      left: 46ex;
+      cursor: pointer; }
+
+  .logo {
+    left: 50vw;
+    transform: translateX(-50%); }
+
+  .general h1 {
+    text-align: center;
+    width: 100%; }
+
+  .general div, #contactForm {
+    display: block;
+    width: 100%; }
+
+  #contactInfo {
+    padding-top: 3em; }
+
+  #contactForm {
+    padding: 0 7vw; }
+
+  .project {
+    width: 165%; }
+    .project .mobileTN {
+      display: inline-block;
+      width: 115%;
+      transform: translateX(-25%);
+      max-width: initial; }
+    .project video {
+      display: none; }
+    .project::before {
+      display: none; }
+    .project p {
+      display: none; }
+
+  #aboutInfo {
+    width: 100%;
+    margin-left: 0;
+    padding: 180px 10vw; }
+
+  .aspirations {
+    width: 100px;
+    margin: 0; } }
 
 /*# sourceMappingURL=base.css.map */

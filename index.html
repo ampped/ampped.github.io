@@ -3,7 +3,7 @@
 <html>
 <head>
 	<link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F71586415184158" title="oEmbed Form"><link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F71586415184158" title="oEmbed Form">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:600,700" rel="stylesheet">
 	<script src="https://use.typekit.net/fjl2lti.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="styles/base.css">
@@ -25,14 +25,18 @@
 				window.alert("Thanks for the message! I'll be sure to get back to you soon!");
 			}
 
-			if(jQuery(window).scrollTop() > (jQuery('#work').position().top/2))
-				jQuery('.logo').attr('class', 'logo shrink');
+			//if(jQuery(window).scrollTop() > (jQuery('#work').position().top/2))
+				//jQuery('.logo').attr('class', 'logo shrink');
 
 			jQuery.noConflict();
 			strokeEffect();
 			formEffect();
 			//project();
 			scrollEffect();
+
+			jQuery('h1').append('<br><svg xmlns="http://www.w3.org/2000/svg" width="139" height="31" viewBox="0 0 139 31"><style type="text/css">' +
+		'.st0{fill:none;stroke:#D1F084;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
+	'</style><path class="st0" d="M5.1 21.3c7.5 0 10.1-3.4 12.9-5.8 3-2.6 5.3-5.8 12.9-5.8s10.1 3.4 12.9 5.8c3 2.6 5.3 5.8 12.9 5.8s9.9-3.2 12.9-5.8c2.8-2.4 5.3-5.8 12.9-5.8s10.1 3.4 12.9 5.8c3 2.6 5.3 5.8 12.9 5.8 7.5 0 9.9-3.2 12.9-5.8 2.8-2.4 5.3-5.8 12.9-5.8"/></svg>');
 		}
 	</script>
 </head>
@@ -105,14 +109,35 @@
 		}
 	</script>
 <nav class="showing">
+	<img src="logo.svg" class="logo shrink">
+	<img src="mobileMenu.svg" class="mobileMenuButton">
 	<a href="javascript:;" data-link="#about">About</a>
 	<a href="javascript:;" data-link="#work">Work</a>
 	<a href="Pham_resume.pdf" target="_blank">Resume</a>
 	<a href="javascript:;" data-link="#contact">Contact</a>
 </nav>
+<div class="mobileNav">
+	<img src="mobileClose.svg" class="mobileClose">
+	<img src="logo.svg" class="logo shrink"><br><br><br>
+	<a href="javascript:;" data-link="#about">About</a><br>
+	<a href="javascript:;" data-link="#work">Work</a><br>
+	<a href="Pham_resume.pdf" target="_blank">Resume</a><br>
+	<a href="javascript:;" data-link="#contact">Contact</a><br>
+</div>
+<script type="text/javascript">
+	jQuery('.mobileMenuButton').click(function(){
+		jQuery('.mobileNav').addClass('showing');
+	});
+	jQuery('.mobileClose').click(function(){
+		jQuery('.mobileNav').removeClass('showing');
+	});
+	jQuery('.mobileNav').children('a').click(function(){
+		jQuery('.mobileNav').removeClass('showing');
+	});
+</script>
 <main>
 	<section id="about" class="general">
-	<svg class="logo" xmlns="http://www.w3.org/2000/svg" width="717" height="196" viewBox="0 0 717 196">
+	<!--svg class="logo" xmlns="http://www.w3.org/2000/svg" width="717" height="196" viewBox="0 0 717 196">
 		<path class="logoPath" d="M297.9 92.3l-86.4 86.4c1.3 1.3 3 2.1 4.9 2.1h165.1c2.6 0 4.7-2.1 4.7-4.7V22c0-8-7.8-10.5-12.3-6L297.9 92.3"/>
 		<path class="logoPath" d="M465.7 13.8c6.7 0 13.1 0 20.2 0 35.6 0 64.4 27.2 64.4 60.8s-28.8 60.8-64.4 60.8c-7.1 0-13.5 0-20.2 0"/>
 		<path class="logoPath" d="M465.7 13.8h-37.4c-3.8 0-6.8 3-6.8 6.8v153.3c0 3.8 3 6.8 6.8 6.8h30.6c3.8 0 6.8-3 6.8-6.8V13.8z"/>
@@ -143,10 +168,10 @@
 		<path class="logoPath" d="M233.2 157c15.4 1.8 24.5-0.4 36.8-11.6 14.8-13.5 54.3-68.5 60-85.2"/>
 		<path class="logoPath" d="M347.4 42.8c12-8.4 28.3-11 38.9 4.7"/>
 		<path class="logoPath" d="M368.4 21.7c10.5-0.1 17.9 2.8 17.9 10"/>
-	</svg>
+	</svg-->
 		<section id="aboutInfo">
-			<h1>Halloo! I'm Amy!</h1>
-			<p>I'm an RIT New Media Design student finding my way in the world, trying to decide between my loves&mdash;</p>
+			<h1>Halloo!</h1>
+			<p>I'm <img src="logoLetters/A.svg" class="nameLetter">my &nbsp;&nbsp;<img src="logoLetters/M.svg" class="nameLetter">ai &nbsp;&nbsp;<img src="logoLetters/P.svg" class="nameLetter">huong &nbsp;&nbsp;<img src="logoLetters/P.svg" class="nameLetter">ham,<br>an RIT New Media Design student who loves all the parts that go into creating experiences.</p>
 		</div>
 
 		<div class="aspirations">
@@ -286,12 +311,12 @@
 		</section>
 	</section>
 	<section id="work"><!--
-		--><a href="projects/powerPoses/powerposes.html" class="project block"><video style="width: 100%; left: 0%; top: 0%;" loop><source src="projects/powerPoses/pose2.webm" type="video/webm"><source src="projects/powerPoses/pose2.mp4" type="video/mp4"></video><p>Power Poses Exhibit</p></a><!--
-		--><a href="projects/nest/nest.html" class="project block""><video style="width: 100%; top: -18%;" loop><source src="projects/nest/addNode.webm" type="video/webm"><source src="projects/nest/addNode.mp4" type="video/mp4"></video><p>Nest Schedule Redesign</p></a><!--
-		--><a href="projects/myCourses/myCourses.html" class="project block"><video style="width: 100%; bottom: -13%" loop><source src="projects/myCourses/prototype.webm" type="video/webm"><source src="projects/myCourses/prototype.mp4" type="video/mp4"></video><p>MyCourses Redesign</p></a><!--
-		--><a href="projects/selfCare/selfCare.html" class="project block"><video style="width: 100%" loop><source src="projects/selfCare/landscapeStill.webm" type="video/webm">><source src="projects/selfCare/landscapeStill.mp4" type="video/mp4"></video><p>The Importance of Self Care</p></a><!--
-		--><a href="projects/usatoday/usatoday.html" class="project block"><video style="width: 120%; left: -15%; top: -38%;" loop><source src="projects/usatoday/mockup.webm" type="video/webm"><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video><p>USA TODAY Mobile Experience</p></a><!--
-		><a href="projects/taw/thoughtatwork.html" class="project block"><video style="width: 120%; left: -15%; top: -38%;" loop><source src="projects/.webm" type="video/webm"><source src="projects/.mp4" type="video/mp4"></video><p>Thought At Work Conference</p></a-->
+		--><a href="projects/powerPoses/powerposes.html" class="project block"><video style="width: 100%; left: 0%; top: 0%;" loop><source src="projects/powerPoses/pose2.webm" type="video/webm"><source src="projects/powerPoses/pose2.mp4" type="video/mp4"></video><img src="projects/powerPoses/comp_pose.png" class="mobileTN"><p>Power Poses Exhibit</p></a><!--
+		--><a href="projects/nest/nest.html" class="project block""><video style="width: 100%; top: -18%;" loop><source src="projects/nest/addNode.webm" type="video/webm"><source src="projects/nest/addNode.mp4" type="video/mp4"></video><img src="projects/nest/base.webp" class="mobileTN"><p>Nest Schedule Redesign</p></a><!--
+		--><a href="projects/getRead-y/getready.html" class="project block"><video style="width: 160%; left: -25%" loop><source src="projects/getRead-y/ARmockup.webm" type="video/webm"><source src="projects/getRead-y/ARmockup.mp4" type="video/mp4"></video><img src="projects/getRead-y/ARmockup.png" class="mobileTN"><p>Get Read-y AR Concept</p></a><!--
+		--><a href="projects/selfCare/selfCare.html" class="project block"><video style="width: 100%" loop><source src="projects/selfCare/landscapeStill.webm" type="video/webm"><source src="projects/selfCare/landscapeStill.mp4" type="video/mp4"></video><img src="projects/selfCare/landscape.webp" class="mobileTN"><p>The Importance of Self Care</p></a><!--
+		--><a href="projects/usatoday/usatoday.html" class="project block"><video style="width: 120%; left: -15%; top: -38%;" loop><source src="projects/usatoday/mockup.webm" type="video/webm"><source src="projects/usatoday/mockup.mp4" type="video/mp4"></video><img src="projects/usatoday/mockup.png" class="mobileTN"><p>USA TODAY Mobile Experience</p></a><!--
+		--><a href="projects/taw/thoughtatwork.html" class="project block"><video style="width: 120%; left: -15%; top: -38%;" loop><source src="projects/taw/modalPrototype.webm" type="video/webm"><source src="projects/taw/modalPrototype.mp4" type="video/mp4"></video><img src="" class="mobileTN"><p>Thought At Work 2017</p></a>
 	</section>
 	<script type="text/javascript">
 		jQuery('.project').hover(function(){
@@ -304,7 +329,6 @@
 		<div id="contactInfo" class="info block">
 			<h1>Contact Me</h1>
 			<p>If you want to have a chat about new media-ish, design-y things or otherwise, drop me a line!</p><p>You can reach me at amysvk@gmail.com or with this handy-dandy form here.</p>
-			<p class="footer">&copy; Designed &amp; developed by Amy Pham</p>
 		</div><!--
 		--><form id="contactForm" class="jotform-form block" action="https://submit.jotform.us/submit/71586415184158/" method="post" name="form_71586415184158" id="71586415184158" accept-charset="utf-8">
 		  <input type="hidden" name="formID" value="71586415184158" />

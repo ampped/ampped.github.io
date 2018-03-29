@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
 	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:600,700" rel="stylesheet">
 	<script src="https://use.typekit.net/fjl2lti.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -91,15 +91,14 @@
 		  }
 		}
 	</script>
-<div class="scene_element scene_element--fadeIn">
+<div id="headerVid" class="scene_element--fadeIn">
+	<video autoplay loop>
+		<source src="pose2.webm" type="video/webm">
+		<source src="pose2.mp4" type="video/mp4">
+	</video>
+</div>
 <main class="scene_element scene_element--fadeInUp">
 	<section class="overview">
-		<div id="headerVid">
-			<video autoplay loop>
-				<source src="pose2.webm" type="video/webm">
-				<source src="pose2.mp4" type="video/mp4">
-			</video>
-		</div>
 		<section class="overviewInfo">
 			<h1>Power Poses Exhibit</h1>
 			<div class="story">
@@ -154,13 +153,13 @@
 			<h5>Messages</h5><br>
 			<p class="IAthemes">Changing your body by doing poses can temporarily change the chemicals produced by your brain.</p>
 			<p class="IAthemes">Doing powerful poses can give you a confidence boost. On the other hand, holding poses that are considered “weak” can make you feel weaker.</p>
-			<p class="IAthemes">Users should aware of what kind of poses they make and how powerful they feel. Then understand that they can control it by changing their body language.</p>
+			<p class="IAthemes">Users should be aware of what kind of poses they make and how powerful they feel. Then understand that they can control it by changing their body language.</p>
 			<img src="ia.png" style="margin: 0 auto; display: block">
 		</div>
 	</section>
 	<section id="wireframes" class="beginningBlock landscape">
 		<h3>Wireframes</h3>
-		<div style="width: 43%">
+		<div>
 			<ul class="pages">
 				<li class="selected">Introduction</li>
 				<li>Initiate</li>
@@ -231,7 +230,7 @@
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
 		<h3>Mood</h3>
-		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.png" style="max-width: 1200px; width: 56%; position: relative; left: 0; display: inline-block;">
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.png">
 		<div>
 			<p>The exhibit should look like a high-tech experience to catch visitors passing by. Other visuals should empower the user but still give space for reflection.</p>
 			<ul>
@@ -254,7 +253,7 @@
 	<section class="conclusion beginningBlock">
 		<h3>Conclusion</h3>
 		<p class="wordblock">
-			Researching the experiment, this project evolved to a degree I never would have expected. I had to prove the placebo effect, which required putting more thought into the interactions and overarching narrative of the experience. And because that's an abstract goal, I had to put more effort into creating a means to get the message across.
+			After researching the experiment, this project evolved to a degree I never would have expected. I had to prove the placebo effect, which required putting more thought into the interactions and overarching narrative of the experience. And because that's an abstract goal, I had to put more effort into creating a means to get the message across.
 		</p>
 	</section>
 	<section class="goProject beginningBlock"> 

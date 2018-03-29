@@ -62,9 +62,10 @@ a, .button {
   fill: none;
   stroke: #1d2349;
   stroke-width: 1px;
-  border-bottom: solid 2px transparent; }
+  border-bottom: solid 2px rgba(0, 0, 0, 0); }
   a:hover, .button:hover {
-    border-color: #B995F0; }
+    color: #A263FF;
+    border-color: #A263FF; }
 
 ul {
   font: 500 15pt/32pt "Montserrat", sans-serif;
@@ -201,7 +202,7 @@ svg {
 
 .loadStroke {
   fill: none;
-  stroke: #B995F0;
+  stroke: #A263FF;
   stroke-width: 2;
   stroke-miterlimit: 10; }
 
@@ -219,7 +220,7 @@ svg {
   z-index: -1;
   stroke-width: 1px;
   fill: none;
-  stroke: #B995F0;
+  stroke: #A263FF;
   stroke-miterlimit: 10;
   transition: 0.5s ease-in-out; }
   .logo.shrink {
@@ -442,7 +443,7 @@ form {
 
 .control-border {
   box-sizing: content-box;
-  border-bottom: 2px solid #B995F0;
+  border-bottom: 2px solid #A263FF;
   width: 0;
   height: 100%;
   position: absolute;

@@ -6,18 +6,20 @@
 	<link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="../../favicon-24x24.png" sizes="24x24" />
 	<link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:600,700" rel="stylesheet">
 	<script src="https://use.typekit.net/fjl2lti.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../styles/base.css">
-	<link rel="stylesheet" type="text/css" href="../../styles/work.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/base2.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/work2.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/toast/css/grid.css">
 	<script src="../../js/addNav.js"></script>
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
 		window.onload = function(){
 			addNav();
+			addSquiggles();
 		}
 	</script>
 </head>
@@ -91,22 +93,28 @@
 	</script>
 <div class="scene_element scene_element--fadeIn">
 <header>
-	<div id="headerVid"><video style="position: relative; bottom: 70%; z-index: -1" autoplay loop><source src="mockup.webm" type="video/webm"><source src="mockup.mp4" type="video/mp4"></video>
-	</div>
-	<div id="headerInfo">
-		<h1>USA TODAY Mobile Experience</h1>
-		<h4>UX Design</h4>
-		<h4>UI Design</h4>
-		<h4>Prototype Animation</h4>
-	</div>
 </header>
 <main class="scene_element scene_element--fadeInUp">
 	<section class="overview">
-		<div class="wordblock">
-			<h3>Story</h3><br>
-			<p>USA TODAY came to our class one day and asked us to help them. They had been having trouble reaching their target demographic of millennials aged 22-35, and wanted us to design a mobile-first experience to do so.</p>
-			<p class="right">This audience is used to getting news from places like social media, podcasts, and blogs. To them, the USA TODAY brand seems like just another dry, factual newspaper that does not suit their interests. I worked with a partner to create a mobile-first experience that delivers news in a form that is more relevant to millennials.</p>
+		<div id="headerVid">
+			<video style="position: relative; bottom: 70%; z-index: -1" autoplay loop>
+				<source src="mockup.webm" type="video/webm">
+				<source src="mockup.mp4" type="video/mp4">
+			</video>
 		</div>
+		<section class="overviewInfo">
+			<h1>USA TODAY Mobile Experience</h1>
+			<div class="story">
+				<p>USA TODAY came to our class one day and asked us to help them with their goal of reaching their target demographic: millennials ages 22-35.</p><br>
+				<p>This audience is used to getting news from places like social media, podcasts, and blogs. USA TODAY's brand seems like just another dry, factual newspaper that does not suit their interests. I worked with a partner to create a <strong>mobile-first experience that delivers news in a form that is more relevant to millennials.</strong></p>
+			</div>
+			<ul class="skills">
+				<li class="header">skills focused on</li>
+				<li>UX Design</li>
+				<li>UI Design</li>
+				<li>Prototype Animation</li>
+			</ul>
+		</section>
 	</section>
 	<section class="previewVid beginningBlock">
 		<video autoplay loop><source src="mockup.webm" type="video/webm"><source src="mockup.mp4" type="video/mp4"></video>
@@ -114,38 +122,9 @@
 	<section class="beginningBlock">
 		<div id="research">
 			<h3>Research</h3><br>
-			<div class="researchItem pieStat">
-				<svg xmlns="http://www.w3.org/2000/svg" width="365" height="365" viewBox="0 0 365 365">
-				<path class="st0" d="M182.5 182.5V0C283.3 0 365 81.7 365 182.5S283.3 365 182.5 365 0 283.3 0 182.5c0-31.2 5.7-55 19.9-82.8L182.5 182.5z"/>
-				<path class="st1" d="M182.5 182.5L19.9 99.6c18.9-37.1 47.8-65 85.5-82.5L182.5 182.5z"/>
-				<path class="st2" d="M182.5 182.5L105.4 17.1C130.5 5.4 154.8 0 182.5 0V182.5z"/>
-				</svg>
-				<div class="wordblock">
-					<h5>When do you generally check the news?</h5><br>
-					<div class="keyColor st0"></div><h5 class="num">Whenever</h5><br>
-					<div class="keyColor st1"></div><h5 class="num">When I get notifications</h5><br>
-					<div class="keyColor st2"></div><h5 class="num">I have a specific time for it</h5>
-				</div>
-			</div><!--
-			--><div class="researchItem pieStat right">
-				<svg xmlns="http://www.w3.org/2000/svg" width="365" height="365" viewBox="0 0 365.3 365.2">
-				<path class="st0" d="M182.8 182.7V0.2c100.8 0 182.5 81.7 182.5 182.5s-81.7 182.5-182.5 182.5c-20.8 0-36.6-2.5-56.4-8.9L182.8 182.7z"/>
-				<path class="st1" d="M182.8 182.7l-56.4 173.6c-66-21.5-111.3-73.5-123.3-141.9L182.8 182.7z"/>
-				<path class="st2" d="M182.8 182.7L3.1 214.4c-7.2-41-1.8-77.4 17.1-114.5L182.8 182.7z"/>
-				<path class="st3" d="M182.8 182.7L20.2 99.8c18.9-37.1 47.8-65 85.5-82.5L182.8 182.7z"/>
-				<path class="st4" d="M182.8 182.7L105.7 17.3c25.1-11.7 49.4-17.1 77.1-17.1V182.7z"/>
-				</svg>
-				<div class="wordblock">
-					<h5>At what point of the day do you check?</h5><br>
-					<div class="keyColor st0"></div><h5 class="num">In my free time</h5><br>
-					<div class="keyColor st1"></div><h5 class="num">Right before sleeping</h5><br>
-					<div class="keyColor st2"></div><h5 class="num">On the way to a destination</h5><br>
-					<div class="keyColor st3"></div><h5 class="num">While preparing for the day</h5><br>
-					<div class="keyColor st4"></div><h5 class="num">While working on something else</h5>
-				</div>
-			</div>
-			<div class="researchItem barStat full">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 228" style="width: calc(55% - 70px)">
+			<div class="surveyItem">
+			<div class="surveyItem barStat grid__col grid__col--1-of-2">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680.2 228">
 				<rect x="150.2" y="0" class="st1" width="424" height="29.6"/>
 				<rect x="150.2" y="65.7" class="st0" width="530" height="29.6"/>
 				<rect x="150.2" y="131.4" class="st2" width="35.3" height="29.6"/>
@@ -155,23 +134,64 @@
 				<text text-anchor="end" x="118.3" y="141.3" class="num multiline">Preview</text>
 				<text text-anchor="end" x="118.3" y="172.3" class="num multiline">Picture</text>
 				<text text-anchor="end" x="118.3" y="223" class="num">Source</text>
-				</svg><!--
-				--><div class="wordblock">
-					<h5>What influences you to read an article?</h5>
-					<h4>Topic or Headline</h4>
+				</svg>
+			</div>
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">What influences you to read an article?</p>
+				<p class="finding">Topic or Headline</p>
+				<p class="topic conclusion">Although pictures and sources are quicker to analyze, content is most easily understood through words.</p>
+			</div>
+			</div>
+			<div class="surveyItem">
+			<div class="grid__col grid__col--1-of-2">
+				<div class="surveyItem pieStat">
+				<svg xmlns="http://www.w3.org/2000/svg" width="365" height="365" viewBox="0 0 365 365">
+				<path class="st0" d="M182.5 182.5V0C283.3 0 365 81.7 365 182.5S283.3 365 182.5 365 0 283.3 0 182.5c0-31.2 5.7-55 19.9-82.8L182.5 182.5z"/>
+				<path class="st1" d="M182.5 182.5L19.9 99.6c18.9-37.1 47.8-65 85.5-82.5L182.5 182.5z"/>
+				<path class="st2" d="M182.5 182.5L105.4 17.1C130.5 5.4 154.8 0 182.5 0V182.5z"/>
+				</svg>
+				<div class="wordblock">
+					<div class="keyColor st0"></div><h5 class="num">Whenever</h5><br>
+					<div class="keyColor st1"></div><h5 class="num">When I get notifications</h5><br>
+					<div class="keyColor st2"></div><h5 class="num">I have a specific time for it</h5>
+				</div>
 				</div>
 			</div>
-			<div class="overview comparison wordblock">
-				<h4>Survey Findings</h4><br><br>
-				<p>After surveying 29 millennials, we found that most of them do not have a set time to sit down and check the news. They lead busy lives and will check at any small, idle moment, such as before bed or while riding a bus.</p><!--
-				--><p class="right">With such limited time, this demographic will not have the commitment to be fully engaged with the news. Therefore, we chose to focus on redesigning how bookmarking works. Since this action can be done in an instant, make the most of those small moments.</p>
-			</div><br><br>
-			<div class="comparison">
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">When do you generally check the news?</p><br>
+				<p class="finding">Whenever</p>
+			</div>
+			<div class="grid__col grid__col--1-of-2">
+				<div class="surveyItem pieStat">
+				<svg xmlns="http://www.w3.org/2000/svg" width="365" height="365" viewBox="0 0 365.3 365.2">
+				<path class="st0" d="M182.8 182.7V0.2c100.8 0 182.5 81.7 182.5 182.5s-81.7 182.5-182.5 182.5c-20.8 0-36.6-2.5-56.4-8.9L182.8 182.7z"/>
+				<path class="st1" d="M182.8 182.7l-56.4 173.6c-66-21.5-111.3-73.5-123.3-141.9L182.8 182.7z"/>
+				<path class="st2" d="M182.8 182.7L3.1 214.4c-7.2-41-1.8-77.4 17.1-114.5L182.8 182.7z"/>
+				<path class="st3" d="M182.8 182.7L20.2 99.8c18.9-37.1 47.8-65 85.5-82.5L182.8 182.7z"/>
+				<path class="st4" d="M182.8 182.7L105.7 17.3c25.1-11.7 49.4-17.1 77.1-17.1V182.7z"/>
+				</svg>
 				<div class="wordblock">
-				<h4>Current Interface</h4><br><br>
-				<p>To save an article in the current USA TODAY app, users tap the bookmark icon on each article. Tapping the icon again will unsave it. However, this icon is fairly small and can go unnoticed. The bookmarks page is nearly identical to the home feed. Bookmarking in the app is extremely simple, but USA TODAY misses an opportunity to make bookmarking meaningful.</p>
+					<div class="keyColor st0"></div><h5 class="num">In my free time</h5><br>
+					<div class="keyColor st1"></div><h5 class="num">Right before sleeping</h5><br>
+					<div class="keyColor st2"></div><h5 class="num">On the way to a destination</h5><br>
+					<div class="keyColor st3"></div><h5 class="num">While preparing for the day</h5><br>
+					<div class="keyColor st4"></div><h5 class="num">While working on something else</h5>
 				</div>
-				<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="current.webp" class="right">
+				</div>
+			</div>
+			<div class="grid__col grid__col--1-of-2">
+				<p class="topic">At what point of the day do you check?</p><br>
+				<p class="finding">During free time</p>
+				<p class="topic conclusion">Most of the 29 surveyed millennials do not have a set time to sit down and check the news. They lead busy lives and will check at any small, idle moment, such as before bed or while riding a bus.</p>
+			</div>
+
+				<br><br><br>
+			<div class="comparison">
+				<h4>Finding</h4><br><br><p>With such limited time, this demographic will not have the commitment to be fully engaged with the news. Therefore, we chose to focus on redesigning how bookmarking works. Since this action can be done in an instant, we can make the most of those small moments.</p>
+			</div><br>
+			<div class="comparison">
+				<h4>Current Interface</h4><br><br>
+				<img src="current.png" style="margin: 0 auto; display: block">
 			</div><br><br><br>
 			<h4>UI + UX Inspiration</h4><br>
 			<div class="researchItem inspo">
@@ -198,34 +218,36 @@
 		</div>
 	</section>
 	<section id="wireframes" class="beginningBlock landscape">
-		<h3>Wireframes</h3><!--
-		--><ul class="pages">
-			<li class="selected">Onboarding</li>
-			<li>Bookmarking Articles</li>
-			<li>Reading Bookmarks</li>
-			<li>Playlists</li>
-		</ul>
-		<div class="wordblock">
-		<p class="pageDesc selected">Users can go through an onboarding process when they open the app for the first time. Here, they can set a goal of how many articles they want to read a day, which article topics will appear in their feed, and how much their feed will focus on local versus national news.</p>
-		<p class="pageDesc">When users bookmark an opened article, they can save their spot by setting a point to start at the next time they open the article. Users can also choose a starting point for others when they share the article.</p>
-		<p class="pageDesc">To prevent the user from forgetting about their bookmarks, the app will remind the user of the daily goal they set during onboarding and reward them for achieving it.</p>
-		<p class="pageDesc">Users can browse through playlists of articles curated by USA TODAY on the playlists page. They can also make their own playlists and add articles from the home feed.</p>
-		<hr>
-		<p class="desc selected">Hover over a hotspot for more details</p>
+		<h3>Wireframes</h3>
+		<div style="width: 43%">
+			<ul class="pages">
+				<li class="selected">Onboarding</li>
+				<li>Bookmarking Articles</li>
+				<li>Reading Bookmarks</li>
+				<li>Playlists</li>
+			</ul>
+			<div class="wordblock">
+			<p class="pageDesc selected">Users can go through an onboarding process when they open the app for the first time. Here, they can set a goal of how many articles they want to read a day, which article topics will appear in their feed, and how much their feed will focus on local versus national news.</p>
+			<p class="pageDesc">When users bookmark an opened article, they can save their spot by setting a point to start at the next time they open the article. Users can also choose a starting point for others when they share the article.</p>
+			<p class="pageDesc">To prevent the user from forgetting about their bookmarks, the app will remind the user of the daily goal they set during onboarding and reward them for achieving it.</p>
+			<p class="pageDesc">Users can browse through playlists of articles curated by USA TODAY on the playlists page. They can also make their own playlists and add articles from the home feed.</p>
+			<hr>
+			<p class="desc selected">Hover over a hotspot for more details</p>
 
-		<p class="desc">Users can choose to go through the onboarding process or skip it to start reading.</p>
-		<p class="desc">Swiping up or down will increase or decrease the user's reading goal.</p>
-		<p class="desc">Tapping topics the user is interested will let the app know how to customize their feed.</p>
+			<p class="desc">Users can choose to go through the onboarding process or skip it to start reading.</p>
+			<p class="desc">Swiping up or down will increase or decrease the user's reading goal.</p>
+			<p class="desc">Tapping topics the user is interested will let the app know how to customize their feed.</p>
 
-		<p class="desc">Tapping either bookmark or share will open the set point mode.</p>
-		<p class="desc">Users drag this up or down the article to set their starting point.</p>
+			<p class="desc">Tapping either bookmark or share will open the set point mode.</p>
+			<p class="desc">Users drag this up or down the article to set their starting point.</p>
 
-		<p class="desc">A bar shows how many articles the user has to read before reaching their goal.</p>
-		<p class="desc">After achieving their daily goal, the user gets a congratulations message.</p>
+			<p class="desc">A bar shows how many articles the user has to read before reaching their goal.</p>
+			<p class="desc">After achieving their daily goal, the user gets a congratulations message.</p>
 
-		<p class="desc">Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>
-		<p class="desc">Tapping the close button will return the user to look through more playlists.</p>
-		<p class="desc">Dragging articles over a list thumbnail will add it to that list.</p>
+			<p class="desc">Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>
+			<p class="desc">Tapping the close button will return the user to look through more playlists.</p>
+			<p class="desc">Dragging articles over a list thumbnail will add it to that list.</p>
+			</div>
 		</div>
 		<div class="wf">
 			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFonboard.webp">
@@ -268,7 +290,7 @@
 		<div class="wordblock">
 			<h3>Final Design</h3><br>
 		</div>
-		<div class="slider">
+		<!--div class="slider">
 			<button class="slider-control control-svg control-arrow control-next">
 				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="53" viewBox="0 0 29 53">
 				<polyline points="2.7,2.5 26.5,26.3 2.5,50.3 "/>
@@ -281,19 +303,44 @@
 			</button>
 			<div class="slider-control pagination">
 			</div>
-		</div>
+		</div-->
 		<script type="text/javascript">
-			var compSrcs = ['onboardFull', 'setpointFull', 'bookmarkFull', 'openListFull', 'createListFull'];
-			for(var i = 0; i < compSrcs.length; i++){
-				compSrcs[i] = '' + compSrcs[i];
-			}
-			createVideoSlider(compSrcs);
+			var compSrcs = ['onboardFull_mobile', 'setpointFull_mobile', 'bookmarkFull_mobile', 'openListFull_mobile', 'createListFull_mobile'];
+			createComps(compSrcs);
+			// for(var i = 0; i < compSrcs.length; i++){
+			// 	compSrcs[i] = '' + compSrcs[i];
+			// }
+			//createVideoSlider(compSrcs);
 		</script>
 	</section>
-	<section class="goProject"><a href="../selfCare/selfCare.html" class="project block"><video style="height: 500px; left: auto; right: 0" loop><source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video><div class="wordblock"><h5>Previous Project</h5><br><p>The Importance of Self Care<!--
-		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a><!--
-		--><a href="../nest/nest.html" class="project block""><video style="top: -85px; left:-45%;" loop><source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4"></video><div class="wordblock"><h5>Next Project</h5><br><p>Nest Schedule Redesign<!--
-		--><svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg></p></div></a>
+	<section class="conclusion beginningBlock">
+		<h3>Conclusion</h3>
+		<p class="wordblock">
+			What made this project different for me personally was the fact that we were able to get feedback from the actual client we were designing this for. It is very helpful to know what their specific goals are and how they thought. Working with a partner also made the project a lot different than how I would normally go about things. We clashed at points but we resolved our conflicts by asking for outside feedback and compromising.
+		</p>
+	</section>
+	<section class="goProject beginningBlock"> 
+		<a href="../usatoday/usatoday.html" class="otherProject block"">
+			<div class="mask">
+				<video style="top: -85px; left:-45%;" autoplay loop>
+					<source src="../usatoday/mockup.webm" type="video/webm"><source src="../usatoday/mockup.mp4" type="video/mp4"></video>
+			</div>
+			<div class="wordblock">
+				<h5>Previous Project</h5>
+				USATODAY Mobile Experience
+			</div>
+		</a>
+		<a href="../nest/nest.html" class="otherProject block">
+			<div class="mask">
+				<video style="height: 500px; left: auto; right: 0" autoplay loop>
+					<source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="wordblock">
+				<h5>Next Project</h5>
+				Nest Schedule Redesign
+			</div>
+		</a>
 	</section>
 	<section>
 		<p class="footer">
