@@ -4,7 +4,7 @@ $blue: #1d2349
 $purple: #A263FF
 $midPurple: #A263FF
 $darkerPurple: #902EFF
-$green: #D1f084
+$green: #AAEF25
 /*$darkerPurple: #972EFF*/
 /*$green: #D4FF69*/
 $white: #FFF
@@ -165,10 +165,10 @@ svg
 	position: absolute
 	top: 50%
 	left: 50%
-	transform: translate(-47%, -50%)
-	t-o-ransform: translate(-47%, -50%)
-	t-moz-ransform: translate(-47%, -50%)
-	t-webkit-ransform: translate(-47%, -50%)
+	transform: translate(-50%, -50%)
+	t-o-ransform: translate(-50%, -50%)
+	t-moz-ransform: translate(-50%, -50%)
+	t-webkit-ransform: translate(-50%, -50%)
 	img, video
 		opacity: 0
 		transform: scale(0.9, 0.9)
@@ -178,59 +178,64 @@ svg
 		transition: 0.2s ease-in-out
 
 	#tri
+		fill: none
+		stroke: $purple
+		stroke-width: 4
+		stroke-miterlimit: 10
 		animation: moveTri 2s infinite linear
 		-o-animation: moveTri 2s infinite linear
 		-moz-animation: moveTri 2s infinite linear
 		-webkit-animation: moveTri 2s infinite linear
-		transform-origin: 50% 63%
-		-o-transform-origin: 50% 63%
-		-moz-transform-origin: 50% 63%
-		-webkit-transform-origin: 50% 63%
+		transform-origin: 106px 122px
+		-o-transform-origin: 50% 50%
+		-moz-transform-origin: 50% 50%
+		-webkit-transform-origin: 50% 50%
+		z-index: 2
 
 @keyframes moveTri
 	0%
-		transform: translate(-30%, -12%) rotate(0deg)
-		-o-transform: translate(-30%, -12%) rotate(0deg)
-		-moz-transform: translate(-30%, -12%) rotate(0deg)
-		-webkit-transform: translate(-30%, -12%) rotate(0deg)
+		transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		-moz-transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
 	100%
-		transform: translate(-30%, -12%) rotate(360deg)
-		-o-transform: translate(-30%, -12%) rotate(360deg)
-		-moz-transform: translate(-30%, -12%) rotate(360deg)
-		-webkit-transform: translate(-30%, -12%) rotate(360deg)
+		transform: rotate(360deg)
+		-o-transform: rotate(360deg)
+		-moz-transform: rotate(360deg)
+		-webkit-transform: rotate(360deg)
 @-webkit-keyframes moveTri
 	0%
-		transform: translate(-30%, -12%) rotate(0deg)
-		-o-transform: translate(-30%, -12%) rotate(0deg)
-		-moz-transform: translate(-30%, -12%) rotate(0deg)
-		-webkit-transform: translate(-30%, -12%) rotate(0deg)
+		transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		-moz-transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
 	100%
-		transform: translate(-30%, -12%) rotate(360deg)
-		-o-transform: translate(-30%, -12%) rotate(360deg)
-		-moz-transform: translate(-30%, -12%) rotate(360deg)
-		-webkit-transform: translate(-30%, -12%) rotate(360deg)
+		transform: rotate(360deg)
+		-o-transform: rotate(360deg)
+		-moz-transform: rotate(360deg)
+		-webkit-transform: rotate(360deg)
 @-moz-keyframes moveTri
 	0%
-		transform: translate(-30%, -12%) rotate(0deg)
-		-o-transform: translate(-30%, -12%) rotate(0deg)
-		-moz-transform: translate(-30%, -12%) rotate(0deg)
-		-webkit-transform: translate(-30%, -12%) rotate(0deg)
+		transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		-moz-transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
 	100%
-		transform: translate(-30%, -12%) rotate(360deg)
-		-o-transform: translate(-30%, -12%) rotate(360deg)
-		-moz-transform: translate(-30%, -12%) rotate(360deg)
-		-webkit-transform: translate(-30%, -12%) rotate(360deg)
+		transform: rotate(360deg)
+		-o-transform: rotate(360deg)
+		-moz-transform: rotate(360deg)
+		-webkit-transform: rotate(360deg)
 @-o-keyframes moveTri
 	0%
-		transform: translate(-30%, -12%) rotate(0deg)
-		-o-transform: translate(-30%, -12%) rotate(0deg)
-		-moz-transform: translate(-30%, -12%) rotate(0deg)
-		-webkit-transform: translate(-30%, -12%) rotate(0deg)
+		transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		-moz-transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
 	100%
-		transform: translate(-30%, -12%) rotate(360deg)
-		-o-transform: translate(-30%, -12%) rotate(360deg)
-		-moz-transform: translate(-30%, -12%) rotate(360deg)
-		-webkit-transform: translate(-30%, -12%) rotate(360deg)
+		transform: rotate(360deg)
+		-o-transform: rotate(360deg)
+		-moz-transform: rotate(360deg)
+		-webkit-transform: rotate(360deg)
 	
 
 .info
@@ -238,10 +243,12 @@ svg
 	vertical-align: top
 
 .loadStroke
-	fill: none
-	stroke: $purple
-	stroke-width: 2
-	stroke-miterlimit: 10
+	fill: $purple
+	/*stroke: $purple*/
+	/*stroke-width: 2*/
+	/*stroke-miterlimit: 10*/
+.loadStrokeG
+	fill: $green
 
 .loadBG
 	clip-path: url(#clipMask)

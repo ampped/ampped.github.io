@@ -124,7 +124,7 @@ a {
         left: 0;
         width: 20px;
         height: 100%;
-        border-bottom: solid 4px #D1f084; }
+        border-bottom: solid 4px #AAEF25; }
   .overviewInfo .story {
     display: inline-block;
     width: 67%;
@@ -260,7 +260,7 @@ a {
         left: 0;
         width: 30px;
         height: 100%;
-        border-top: solid 4px #D1f084; }
+        border-top: solid 4px #AAEF25; }
   #research .finding {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -379,7 +379,7 @@ a {
 
 .st1 {
   fill: #FFF;
-  stroke: #D1f084;
+  stroke: #AAEF25;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;

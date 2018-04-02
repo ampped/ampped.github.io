@@ -295,7 +295,7 @@ header, section {
         opacity: 1;
         stroke: #A263FF;
         stroke-width: 8;
-        fill: transparent; }
+        fill: rgba(0, 0, 0, 0); }
   #wireframes .selected, #wireframes .hotspots.selected {
     display: inline-block; }
   #wireframes.landscape h3 {
