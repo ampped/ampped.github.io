@@ -223,71 +223,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</section>
 	<section id="wireframes" class="beginningBlock landscape">
 		<h3>Wireframes</h3>
-		<div style="width: 43%">
-			<ul class="pages">
-				<li class="selected">Onboarding</li>
-				<li>Bookmarking Articles</li>
-				<li>Reading Bookmarks</li>
-				<li>Playlists</li>
-			</ul>
-			<div class="wordblock">
-			<p class="pageDesc selected">Users can go through an onboarding process when they open the app for the first time. Here, they can set a goal of how many articles they want to read a day, which article topics will appear in their feed, and how much their feed will focus on local versus national news.</p>
-			<p class="pageDesc">When users bookmark an opened article, they can save their spot by setting a point to start at the next time they open the article. Users can also choose a starting point for others when they share the article.</p>
-			<p class="pageDesc">To prevent the user from forgetting about their bookmarks, the app will remind the user of the daily goal they set during onboarding and reward them for achieving it.</p>
-			<p class="pageDesc">Users can browse through playlists of articles curated by USA TODAY on the playlists page. They can also make their own playlists and add articles from the home feed.</p>
-			<hr>
-			<p class="desc selected">Hover over a hotspot for more details</p>
-
-			<p class="desc">Users can choose to go through the onboarding process or skip it to start reading.</p>
-			<p class="desc">Swiping up or down will increase or decrease the user's reading goal.</p>
-			<p class="desc">Tapping topics the user is interested will let the app know how to customize their feed.</p>
-
-			<p class="desc">Tapping either bookmark or share will open the set point mode.</p>
-			<p class="desc">Users drag this up or down the article to set their starting point.</p>
-
-			<p class="desc">A bar shows how many articles the user has to read before reaching their goal.</p>
-			<p class="desc">After achieving their daily goal, the user gets a congratulations message.</p>
-
-			<p class="desc">Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>
-			<p class="desc">Tapping the close button will return the user to look through more playlists.</p>
-			<p class="desc">Dragging articles over a list thumbnail will add it to that list.</p>
-			</div>
-		</div>
-		<div class="wf">
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFonboard.webp">
-			<div class="hotspots selected">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="266.5" cy="472.6" r="28.3"/>
-				<circle class="hotspot" cx="431.5" cy="390.8" r="28.3"/>
-				<circle class="hotspot" cx="900.4" cy="370.4" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="394.7" cy="31.7" r="28.3"/>
-				<circle class="hotspot" cx="804" cy="466.6" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="260.8" cy="124.2" r="28.3"/>
-				<circle class="hotspot" cx="862.8" cy="218.6" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="195.7" cy="286.9" r="28.3"/>
-				<circle class="hotspot" cx="623" cy="138.8" r="28.3"/>
-				<circle class="hotspot" cx="731.8" cy="527.9" r="28.3"/>
-				</svg>
-			</div>
-		</div>
 		<script type="text/javascript">
 			var wfSrcs = ['WFonboard.webp', 'WFsetpoint.webp', 'WFbookmark.webp', 'WFlists.webp'];
+
+			var pageNames = ['Onboarding','Bookmarking&nbsp;Articles','Reading&nbsp;Bookmarks','Playlists'];
+
+			var pageDescs = ['<p>Users can go through an onboarding process when they open the app for the first time. Here, they can set a goal of how many articles they want to read a day, which article topics will appear in their feed, and how much their feed will focus on local versus national news.</p>',
+			'<p>When users bookmark an opened article, they can save their spot by setting a point to start at the next time they open the article. Users can also choose a starting point for others when they share the article.</p>',
+			'<p>To prevent the user from forgetting about their bookmarks, the app will remind the user of the daily goal they set during onboarding and reward them for achieving it.</p>',
+			'<p>Users can browse through playlists of articles curated by USA TODAY on the playlists page. They can also make their own playlists and add articles from the home feed.</p>'];
+
+			var hotspots = [
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="266.5" cy="472.6" r="28.3"/>' +
+					'<circle class="hotspot" cx="431.5" cy="390.8" r="28.3"/>' +
+					'<circle class="hotspot" cx="900.4" cy="370.4" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="394.7" cy="31.7" r="28.3"/>' +
+					'<circle class="hotspot" cx="804" cy="466.6" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="260.8" cy="124.2" r="28.3"/>' +
+					'<circle class="hotspot" cx="862.8" cy="218.6" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="195.7" cy="286.9" r="28.3"/>' +
+					'<circle class="hotspot" cx="623" cy="138.8" r="28.3"/>' +
+					'<circle class="hotspot" cx="731.8" cy="527.9" r="28.3"/>' +
+					'</svg>' +
+				'</div>'];
+
+			var hsDescs = [
+				['<p>Users can choose to go through the onboarding process or skip it to start reading.</p>',
+				'<p>Swiping up or down will increase or decrease the user\'s reading goal.</p>',
+				'<p>Tapping topics the user is interested will let the app know how to customize their feed.</p>'],
+				['<p>Tapping either bookmark or share will open the set point mode.</p>',
+				'<p>Users drag this up or down the article to set their starting point.</p>'],
+				['<p>A bar shows how many articles the user has to read before reaching their goal.</p>',
+				'<p>After achieving their daily goal, the user gets a congratulations message.</p>'],
+				['<p>Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>',
+				'<p>Tapping the close button will return the user to look through more playlists.</p>',
+				'<p>Dragging articles over a list thumbnail will add it to that list.</p>']];
+
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
 		</script>
 	</section>
 	<section id="comps" class="beginningBlock">
@@ -324,25 +313,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</p>
 	</section>
 	<section class="goProject beginningBlock"> 
-		<a href="../usatoday/usatoday.html" class="otherProject block"">
+		<a href="../selfCare/selfCare.html" class="otherProject block"">
 			<div class="mask">
-				<video style="top: -85px; left:-45%;" autoplay loop>
-					<source src="../usatoday/mockup.webm" type="video/webm"><source src="../usatoday/mockup.mp4" type="video/mp4"></video>
+				<video style="width: 170%; left:-25%;" autoplay loop>
+					<source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video>
 			</div>
 			<div class="wordblock">
 				<h5>Previous Project</h5>
-				USATODAY Mobile Experience
+				The Important of Self Care
 			</div>
 		</a>
-		<a href="../nest/nest.html" class="otherProject block">
+		<a href="../taw/thoughtatwork.html" class="otherProject block">
 			<div class="mask">
-				<video style="height: 500px; left: auto; right: 0" autoplay loop>
-					<source src="../nest/addNode.webm" type="video/webm"><source src="../nest/addNode.mp4" type="video/mp4">
+				<video style="width: 130%;" autoplay loop>
+					<source src="../taw/modalPrototype.webm" type="video/webm"><source src="../taw/modalPrototype.mp4" type="video/mp4">
 				</video>
 			</div>
 			<div class="wordblock">
 				<h5>Next Project</h5>
-				Nest Schedule Redesign
+				Thought At Work 2018
 			</div>
 		</a>
 	</section>

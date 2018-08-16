@@ -1,6 +1,37 @@
 //written by Amy Pham
+function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs){
+	console.dir(hsDescs);
+	for(var i = 0; i < wfSrcs.length; i++){
+		jQuery('#wireframes').append('<div class="wf"><div class="pageDesc"><h4>' + pageNames[i] + '</h4>' + pageDescs[i] + '</div><div class="wfImg"><img src="'+wfSrcs[i]+'" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\">' + hotspots[i] + '<div class="desc"></div></div>');
+	}
 
-function setupWFDisplay(wfSrcs){
+	jQuery('.hotspot').each(function(){
+		jQuery(this).clone().insertAfter(this).attr('class', 'hotspotClone');
+	});
+
+	jQuery('.hotspot').hover(function(){
+		//select hotspot and change classes
+		var i = jQuery(this).index('.hotspot');
+		selectItem('desc', i + 1);
+		jQuery('.hotspot.selected').attr('class', 'hotspot');
+		jQuery(this).attr('class', 'hotspot selected');
+		jQuery('.hotspotClone.selected').attr('class', 'hotspotClone');
+		jQuery('.hotspotClone:eq(' + i + ')').attr('class', 'hotspotClone selected');
+
+		//change hotspot description box
+		var selectedDesc = jQuery(this).parent().parent().next();
+		selectedDesc.html('<p>' + hsDescs[jQuery(this).closest('.wf').index('.wf')][jQuery(this).index()/2] + '</p>');
+		selectedDesc.attr('class', 'desc selected');
+	});
+
+	jQuery('.wfImg').mouseleave(function(){
+		jQuery('.desc.selected').attr('class', 'desc');
+		jQuery('.hotspot.selected').attr('class', 'hotspot');
+		jQuery('.hotspotClone.selected').attr('class', 'hotspotClone');
+	});
+}
+
+function setupWFDisplayOld(wfSrcs){
 	jQuery('.pages>li').click(function(){
 		jQuery('.pages>.selected').removeClass('selected');
 		jQuery(this).addClass('selected');

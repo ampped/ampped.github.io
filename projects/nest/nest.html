@@ -187,83 +187,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</section>
 	<section id="wireframes" class="beginningBlock landscape">
 		<h3>Wireframes</h3>
-		<div>
-		<ul class="pages">
-			<li class="selected">Base</li>
-			<li>Add Target</li>
-			<li>Past Days</li>
-			<li>Templates</li>
-			<li>Smart Set</li>
-		</ul>
-		<div class="wordblock">
-		<p class="pageDesc selected">I chose to go with a circular interface that represents a 24 hour clock with sections colored according to the set temperature. At a quick glance, users can see and get an idea of what their thermostat schedule looks like.</p>
-		<p class="pageDesc">Clicking on the ring will add a temperature target at that time.</p>
-		<p class="pageDesc">When users schedule other days, they can see how much energy the thermostat used if the day has already passed.</p>
-		<p class="pageDesc">Users like Linda who have regular schedules can set up templates of targets to follow on certain days.</p>
-		<p class="pageDesc">Users can set their thermostat to automatically adjust to the outdoor temperature. They can also have multiple Smart Sets, so someone like Jon can easily change to a different set when their guests come over.</p>
-		<hr>
-		<p class="desc selected">Hover over a highlighted area for more details</p>
-		<p class="desc">Users can choose set schedules for individual thermostats throughout the house.</p>
-		<p class="desc">Current temperature and time are shown in the middle of the schedule.</p>
-		<p class="desc">A target will signal the thermostat to change the temperature at this time.</p>
-		<p class="desc">A triangle will signal which temperature the thermostat is currently set to.</p>
-
-		<p class="desc">Along with the set time for target, users will also see the temperature outside to make an informed decision.</p>
-		<p class="desc">Users can change the target temperature by adjusting this node as a dial.</p>
-		<p class="desc">Users can save preset temperatures to easily set targets in the future.</p>
-
-		<p class="desc">The brightness of the inner ring shows how energy efficient the user's settings were at that time of day.</p>
-		<p class="desc">Current temperature and time are not displayed if the selected schedule is not for the current day.</p>
-
-		<p class="desc">Temperature targets in templates have the same function in normal scheduling.</p>
-		<p class="desc">Users can turn set their thermostat to turn off when they leave the house.</p>
-
-		<p class="desc">For example, when the weather outside is about 25 degrees to 65 degrees, this user wants to set their house to 75 degrees.</p>
-		<p class="desc">Users can turn their thermostats off at a certain outdoor temperature if they do not need the indoor temperature to be different from outside.</p>
-		</div>
-		</div><!--
-		--><div class="wf">
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFbase.webp">
-			<div class="hotspots selected">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="487" cy="36.5" r="28.3"/>
-				<circle class="hotspot" cx="464" cy="340.5" r="28.3"/>
-				<circle class="hotspot" cx="694.5" cy="358.5" r="28.3"/>
-				<circle class="hotspot" cx="536.5" cy="416.5" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="709.5" cy="169.5" r="28.3"/>
-				<circle class="hotspot" cx="650.5" cy="232.5" r="28.3"/>
-				<circle class="hotspot" cx="789.5" cy="236.5" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="611.5" cy="284.5" r="28.3"/>
-				<circle class="hotspot" cx="509.5" cy="319.5" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="694.5" cy="358.5" r="28.3"/>
-				<circle class="hotspot" cx="404.5" cy="478.5" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 638">
-				<circle class="hotspot" cx="701.5" cy="319" r="28.3"/>
-				<circle class="hotspot" cx="333.5" cy="401.5" r="28.3"/>
-				</svg>
-			</div>
-		</div>
 		<script type="text/javascript">
 			var wfSrcs = ['WFbase.webp', 'WFadd.webp', 'WFpast.webp', 'WFtemplate.webp', 'WFsmart.webp'];
+
+			var pageNames = ['Base','Add&nbsp;Target','Past&nbsp;Days','Templates','Smart&nbsp;Set'];
+
+			var pageDescs = [
+			'<p>I chose to go with a circular interface that represents a 24 hour clock with sections colored according to the set temperature. At a quick glance, users can see and get an idea of what their thermostat schedule looks like.</p>',
+			'<p>Clicking on the ring will add a temperature target at that time.</p>',
+			'<p>When users schedule other days, they can see how much energy the thermostat used if the day has already passed.</p>',
+			'<p>Users like Linda who have regular schedules can set up templates of targets to follow on certain days.</p>',
+			'<p>Users can set their thermostat to automatically adjust to the outdoor temperature. They can also have multiple Smart Sets, so someone like Jon can easily change to a different set when their guests come over.</p>'];
+
+			var hotspots = [
+				'<div class="hotspots selected">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="487" cy="36.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="464" cy="340.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="694.5" cy="358.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="536.5" cy="416.5" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="709.5" cy="169.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="650.5" cy="232.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="789.5" cy="236.5" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="611.5" cy="284.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="509.5" cy="319.5" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="694.5" cy="358.5" r="28.3"/>' +
+					'<circle class="hotspot" cx="404.5" cy="478.5" r="28.3"/>' +
+					'</svg>' +
+				'</div>',
+				'<div class="hotspots">' +
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 638">' +
+					'<circle class="hotspot" cx="701.5" cy="319" r="28.3"/>' +
+					'<circle class="hotspot" cx="333.5" cy="401.5" r="28.3"/>' +
+					'</svg>' +
+				'</div>'];
+
+			var hsDescs = [['Hover over a highlighted area for more details',
+				'Users can choose set schedules for individual thermostats throughout the house.',
+				'Current temperature and time are shown in the middle of the schedule.',
+				'A target will signal the thermostat to change the temperature at this time.',
+				'A triangle will signal which temperature the thermostat is currently set to.'],
+				['Along with the set time for target, users will also see the temperature outside to make an informed decision.',
+				'Users can change the target temperature by adjusting this node as a dial.',
+				'Users can save preset temperatures to easily set targets in the future.'],
+				['The brightness of the inner ring shows how energy efficient the user\'s settings were at that time of day.',
+				'Current temperature and time are not displayed if the selected schedule is not for the current day.'],
+				['Temperature targets in templates have the same function in normal scheduling.',
+				'Users can turn set their thermostat to turn off when they leave the house.'],
+				['For example, when the weather outside is about 25 degrees to 65 degrees, this user wants to set their house to 75 degrees.',
+				'Users can turn their thermostats off at a certain outdoor temperature if they do not need the indoor temperature to be different from outside.']];
+
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
@@ -306,15 +295,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				Power Poses Exhibit
 			</div>
 		</a>
-		<a href="../myCourses/myCourses.html" class="otherProject block">
+		<a href="../selfCare/selfCare.html" class="otherProject block"">
 			<div class="mask">
-				<video style="width: 120%;" autoplay loop>
-					<source src="../myCourses/prototype.webm" type="video/webm"><source src="../myCourses/prototype.mp4" type="video/mp4">
-				</video>
+				<video style="width: 170%; left:-25%;" autoplay loop>
+					<source src="../selfCare/landscapeStill.webm" type="video/webm"><source src="../selfCare/landscapeStill.mp4" type="video/mp4"></video>
 			</div>
 			<div class="wordblock">
 				<h5>Next Project</h5>
-				myCourses Redesign
+				The Important of Self Care
 			</div>
 		</a>
 	</section>

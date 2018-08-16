@@ -407,78 +407,125 @@ a {
   text-align: left;
   max-width: 1000px;
   margin-right: auto;
-  margin-left: auto; }
-  #wireframes .wordblock {
-    max-width: 500px;
-    margin-right: 100px;
-    float: left; }
-  #wireframes .pages {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-    margin-bottom: 1ex;
-    float: left; }
-    #wireframes .pages li {
-      display: inline;
-      margin-right: 20px;
-      cursor: pointer;
-      color: #A263FF;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 500;
-      letter-spacing: 0; }
-      #wireframes .pages li:hover {
-        border-bottom: solid 1px #A263FF; }
-    #wireframes .pages .selected {
-      color: #1d2349;
-      cursor: default; }
-      #wireframes .pages .selected:hover {
-        border: none; }
-  #wireframes p {
-    display: none; }
-  #wireframes .desc {
-    margin-top: 1em; }
+  margin-left: auto;
+  /*.pages
+   * display: inline-block
+   * vertical-align: top
+   * margin: 0
+   * margin-bottom: 1ex
+   * float: left
+   * li
+   * 	display: inline
+   * 	margin-right: 20px
+   * 	cursor: pointer
+   * 	color: $midPurple
+   * 	@include heading-font()
+   * 	&:hover
+   * 		border-bottom: solid 1px $midPurple
+   * .selected
+   * 	color: $blue
+   * 	cursor: default
+   * 	&:hover
+   * 		border: none */
+  /*p
+   * display: none */ }
   #wireframes hr {
     height: 1px;
     background-color: #B995F0;
     border: none; }
   #wireframes .wf {
     display: inline-block;
-    width: auto;
-    max-width: 400px;
-    position: relative; }
+    width: 100%;
+    /*width: auto */
+    /*max-width: 400px */
+    position: relative;
+    margin-bottom: 8em; }
+    #wireframes .wf .pageDesc {
+      display: flex;
+      margin-bottom: 2em; }
+      #wireframes .wf .pageDesc h4 {
+        float: left;
+        margin-right: 3em;
+        position: relative; }
+        #wireframes .wf .pageDesc h4::after {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 1.7em;
+          border-bottom: solid 4px #AAEF25; }
     #wireframes .wf img {
       width: 100%; }
     #wireframes .wf .hotspots {
+      width: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 2;
-      display: none; }
-    #wireframes .wf .hotspot {
+      z-index: 2; }
+    #wireframes .wf .hotspot, #wireframes .wf .hotspotClone {
       cursor: pointer;
       fill: #902EFF;
-      opacity: 0.4;
-      stroke-width: 0; }
-      #wireframes .wf .hotspot::after {
-        display: block;
-        position: absolute;
-        border-radius: 50%;
-        width: 25%;
-        height: 25%; }
-      #wireframes .wf .hotspot.selected {
-        opacity: 1;
+      stroke-width: 0;
+      animation: pulse 6s linear infinite;
+      /*&::after
+       * display: block
+       * position: absolute
+       * border-radius: 50%
+       * width: 25%
+       * height: 25% */ }
+      #wireframes .wf .hotspot.selected, #wireframes .wf .hotspotClone.selected {
         stroke: #A263FF;
         stroke-width: 8;
-        fill: rgba(0, 0, 0, 0); }
+        fill: rgba(0, 0, 0, 0);
+        r: 28.3;
+        animation: none; }
+    #wireframes .wf .hotspotClone {
+      pointer-events: none;
+      r: 0;
+      animation: pulse 6s linear infinite 3s; }
+      #wireframes .wf .hotspotClone.selected {
+        display: none; }
+@keyframes pulse {
+  0% {
+    r: 0;
+    fill: rgba(144, 46, 255, 0.25); }
+  70% {
+    fill: rgba(144, 46, 255, 0.6); }
+  100% {
+    r: 28.3;
+    fill: rgba(144, 46, 255, 0); } }
   #wireframes .selected, #wireframes .hotspots.selected {
     display: inline-block; }
+  #wireframes .wfImg {
+    position: relative; }
+  #wireframes .desc {
+    background-color: rgba(255, 255, 255, 0.83);
+    width: calc(100% - 6em);
+    height: 0em;
+    padding: 0 3em;
+    z-index: 3;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease-in-out; }
+    #wireframes .desc p {
+      opacity: 0;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      transition: 0.15s ease-in-out; }
+    #wireframes .desc.selected {
+      height: 2em;
+      padding: 1.5em 3em; }
+      #wireframes .desc.selected p {
+        opacity: 1; }
   #wireframes.landscape .wf {
-    max-width: 560px; }
+    /*max-width: 560px */ }
     #wireframes.landscape .wf .hotspot.selected {
       stroke-width: 5; }
-  #wireframes.landscape .wordblock {
-    max-width: 370px;
-    margin-right: 70px; }
 
 #moodboard img {
   width: 56%;
@@ -511,12 +558,12 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
-.compImg {
+.compImg, .wfImg {
   width: 100%;
   margin-bottom: 3vw;
   vertical-align: top;
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
-  .compImg.compMobile {
+  .compImg.compMobile, .wfImg.compMobile {
     box-shadow: none;
     width: 40%;
     margin: 0 5%;

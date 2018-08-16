@@ -135,10 +135,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div class="grid__col grid__col--1-of-2" style="vertical-align: top">
 				<p>A group of researchers at Harvard University conducted an <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FMEGS6">experiment</a> on how personal body language affects people’s minds. 
 				</p><br><br>
-				<p class="finding">Different poses affected our brain’s production of chemicals.</p><br><br><br>
-				<p class="finding">High Power Poses &mdash; &nbsp;<div class="block finding">Increase in testosterone<br>Decrease in cortisol</div></p><br><br>
-				<p class="finding">Low Power Poses &mdash; &nbsp;<div class="block finding">Decrease in testosterone<br>Increase in cortisol</div></p>
+				<p class="finding">They found that different poses affected our brain’s production of chemicals.</p><br><br><br>
 			</div>
+			<img src="poseScale.png" style="width: 100%">
 			<div class="surveyItem gri">
 				<div class="comment grid__col grid__col--1-of-2">
 					<p class="textData">"As evidence has come in over these past 2+ years, my views have updated to reflect the evidence. As such, I do not believe that 'power pose' effects are real."</p>
@@ -163,73 +162,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</section>
 	<section id="wireframes" class="beginningBlock landscape">
 		<h3>Wireframes</h3>
-		<div>
-			<ul class="pages">
-				<li class="selected">Introduction</li>
-				<li>Initiate</li>
-				<li>Fetch Data</li>
-				<li>Closing Statement</li>
-			</ul>
-			<div class="wordblock">
-			<p class="pageDesc selected">I wanted to create an experience that stresses the user's agency and self reflection. To do this, the user, themself, is displayed on the screen and they control the exhibit through full-body interaction.</p>
-			<p class="pageDesc">Within a few moments after the user has been recognized, the main display transitions in and the exhibit starts recording data from the user.</p>
-			<p class="pageDesc">As users pose their body to match the ones displayed on top of the screen, they will see corresponding experiment data as well as how they are responding to the pose.</p>
-			<p class="pageDesc">After cycling through all poses, the exhibition reveals that the experiment did not necessarily prove anything. Any reactions in the user's body happened because of the placebo effect.</p>
-			<hr>
-			<p class="desc selected">Hover over a highlighted area for more details</p>
-
-			<p class="desc">This first sentence aims to hook users by addressing the problem immediately.</p>
-			<p class="desc">A mirror image of the user is displayed when they step into frame.</p>
-
-			<p class="desc">Floating energy particles represent the user's testosterone and cortisol levels.</p>
-			<p class="desc">Matching the displayed poses will bring up the experiment data corresponding to that pose.</p>
-			<p class="desc">The user's testosterone and cortisol levels are recorded and displayed in real time.</p>
-
-			<p class="desc">Simple slope graphs show the difference between each subject's hormone levels before and after the experiment.</p>
-			<p class="desc">A visual change in the user's image signifies whether their current pose is a high or low power pose.</p>
-			<p class="desc">Poses that were not used in the experiment bring up fake data, emphasizing the presence of the placebo effect.</p>
-			<p class="desc">The user's hormone levels are recorded throughout their experience showing how they are reacting to different poses.</p>
-
-			<p class="desc">This last sentence aims to leave the user feeling more powerful and in control.</p>
-			<p class="desc">All energy particles are in the high power color to visually empower the user.</p>
-			</div>
-		</div>
-		<div class="wf">
-			<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="WFintro.png">
-			<div class="hotspots selected">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 573.8">
-				<circle class="hotspot" cx="248.4" cy="244.1" r="28.3"/>
-				<circle class="hotspot" cx="540" cy="273.9" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 573.8">
-				<circle class="hotspot" cx="421.5" cy="316.4" r="28.3"/>
-				<circle class="hotspot" cx="580.9" cy="72.5" r="28.3"/>
-				<circle class="hotspot" cx="871.5" cy="287.1" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 573.8">
-				<circle class="hotspot" cx="195.5" cy="273.6" r="28.3"/>
-				<circle class="hotspot" cx="458.7" cy="287.1" r="28.3"/>
-				<circle class="hotspot" cx="667" cy="68.8" r="28.3"/>
-				<circle class="hotspot" cx="769" cy="295.6" r="28.3"/>
-				</svg>
-			</div>
-			<div class="hotspots">
-				<svg xmlns="http://www.w3.org/2000/svg" width="560px" viewBox="0 0 1020 573.8">
-				<circle class="hotspot" cx="180.9" cy="366.8" r="28.3"/>
-				<circle class="hotspot" cx="826.4" cy="159.6" r="28.3"/>
-				</svg>
-			</div>
-		</div>
 		<script type="text/javascript">
 			var wfSrcs = ['WFintro.png', 'WFstart.png', 'WFpose.png', 'WFclosing.png'];
+
+			var pageNames = ['Introduction', 'Initiate', 'Fetch&nbsp;Data', 'Closing&nbsp;Statement'];
+
+			var pageDescs = ['<p>I wanted to create an experience that stresses the user\'s agency and self reflection. To do this, the user, themself, is displayed on the screen and they control the exhibit through full-body interaction.</p>',
+			'<p>Within a few moments after the user has been recognized, the main display transitions in and the exhibit starts recording data from the user.</p>',
+			'<p>As users pose their body to match the ones displayed on top of the screen, they will see corresponding experiment data as well as how they are responding to the pose.</p>',
+			'<p>After cycling through all poses, the exhibition reveals that the experiment did not necessarily prove anything. Any reactions in the user\'s body happened because of the placebo effect.</p>'];
+
+			var hotspots = ['<div class="hotspots selected">'+
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
+				'<circle class="hotspot" cx="248.4" cy="244.1" r="28.3"/>'+
+				'<circle class="hotspot" cx="540" cy="273.9" r="28.3"/>'+
+				'</svg>'+
+			'</div>',
+			'<div class="hotspots">'+
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
+				'<circle class="hotspot" cx="421.5" cy="316.4" r="28.3"/>'+
+				'<circle class="hotspot" cx="580.9" cy="72.5" r="28.3"/>'+
+				'<circle class="hotspot" cx="871.5" cy="287.1" r="28.3"/>'+
+				'</svg>'+
+			'</div>',
+			'<div class="hotspots">'+
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
+				'<circle class="hotspot" cx="195.5" cy="273.6" r="28.3"/>'+
+				'<circle class="hotspot" cx="458.7" cy="287.1" r="28.3"/>'+
+				'<circle class="hotspot" cx="667" cy="68.8" r="28.3"/>'+
+				'<circle class="hotspot" cx="769" cy="295.6" r="28.3"/>'+
+				'</svg>'+
+			'</div>',
+			'<div class="hotspots">'+
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
+				'<circle class="hotspot" cx="180.9" cy="366.8" r="28.3"/>'+
+				'<circle class="hotspot" cx="826.4" cy="159.6" r="28.3"/>'+
+				'</svg>'+
+			'</div>'];
+
+
+			var hsDescs = [['This first sentence aims to hook users by addressing the problem immediately.',
+			'A mirror image of the user is displayed when they step into frame.'],
+			['Floating energy particles represent the user\'s testosterone and cortisol levels.',
+			'Matching the displayed poses will bring up the experiment data corresponding to that pose.',
+			'The user\'s testosterone and cortisol levels are recorded and displayed in real time.'],
+			['Simple slope graphs show the difference between each subject\'s hormone levels before and after the experiment.',
+			'A visual change in the user\'s image signifies whether their current pose is a high or low power pose.',
+			'Poses that were not used in the experiment bring up fake data, emphasizing the presence of the placebo effect.',
+			'The user\'s hormone levels are recorded throughout their experience showing how they are reacting to different poses.'],
+			['This last sentence aims to leave the user feeling more powerful and in control.',
+			'All energy particles are in the high power color to visually empower the user.']];
+
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
 		</script>
 	</section>
 	<section id="moodboard" class="beginningBlock" style="text-align: left;">
@@ -261,14 +248,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</p>
 	</section>
 	<section class="goProject beginningBlock"> 
-		<a href="../usatoday/usatoday.html" class="otherProject block"">
+		<a href="../taw/thoughtatwork.html" class="otherProject block">
 			<div class="mask">
-				<video style="top: -85px; left:-45%;" autoplay loop>
-					<source src="../usatoday/mockup.webm" type="video/webm"><source src="../usatoday/mockup.mp4" type="video/mp4"></video>
+				<video style="width: 130%;" autoplay loop>
+					<source src="../taw/modalPrototype.webm" type="video/webm"><source src="../taw/modalPrototype.mp4" type="video/mp4">
+				</video>
 			</div>
 			<div class="wordblock">
 				<h5>Previous Project</h5>
-				USATODAY Mobile Experience
+				Thought At Work 2018
 			</div>
 		</a>
 		<a href="../nest/nest.html" class="otherProject block">
