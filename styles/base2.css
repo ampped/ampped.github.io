@@ -89,8 +89,13 @@ nav {
     margin: 0 30px;
     color: #1d2349;
     pointer-events: initial; }
+  nav .mobileMenuButton {
+    display: none; }
   nav.showing {
     top: 0; }
+
+.mobileNav {
+  display: none; }
 
 section {
   width: 100%; }
@@ -527,5 +532,84 @@ textarea:focus ~ .placeholder p {
   color: #AAA;
   stroke: #AAA;
   pointer-events: none; }
+
+@media only screen and (max-width: 800px) {
+  nav {
+    background-color: #FFF;
+    height: 4.5em;
+    pointer-events: initial; }
+    nav a {
+      display: none; }
+    nav a:first-child {
+      display: block; }
+    nav .mobileMenuButton {
+      display: inline-block;
+      height: 95%;
+      cursor: pointer; }
+
+  .mobileNav {
+    box-sizing: border-box;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    padding: 7vw 0;
+    position: fixed;
+    text-align: center;
+    z-index: 5; }
+    .mobileNav a {
+      display: inline-block;
+      font-size: 2.6em;
+      line-height: 1.3em;
+      margin-bottom: 1.5em; }
+    .mobileNav.showing {
+      display: block; }
+    .mobileNav .mobileClose {
+      height: 2.4em;
+      position: absolute;
+      top: 7vw;
+      right: 8vw;
+      cursor: pointer; }
+    .mobileNav .logo {
+      width: 34vw;
+      height: auto;
+      position: static;
+      margin-bottom: 4em; }
+
+  .general h1 {
+    text-align: center;
+    width: 100%; }
+
+  .general div, #contactForm {
+    display: block;
+    width: 100%; }
+
+  #contactInfo {
+    padding-top: 3em; }
+
+  #contactForm {
+    padding: 0 7vw; }
+
+  .project {
+    width: 165%; }
+    .project .mobileTN {
+      display: inline-block;
+      width: 115%;
+      transform: translateX(-25%);
+      max-width: initial; }
+    .project video {
+      display: none; }
+    .project::before {
+      display: none; }
+    .project p {
+      display: none; }
+
+  #aboutInfo {
+    width: 100%;
+    margin-left: 0;
+    padding: 180px 10vw; }
+
+  .aspirations {
+    width: 100px;
+    margin: 0; } }
 
 /*# sourceMappingURL=base2.css.map */

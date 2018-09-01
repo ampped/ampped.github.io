@@ -2,7 +2,32 @@ function scrollEffect(){
 	var lastScrollTop = 0;
 
 	jQuery(window).scroll(function(e){
+    adjustNav(e);
+	});
+
+  checkMobileNav();
+
+	/*jQuery('.projectBlock').scroll(function(e){
 		hideNav(e);
+	});*/
+
+  jQuery(window).resize(checkMobileNav);
+
+  function checkMobileNav(){
+    if(jQuery(window).width() < 800){
+      jQuery(window).unbind('scroll');
+      jQuery('nav').addClass('showing solidBG');
+    }
+    else{
+      adjustNav(window);
+      jQuery(window).scroll(function(e){
+        adjustNav(e);
+      });
+    }
+  }
+
+  function adjustNav(e){
+    hideNav(e);
 
     if(jQuery(e.target).scrollTop() > 600){
       jQuery('nav').addClass('solidBG');
@@ -10,10 +35,7 @@ function scrollEffect(){
     else{
       jQuery('nav').removeClass('solidBG');
     }
-	});
-	jQuery('.projectBlock').scroll(function(e){
-		hideNav(e);
-	});
+  }
 
 	function hideNav(e){
 		var st = jQuery(e.target).scrollTop();
