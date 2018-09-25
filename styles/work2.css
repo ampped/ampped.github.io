@@ -705,9 +705,6 @@ video.comp {
   max-width: 43em;
   width: 80%; }
 
-.goProject {
-  z-index: -1; }
-
 .otherProject {
   width: 33%;
   height: 280px;
