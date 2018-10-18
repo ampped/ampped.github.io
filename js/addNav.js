@@ -1,3 +1,11 @@
+function setupWorkPage(){
+	sessionSetup();
+	window.onload = function(){
+		addNav();
+		addSquiggles();
+	}
+}
+
 function addNav(){
 	jQuery('body').prepend("<nav class=\"showing\"><img src=\"../../mobileMenu.svg\" class=\"mobileMenuButton\"><a href=\"../../index.html#about\">About</a><a href=\"../../index.html#work\">Work</a><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
 
@@ -71,4 +79,12 @@ function addSquiggles(){
 		'.hSquiggle{fill:none;stroke:#AAEF25;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
 	'</style><path class="hSquiggle" d="M1 12.6c7.5 0 10.1-3.4 12.9-5.8 3-2.6 5.3-5.8 12.9-5.8s10.1 3.4 12.9 5.8c3 2.6 5.3 5.8 12.9 5.8s9.9-3.2 12.9-5.8C68 4.4 70.6 1 78.1 1S88.2 4.4 91 6.8c3 2.6 5.3 5.8 12.9 5.8s9.9-3.2 12.9-5.8C119.5 4.4 122 1 129.5 1"/></svg>');
 	});
+}
+
+function sessionSetup(){
+	if(typeof(Storage) !== "undefined"){
+		if(!sessionStorage.hotspotSeen){
+			sessionStorage.setItem("hotspotSeen", "false");
+		}
+	}
 }

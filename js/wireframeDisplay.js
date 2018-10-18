@@ -1,8 +1,42 @@
 //written by Amy Pham
 function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs){
 	console.dir(hsDescs);
+
 	for(var i = 0; i < wfSrcs.length; i++){
 		jQuery('#wireframes').append('<div class="wf"><div class="pageDesc"><h4>' + pageNames[i] + '</h4>' + pageDescs[i] + '</div><div class="wfImg"><img src="'+wfSrcs[i]+'" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\">' + hotspots[i] + '<div class="desc"></div></div>');
+	}
+
+	//append hotspot popup
+	console.log(sessionStorage.getItem('hotspotSeen'));
+	jQuery('.wfImg').append('<div class="lookAtMe">Rollover for more info!</div>').each(function(){
+		var thisWF = jQuery(this);
+
+		var hs1 = thisWF.find('.hotspot:first-of-type');
+
+		var viewboxSpecs = thisWF.find('svg').get(0).getAttribute('viewBox').split(' ');
+		console.dir(viewboxSpecs);		
+		thisWF.find('.lookAtMe').css('left', ((parseInt(hs1.attr('cx'))/parseInt(viewboxSpecs[2])*100).toFixed(2)) + '%');
+		thisWF.find('.lookAtMe').css('top', ((parseInt(hs1.attr('cy'))/parseInt(viewboxSpecs[3])*100).toFixed(2))+ '%');
+
+		//position at the farthest right hotspot
+		/*
+		var farRight = "";
+		var amtRight;
+		amtRight = 0;
+		jQuery(this).find('.hotspot').each(function(){
+			if(jQuery(this).attr('cx') > amtRight){
+				farRight = this;
+				amtRight = jQuery(this).attr('cx');
+			}
+		});
+		console.log(((parseInt(amtRight)/1020)*100).toFixed(2));
+		jQuery(this).find('.lookAtMe').css('left', ((parseInt(amtRight)/1020)*100).toFixed(2) + '%');
+		jQuery(this).find('.lookAtMe').css('top', ((parseInt(jQuery(farRight).attr('cy'))/638)*100).toFixed(2)+ '%');*/
+	});
+
+	//if session is continued, hotspot popup should be hidden
+	if(sessionStorage.getItem("hotspotSeen") == "true"){
+		jQuery('.lookAtMe').addClass('seen');
 	}
 
 	jQuery('.hotspot').each(function(){
@@ -10,6 +44,11 @@ function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs){
 	});
 
 	jQuery('.hotspot').hover(function(){
+		if(sessionStorage.getItem("hotspotSeen") == "false"){
+			sessionStorage.setItem("hotspotSeen", "true");
+			jQuery('.lookAtMe').addClass('seen');
+		}
+
 		//select hotspot and change classes
 		var i = jQuery(this).index('.hotspot');
 		selectItem('desc', i + 1);
@@ -31,35 +70,11 @@ function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs){
 	});
 }
 
-function setupWFDisplayOld(wfSrcs){
-	jQuery('.pages>li').click(function(){
-		jQuery('.pages>.selected').removeClass('selected');
-		jQuery(this).addClass('selected');
-
-		selectItem('hotspots', jQuery(this).index());
-		selectItem('pageDesc', jQuery(this).index());
-
-		jQuery('.wf>img').attr('src', wfSrcs[jQuery(this).index()]);
-	})
-
-	jQuery('.hotspot').hover(function(){
-		selectItem('desc', jQuery(this).index('.hotspot') + 1);
-		jQuery('.hotspot.selected').attr('class', 'hotspot');
-		jQuery(this).attr('class', 'hotspot selected');
-	});
-
-	jQuery('.wf').mouseleave(function(){
-		selectItem('desc', 0);
-		jQuery('.hotspot.selected').attr('class', 'hotspot');
-	});
-}
-
 //helper function to add the selected class to the actual selected object
 function selectItem(className, i){
 	jQuery('.' + className + '.selected').removeClass('selected');
 	jQuery('.' + className + ':eq(' + i + ')').addClass('selected');
 }
-
 
 //create comp images
 var compSrcs = "";

@@ -23,10 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
 	<script type="text/javascript">
-		window.onload = function(){
-			addNav();
-			addSquiggles();
-		}
+		setupWorkPage();
 	</script>
 </head>
 <body>
@@ -234,8 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					'</svg>' +
 				'</div>'];
 
-			var hsDescs = [['Hover over a highlighted area for more details',
-				'Users can choose set schedules for individual thermostats throughout the house.',
+			var hsDescs = [['Users can choose set schedules for individual thermostats throughout the house.',
 				'Current temperature and time are shown in the middle of the schedule.',
 				'A target will signal the thermostat to change the temperature at this time.',
 				'A triangle will signal which temperature the thermostat is currently set to.'],
