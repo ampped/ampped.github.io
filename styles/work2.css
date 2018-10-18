@@ -468,13 +468,7 @@ a {
       cursor: pointer;
       fill: #902EFF;
       stroke-width: 0;
-      animation: pulse 6s linear infinite;
-      /*&::after
-       * display: block
-       * position: absolute
-       * border-radius: 50%
-       * width: 25%
-       * height: 25% */ }
+      animation: pulse 6s linear infinite; }
       #wireframes .wf .hotspot.selected, #wireframes .wf .hotspotClone.selected {
         stroke: #A263FF;
         stroke-width: 8;
@@ -487,6 +481,34 @@ a {
       animation: pulse 6s linear infinite 3s; }
       #wireframes .wf .hotspotClone.selected {
         display: none; }
+    #wireframes .wf .lookAtMe {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 1em 1.5em;
+      border-radius: 0.5em;
+      transform: translate(-50%, 47%);
+      pointer-events: none;
+      white-space: nowrap;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      z-index: 3;
+      opacity: 1;
+      transition: 0.3s ease-in-out; }
+      #wireframes .wf .lookAtMe::before {
+        content: " ";
+        width: 0;
+        height: 0;
+        border: 0.9em solid transparent;
+        border-bottom: 0.9em solid #1d2349;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -120%); }
+      #wireframes .wf .lookAtMe.seen {
+        opacity: 0;
+        transform: translate(-50%, 20%); }
 @keyframes pulse {
   0% {
     r: 0;

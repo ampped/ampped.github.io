@@ -486,12 +486,6 @@ a
 			fill: $darkerPurple
 			stroke-width: 0
 			animation: pulse 6s linear infinite
-			/*&::after
-				display: block
-				position: absolute
-				border-radius: 50%
-				width: 25%
-				height: 25%*/
 			&.selected
 				stroke: $midPurple
 				stroke-width: 8
@@ -505,6 +499,36 @@ a
 			animation: pulse 6s linear infinite 3s
 			&.selected
 				display: none
+		.lookAtMe
+			background-color: rgba(255,255,255,0.85)
+			padding: 1em 1.5em
+			border-radius: 0.5em
+			transform: translate(-50%, 47%)
+			pointer-events: none
+			white-space: nowrap
+			@include heading-font()
+			@include drop-shadow()
+
+			position: absolute
+			z-index: 3
+
+			opacity: 1
+			transition: 0.3s ease-in-out
+
+			&::before
+				content: ' '
+				width: 0
+				height: 0
+				border: 0.9em solid transparent
+				border-bottom: 0.9em solid $blue
+				position: absolute
+				top: 0
+				left: 50%
+				transform: translate(-50%, -120%)
+
+			&.seen
+				opacity: 0
+				transform: translate(-50%, 20%)
 
 		@keyframes pulse
 			0%
