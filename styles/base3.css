@@ -13,6 +13,9 @@
 @font-face {
   font-family: Qanelas;
   src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
+@font-face {
+  font-family: Qanelas Soft DEMO ExtraBold;
+  src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
 body {
   background-color: #fdfdfd;
   padding-bottom: 5em;
