@@ -1,5 +1,19 @@
-@charset "UTF-8";
 /*written by Amy Pham */
+@font-face {
+  font-family: HK-reg;
+  src: url("../fonts/HKGrotesk-Regular.ttf"); }
+@font-face {
+  font-family: HK-med;
+  src: url("../fonts/HKGrotesk-Medium.ttf"); }
+@font-face {
+  font-family: HK-semi;
+  src: url("../fonts/HKGrotesk-SemiBold.ttf"); }
+@font-face {
+  font-family: HK-bold;
+  src: url("../fonts/HKGrotesk-Bold.ttf"); }
+@font-face {
+  font-family: Qanelas;
+  src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
 /*$midPurple: #BF78FF */
 nav {
   background-color: #FFF;
@@ -8,10 +22,15 @@ nav {
   animation-name: slideDown;
   box-shadow: 0 0 10px #902EFF; }
   nav a {
-    border-bottom: none; }
+    text-transform: uppercase;
+    font: 0.93em Qanelas;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.175em;
+    border-bottom: 3px solid transparent; }
     nav a:hover {
-      border-bottom: solid 1px #A263FF;
-      color: #A263FF; }
+      color: #24252e;
+      border-color: #A9EE25; }
   nav .logo {
     position: absolute;
     top: 10px;
@@ -28,7 +47,7 @@ h3 svg {
 
 a {
   font-size: 12pt;
-  border-bottom: solid 1px #1d2349; }
+  border-bottom: solid 1px #24252e; }
 
 .fullStretch {
   max-width: 100%; }
@@ -81,7 +100,7 @@ a {
   padding-top: 17.5vw; }
 
 .overviewInfo {
-  background-color: #FCFCFC;
+  background-color: #FDFDFD;
   width: 75%;
   min-height: 315pt;
   text-align: left;
@@ -108,11 +127,11 @@ a {
     .overviewInfo .skills li {
       margin-bottom: 5pt; }
     .overviewInfo .skills .header {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Qanelas", sans-serif;
       font-weight: 500;
       letter-spacing: 0;
       font-weight: 700;
-      font-size: 11pt;
+      font-size: 13pt;
       line-height: 20pt;
       position: relative;
       margin-bottom: 20pt; }
@@ -124,7 +143,7 @@ a {
         left: 0;
         width: 20px;
         height: 100%;
-        border-bottom: solid 4px #AAEF25; }
+        border-bottom: solid 4px #A9EE25; }
   .overviewInfo .story {
     display: inline-block;
     width: 67%;
@@ -135,7 +154,7 @@ a {
 
 .message {
   width: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Qanelas", sans-serif;
   font-weight: 500;
   letter-spacing: 0;
   margin: 0;
@@ -143,7 +162,7 @@ a {
   color: #A263FF; }
 
 .projectContent {
-  background-color: #FCFCFC;
+  background-color: #FDFDFD;
   /*margin-bottom: 30vw */ }
 
 .previewVid video {
@@ -224,7 +243,7 @@ a {
       margin-left: 8%;
       display: inline-block;
       font-weight: 700;
-      font-family: "Open Sans", sans-serif;
+      font-family: "HK-reg", sans-serif;
       letter-spacing: 0.05ex; }
     #research .persona li {
       font-size: 11pt;
@@ -260,9 +279,9 @@ a {
         left: 0;
         width: 30px;
         height: 100%;
-        border-top: solid 4px #AAEF25; }
+        border-top: solid 4px #A9EE25; }
   #research .finding {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Qanelas", sans-serif;
     font-weight: 500;
     letter-spacing: 0;
     font-size: 13pt;
@@ -270,7 +289,7 @@ a {
     color: #A263FF; }
   #research .textData {
     font-size: 12pt;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Qanelas", sans-serif;
     font-weight: 500;
     letter-spacing: 0; }
 
@@ -294,8 +313,8 @@ a {
     vertical-align: middle;
     display: inline-block; }
   .surveyItem.barStat .num {
-    fill: #1d2349;
-    font-family: "Montserrat", sans-serif;
+    fill: #24252e;
+    font-family: "Qanelas", sans-serif;
     font-weight: 500;
     letter-spacing: 0;
     font-weight: 700;
@@ -331,9 +350,9 @@ a {
     width: auto;
     max-width: calc(100% - 33px);
     display: inline-block;
-    fill: #1d2349;
-    color: #1d2349;
-    font-family: "Montserrat", sans-serif;
+    fill: #24252e;
+    color: #24252e;
+    font-family: "Qanelas", sans-serif;
     font-weight: 500;
     letter-spacing: 0;
     font-size: 13pt;
@@ -379,12 +398,12 @@ a {
 
 .st1 {
   fill: #FFF;
-  stroke: #AAEF25;
+  stroke: #A9EE25;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
-  background-color: #1d2349; }
+  background-color: #24252e; }
 
 .st2 {
   fill: #D9B9FF;
@@ -423,7 +442,7 @@ a {
    * 	&:hover
    * 		border-bottom: solid 1px $midPurple
    * .selected
-   * 	color: $blue
+   * 	color: $dark
    * 	cursor: default
    * 	&:hover
    * 		border: none */
@@ -455,7 +474,7 @@ a {
           left: 0;
           width: 40px;
           height: 1.7em;
-          border-bottom: solid 4px #AAEF25; }
+          border-bottom: solid 4px #A9EE25; }
     #wireframes .wf img {
       width: 100%; }
     #wireframes .wf .hotspots {
@@ -488,7 +507,7 @@ a {
       transform: translate(-50%, 47%);
       pointer-events: none;
       white-space: nowrap;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Qanelas", sans-serif;
       font-weight: 500;
       letter-spacing: 0;
       box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3);
@@ -501,7 +520,7 @@ a {
         width: 0;
         height: 0;
         border: 0.9em solid transparent;
-        border-bottom: 0.9em solid #1d2349;
+        border-bottom: 0.9em solid #24252e;
         position: absolute;
         top: 0;
         left: 50%;
@@ -535,7 +554,7 @@ a {
     transition: 0.2s ease-in-out; }
     #wireframes .desc p {
       opacity: 0;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Qanelas", sans-serif;
       font-weight: 500;
       letter-spacing: 0;
       transition: 0.15s ease-in-out; }
@@ -563,13 +582,13 @@ a {
 #moodboard p {
   max-width: 24em; }
 #moodboard li {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Qanelas", sans-serif;
   font-weight: 500;
-  letter-spacing: 0; }
-  #moodboard li::before {
-    content: "— ";
-    color: #A263FF;
-    font-size: 16pt; }
+  letter-spacing: 0;
+  /*&::before
+   * content: '\2014\00a0'
+   * color: $midPurple
+   * font-size: 16pt */ }
 
 #prototype {
   text-align: center; }

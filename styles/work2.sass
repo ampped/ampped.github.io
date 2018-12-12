@@ -1,20 +1,37 @@
 /*written by Amy Pham*/
-$blue: #1d2349
+@font-face
+	font-family: HK-reg
+	src: url('../fonts/HKGrotesk-Regular.ttf')
+@font-face
+	font-family: HK-med
+	src: url('../fonts/HKGrotesk-Medium.ttf')
+@font-face
+	font-family: HK-semi
+	src: url('../fonts/HKGrotesk-SemiBold.ttf')
+@font-face
+	font-family: HK-bold
+	src: url('../fonts/HKGrotesk-Bold.ttf')
+
+@font-face
+	font-family: Qanelas
+	src: url('../fonts/QanelasSoftDEMO-ExtraBold.otf')
+
+$dark: #24252e
 $purple: #B995F0
 $midPurple: #A263FF
 $darkerPurple: #902EFF
 /*$midPurple: #BF78FF*/
-$green: #AAEF25
+$green: #A9EE25
 $white: #FFF
-$bgWhite: #FCFCFC
+$bgWhite: #FDFDFD
 
 @mixin heading-font()
-	font-family: 'Montserrat', sans-serif
+	font-family: 'Qanelas', sans-serif
 	font-weight: 500
 	letter-spacing: 0
 
 @mixin body-font()
-	font-family: 'Open Sans', sans-serif
+	font-family: 'HK-reg', sans-serif
 	letter-spacing: 0.05ex
 
 @mixin drop-shadow()
@@ -27,10 +44,15 @@ nav
 	animation-name: slideDown
 	box-shadow: 0 0 10px $darkerPurple
 	a
-		border-bottom: none
+		text-transform: uppercase
+		font: 0.93em Qanelas
+		text-transform: uppercase
+		text-decoration: none
+		letter-spacing: 0.175em
+		border-bottom: 3px solid transparent
 		&:hover
-			border-bottom: solid 1px $midPurple
-			color: $midPurple
+			color: $dark
+			border-color: $green
 	.logo
 		position: absolute
 		top: 10px
@@ -47,7 +69,7 @@ h3 svg
 
 a
 	font-size: 12pt
-	border-bottom: solid 1px $blue
+	border-bottom: solid 1px $dark
 
 .fullStretch
 	max-width: 100%
@@ -131,7 +153,7 @@ a
 		.header
 			@include heading-font()
 			font-weight: 700 
-			font-size: 11pt
+			font-size: 13pt
 			line-height: 20pt
 			position: relative
 			margin-bottom: 20pt
@@ -314,7 +336,7 @@ a
 			vertical-align: middle
 			display: inline-block
 		.num
-			fill: $blue
+			fill: $dark
 			@include heading-font()
 			font-weight: 700 
 			font-size: 20pt
@@ -350,8 +372,8 @@ a
 			width: auto
 			max-width: calc(100% - 33px)
 			display: inline-block
-			fill: $blue
-			color: $blue
+			fill: $dark
+			color: $dark
 			@include heading-font()
 			font-size: 13pt
 			position: relative
@@ -403,7 +425,7 @@ a
 	stroke-linecap: round
 	stroke-linejoin: round
 	stroke-miterlimit: 10
-	background-color: $blue
+	background-color: $dark
 .st2
 	fill: #D9B9FF
 	background-color: #D9B9FF
@@ -438,7 +460,7 @@ a
 			&:hover
 				border-bottom: solid 1px $midPurple
 		.selected
-			color: $blue
+			color: $dark
 			cursor: default
 			&:hover
 				border: none*/
@@ -520,7 +542,7 @@ a
 				width: 0
 				height: 0
 				border: 0.9em solid transparent
-				border-bottom: 0.9em solid $blue
+				border-bottom: 0.9em solid $dark
 				position: absolute
 				top: 0
 				left: 50%
@@ -590,10 +612,10 @@ a
 		max-width: 24em
 	li
 		@include heading-font()
-		&::before
+		/*&::before
 			content: '\2014\00a0'
 			color: $midPurple
-			font-size: 16pt
+			font-size: 16pt*/
 
 #prototype
 	text-align: center

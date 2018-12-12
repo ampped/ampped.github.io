@@ -1,15 +1,31 @@
 /*written by Amy Pham */
+@font-face {
+  font-family: HK-reg;
+  src: url("../fonts/HKGrotesk-Regular.ttf"); }
+@font-face {
+  font-family: HK-med;
+  src: url("../fonts/HKGrotesk-Medium.ttf"); }
+@font-face {
+  font-family: HK-semi;
+  src: url("../fonts/HKGrotesk-SemiBold.ttf"); }
+@font-face {
+  font-family: HK-bold;
+  src: url("../fonts/HKGrotesk-Bold.ttf"); }
+@font-face {
+  font-family: Qanelas;
+  src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
 /*$darkerPurple: #972EFF */
 /*$green: #D4FF69 */
 body {
   margin: 0;
   box-sizing: border-box;
   background-color: #FCFCFC;
-  color: #1d2349;
-  font: 11pt/20pt "Open Sans", sans-serif;
+  color: #24252e;
+  font: 13pt/22pt "HK-reg", sans-serif;
   letter-spacing: 0.05ex;
   overflow-x: hidden;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  font-feature-settings: "liga" 0; }
 
 p {
   display: inline-block;
@@ -18,7 +34,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Qanelas", sans-serif;
   margin: 0; }
 
 h1 {
@@ -47,6 +63,9 @@ h4 {
 h5 {
   font-size: 14pt; }
 
+.specialC {
+  font-family: HK-bold; }
+
 /*img
  * max-width: 100% */
 video, img {
@@ -55,12 +74,12 @@ video, img {
 
 a, .button {
   text-decoration: none;
-  font: 700 14pt "Montserrat", sans-serif;
+  font: 700 14pt "Qanelas", sans-serif;
   letter-spacing: 0.02ex;
-  color: #1d2349;
+  color: #24252e;
   box-sizing: border-box;
   fill: none;
-  stroke: #1d2349;
+  stroke: #24252e;
   stroke-width: 1px;
   border-bottom: solid 2px rgba(0, 0, 0, 0); }
   a:hover, .button:hover {
@@ -68,7 +87,7 @@ a, .button {
     border-color: #A263FF; }
 
 ul {
-  font: 500 15pt/32pt "Montserrat", sans-serif;
+  font: 500 15pt/32pt "Qanelas", sans-serif;
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -87,7 +106,7 @@ nav {
   nav a {
     display: inline-block;
     margin: 0 30px;
-    color: #1d2349;
+    color: #24252e;
     pointer-events: initial; }
   nav .mobileMenuButton {
     display: none; }
@@ -105,8 +124,8 @@ section {
 input, textarea {
   width: 100%;
   resize: none;
-  color: #1d2349;
-  font: 13pt "Open Sans", sans-serif;
+  color: #24252e;
+  font: 13pt "HK-reg", sans-serif;
   letter-spacing: 0.03ex; }
 
 svg {
@@ -357,7 +376,7 @@ svg {
     position: relative;
     margin: 0;
     color: #FFF;
-    font: 500 2em "Montserrat", sans-serif;
+    font: 500 2em "Qanelas", sans-serif;
     top: 52%;
     transform: translateY(-50%);
     -o-transform: translateY(-50%);
@@ -399,7 +418,7 @@ form {
   width: 100%;
   position: relative;
   margin: 60px 0;
-  border-bottom: 1px solid #1d2349; }
+  border-bottom: 1px solid #24252e; }
 
 .form-control {
   background: transparent;
@@ -410,7 +429,7 @@ form {
 
 .footer {
   width: calc(100% - 14vw);
-  font: 200 10pt "Open Sans", sans-serif !important;
+  font: 200 10pt "HK-reg", sans-serif !important;
   color: #AAA;
   position: absolute;
   bottom: 0;
@@ -468,7 +487,7 @@ form {
   width: 100%; }
 
 .label {
-  font: 600 12pt "Montserrat", sans-serif;
+  font: 600 12pt "Qanelas", sans-serif;
   width: 100%;
   height: 30px;
   position: absolute;
@@ -505,8 +524,8 @@ textarea:focus ~ .label label {
   overflow: hidden;
   pointer-events: none; }
   .placeholder p {
-    color: #1d2349;
-    font: 13pt "Open Sans", sans-serif;
+    color: #24252e;
+    font: 13pt "HK-reg", sans-serif;
     position: absolute;
     bottom: 10px;
     margin: 0;

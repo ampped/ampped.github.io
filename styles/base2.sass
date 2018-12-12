@@ -1,6 +1,22 @@
 /*written by Amy Pham*/
+@font-face
+	font-family: HK-reg
+	src: url('../fonts/HKGrotesk-Regular.ttf')
+@font-face
+	font-family: HK-med
+	src: url('../fonts/HKGrotesk-Medium.ttf')
+@font-face
+	font-family: HK-semi
+	src: url('../fonts/HKGrotesk-SemiBold.ttf')
+@font-face
+	font-family: HK-bold
+	src: url('../fonts/HKGrotesk-Bold.ttf')
 
-$blue: #1d2349
+@font-face
+	font-family: Qanelas
+	src: url('../fonts/QanelasSoftDEMO-ExtraBold.otf')
+
+$dark: #24252e
 $purple: #A263FF
 $darkerPurple: #902EFF
 $green: #AAEF25
@@ -9,8 +25,9 @@ $green: #AAEF25
 $white: #FFF
 $bgWhite: #FCFCFC
 $grey: #AAA
-$heading-font: 'Montserrat', sans-serif
-$body-font: 'Open Sans', sans-serif
+$heading-font: 'Qanelas', sans-serif
+$body-font: 'HK-reg', sans-serif
+
 
 @mixin drop-shadow()
 	box-shadow: 0 5px 13px rgba(0,0,0,0.3)
@@ -19,11 +36,12 @@ body
 	margin: 0
 	box-sizing: border-box
 	background-color: $bgWhite
-	color: $blue
-	font: 11pt/20pt $body-font
+	color: $dark
+	font: 13pt/22pt $body-font
 	letter-spacing: 0.05ex
 	overflow-x: hidden
 	overflow-y: scroll
+	font-feature-settings: "liga" 0
 
 p
 	display: inline-block
@@ -61,6 +79,9 @@ h4
 h5
 	font-size: 14pt
 
+.specialC
+	font-family: HK-bold
+
 /*img
 	max-width: 100%*/
 
@@ -72,10 +93,10 @@ a, .button
 	text-decoration: none
 	font: 700 14pt $heading-font
 	letter-spacing: 0.02ex
-	color: $blue
+	color: $dark
 	box-sizing: border-box
 	fill: none
-	stroke: $blue
+	stroke: $dark
 	stroke-width: 1px
 	border-bottom: solid 2px rgba(0,0,0,0)
 	&:hover
@@ -102,7 +123,7 @@ nav
 	a
 		display: inline-block
 		margin: 0 30px
-		color: $blue
+		color: $dark
 		pointer-events: initial
 	.mobileMenuButton
 		display: none
@@ -121,7 +142,7 @@ section
 input, textarea
 	width: 100%
 	resize: none
-	color: $blue
+	color: $dark
 	font: 13pt $body-font
 	letter-spacing: 0.03ex
 
@@ -427,7 +448,7 @@ form
 	width: 100%
 	position: relative
 	margin: 60px 0
-	border-bottom: 1px solid $blue
+	border-bottom: 1px solid $dark
 
 .form-control
 	background: transparent
@@ -540,7 +561,7 @@ textarea:focus ~ .label label
 	pointer-events: none
 
 	p
-		color: $blue
+		color: $dark
 		font: 13pt $body-font
 		position: absolute
 		bottom: 10px
