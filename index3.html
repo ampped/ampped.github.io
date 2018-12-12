@@ -5,11 +5,23 @@
 	<link rel="stylesheet" type="text/css" href="styles/base3.css">
 	<link rel="stylesheet" type="text/css" href="styles/toast/css/grid.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/scrollEffect.js"></script>
 	<script src="js/stroke.js"></script>
 	<script src="js/formEffect.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+	scrollEffect();
+</script>
 <main>
+<nav class="showing">
+	<a href="#intro" class="logo shrink"><img src="logo.svg"></a>
+	<img src="mobileMenu.svg" class="mobileMenuButton">
+	<!--a href="javascript:;" data-link="#about">About</a-->
+	<a href="#work">Work</a>
+	<a href="Pham_resume.pdf" target="_blank">Resume</a>
+	<a href="#contact">Contact</a>
+</nav>
 <section id="intro" class="grid">
 	<img src="greeting.svg" id="greetingImg" class="grid__col grid__col--7-of-16 grid__col--push-1-of-16">
 	<div id="intro__box" class="grid__col grid__col--7-of-16">
@@ -139,9 +151,15 @@
 			</script>
 		</div>
 	</div>
-	<a href="" id="intro__link">Let's see the work
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 -1.2 170 12.5" class="squiggleSVG">
-			<path class="linkSquiggle" d="M393.4 8.6c-9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1"/></svg></a>
+	<p id="intro__link">Let's see the work
+		<!--svg xmlns="http://www.w3.org/2000/svg" viewBox="5 -1.2 170 12.5" class="squiggleSVG">
+			<path class="linkSquiggle" d="M393.4 8.6c-9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1"/></svg--></p>
+	<script type="text/javascript">
+		jQuery('#intro__link').click(function() { 
+				var position = jQuery("#work").offset().top; 
+				jQuery('html, body').animate({scrollTop: position}, 800); 
+			}); 
+	</script>
 </section>
 <section id="work" class="grid">
 	<div class="project">
@@ -269,7 +287,7 @@
 	        </div>
 	      </li>
 	      <li class="form-line jf-required" data-type="control_textarea" id="id_3">
-	        <div id="cid_3" class="form-input jf-required">
+	        <div id="cid_3" class="form-input textarea-input jf-required">
 	          <textarea id="input_3" class="form-control form-textarea validate[required]" name="q3_comments" cols="40" rows="4" data-component="textarea" required="" placeholder="Message"></textarea>
 	        </div>
 	      </li>
@@ -277,7 +295,7 @@
 	        <div id="cid_4" class="form-input-wide">
 	          <div style="text-align:right;" class="form-buttons-wrapper">
 	            <button id="input_4" type="submit" class="disabled form-submit-button button" data-component="button">
-	              Submit<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>
+	              Submit
 	            </button>
 	          </div>
 	        </div>

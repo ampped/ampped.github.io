@@ -14,8 +14,10 @@
   font-family: Qanelas;
   src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
 body {
-  text-align: center;
   background-color: #fdfdfd;
+  padding-bottom: 5em;
+  overflow-x: hidden;
+  text-align: center;
   font-family: HK-Reg;
   color: #24252e; }
 
@@ -27,7 +29,7 @@ h1 {
   font: 2.46em Qanelas;
   line-height: 1.4em; }
 
-a, .label, .placeholder p {
+a, #intro__link, .label, .placeholder p, button {
   color: #24252e;
   font: 0.93em Qanelas;
   text-transform: uppercase;
@@ -38,7 +40,7 @@ a, .label, .placeholder p {
 ul {
   list-style: none; }
 
-#intro__link::after, .project__link::after {
+#intro__link::after, .project__link::after, button::after {
   display: inline-block;
   content: "";
   width: 1.8ex;
@@ -74,26 +76,63 @@ ul {
   stroke-dasharray: 171;
   animation: squiggle 6.3s linear infinite, move 6.3s linear infinite; }
 
+/*Navigation Bar */
+nav {
+  background-color: transparent;
+  box-sizing: border-box;
+  position: fixed;
+  top: -5em;
+  left: 0;
+  width: 100%;
+  padding: 1.3em 1em;
+  text-align: right;
+  z-index: 5;
+  transition: 0.3s ease-in-out;
+  pointer-events: none; }
+  nav a {
+    display: inline-block;
+    margin: 0 2.5em;
+    color: #24252e;
+    pointer-events: initial;
+    border-bottom: solid 2px transparent; }
+    nav a:hover {
+      border-color: #A9EE25; }
+  nav .mobileMenuButton {
+    display: none; }
+  nav.showing {
+    top: 0; }
+  nav.solidBG {
+    background-color: #FFF;
+    box-shadow: 0 0 10px #a263ff; }
+
+.logo {
+  width: 9.5em;
+  position: absolute;
+  top: 0.9em;
+  left: 0em; }
+  .logo:hover {
+    border: none; }
+
+.mobileNav {
+  display: none; }
+
 /*Greeting section */
 #intro {
-  margin-bottom: 10em; }
+  padding-top: 8em; }
 
 #intro__box {
-  font-family: "HK-med";
-  vertical-align: middle; }
-
-#greetingImg {
-  vertical-align: middle; }
+  font: 1.1em HK-med;
+  margin-top: 5em;
+  margin-left: 1em; }
 
 /*letter animation */
 .aspirations {
   text-align: center;
   height: 50%;
-  margin-top: 30px;
+  margin-top: 3.7em;
   position: relative; }
   .aspirations svg {
-    position: absolute;
-    left: 60%; }
+    position: absolute; }
 
 .letterPath {
   fill: none;
@@ -157,7 +196,8 @@ ul {
   display: block;
   width: 15em;
   margin: 1em auto;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
   #intro__link::after {
     transform: translate(45%, 14%) rotate(90deg);
     vertical-align: top; }
@@ -165,6 +205,9 @@ ul {
     margin-top: 0.6ex; }
 
 /*Projects */
+#work {
+  padding-top: 10em; }
+
 .project {
   position: relative;
   margin-bottom: 12.67em; }
@@ -205,26 +248,31 @@ ul {
 .project__desc {
   margin-bottom: 3.37em; }
 
-.project__link.hovered:after {
+.project__link.hovered:after, button:after {
   margin-left: 0.8ex; }
 
 /*contact */
 input, textarea {
   box-sizing: border-box;
-  padding: 0.8em 0.8em; }
+  padding: 0.8em 0.8em;
+  font-family: inherit;
+  color: inherit; }
 
-/*input*/
- * /*height: 2.5em !important */
+input {
+  font-family: HK-med; }
+
 textarea {
-  font: 0.93em HK-Reg;
+  font-size: 1em;
+  line-height: 1.5em;
   resize: none; }
 
 .form-input {
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
   position: relative;
-  margin: 60px 0; }
+  margin: 3.8em 0; }
+  .form-input.textarea-input {
+    height: 9em; }
 
 .form-control {
   width: 100%;
@@ -291,7 +339,7 @@ textarea:focus ~ .label label {
   .placeholder p {
     color: #AAA;
     position: absolute;
-    bottom: 0.93em;
+    bottom: 1.2em;
     margin: 0;
     margin-left: 0.8em;
     transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out;

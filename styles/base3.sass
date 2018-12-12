@@ -25,9 +25,11 @@ $grey: #AAA
 	border-radius: 8px
 
 body
-	text-align: center
 	background-color: #fdfdfd
+	padding-bottom: 5em
+	overflow-x: hidden
 
+	text-align: center
 	font-family: HK-Reg
 	color: $dark
 
@@ -39,7 +41,7 @@ h1
 	font: 2.46em Qanelas
 	line-height: 1.4em
 
-a, .label, .placeholder p
+a, #intro__link, .label, .placeholder p, button
 	color: $dark
 	font: 0.93em Qanelas
 	text-transform: uppercase
@@ -50,7 +52,7 @@ a, .label, .placeholder p
 ul
 	list-style: none
 
-#intro__link, .project__link
+#intro__link, .project__link, button
 	&::after
 		display: inline-block
 		content: ""
@@ -89,27 +91,64 @@ ul
 
 	animation: squiggle 6.3s linear infinite, move 6.3s linear infinite
 
+/*Navigation Bar*/
+nav
+	background-color: transparent
+	box-sizing: border-box
+	position: fixed
+	top: -5em
+	left: 0
+	width: 100%
+	padding: 1.3em 1em
+	text-align: right 
+	z-index: 5
+	transition: 0.3s ease-in-out
+	pointer-events: none
+	a
+		display: inline-block
+		margin: 0 2.5em
+		color: $dark
+		pointer-events: initial
+		border-bottom: solid 2px transparent
+		&:hover
+			border-color: $green
+	.mobileMenuButton
+		display: none
+	&.showing
+		top: 0
+	&.solidBG
+		background-color: #FFF
+		box-shadow: 0 0 10px $purple
+
+.logo
+	width: 9.5em
+	position: absolute
+	top: 0.9em
+	left: 0em
+	&:hover
+		border: none
+
+.mobileNav
+	display: none
+
 /*Greeting section*/
 #intro
-	margin-bottom: 10em
+	padding-top: 8em
 
 #intro__box
-	font-family: 'HK-med'
-	vertical-align: middle
-
-#greetingImg
-	vertical-align: middle
+	font: 1.1em HK-med
+	margin-top: 5em
+	margin-left: 1em
 
 /*letter animation*/
 .aspirations
 	text-align: center
 	height: 50%
-	margin-top: 30px
+	margin-top: 3.7em
 	position: relative
 
 	svg
 		position: absolute
-		left: 60%
 .letterPath
 	fill: none
 	stroke: $dark
@@ -180,6 +219,7 @@ ul
 	margin: 1em auto
 
 	text-align: center
+	cursor: pointer
 
 	&::after
 		transform: translate(45%, 14%) rotate(90deg)
@@ -189,6 +229,8 @@ ul
 		margin-top: 0.6ex
 
 /*Projects*/
+#work
+	padding-top: 10em
 
 .project
 	position: relative
@@ -233,8 +275,7 @@ ul
 .project__desc
 	margin-bottom: 3.37em
 
-.project__link
-	&.hovered:after
+.project__link.hovered:after, button:after
 		margin-left: 0.8ex
 
 
@@ -242,20 +283,24 @@ ul
 input, textarea
 	box-sizing: border-box
 	padding: 0.8em 0.8em
+	font-family: inherit
+	color: inherit
 
-/*input*/
-	/*height: 2.5em !important*/
+input
+	font-family: HK-med
 
 textarea
-	font: 0.93em HK-Reg
+	font-size: 1em
+	line-height: 1.5em
 	resize: none
 
 .form-input
-	box-sizing: border-box
 	width: 100%
 	height: 100%
 	position: relative
-	margin: 60px 0
+	margin: 3.8em 0
+	&.textarea-input
+		height: 9em
 
 .form-control
 	width: 100%
@@ -327,7 +372,7 @@ textarea:focus ~ .label label
 	p
 		color: $grey
 		position: absolute
-		bottom: 0.93em
+		bottom: 1.2em
 		margin: 0
 		margin-left: 0.8em
 
