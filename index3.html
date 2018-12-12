@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/base3.css">
 	<link rel="stylesheet" type="text/css" href="styles/toast/css/grid.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/scrollEffect.js"></script>
+	<script src="js/scrollEffect2.js"></script>
 	<script src="js/stroke.js"></script>
 	<script src="js/formEffect.js"></script>
 </head>
@@ -301,6 +301,17 @@
 	        </div>
 	      </li>
 	    </ul>
+	    <script type="text/javascript">
+	    	window.addEventListener('pageshow', function(event) {
+	    		jQuery('.form-control').each(function(){
+		    		if(jQuery(this).val() != "")
+		    			jQuery(this).val("");
+		    	});
+			});
+	    	/*jQuery(document).on('pageshow', function(){
+	    		alert("pageshow");
+	    	});*/
+	    </script>
 	  </div>
 	  <!--script>
 	  JotForm.showJotFormPowered = "new_footer";
