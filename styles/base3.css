@@ -79,6 +79,102 @@ ul {
   stroke-dasharray: 171;
   animation: squiggle 6.3s linear infinite, move 6.3s linear infinite; }
 
+/*Loader */
+.loaderDiv {
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FDFDFD;
+  opacity: 1;
+  z-index: 10;
+  transition: 0.2s ease-in-out; }
+
+.loader {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  t-o-ransform: translate(-50%, -50%);
+  t-moz-ransform: translate(-50%, -50%);
+  t-webkit-ransform: translate(-50%, -50%); }
+  .loader img, .loader video {
+    opacity: 0;
+    transform: scale(0.9, 0.9);
+    -o-transform: scale(0.9, 0.9);
+    -moz-transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
+    transition: 0.2s ease-in-out; }
+  .loader #tri {
+    fill: none;
+    stroke: #a263ff;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+    animation: moveTri 2s infinite linear;
+    -o-animation: moveTri 2s infinite linear;
+    -moz-animation: moveTri 2s infinite linear;
+    -webkit-animation: moveTri 2s infinite linear;
+    transform-origin: 106px 122px;
+    -o-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    z-index: 2; }
+
+@keyframes moveTri {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
+@-webkit-keyframes moveTri {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
+@-moz-keyframes moveTri {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
+@-o-keyframes moveTri {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
+.loadStroke {
+  fill: #a263ff; }
+
+.loadStrokeG {
+  fill: #A9EE25; }
+
+.loadBG {
+  clip-path: url(#clipMask);
+  clip-path: url(#clipMask); }
+
 /*Navigation Bar */
 nav {
   background-color: transparent;
