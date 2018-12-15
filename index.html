@@ -328,15 +328,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 
 	<script type="text/javascript">
-		$('.project__link').append("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"72 -1.2 170 12.5\" class=\"squiggleSVG\">"+
+		jQuery('.project__link').append("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"72 -1.2 170 12.5\" class=\"squiggleSVG\">"+
 			"<path class=\"linkSquiggle\" d=\"M393.4 8.6c-9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1\"/></svg>")
 
-		$('.project a').hover(function(){
-			$(this).closest('.project').find('video').get(0).play();
-			$(this).closest('.project').find('.project__info a').addClass('hovered');
+		jQuery('.project a').hover(function(){
+			jQuery(this).closest('.project').find('video').get(0).play();
+			jQuery(this).closest('.project').find('.project__info a').addClass('hovered');
 		}, function(){
-			$(this).closest('.project').find('video').get(0).pause();
-			$(this).closest('.project').find('.project__info a').removeClass('hovered');
+			jQuery(this).closest('.project').find('video').get(0).pause();
+			jQuery(this).closest('.project').find('.project__info a').removeClass('hovered');
 		});
 	</script>
 </section>
