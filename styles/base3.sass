@@ -28,6 +28,9 @@ $grey: #AAA
 	box-shadow: 0 7px 28px rgba(0,0,0,0.2) 
 	border-radius: 8px
 
+html
+	overflow-x: hidden
+
 body
 	background-color: #fdfdfd
 	padding-bottom: 5em
@@ -45,7 +48,7 @@ h1
 	font: 2.46em Qanelas
 	line-height: 1.4em
 
-a, #intro__link, .label, .placeholder p, button
+a, #intro__link, #construction__link, .label, .placeholder p, button
 	color: $dark
 	font: 0.93em Qanelas
 	text-transform: uppercase
@@ -97,11 +100,13 @@ ul
 
 /*Loader*/
 .loaderDiv
-	position: fixed
 	display: block
 	width: 100vw
 	height: 100vh
 	background-color: #FDFDFD
+	position: fixed
+	left: 0
+	top: 0
 	opacity: 1
 	z-index: 10
 	transition: 0.2s ease-in-out
@@ -232,6 +237,37 @@ nav
 .mobileNav
 	display: none
 
+#mobileConstruction
+	opacity: 0
+	box-sizing: border-box
+	background-color: #9D76F4
+	width: 100vw
+	height: 100vh
+	color: #FFF
+	padding: 15vw 10vw
+	position: fixed
+	top: 0
+	left: 0
+	text-align: center
+	z-index: 5
+	pointer-events: none
+	transition: opacity 0.3s ease-in-out
+
+	h1
+		font-size: 2em
+		margin-bottom: 2vh
+
+	#constructionImg
+		width: 68vw
+		position: absolute
+		left: 50%
+		bottom: -5vw
+		transform: translateX(-50%)
+
+
+#construction__link
+	color: #FFF
+
 /*Greeting section*/
 #intro
 	padding-top: 8em
@@ -250,6 +286,7 @@ nav
 
 	svg
 		position: absolute
+
 .letterPath
 	fill: none
 	stroke: $dark
@@ -503,3 +540,29 @@ input:focus ~ .placeholder p, textarea:focus ~ .placeholder p
 	position: absolute
 	bottom: 0
 	left: 7vw
+
+
+
+@media only screen and (max-width: 700px)
+	#mobileConstruction.showing
+		opacity: 1
+		pointer-events: auto
+
+	nav
+		a
+			display: block
+
+	.aspirations
+		margin: 1em
+		svg
+			transform-origin: left
+			transform: translateX(-20%) scale(0.7)
+
+	#intro__link
+		margin: 6em auto
+
+
+@media only screen and (max-width: 600px)
+	#mobileConstruction
+		#constructionImg
+			width: 85vw

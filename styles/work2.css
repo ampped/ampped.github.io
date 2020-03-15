@@ -899,6 +899,8 @@ video.comp {
 
   #wireframes div {
     width: 100%; }
+  #wireframes .lookAtMe {
+    width: auto; }
   #wireframes .pages {
     max-width: 100%;
     margin-right: 0;

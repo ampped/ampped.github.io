@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -97,6 +98,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<a href="#contact">Contact</a>
 </nav>
 <section id="intro" class="grid">
+	<div id="mobileConstruction" class='showing'>
+		<h1>Sorry!<br />Still banging out the mobile friendliness, so please take a look on desktop...</h1><br />
+		<p id='construction__link'>But if you must <img src="arrowWhite.svg" style="width: 1em; transform: translateY(0.2em);" /></p>
+		<script type="text/javascript">
+			jQuery('#construction__link').click(function() { 
+					jQuery("#mobileConstruction").removeClass('showing') 
+				}); 
+		</script>
+
+		<img src="construction.svg" id="constructionImg" />
+	</div>
 	<img src="greeting.svg" id="greetingImg" class="grid__col grid__col--7-of-16 grid__col--push-1-of-16">
 	<div id="intro__box" class="grid__col grid__col--7-of-16">
 		<p>I’m Amy Pham, a designer striving to create experiences that will shake up the industry by harnessing the powers of</p>
@@ -226,8 +238,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 	<p id="intro__link">Let's see the work
-		<!--svg xmlns="http://www.w3.org/2000/svg" viewBox="5 -1.2 170 12.5" class="squiggleSVG">
-			<path class="linkSquiggle" d="M393.4 8.6c-9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1"/></svg--></p>
+		<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 -1.2 170 12.5" class="squiggleSVG">
+			<path class="linkSquiggle2" d="M217 1.5c-9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1"/></svg> -->
+	</p>
 	<script type="text/javascript">
 		jQuery('#intro__link').click(function() { 
 				var position = jQuery("#work").offset().top; 
