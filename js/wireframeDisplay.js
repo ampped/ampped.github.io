@@ -95,7 +95,7 @@ function createComps(compSrcs){
 		}
 		else{
 			if(compSrcs[i].includes('mobile')){
-				jQuery('#comps').append('<video class="compImg compMobile" style="box-shadow: none;" autoplay loop><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
+				jQuery('#comps').append('<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
 			}
 			else{
 				jQuery('#comps').append('<video class="compImg" autoplay loop><source src=\"' + compSrcs[i] + '.webm\" type="video/webm"><source src=\"' + compSrcs[i] + '.mp4\" type="video/mp4"></video>');
