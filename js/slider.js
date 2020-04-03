@@ -165,9 +165,9 @@ function createVideoSlider(vids){
 	var current = 0;
 
 	//create html elements of slider
-	jQuery('.slider').append('<video class="comp fitHeight currentComp" autoplay loop><source src=\"' + vidSrcs[current] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[current] + '.mp4\" type="video/mp4"></video>');
-	jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
-	jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
+	jQuery('.slider').append('<video class="comp fitHeight currentComp" autoplay loop muted><source src=\"' + vidSrcs[current] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[current] + '.mp4\" type="video/mp4"></video>');
+	jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop muted><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
+	jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop muted><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current-1+vidSrcs.length)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
 	jQuery.each(vidSrcs, function(){
 		jQuery('.pagination').append('<button class="control-page"></button>');
 	});
@@ -241,7 +241,7 @@ function createVideoSlider(vids){
 			openFull();
 		});
 		
-		jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
+		jQuery('.slider').append('<video class="comp fitHeight nextComp" autoplay loop muted><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(current+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
 	}
 
 	//move to a previous page
@@ -259,10 +259,10 @@ function createVideoSlider(vids){
 			openFull();
 		});
 
-		jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '.webm\"><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '.mp4\"></video>');
+		jQuery('.slider').append('<video class="comp fitHeight prevComp" autoplay loop muted><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '.webm\"><source src=\"' + vidSrcs[(current-1 + vidSrcs.length)%vidSrcs.length] + '.mp4\"></video>');
 	}
 	//seeing full-size comp
-	jQuery('.slider').append('<div class="fullComp"><video class="currentFull" autoplay loop></video><video class="prevFullComp" autoplay loop></video><video class="nextFullComp" autoplay loop></video><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
+	jQuery('.slider').append('<div class="fullComp"><video class="currentFull" autoplay loop muted></video><video class="prevFullComp" autoplay loop muted></video><video class="nextFullComp" autoplay loop muted></video><div class="prevFull"></div><div class="nextFull"></div><svg class="control-svg control-close" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><line x1="39" y1="33" x2="3" y2="69"/><line x1="3" y1="33" x2="39" y2="69"/></svg></div>')
 
 	//set up close button
 	jQuery('.control-close').click(function(){
@@ -314,7 +314,7 @@ function createVideoSlider(vids){
 		jQuery('.currentFull').get(0).currentTime = 0;
 		jQuery('.currentFull').get(0).play();
 		
-		jQuery('.fullComp').append('<video class="nextFullComp" autoplay loop><source src=\"' + vidSrcs[(currentFull+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(currentFull+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
+		jQuery('.fullComp').append('<video class="nextFullComp" autoplay loop muted><source src=\"' + vidSrcs[(currentFull+1)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(currentFull+1)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
 		setUpControls();
 	}
 
@@ -330,7 +330,7 @@ function createVideoSlider(vids){
 		jQuery('.currentFull').get(0).currentTime = 0;
 		jQuery('.currentFull').get(0).play();
 		
-		jQuery('.fullComp').append('<video class="prevFullComp" autoplay loop><source src=\"' + vidSrcs[(currentFull-1+vidSrcs.length)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(currentFull-1+vidSrcs.length)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
+		jQuery('.fullComp').append('<video class="prevFullComp" autoplay loop muted><source src=\"' + vidSrcs[(currentFull-1+vidSrcs.length)%vidSrcs.length] + '.webm\" type="video/webm"><source src=\"' + vidSrcs[(currentFull-1+vidSrcs.length)%vidSrcs.length] + '.mp4\" type="video/mp4"></video>');
 		setUpControls();
 	}
 
