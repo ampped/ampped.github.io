@@ -128,20 +128,24 @@ ul
 		-webkit-transform: scale(0.9, 0.9)
 		transition: 0.2s ease-in-out
 
+	#clipMask, #tri
+		animation: moveTri 3s infinite linear
+		-o-animation: moveTri 3s infinite linear
+		-moz-animation: moveTri 3s infinite linear
+		-webkit-animation: moveTri 3s infinite linear
+		transform-origin: 50% 50%
+		-o-transform-origin: 50% 50%
+		-moz-transform-origin: 50% 50%
+		-webkit-transform-origin: 50% 50%
+
 	#tri
 		fill: none
 		stroke: $purple
 		stroke-width: 4
 		stroke-miterlimit: 10
-		animation: moveTri 2s infinite linear
-		-o-animation: moveTri 2s infinite linear
-		-moz-animation: moveTri 2s infinite linear
-		-webkit-animation: moveTri 2s infinite linear
-		transform-origin: 106px 122px
-		-o-transform-origin: 50% 50%
-		-moz-transform-origin: 50% 50%
-		-webkit-transform-origin: 50% 50%
-		z-index: 2
+
+	#triMask
+		fill: none
 
 @keyframes moveTri
 	0%
@@ -297,14 +301,14 @@ nav
 
 @keyframes squiggle
 	from
-		stroke-dashoffset: 0
+		stroke-dashoffset: 171
 	to
-		stroke-dashoffset: -171
+		stroke-dashoffset: 342
 @keyframes move
 	from
-		transform: translateX(-94.5%)
-	to
 		transform: translateX(-2%)
+	to
+		transform: translateX(-94.5%)
 
 .animated
 	left: 8%

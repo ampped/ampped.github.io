@@ -3,6 +3,7 @@ function setupWorkPage(){
 	window.onload = function(){
 		addNav();
 		addSquiggles();
+		addLoader();
 	}
 }
 
@@ -59,12 +60,6 @@ function addNav(){
 	    }
 	    lastScrollTop = st;
 	}
-
-	jQuery('.project').hover(function(){
-		this.firstChild.play();
-	}, function(){
-		this.firstChild.pause();
-	});
 }
 
 function addSquiggles(){
