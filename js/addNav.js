@@ -13,8 +13,8 @@ function addNav(){
 
 	jQuery('nav').after("<div class=\"mobileNav\">"+
 		"<img src=\"../../mobileClose.svg\" class=\"mobileClose\">"+
-		"<img src=\"../../logo.svg\" class=\"logo\"><br>"+
-		"<a href=\"../../index.html#work\">Work</a><br><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><br><a href=\"../../index.html#contact\">Contact</a><br>"+
+		"<img src=\"../../logo.svg\" class=\"logo\"><br />"+
+		"<a href=\"../../index.html#work\">Work</a><br /><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><br /><a href=\"../../index.html#contact\">Contact</a><br />"+
 	"</div>");
 	
 	jQuery('.mobileMenuButton').click(function(){
@@ -68,7 +68,7 @@ function addNav(){
 }
 
 function addSquiggles(){
-	jQuery('h1').append('<br><svg xmlns="http://www.w3.org/2000/svg" width="208" height="14" viewBox="0 0 207.6 13.6"><style type="text/css">' +
+	jQuery('h1').append('<br /><svg xmlns="http://www.w3.org/2000/svg" width="208" height="14" viewBox="0 0 207.6 13.6"><style type="text/css">' +
 		'.hSquiggle{fill:none;stroke:#AAEF25;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
 	'</style><path class="hSquiggle" d="M206.6 1c-7.5 0-10.1 3.4-12.9 5.8 -3 2.6-5.3 5.8-12.9 5.8 -7.5 0-9.9-3.2-12.9-5.8 -2.8-2.4-5.3-5.8-12.9-5.8 -7.5 0-9.9 3.2-12.9 5.8 -2.8 2.4-5.3 5.8-12.9 5.8 -7.5 0-10.1-3.4-12.9-5.8 -3-2.6-5.3-5.8-12.9-5.8S93.8 4.4 91 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C62.5 4.4 59.9 1 52.4 1S42.3 4.4 39.6 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C11.1 4.4 8.5 1 1 1"/></svg>');
 	jQuery('h3').each(function(){

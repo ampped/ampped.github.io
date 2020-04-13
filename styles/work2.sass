@@ -109,7 +109,14 @@ a
 		opacity: 0.4
 
 .beginningBlock
+	display: block
+	margin: 0 auto
 	margin-top: 100px !important
+	width: 90%
+	max-width: 1000px
+
+.goProject
+	max-width: initial
 
 .right
 	float: right
@@ -226,8 +233,6 @@ a
 
 #research
 	text-align: left
-	width: 90%
-	max-width: 1000px
 	margin: 0 auto
 	.grid__col
 		transform: translateX(-6em)
@@ -522,7 +527,8 @@ a
 			&.selected
 				display: none
 		.lookAtMe
-			background-color: rgba(255,255,255,0.85)
+			background-color: rgba(162,99,255,0.85)
+			color: $white
 			padding: 1em 1.5em
 			border-radius: 0.5em
 			transform: translate(-50%, 47%)
@@ -531,6 +537,7 @@ a
 			@include heading-font()
 			@include drop-shadow()
 
+			letter-spacing: 0.03em
 			position: absolute
 			z-index: 3
 
@@ -597,6 +604,8 @@ a
 				stroke-width: 5
 
 #moodboard
+	width: 100%
+	max-width: initial
 	img
 		width: 56%
 		position: relative

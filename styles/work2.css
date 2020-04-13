@@ -87,7 +87,14 @@ a {
     opacity: 0.4; }
 
 .beginningBlock {
-  margin-top: 100px !important; }
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px !important;
+  width: 90%;
+  max-width: 1000px; }
+
+.goProject {
+  max-width: initial; }
 
 .right {
   float: right; }
@@ -206,8 +213,6 @@ a {
 
 #research {
   text-align: left;
-  width: 90%;
-  max-width: 1000px;
   margin: 0 auto; }
   #research .grid__col {
     transform: translateX(-6em);
@@ -501,7 +506,8 @@ a {
       #wireframes .wf .hotspotClone.selected {
         display: none; }
     #wireframes .wf .lookAtMe {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(162, 99, 255, 0.85);
+      color: #FFF;
       padding: 1em 1.5em;
       border-radius: 0.5em;
       transform: translate(-50%, 47%);
@@ -511,6 +517,7 @@ a {
       font-weight: 500;
       letter-spacing: 0;
       box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3);
+      letter-spacing: 0.03em;
       position: absolute;
       z-index: 3;
       opacity: 1;
@@ -568,27 +575,30 @@ a {
     #wireframes.landscape .wf .hotspot.selected {
       stroke-width: 5; }
 
-#moodboard img {
-  width: 56%;
-  position: relative;
-  left: 0;
-  display: inline-block; }
-#moodboard div {
-  width: 35%;
-  height: 100%;
-  padding: 100px 0 50px 70px;
-  display: inline-block;
-  vertical-align: top; }
-#moodboard p {
-  max-width: 24em; }
-#moodboard li {
-  font-family: "Qanelas", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0;
-  /*&::before
-   * content: '\2014\00a0'
-   * color: $midPurple
-   * font-size: 16pt */ }
+#moodboard {
+  width: 100%;
+  max-width: initial; }
+  #moodboard img {
+    width: 56%;
+    position: relative;
+    left: 0;
+    display: inline-block; }
+  #moodboard div {
+    width: 35%;
+    height: 100%;
+    padding: 100px 0 50px 70px;
+    display: inline-block;
+    vertical-align: top; }
+  #moodboard p {
+    max-width: 24em; }
+  #moodboard li {
+    font-family: "Qanelas", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0;
+    /*&::before
+     * content: '\2014\00a0'
+     * color: $midPurple
+     * font-size: 16pt */ }
 
 #prototype {
   text-align: center; }
