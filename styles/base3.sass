@@ -375,10 +375,33 @@ nav
 	padding-top: 10em
 
 .project
+	display: flex
+	justify-content: center
+	align-content: center
 	position: relative
 	margin-bottom: 12.67em
 
+	&:nth-child(odd)
+		.project__info
+			margin-left: 14%
+		.previewBack
+			left: -1.5em
+	&:nth-child(even)
+		flex-direction: row-reverse
+		.project__info
+			margin-right: 14%
+		.previewBack
+			right: -1.5em
+		
+.project__prvwHolder
+	width: calc(8.8em + 13vw)
+	height: 100%
+	position: relative
+
 .project__preview, .previewBack
+	display: block
+	width: 100%
+	height: 100%
 	overflow: hidden
 	position: relative
 	@include material()
@@ -398,18 +421,15 @@ nav
 
 .previewBack
 	position: absolute
-	top: 10px
+	top: 1.5em
 
 	background-color: $purple
 	z-index: -1
 	@include material()
 
-	&:nth-child(odd)
-		left: -15px
-	&:nth-child(even)
-		margin-right: 6.25%
-		right: -15px
-
+.project__info
+	width: 60%
+	max-width: 28em
 
 .project__title
 	margin-top: 1.1em
@@ -451,6 +471,7 @@ textarea
 	border: none
 	border-bottom: 3px solid $purple
 	@include material()
+	box-shadow: 0 6px 10px rgba(0,0,0,0.2) 
 	&:focus
 		outline: 0
 
@@ -570,3 +591,6 @@ input:focus ~ .placeholder p, textarea:focus ~ .placeholder p
 	#mobileConstruction
 		#constructionImg
 			width: 85vw
+	
+	.project
+		display: block
