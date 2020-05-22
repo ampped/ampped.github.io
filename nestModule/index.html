@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thermostat Schedule Maker</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+	<style type="text/css">
+		html, body{
+			margin: 0;
+			color: #999;
+			font-family: 'Source Sans Pro';
+		}
+
+		a{
+			color: #00AFD8;
+			font-size: 14pt;
+			font-weight: 300;
+			margin: 0 10px;
+			text-decoration: none;
+		}
+
+		main{
+			position: absolute;
+			width: 100%;
+			height: 16pt;
+		}
+
+		#device{
+			position: absolute;
+			width: 100%;
+			font-size: 20pt;
+			font-weight: 400;
+			color: #999;
+			text-align: center;
+		}
+
+		.degree{
+			font-size: 70%;
+			line-height: 85pt;
+			margin-left: -10px;
+			vertical-align: top;
+		}
+
+		.thermInfo{
+			position: absolute;
+			text-align: center;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.day{
+			color: #00AFD8;
+			font-size: 20pt;
+			font-weight: 300;
+			margin: 0 auto;
+		}
+		#currentTarget{
+			color: #FF9332;
+			font-size: 114pt;
+			font-weight: 600;
+			line-height: 100pt; 
+			margin: 0 auto;
+			transform: translateX(16px);
+		}
+		.time{
+			font-size: 24pt;
+			margin: 0 auto;
+		}
+
+		#leaf{
+			position: absolute;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		#controls{
+			margin-top: 4px;
+		}
+
+		.editUI{
+			position: absolute;
+			cursor: pointer;
+			z-index: 1;
+		}
+
+		.node{
+			position: absolute;
+			text-align: center;
+			width: 137px;
+			height: 137px;
+			line-height: 0;
+			cursor: grab;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.node:active{
+			cursor: grabbing;
+		}
+
+		.nodeButton{
+			position: absolute;
+			left: 0;
+			margin-top: 50%;
+			margin-left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.nodeTemp{
+			position: absolute;
+			width: 100%;
+			font-weight: 400;
+			margin: 0;
+			margin-top: 50%;
+			transform: translateY(-50%);
+		}
+
+		#tempSlider{
+			-webkit-appearance: none;
+			outline: none;
+			width: 180px;
+		}
+		#tempSlider::-webkit-slider-runnable-track{
+			width: 100%;
+			height: 7px;
+			background: linear-gradient(to right, rgb(255, 248, 183), rgb(255, 102, 0), rgb(230, 49, 23));
+			border: 0;
+			border-radius: 7px;
+		}
+		#tempSlider::-webkit-slider-thumb {
+		    box-shadow: 0px 2px 4px #999;
+		    border: 5px solid #FFF;
+		    height: 18px;
+		    width: 18px;
+		    border-radius: 10px;
+		    background: none;
+		    cursor: pointer;
+		    -webkit-appearance: none;
+		    margin-top: -5px;
+		}
+
+		#presets{
+			width: 238px;
+			line-height: 0;
+		}
+
+		#addPreset{
+			position: absolute;
+		}
+
+		.preset{
+			display: inline-block;
+			width: 29px;
+			height: 29px;
+			position: static;
+			text-align: center;
+			color: #FFF;
+			font-size: 11pt;
+			font-weight: 300;
+			letter-spacing: 1px;
+			border-radius: 14.5px;
+			margin: 0 13px 8px 0;
+			line-height: 29px;
+			cursor: pointer;
+		}
+
+		.nodeOption{
+			position: absolute;
+			transform: translateX(-50%) translateY(-50%) scale(1, 1);
+			cursor: pointer;
+			opacity: 1;
+			z-index: 1;
+			transition: opacity 0.1s ease-in-out, transform 0.15s ease-in-out;
+		}
+
+		.nodeOptHidden{
+			transform: translateX(-50%) translateY(-50%) scale(0, 0);
+			opacity: 0;
+		}
+
+	</style>
+	<script>
+		window.onload = init;
+		var hoveredNodeI = {};
+		var prevTemp = -1;
+		var prevTime = -1;
+
+		function init(){
+			getWeatherData();
+			$('.editUI').css('display','none');
+
+			var tempSlider = document.querySelector('#tempSlider');
+
+			//edit temperature of a node by slider
+			tempSlider.oninput = function(){
+				var node = app.main.s.nodes[app.main.getEditI()];
+				node.temp = this.value;
+
+				$('#editTemp').css({'color': node.getColor(), 'font-size': '1.5em', 'font-weight': 400});
+				document.querySelector('#editTemp').innerHTML = node.temp + '°';
+			};
+
+			var complete = document.querySelector('#completeEdit');
+			var cancel = document.querySelector('#cancelEdit');
+
+			complete.onclick = function(){
+				$('.thermInfo').fadeIn(200);
+				$('#leaf').fadeOut(200);
+
+				$('#editNode').addClass('defaultNode');
+				$('#editNode').removeClass('ui-draggable ui-draggable-handle');
+				$('#editNode').draggable('disable');
+				$('.editUI').toggle();
+
+				document.querySelector('#editNode').setAttribute('id', "");
+				document.querySelector('#editTemp').setAttribute('id', "");
+
+				//set state of current selected node to default
+				app.main.s.nodes[app.main.getEditI()].state = app.main.NODE_STATE.DEFAULT;
+
+				makeHover();
+
+				app.main.state = app.main.STATE.DEFAULT;
+				prevTemp = -1;
+				prevTime = -1;
+			}
+
+			cancel.onclick = function(){
+				$('.thermInfo').fadeIn(200);
+				$('#leaf').fadeOut(200);
+
+				nodes = app.main.s.nodes;
+		        var i = app.main.getEditI();
+
+				if(prevTemp == -1){
+					$('#editNode').remove();
+					nodes.splice(i, 1);
+				}
+				else{
+					//reset temp
+					nodes[i].temp = prevTemp.replace('°', '');
+					document.querySelector('#editTemp').innerHTML = prevTemp;
+					$('#editTemp').css('color', nodes[i].getColor());
+
+					if(prevTemp == 'OFF'){
+						document.querySelector('#editTemp').innerHTML = nodes[i].temp;
+						$('#editTemp').css({'color': '#999', 'font-size': '16pt', 'font-weight': 300});
+					}
+
+					//reset time
+					nodes[i].time = getTime(prevTime);
+				    setPositions(prevTime, document.querySelector('#editNode'));
+
+					$('#editNode').addClass('defaultNode');
+					$('#editNode').removeClass('ui-draggable ui-draggable-handle');
+					$('#editNode').draggable('disable');
+
+					//set state of current selected node to default
+					nodes[i].state = app.main.NODE_STATE.DEFAULT;
+
+			        //change order of nodes back accordingly
+			        if(nodes.length > 1){
+			        	removeNode = nodes.splice(i, 1);
+				        for(var j = 0; j < nodes.length; j++){
+				        	if(nodes[j].time > getTime(prevTime)){
+				        		nodes.splice(j, 0, removeNode[0]);
+				        		break;
+				        	}
+				        	else if(j == nodes.length-1){
+				        		nodes.splice(j+1, 0, removeNode[0]);
+				        		break;
+				        	}
+				        }
+				    }
+
+					document.querySelector('#editNode').setAttribute('id', "");
+					document.querySelector('#editTemp').setAttribute('id', "");
+
+				}
+
+				$('.editUI').toggle();
+				makeHover();
+				app.main.state = app.main.STATE.DEFAULT;
+				prevTemp = -1;
+				prevTime = -1;
+			}
+
+			//code for presets
+			var add = document.querySelector('#addPreset');
+			var off = document.querySelector('#setOff');
+
+			add.onclick = function(){
+				nodes = app.main.s.nodes;
+		        var i = app.main.getEditI();
+
+		        //check if preset already exists
+		        var presets = document.querySelectorAll('.preset');
+		        for(var j = 0; j < presets.length; j++){
+		        	if(presets[j].innerHTML == nodes[i].temp)
+		        		return;
+		        }
+
+				var newPreset = document.createElement('div');
+				newPreset.innerHTML = nodes[i].temp;
+				newPreset.setAttribute('class', 'preset');
+				newPreset.style.backgroundColor = nodes[i].getColor();
+
+
+				newPreset.onclick = function(){
+					nodes = app.main.s.nodes;
+			        var i = app.main.getEditI();
+					nodes[i].temp = newPreset.innerHTML;
+					document.querySelector('#editTemp').innerHTML = nodes[i].temp + '°';
+					document.querySelector('#editTemp').style.color = nodes[i].getColor();
+					document.querySelector('#tempSlider').value = nodes[i].temp;
+				}
+
+				if(presets.length == 1)
+					presets[0].after(newPreset);
+				else{
+					for(var j = 1; j < presets.length; j++){
+						if(presets[j].innerHTML > nodes[i].temp){
+							$(presets[j]).before(newPreset);
+							return;
+						}
+					}
+					$('#addPreset').before(newPreset);
+				}
+			}
+
+			off.onclick = function(){
+				nodes = app.main.s.nodes;
+		        var i = app.main.getEditI();
+
+		        nodes[i].temp = 'OFF';
+				document.querySelector('#editTemp').innerHTML = 'OFF';
+				$('#editTemp').css({'color': '#999', 'font-size': '16pt', 'font-weight': 300});
+			}
+		} 
+
+		function makeDraggable(){
+			//original script found here: https://ammarshaikh.wordpress.com/2011/12/20/drag-object-in-circular-motion-using-jquery-ui-draggable/
+			$(function() {
+			  $( "#editNode" ).draggable();
+			});
+
+			var drag = $('#editNode');
+			drag.draggable({
+			    start: function(e){
+			        if(!drag.data('circle'))
+			            drag.data( 'circle', {
+			                radius : app.main.MAIN.radius,
+			                centerX : app.main.center.x,
+			                centerY : app.main.center.y
+			        	});
+			    },
+			    drag: function(e,domNode){
+			        var data = drag.data( 'circle' );
+			        var angle = Math.atan2( e.pageX - data.centerX, e.pageY - data.centerY );
+
+			        //my code to set node times to 15 minute intervals
+		      	    angle -= angle % getAngle(15);
+			        if(angle % getAngle(15) > getAngle(15)/2)
+			      	angle += getAngle(15);
+			        //end
+
+			        //set position of node
+			        var postop = Math.round(data.centerY + (Math.cos( angle ) * data.radius));
+			        var posleft = Math.round(data.centerX + (Math.sin( angle ) * data.radius));
+			        domNode.position.top = postop;
+			        domNode.position.left = posleft;
+
+			        //my code to record node time
+			        var nodes = app.main.s.nodes;
+
+			        //change order of nodes accordingly
+			        var i = app.main.getEditI();
+			        nodes[i].time = getTime(Math.PI-angle);
+			        if(i == nodes.length-1 && nodes[i].time < nodes[0].time){
+			        	var editNode = nodes.splice(i, 1);
+						nodes.splice(0, 0, editNode[0]);
+					}
+			        else if(i == 0 && nodes[i].time > nodes[nodes.length-1].time){
+			        	var editNode = nodes.splice(i, 1);
+						nodes.splice(nodes.length, 0, editNode[0]);
+			        }
+			        else if(i > 0 && nodes[i].time < nodes[i-1].time){
+			        	var editNode = nodes.splice(i, 1);
+						nodes.splice(i-1, 0, editNode[0]);
+			        }
+			        else if(i < nodes.length-1 && nodes[i].time > nodes[i+1].time){
+			        	var editNode = nodes.splice(i, 1);
+						nodes.splice(i+1, 0, editNode[0]);
+			        }
+
+					setPositions(Math.PI - angle, document.querySelector('#editNode'));
+				}
+			});
+		}
+			
+		function setPositions(angle, domNode){
+			angle = Math.PI - angle;
+
+	        //set position of node
+			var postop = Math.round(app.main.center.y + (Math.cos(angle ) * app.main.MAIN.radius));
+		    var posleft = Math.round(app.main.center.x + (Math.sin(angle ) * app.main.MAIN.radius))
+
+		    domNode.style.top = postop + 'px';
+		    domNode.style.left = posleft + 'px';
+
+	        //set up variables to change position of buttons
+		    var editButton = $(domNode).children('.editButton');
+		    var deleteButton = $(domNode).children('.deleteButton');
+
+			//get angles to set positions of buttons
+		    if(angle < 0){
+				var angleE = angle - 0.349;
+				var angleD = angle + 0.349;
+			}
+			else{
+				var angleE = angle + 0.349;
+				var angleD = angle - 0.349;
+			}
+
+		    //set position of edit button
+		    var postopE = Math.round(domNode.offsetWidth/2 + (Math.cos(angleE ) * 57));
+		    var posleftE = Math.round(domNode.offsetWidth/2 + (Math.sin(angleE ) * 57));
+
+		    editButton.css('top', postopE +'px');
+		    editButton.css('left', posleftE +'px');
+
+		    //set position of delete button
+		    var postopD = Math.round(domNode.offsetWidth/2 + (Math.cos(angleD ) * 57));
+		    var posleftD = Math.round(domNode.offsetWidth/2 + (Math.sin(angleD ) * 57));
+
+		    deleteButton.css('top', postopD +'px');
+		    deleteButton.css('left', posleftD +'px');
+
+	        //move edit UI along with node
+			var adjustY = 0;
+			if(angle > -Math.PI/2 && angle < Math.PI/2)
+				adjustY = Math.cos(angle)*65;
+
+			var postopS = Math.round(app.main.center.y + (Math.cos( angle ) * (app.main.MAIN.radius+30)) + adjustY);
+		    var posleftS = Math.round(app.main.center.x + (Math.sin( angle ) * (app.main.MAIN.radius+30)))
+
+		    if(angle > 0){
+			    $('#tempSlider').css({'top': postopS, 'left': posleftS+54});
+			    $('#presets').css({'top': postopS+23, 'left': posleftS+29});
+			    $('#completeEdit').css({'top': postopS-50, 'left': posleftS+172});
+			    $('#cancelEdit').css({'top': postopS-50, 'left': posleftS+210});
+			}
+			else{
+				$('#tempSlider').css({'top': postopS, 'left': posleftS-238});
+			    $('#presets').css({'top': postopS+23, 'left': posleftS-263});
+			    $('#completeEdit').css({'top': postopS-50, 'left': posleftS-250});
+			    $('#cancelEdit').css({'top': postopS-50, 'left': posleftS-212});
+			}
+		}
+
+		function makeHover(){
+			//make options in every node, this.children().addClass on hover
+			$('.defaultNode').hover(function(){
+				$(this).addClass('hovered');
+				$(this).children('.nodeOption').removeClass('nodeOptHidden');
+
+				//get corresponding node object
+				var nodes = app.main.s.nodes;
+				for(var i in nodes){
+					var elTime = Math.atan2( (this.style.left).replace('px','') - app.main.center.x, (this.style.top).replace('px','') - app.main.center.y );
+					elTime = Math.PI - elTime;
+					elTime = getTime(elTime);
+					if(elTime == nodes[i].time)
+						hoveredNodeI = i;
+				}
+			}, function(){
+				$('.nodeOption').addClass('nodeOptHidden');
+				$(this).removeClass('hovered');
+			});
+		}
+	</script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+	<script src="js/weather.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/draw.js"></script>
+</head>
+<body>
+	<main>
+		<h1 id="device"></h1>
+		<div class="thermInfo">
+			<p class="day"></p>
+			<h1 id="currentTarget"></h1>
+			<p class="time"></p>
+			<!--for later development div id="controls"><a href="">Smartset</a><a href="">Copy</a><a href="">Templates</a></div-->
+		</div>
+		<img src="img/leaf.png" id="leaf" style="display:none">
+		<img src="img/complete.png" id="completeEdit" class="ui-widget-content editUI">
+		<img src="img/x.png" id="cancelEdit" class="ui-widget-content editUI">
+		<input type="range" id="tempSlider" class="editUI">
+		<div id="presets" class="editUI"><div id="setOff" class="preset" style="background-color:#CECECE; font-size: 10pt; letter-spacing: 1px">OFF</div><img src="img/addPreset.png" id="addPreset"></div>
+		<a href="https://darksky.net/poweredby" style="position: absolute; top:95vh; left: 50%; transform: translateX(-50%); font-size:1.5ex; color: #777">Weather Info by Dark Sky API</a>
+	</main>
+	<canvas></canvas>
+</body>
+</html>
