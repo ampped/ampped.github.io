@@ -13,7 +13,7 @@
   src: url("../fonts/HKGrotesk-Bold.ttf"); }
 @font-face {
   font-family: Qanelas;
-  src: url("../fonts/QanelasSoftDEMO-ExtraBold.otf"); }
+  src: url("../fonts/qanelassoft-extrabold-webfont.woff2") format("woff2"), url("../fonts/qanelassoft-extrabold-webfont.woff") format("woff"); }
 /*$midPurple: #BF78FF */
 nav {
   background-color: #FFF;
