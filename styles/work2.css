@@ -67,6 +67,33 @@ a {
   font-size: 12pt;
   border-bottom: solid 1px #24252e; }
 
+.project__link, .otherProject h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  border-bottom: none; }
+
+.project__link:hover {
+  color: #24252e; }
+  .project__link:hover:after {
+    margin-left: 1.5ex; }
+
+.project__link::after, .otherProject:last-of-type h5::after, .otherProject:first-of-type h5::before {
+  display: inline-block;
+  content: "";
+  width: 1.8ex;
+  height: 1.8ex;
+  background: url("../arrow.svg") no-repeat;
+  background-size: contain;
+  margin-left: 0.8ex;
+  margin-top: 0ex;
+  transform: translateY(14%);
+  transition: 0.2s ease-in-out; }
+
+.otherProject:first-of-type h5::before {
+  margin-left: 0;
+  margin-right: 1ex;
+  transform: translateY(14%) rotate(180deg); }
+
 .addShadow {
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
 
@@ -83,9 +110,6 @@ a {
 
 .header-img {
   width: 100%; }
-
-.goProject {
-  max-width: initial; }
 
 .right {
   float: right; }
@@ -256,6 +280,8 @@ a {
   margin-top: 30px;
   position: relative;
   vertical-align: top; }
+  .researchItem img {
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
 
 .surveyItem {
   margin-bottom: 30px;
@@ -710,18 +736,27 @@ video.comp {
   max-width: 43em;
   width: 80%; }
 
+.goProject {
+  display: flex;
+  justify-content: space-between;
+  max-width: initial; }
+
 .otherProject {
-  width: 33%;
-  height: 280px;
-  position: relative;
-  margin: 0 5%;
+  width: 45%;
   border-bottom: none; }
+  .otherProject:first-of-type .wordblock {
+    float: right;
+    text-align: right; }
+  .otherProject:last-of-type .wordblock {
+    float: left; }
   .otherProject .mask {
+    display: inline-block;
+    width: 20vw;
+    height: 20vw;
     overflow: hidden;
     border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out; }
   .otherProject img {
     width: auto;
     max-width: none;
@@ -730,25 +765,24 @@ video.comp {
     left: 0;
     z-index: -2;
     float: right; }
+  .otherProject video {
+    height: 100%; }
   .otherProject .wordblock {
-    background-color: #FFF;
-    border-radius: 8px;
-    padding: 1.5ex 2.5ex;
-    width: auto;
-    position: absolute;
-    top: -5%;
-    left: -10%;
-    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
+    width: 18vw;
+    font-size: 2em;
+    padding-top: 5.5vw; }
   .otherProject h5 {
-    font-weight: 500;
-    margin: 0.5ex 0; }
-  .otherProject svg {
-    stroke: #FFF; }
-  .otherProject::before {
-    background-color: #FFF;
-    opacity: 0.4; }
-  .otherProject:hover .wordblock {
-    color: #A263FF; }
+    font-size: 0.5em;
+    margin-bottom: 1em; }
+  .otherProject:hover {
+    color: #24252e; }
+    .otherProject:hover .mask {
+      transform: translateY(-3%);
+      box-shadow: 0 9px 20px rgba(0, 0, 0, 0.4); }
+    .otherProject:hover h5::after {
+      margin-left: 1.55ex; }
+    .otherProject:hover h5::before {
+      margin-right: 1.55ex; }
 
 .footer {
   width: auto;

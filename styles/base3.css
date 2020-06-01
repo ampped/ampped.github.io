@@ -43,6 +43,9 @@ a, #intro__link, #construction__link, .label, .placeholder p, button {
 ul {
   list-style: none; }
 
+.bold {
+  font-family: HK-bold; }
+
 #intro__link::after, .project__link::after, button::after {
   display: inline-block;
   content: "";
@@ -50,7 +53,7 @@ ul {
   height: 1.8ex;
   background: url("../arrow.svg") no-repeat;
   background-size: contain;
-  margin-left: 0ex;
+  margin-left: 0.75ex;
   margin-top: 0ex;
   transform: translateY(14%);
   transition: 0.2s ease-in-out; }
@@ -398,7 +401,7 @@ nav {
   margin-bottom: 3.37em; }
 
 .project__link.hovered:after, button:after {
-  margin-left: 0.8ex; }
+  margin-left: 1.55ex; }
 
 /*contact */
 input, textarea {
