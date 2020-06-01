@@ -20,6 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script  src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../styles/base2.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/work2.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/toast/css/grid.css">
 	<script src="../../js/addNav.js"></script>
 	<script src="../../js/slider.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
@@ -70,49 +71,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			}
 		}, 10);
 	</script>
-<div class="scene_element">
-<main class="scene_element">
+<main>
 	<section class="overview">
-		<div id="headerVid">
-			<video autoplay loop muted>
-				<source src="addNode.mp4" type="video/mp4">
-			</video>
-		</div>
-		<section class="overviewInfo">
+		<div class="overviewInfo">
 			<h1>Nest Schedule Redesign</h1>
-			<div class="story">
-				<p>Nest's thermostat is a smart thermostat that learns when and how to adjust itself automatically to the user's preferences over time. It also connects to a website module that lets the user schedule temperature targets for the week.</p><br />
-				<p>The current scheduling module takes some effort to use and has limited functions. <strong>This module should be redesigned with a more intuitive interface and features that will cater more to the user's needs to match the thermostat itself.</strong></p><br /><br /><br />
-				<h4>Development</h4><br /><br />
-				<p>I also developed this project as practice. The project works with a Nest thermostat simulator, the Nest API, and a weather API to gather real time data. This application shows the basic interactions, but it does not contain all the features I had planned in my design. For now, I have made an Invision prototype to show how the features would connect.</p><br />
-				<p>
-					<a href="../../nestModule/index.html" target="_blank">Developed prototype</a><br />
-					<a href="https://invis.io/7M76EQFTC" target="_blank">Invision prototype</a>
+			<div class="skills grid">
+				<p class="grid__col grid__col--1-of-2">
+					UX Design<br />
+					UI Design
+				</p>
+				<p class="grid__col grid__col--1-of-2">
+					Prototype Animation<br />
+					Front-end Development
 				</p>
 			</div>
-			<ul class="skills">
-				<li class="header">skills focused on</li>
-				<li>UX Design</li>
-				<li>UI Design</li>
-				<li>Prototype Animation</li>
-				<li>Front-end Development</li>
-			</ul>
-		<script type="text/javascript">
-			jQuery('.overview').find('a').append('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>');
-		</script>
-		</section>
+			<p>The Nest smart thermostat connects to a website module that lets users schedule temperature targets for the week, but it is limited and takes effort to use.
+			<p>I redesigned the module to be a <span class="bold">full-fledged experience with an interface that feels more like an extension of the thermostat.</span></p>
+			<p>I also developed the basic interface design.</p>
+			<a href="../../nestModule/index.html" target="_blank" style="text-transform: uppercase; letter-spacing: 0.1em;">Try the prototype</a>
+			<script type="text/javascript">
+				jQuery('.overview').find('a').append('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 28 10"><line x1="8" y1="5" x2="26" y2="5"/><polyline points="22 9 26 5 22 1 "/></svg>');
+			</script>
+		</div>
+		<div class="preview">
+			<h4>Current</h4><br /><br />
+			<img src="nestCurrent.png" /><br /><br /><br />
+			<h4>Redesign</h4><br /><br />
+			<video autoplay loop muted style="width: 537px;"><source src="addNode.mp4" type="video/mp4"></video>
+		</div>
 	</section>
-	<section class="previewVid beginningBlock">
-		<video autoplay loop muted><source src="addNode.mp4" type="video/mp4"></video>
-	</section>
-	<section class="beginningBlock">
+	<section>
 		<div id="research">
 		<h3>Research</h3><br />
 		<div class="comparison">
 			<h4>Current Interface</h4><br /><br />
 			<img src="current.png" style="margin: 0 auto; display: block">
-			<!--p>The current schedule module for Nest requires the user to read the temperature of each target to know what it is. To know when the temperature is scheduled, users would have to visually draw a line from the target to the timeline. It may still be hard to pinpoint because targets can be scheduled on 15 minute intervals. Overall, it takes time to read and understand this schedule.</p-->
-			<!--img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="nestCurrent.webp" class="right"/-->
 		</div>
 		<br /><br />
 		<h4>Competitive Analysis</h4><br /><br />
@@ -228,7 +221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
 		</script>
 	</section>
-	<section id="moodboard" class="beginningBlock" style="text-align: left;">
+	<section id="moodboard" style="text-align: left;">
 		<h3>art direction</h3>
 		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp">
 		<div>
@@ -241,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</ul>
 		</div>
 	</section>
-	<section id="comps" class="beginningBlock">
+	<section id="comps">
 		<div class="wordblock">
 			<h3>Final Design</h3><br />
 		</div>
@@ -286,6 +279,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</p>
 	</section>
 </main>
-</div>
 </body>
 </html>

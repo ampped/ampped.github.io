@@ -21,6 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="stylesheet" type="text/css" href="../../styles/work2.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="../../js/wireframeDisplay.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../styles/toast/css/grid.css">
 	<script src="../../js/addNav.js"></script>
 	<script src="../../js/slider.js"></script>
 	<script type="text/javascript">
@@ -70,37 +71,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			  }
 			}, 10);
 	</script>
-<div class="scene_element">
-<main class="scene_element">
+<main>
 	<section class="overview">
-		<div id="headerVid">
-			<video autoplay loop muted>
-				<source src="landscapeStill.webm" type="video/webm">
-				<source src="landscapeStill.mp4" type="video/mp4">
-			</video>
-		</div>
-		<section class="overviewInfo">
-			<h1>The Importance of Self Care</h1>
-			<div class="story">
-				<p>A few days before starting this project, I attended a talk about self care for artists and designers. The speaker did well in covering basic care techniques, but couldn't answer any of the questions students asked. These were serious questions that everyone often asks themselves, and I felt that they needed to be addressed.</p><br />
-				<p>After that experience, I became extremely aware of how stressed and doubtful the people around me were. So many of my friends were pulling all-nighters, sometimes multiple in a row. I felt compelled to make this project to tell people that:</p><br />
-				<strong>In a field like design, where the only effort we can put in is time, it's hard to admit that we need to take a break sometimes. We get exhausted and stressed over perfecting projects and how our futures depend on our work. But it's ok to take a break and it's important to take care of yourself.</strong>
+		<div class="overviewInfo">
+			<h1>The Importance of<br />Self Care</h1>
+			<div class="skills grid">
+				<p class="grid__col grid__col--1-of-2">
+					Motion Graphics<br />
+					Illustration
+				</p>
+				<p class="grid__col grid__col--1-of-2">Storytelling</p>
 			</div>
-			<ul class="skills">
-				<li class="header">skills focused on</li>
-				<li>Motion Graphics</li>
-				<li>Illustration</li>
-				<li>Storytelling</li>
-			</ul>
-		</section>
-	</section>
-	<section id="video" class="beginningBlock">
-		<iframe src="https://player.vimeo.com/video/197560377?color=b995f0&title=0&byline=0&portrait=0" width="1000" height="563" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	</section>
-	<section id="creations">
-		<img src="creation_orbit.gif" style="margin: 0 3vw">
-		<img src="creation_stripes.gif" id="toHide">
-		<img src="creation_diamond.gif">
+				<p>After attending a talk about self care for artists and designers, I became extremely aware of how stressed and doubtful the people around me were. So many of my friends were pulling all-nighters, sometimes multiple in a row. I felt compelled to make this project to tell people that:</p><br />
+				<p class="bold">It's hard to admit that we need to take a break sometimes. We get exhausted and stressed over perfecting projects and how our futures depend on our work. But it's ok to take a break and it's important to take care of yourself.</p class="bold">
+		</div>
+		<div class="preview">
+			<div id="creations">
+				<img src="creation_orbit.gif">
+				<img src="creation_stripes.gif" id="toHide">
+				<img src="creation_diamond.gif">
+			</div>
+			<iframe src="https://player.vimeo.com/video/197560377?color=b995f0&title=0&byline=0&portrait=0" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
 	</section>
 	<section>
 		<div class="wordblock"><h3>Writing the Script</h3><br />
@@ -108,8 +100,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><br /><br />
 		<img onerror="this.src=(this.src.replace('webp','png'));this.onerror=null;" src="storyboard.webp">
 	</section>
-	<section id="moodboard" class="beginningBlock" style="text-align: left;">
-		<h3>Mood</h3>
+	<section id="moodboard" style="text-align: left;">
+		<h3>art direction</h3>
 		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.jpg">
 		<div>
 			<ul>
@@ -120,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</ul>
 		</div>
 	</section>
-	<section id="comps" class="beginningBlock">
+	<section id="comps">
 		<h3>Style Frames</h3>
 		<!--div class="slider">
 			<button class="slider-control control-svg control-arrow control-next">
@@ -179,6 +171,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</p>
 	</section>
 </main>
-</div>
 </body>
 </html>

@@ -63,16 +63,14 @@ function addNav(){
 }
 
 function addSquiggles(){
-	jQuery('h1').append('<br /><svg xmlns="http://www.w3.org/2000/svg" width="208" height="14" viewBox="0 0 207.6 13.6"><style type="text/css">' +
-		'.hSquiggle{fill:none;stroke:#AAEF25;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
-	'</style><path class="hSquiggle" d="M206.6 1c-7.5 0-10.1 3.4-12.9 5.8 -3 2.6-5.3 5.8-12.9 5.8 -7.5 0-9.9-3.2-12.9-5.8 -2.8-2.4-5.3-5.8-12.9-5.8 -7.5 0-9.9 3.2-12.9 5.8 -2.8 2.4-5.3 5.8-12.9 5.8 -7.5 0-10.1-3.4-12.9-5.8 -3-2.6-5.3-5.8-12.9-5.8S93.8 4.4 91 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C62.5 4.4 59.9 1 52.4 1S42.3 4.4 39.6 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C11.1 4.4 8.5 1 1 1"/></svg>');
+	var squiggleSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 151 18"><path class="hSquiggle" d="M148 3c-14.5 0-14.5 10.6-29 10.6C104.5 13.6 104.5 3 90 3 75.5 3 75.5 13.6 61 13.6 46.5 13.6 46.5 3 32 3 17.5 3 17.5 13.6 3 13.6"/></svg>';
+
+	var squiggleReverseSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 151 18"><path class="hSquiggle" d="M3 3c14.5 0 14.5 10.6 29 10.6C46.5 13.6 46.5 3 61 3c14.5 0 14.5 10.6 29 10.6 14.5 0 14.5-10.6 29-10.6 14.5 0 14.5 10.6 29 10.6"/></svg>'
+
+	jQuery('h1').append(squiggleSVG);
 	jQuery('h3').each(function(){
-		jQuery(this).prepend('<svg xmlns="http://www.w3.org/2000/svg" width="131" height="24" viewBox="0 0 130.5 13.6"><style type="text/css">'+  
-		'.hSquiggle{fill:none;stroke:#AAEF25;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
-	'</style><path class="hSquiggle" d="M129.5 12.6c-7.5 0-10.1-3.4-12.9-5.8 -3-2.6-5.3-5.8-12.9-5.8S93.8 4.4 91 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C62.5 4.4 59.9 1 52.4 1S42.3 4.4 39.6 6.8c-3 2.6-5.3 5.8-12.9 5.8s-9.9-3.2-12.9-5.8C11.1 4.4 8.5 1 1 1"/></svg>');
-		jQuery(this).append('<svg xmlns="http://www.w3.org/2000/svg" width="131" height="24" viewBox="0 0 130.5 13.6"><style type="text/css">'+  
-		'.hSquiggle{fill:none;stroke:#AAEF25;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}'+
-	'</style><path class="hSquiggle" d="M1 12.6c7.5 0 10.1-3.4 12.9-5.8 3-2.6 5.3-5.8 12.9-5.8s10.1 3.4 12.9 5.8c3 2.6 5.3 5.8 12.9 5.8s9.9-3.2 12.9-5.8C68 4.4 70.6 1 78.1 1S88.2 4.4 91 6.8c3 2.6 5.3 5.8 12.9 5.8s9.9-3.2 12.9-5.8C119.5 4.4 122 1 129.5 1"/></svg>');
+		jQuery(this).prepend(squiggleReverseSVG);
+		jQuery(this).append(squiggleSVG);
 	});
 }
 

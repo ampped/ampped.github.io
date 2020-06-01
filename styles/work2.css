@@ -42,12 +42,33 @@ header, section {
   text-align: center;
   position: relative; }
 
+section {
+  margin: 0 auto;
+  margin-top: 100px !important;
+  width: 90%;
+  max-width: 1000px; }
+
+h1 svg {
+  display: block;
+  margin: 0.25em 0; }
+
 h3 svg {
   margin: 0 1ex; }
+
+.hSquiggle {
+  fill: none;
+  stroke: #A9EE25;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10; }
 
 a {
   font-size: 12pt;
   border-bottom: solid 1px #24252e; }
+
+.addShadow {
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
 
 .bold {
   font-family: HK-bold; }
@@ -60,46 +81,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-between; }
 
-#headerInfo {
-  padding: 80px 0;
-  height: 170px; }
-  #headerInfo h1 {
-    display: block;
-    font-weight: 700;
-    color: #FFF;
-    margin-bottom: 20px;
-    border: none; }
-  #headerInfo h4 {
-    color: #FFF;
-    margin: 20px 40px 0 40px; }
-
 .header-img {
   width: 100%; }
-
-#headerVid {
-  width: 100%;
-  height: 380pt;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-  z-index: -1; }
-  #headerVid video {
-    width: 100%; }
-  #headerVid::before {
-    display: block;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 100%;
-    background-color: #902EFF;
-    opacity: 0.4; }
-
-.beginningBlock {
-  display: block;
-  margin: 0 auto;
-  margin-top: 100px !important;
-  width: 90%;
-  max-width: 1000px; }
 
 .goProject {
   max-width: initial; }
@@ -112,60 +95,37 @@ a {
   float: left; }
 
 .overview {
-  padding-top: 17.5vw; }
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8vw;
+  margin: 0 auto !important;
+  max-width: 1200px; }
 
 .overviewInfo {
-  background-color: #FDFDFD;
-  width: 75%;
-  min-height: 315pt;
+  display: inline-block;
+  width: 36%;
   text-align: left;
-  margin: 0 auto;
-  padding: 3em 8% 0 8%;
-  border-radius: 12px;
-  box-sizing: border-box; }
+  vertical-align: top; }
   .overviewInfo h1 {
     display: block;
-    text-align: center; }
-  .overviewInfo p {
-    display: block;
-    margin: 0; }
+    margin-bottom: 0.2em; }
   .overviewInfo a {
     box-sizing: content-box;
     display: inline-block; }
   .overviewInfo .skills {
-    display: inline-block;
-    width: 24%;
-    font: inherit;
-    text-align: left;
-    vertical-align: top;
-    margin-left: 8%; }
-    .overviewInfo .skills li {
-      margin-bottom: 5pt; }
-    .overviewInfo .skills .header {
-      font-family: "Qanelas", sans-serif;
-      font-weight: 500;
-      letter-spacing: 0;
-      font-weight: 700;
-      font-size: 13pt;
-      line-height: 20pt;
-      position: relative;
-      margin-bottom: 20pt; }
-      .overviewInfo .skills .header::after {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 30%;
-        left: 0;
-        width: 20px;
-        height: 100%;
-        border-bottom: solid 4px #A9EE25; }
-  .overviewInfo .story {
-    display: inline-block;
-    width: 67%;
-    text-align: left; }
+    font-family: HK-bold;
+    font-size: 0.86em;
+    line-height: 1.8em;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.1em; }
 
-.addShadow {
-  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
+.preview {
+  display: inline-block;
+  width: 55%;
+  vertical-align: top; }
+  .preview video, .preview img {
+    max-width: 100%;
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
 
 .message {
   width: 100%;
@@ -180,10 +140,6 @@ a {
   background-color: #FDFDFD;
   /*margin-bottom: 30vw */ }
 
-.previewVid video {
-  width: auto;
-  max-width: 1000px; }
-
 .wordblock {
   display: inline-block;
   width: 100%;
@@ -195,13 +151,12 @@ a {
   max-width: 100%; }
 
 #creations {
-  min-width: 355px;
-  width: 100%;
-  margin: 5vw 0; }
+  display: flex;
+  justify-content: space-between;
+  margin-left: -30px; }
   #creations img {
-    max-height: 200px;
-    height: 20vw;
-    margin: 0 5vw; }
+    max-height: 180px;
+    box-shadow: none; }
 
 #development {
   text-align: left;
@@ -281,25 +236,14 @@ a {
     position: relative;
     display: block;
     margin-bottom: 1ex; }
-    #research .topic.conclusion {
-      padding-top: 16pt;
-      margin-top: 2.3em; }
-      #research .topic.conclusion::before {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 100%;
-        border-top: solid 4px #A9EE25; }
+  #research .conclusion {
+    margin-top: 1em; }
   #research .finding {
     font-family: "Qanelas", sans-serif;
     font-weight: 500;
     letter-spacing: 0;
     font-size: 13pt;
-    font-weight: 700;
-    color: #A263FF; }
+    font-weight: 700; }
   #research .textData {
     font-size: 12pt;
     font-family: "Qanelas", sans-serif;
@@ -412,11 +356,13 @@ a {
 .st1 {
   fill: #FFF;
   stroke: #A9EE25;
-  stroke-width: 6;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
-  background-color: #24252e; }
+  box-sizing: border-box;
+  background-color: #FFF;
+  border: 2px solid #A9EE25; }
 
 .st2 {
   fill: #D9B9FF;
@@ -827,24 +773,6 @@ video.comp {
     top: -60px; }
   100% {
     top: 0; } }
-.scene_element {
-  position: relative;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both; }
-
-.scene_element--fadeInUp {
-  animation-delay: 0.2s;
-  animation-duration: 0.4s;
-  animation-name: fadeInUp; }
-
-.scene_element--fadeIn {
-  animation-delay: 0s;
-  animation-duration: 2s;
-  animation-name: fadeIn; }
-
-.is-exiting .scene_element {
-  animation-direction: alternate-reverse; }
-
 @media only screen and (max-width: 480px) {
   section {
     width: 88%;
@@ -874,26 +802,8 @@ video.comp {
     .overview .overviewInfo {
       width: 100%;
       border-radius: none; }
-      .overview .overviewInfo .story {
-        width: 100%; }
       .overview .overviewInfo .skills {
-        width: 100%;
-        margin-left: 0;
         margin-top: 2.5em; }
-        .overview .overviewInfo .skills .header {
-          display: block;
-          width: 100%;
-          margin: 0 auto;
-          margin-bottom: 2.4em; }
-          .overview .overviewInfo .skills .header::after {
-            left: calc(50% - 10px); }
-        .overview .overviewInfo .skills li {
-          display: inline-block;
-          width: 40%;
-          text-align: center;
-          margin: 0 4%;
-          margin-bottom: 0.8em;
-          vertical-align: top; }
 
   #research {
     width: 100%; }
@@ -903,7 +813,7 @@ video.comp {
         margin-bottom: 1.5em; }
     #research .finding {
       margin-bottom: 0; }
-    #research .topic.conclusion {
+    #research .conclusion {
       margin-top: 2ex; }
     #research .comparison > img, #research .persona {
       max-width: 100% !important; }
