@@ -44,7 +44,8 @@ ul {
   list-style: none; }
 
 .bold {
-  font-family: HK-bold; }
+  font-family: HK-bold;
+  letter-spacing: 0.01em; }
 
 #intro__link::after, .project__link::after, button::after {
   display: inline-block;
@@ -369,7 +370,8 @@ nav {
   background-color: #FFFFFF;
   position: relative;
   box-shadow: 0 7px 28px rgba(0, 0, 0, 0.2);
-  border-radius: 8px; }
+  border-radius: 8px;
+  transition: 0.3s ease-in-out; }
   .project__preview::after, .previewBack::after {
     content: none;
     background: none; }
@@ -400,8 +402,19 @@ nav {
 .project__desc {
   margin-bottom: 3.37em; }
 
-.project__link.hovered:after, button:after {
+.project.hovered .project__link:after, .project.hovered button:after {
   margin-left: 1.55ex; }
+.project.hovered .project__preview {
+  transform: translateY(-1.5%);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3); }
+.project.hovered .previewBack {
+  transform-origin: bottom right;
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45); }
+.project.hovered:nth-child(odd) .previewBack {
+  transform-origin: bottom left; }
+.project.hovered:nth-child(even) .previewBack {
+  transform-origin: bottom right; }
 
 /*contact */
 input, textarea {

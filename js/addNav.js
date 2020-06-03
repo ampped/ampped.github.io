@@ -3,7 +3,6 @@ function setupWorkPage(){
 	window.onload = function(){
 		addNav();
 		addSquiggles();
-		addLoader();
 	}
 }
 

@@ -55,6 +55,9 @@ h1 svg {
 h3 svg {
   margin: 0 1ex; }
 
+h6 {
+  font-size: 1.2em; }
+
 .hSquiggle {
   fill: none;
   stroke: #A9EE25;
@@ -98,7 +101,8 @@ a {
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
 
 .bold {
-  font-family: HK-bold; }
+  font-family: HK-bold;
+  letter-spacing: 0.01em; }
 
 .fullStretch {
   max-width: 100%; }

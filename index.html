@@ -296,22 +296,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="project">
 		<div class="project__prvwHolder">
 			<div class="previewBack"> </div>
-			<a href="projects/taw/thoughtatwork.html" class="project__preview">
-				<video style="width: 100%; left: 0; top: 0;" autoplay loop muted>
-					<source src="projects/taw/tawTN.webm" type="video/webm"><source src="projects/taw/tawTN.mp4" type="video/mp4">
-				</video>
-				<img style="width: 240%; left: -50%; top: 0%;" src="projects/taw/speakersTN.png" class="mobileTN">
-			</a>
-		</div>
-		<div class="project__info">
-			<h1 class="project__title">Thought At Work</h1>
-			<p class="project__desc">I worked with cross-functional teams and got to co-lead the development team to create a website advertising Thought At Work, a conference that connects students to professionals.</p>
-			<a href="projects/taw/thoughtatwork.html" class="project__link">Take a look</a>
-		</div>
-	</div>
-	<div class="project">
-		<div class="project__prvwHolder">
-			<div class="previewBack"> </div>
 			<a href="projects/usatoday/usatoday.html" class="project__preview">
 				<video style="width: 100%; left: 0; top: 0;" autoplay loop muted>
 					<source src="projects/usatoday/usatodayTN.webm" type="video/webm"><source src="projects/usatoday/usatodayTN.mp4" type="video/mp4">
@@ -325,17 +309,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="projects/usatoday/usatoday.html" class="project__link">Take a look</a>
 		</div>
 	</div>
+	<div class="project">
+		<div class="project__prvwHolder">
+			<div class="previewBack"> </div>
+			<a href="projects/blueFever/blueFever.html" class="project__preview">
+				<video style="width: 100%; left: 0; top: 0;" autoplay loop muted>
+					<source src="projects/blueFever/BFReelTN.mp4" type="video/mp4">
+				</video>
+				<img style="width: 100%; left: 0%; top: 0%;" src="projects/blueFever/BFTN.png" class="mobileTN">
+			</a>
+		</div>
+		<div class="project__info">
+			<h1 class="project__title">Blue Fever</h1>
+			<p class="project__desc">A startup with an SMS chatbot that emotionally supports teenage girls.</p>
+			<a href="projects/blueFever/blueFever.html" class="project__link">Take a look</a>
+		</div>
+	</div>
 
 	<script type="text/javascript">
 		jQuery('.project__link').append("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"72 -1.2 170 12.5\" class=\"squiggleSVG\">"+
 			"<path class=\"linkSquiggle\" d=\"M393.4 8.6c-9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1 -9.8 0-9.8-7.1-19.6-7.1 -9.8 0-9.8 7.1-19.6 7.1\"/></svg>")
 
 		jQuery('.project a').hover(function(){
-			// jQuery(this).closest('.project').find('video').get(0).play();
-			jQuery(this).closest('.project').find('.project__info a').addClass('hovered');
+			jQuery(this).closest('.project').addClass('hovered');
 		}, function(){
-			// jQuery(this).closest('.project').find('video').get(0).pause();
-			jQuery(this).closest('.project').find('.project__info a').removeClass('hovered');
+			jQuery(this).closest('.project').removeClass('hovered');
 		});
 	</script>
 </section>
