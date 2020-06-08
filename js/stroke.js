@@ -8,12 +8,26 @@ function strokeEffect(){
   var groups = jQuery('.aspirations>svg');
   var paths = "";
   var playing = true;
+  var focused = true;
 
-  //set up ids
+  window.onblur = function() {
+    focused = false;
+  }
+
+  window.onfocus = function() {
+    focused = true;
+  }
+
+  //set up ids, dashArray and dashOffset properties
+  var pathLength = 0;
   for(var i = 0; i < groups.length; i++){
     paths = jQuery(groups[i]).children('path');
     for(var j = 0; j < paths.length; j++){
       paths[j].setAttribute('id', step+"i"+j);
+
+      pathLength = paths[j].getTotalLength();
+      paths[j].style.strokeDasharray = pathLength + ' ' + pathLength; 
+      paths[j].style.strokeDashoffset = pathLength;
     }
     step++;
   }
@@ -27,15 +41,19 @@ function strokeEffect(){
     play(step);
     if(playing)
       setTimeout(playAni, 1800);
-    step++;
+    
+    if(focused) {
+      step++;
+    }
 
-    jQuery(window).blur(function(){
-      playing = false;
-    });
+    // jQuery(window).blur(function(){
+    //   playing = false;
+    // });
   };
   playAni();
 
   jQuery(window).focus(function(){
+    console.log('focused');
     if(!playing){
       playing = true;
       playAni();
@@ -49,21 +67,29 @@ function strokeEffect(){
     var path = new Array();
     var length = new Array();
 
-    jQuery('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath animated');
-    
-    var i = 0;
-    while(document.getElementById(current+'i'+i)){
-      path[i] = document.getElementById(current+'i'+i);
-      l = path[i].getTotalLength();
-      length[i] = l;
-      path[i].style.strokeDasharray = l + ' ' + l; 
-      path[i].style.strokeDashoffset = l;
-      i++;
+    if(focused) {
+      jQuery('.aspirations>svg:nth-child('+(current+1)+')').attr('class', 'letterPath animated');
+      
+      var i = 0;
+      while(document.getElementById(current+'i'+i)){
+        path[i] = document.getElementById(current+'i'+i);
+        l = path[i].getTotalLength();
+        length[i] = l;
+        i++;
+      }
     }
     var handle = 0;
     
     var draw = function() {
       var progress = current_frame/total_frames;
+      console.log(step + " progress: " + progress)
+
+      // if(!focused) {
+      //   console.log('blurred');
+      //   window.cancelAnimationFrame(handle);
+      //   return;
+      // }
+
       current_frame++;
       //draw paths
       for(var j=0; j<path.length;j++){
@@ -87,12 +113,12 @@ function strokeEffect(){
     
     var undraw = function() {
       var progress = current_frame/total_frames;
+      console.log(step + " progress: " + progress)
       current_frame--;
 
       //undraw paths
       for(var j=0; j<path.length;j++){
         path[j].style.strokeDashoffset = Math.ceil(length[j] * (1 + progress));
-        path[j].setAttribute("class", "letterPath");
       }
       handle = window.requestAnimationFrame(undraw);
 

@@ -150,7 +150,8 @@ a {
 .preview {
   display: inline-block;
   width: 55%;
-  vertical-align: top; }
+  vertical-align: top;
+  position: relative; }
   .preview video, .preview img {
     max-width: 100%;
     box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
