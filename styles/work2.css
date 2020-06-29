@@ -203,6 +203,11 @@ a {
     padding-left: 6em;
     vertical-align: middle; }
 
+.topic {
+  font-size: 14pt;
+  font-family: HK-bold;
+  line-height: 25pt; }
+
 #research {
   text-align: left;
   margin: 0 auto; }
@@ -259,9 +264,6 @@ a {
         height: 100%;
         transform: translateX(-15%); }
   #research .topic {
-    font-size: 14pt;
-    line-height: 25pt;
-    font-weight: 900;
     position: relative;
     display: block;
     margin-bottom: 1ex; }
@@ -411,6 +413,29 @@ a {
   fill: #F0F0F0;
   background-color: #F0F0F0; }
 
+.pageDesc {
+  display: flex;
+  margin-bottom: 2em; }
+  .pageDesc h4, .pageDesc h6 {
+    float: left;
+    margin-right: 3em;
+    position: relative;
+    flex-shrink: 0; }
+    .pageDesc h4::after, .pageDesc h6::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 1.7em;
+      border-bottom: solid 4px #A9EE25; }
+
+.screen {
+  width: 48%;
+  margin-bottom: 2em;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.3); }
+
 #wireframes {
   display: block;
   text-align: left;
@@ -449,22 +474,6 @@ a {
     /*max-width: 400px */
     position: relative;
     margin-bottom: 8em; }
-    #wireframes .wf .pageDesc {
-      display: flex;
-      margin-bottom: 2em; }
-      #wireframes .wf .pageDesc h4 {
-        float: left;
-        margin-right: 3em;
-        position: relative; }
-        #wireframes .wf .pageDesc h4::after {
-          content: " ";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 40px;
-          height: 1.7em;
-          border-bottom: solid 4px #A9EE25; }
     #wireframes .wf img {
       width: 100%; }
     #wireframes .wf .hotspots {

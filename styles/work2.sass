@@ -231,6 +231,12 @@ a
 		padding-left: 6em
 		vertical-align: middle
 
+.topic
+	font-size: 14pt
+	font-family: HK-bold
+	line-height: 25pt
+
+
 #research
 	text-align: left
 	margin: 0 auto
@@ -290,10 +296,6 @@ a
 				height: 100%
 				transform: translateX(-15%)
 	.topic
-		font-size: 14pt
-		line-height: 25pt
-		font-weight: 900
-
 		position: relative
 		display: block
 		margin-bottom: 1ex
@@ -438,6 +440,29 @@ a
 	fill: #F0F0F0
 	background-color: #F0F0F0
 
+.pageDesc
+	display: flex
+	margin-bottom: 2em
+	h4, h6
+		float: left
+		margin-right: 3em
+		position: relative
+		flex-shrink: 0
+		&::after
+			content: ' '
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 40px
+			height: 1.7em
+			border-bottom: solid 4px $green
+
+.screen
+	width: 48%
+	margin-bottom: 2em
+	@include drop-shadow()
+
 #wireframes
 	display: block
 	text-align: left
@@ -469,6 +494,7 @@ a
 		height: 1px
 		background-color: $purple
 		border: none
+
 	.wf
 		display: inline-block
 		width: 100%
@@ -477,22 +503,6 @@ a
 		position: relative
 		margin-bottom: 8em
 
-		.pageDesc
-			display: flex
-			margin-bottom: 2em
-			h4
-				float: left
-				margin-right: 3em
-				position: relative
-				&::after
-					content: ' '
-					display: block
-					position: absolute
-					top: 0
-					left: 0
-					width: 40px
-					height: 1.7em
-					border-bottom: solid 4px $green
 		img
 			width: 100%
 

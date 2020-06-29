@@ -28,6 +28,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		setupWorkPage();
 	</script>
 	<style>
+		p {
+			text-align: left;
+		}
+
+		h4, h6 {
+			margin-bottom: 0.8em;
+		}
+
+		.inspiration {
+			width: 46%;
+			border-radius: 12px;
+			overflow: hidden;
+			line-height: 0;
+		}
+
+		.inspiration img {
+			width: 100%;
+		}
+
+		.flexBlock, .feature {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.specialQuo {
+			font-family: Qanelas;
+			font-size: 1.07em;
+		}
+
+		.improvements {
+			margin-top: 0.5em;
+			align-items: flex-start;
+		}
+		.improvements div {
+			max-width: 43%;
+		}
+		.improvements p {
+			text-align: left;
+		}
+
+		.controls {
+			margin-top: 1em;
+			margin-bottom: 4em;
+		}
+
+		.controlBlock {
+			width: 27%;
+		}
+		.controlBlock img, .controlBlock video {
+			height: 8em;
+		}
+		.controlBlock p{
+			text-align: center;
+			font-size: 0.9em;
+			line-height: 1.6em;
+		}
+
+		.feature {
+			margin-bottom: 6em;
+		}
+		.pageDesc {
+			width: 100%;
+		}
+
 	</style>
 </head>
 <body>
@@ -89,160 +155,217 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					Game Development
 				</p>
 			</div>
-			<p>People go through moments of feeling self-conscious or powerless. However, a <a href="http://www.youtube.com/watch?v=Ks-_Mh1QhMc" target="_blank">TED talk</a> by Amy Cuddy claims that you can change how you feel by doing power poses.</p><br />
-			<p>This project embodies the talk, but as an interactive exhibit concept that shows that <span class="bold">people have control over how they feel.</span></p>
+			<p>Who says playing games on your phone can't get you moving?</p>
+			<p>I worked with a team of 5 designers and 1 developer to create a game which we demoed at a festival. <span class="bold">FLUX modifies mobile game controls to turn phone time into a workout.</span></p>
 		</div>
 		<div class="preview">
 			<iframe src="https://player.vimeo.com/video/266894490?color=b995f0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 		</div>
 	</section>
 	<section>
-		<div id="research">
-		<h3>Research</h3><br />
-		<div class="comparison grid">
-			<h4>Experiment</h4><br /><br />
-			<div style="width: 43%; display: inline-block">
-				<p>A group of researchers at Harvard University conducted an <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FMEGS6">experiment</a> on how personal body language affects people's minds. 
+		<div id="research grid">
+		<h3>Research</h3>
+		<div class="flexBlock">
+			<div style="width: 50%;">
+				<p>Millennials need a minimum of <span class="bold">22 minutes of physical activity</span> a day, but <span class="bold">only 50% reach this.</span>
 				</p><br /><br />
-				<p class="topic">They found that different poses affected our brain's production of chemicals.</p><br />
-				<p><strong>testosterone</strong> &mdash; &nbsp;the dominance hormone<br />generates feeling of power</p>
-				<p><strong>cortisol</strong> &mdash; &nbsp;the stress hormone<br />generates feeling of nervousness</p>
+				<p>We noticed that millennials spend an average of <span class="bold">223 minutes on their phones</span> a day.</p><br />
+				<p>A contributing factor to the huge difference could be that it takes constant effort over long periods of time to see the results of exercise. Compared to phone activities like social media and mobile games which give instant gratification, exercise doesn’t seem worth the time.</p><br /><br />
+				<p class="topic">How could we leverage this behavior to transform phone time into physical activity?</p>
 			</div>
-			<div style="width: 55%; display: inline-block">
-				<img src="data.png" style="transform: translateX(2.3ex);"><br /><br />
+			<img src="research/transform.png" style="width: 42%;"/>
+		</div><br /><br /><br />
+		<div class="flexBlock">
+			<div class="flexBlock" style="width: 44%;">
+				<div class="inspiration addShadow"><img src="research/templeRun.png" /></div>
+				<div class="inspiration addShadow"><img src="research/subwaySurfers.png" /></div>
 			</div>
-			<img src="poseScale.png" style="width: 100%; margin: 2em 0;">
-			<div class="surveyItem gri">
-				<div class="grid__col grid__col--1-of-2">
-					<p class="topic">However, the experiment was heavily criticized.</p>
-					<p>Other researchers disapproved of their subjects' reports being a significant part of the data and of having too small of a sample size.</p>
-					<p>One of the original researchers even <a href="http://fortune.com/2016/10/02/power-poses-research-false/">declared</a> later that the experiment did not prove anything.</p>
-				</div>
-				<div class="comment grid__col grid__col--1-of-2">
-					<p>"As evidence has come in over these past 2+ years, my views have updated to reflect the evidence. As such, I do not believe that 'power pose' effects are real."</p>
-					<p>&mdash; Dana Carney</p>
-				</div>
+			<div class="wordblock" style="width: 47%;">
+				<h4>Inspiration</h4>
+				<p>We found a potential solution in <span class="bold">endless runner games</span> like Temple Run or Subway Surfers.
+				</p>
+				<p>In these games, players control a character with touch gestures to dodge obstacles on and endless path. But the in-game character is getting a workout by running and jumping.
+				</p>
 			</div>
-		</div>
-		<div class="comparison">
-			<h4>Creating a narrative</h4><br /><br />
-			<p>Even though the experiment was a failure, it still worked for some people. For those who will benefit from this message, I want to make a museum experience that ultimately mirrors the experiment, but people will be given all of the knowledge so they can see and understand what is happening to them.</p><br /><br />
-			<h5>Messages</h5><br />
-			<p class="IAthemes">Changing your body by doing poses can temporarily change the chemicals produced by your brain.</p>
-			<p class="IAthemes">Doing powerful poses can give you a confidence boost. On the other hand, holding poses that are considered “weak” can make you feel weaker.</p>
-			<p class="IAthemes">Users should be aware of what kind of poses they make and how powerful they feel. Then understand that they can control it by changing their body language.</p>
-			<img src="ia.png" style="margin: 0 auto; display: block">
 		</div>
 	</section>
-	<section style="text-align: left;">
-		<h4>Turn it into an exhibit</h4><br /><br />
-		<p>Because this project has to do with poses, my mind goes immediately to full body interactions. Because the end goal is a change in perception, users would get value from this experience only once. Therefore, this experience would be most suited to an interactive museum exhibit.</p><br /><br />
-		<div style="width: 49%; display: inline-block">
-			<h4>Static Layout</h4>
-			<p>Biology or psychology section of science museum</p>
-			<img src="staticExhibit.png" style="width: 100%; transform: translateX(-8%);" />
+	<section>
+		<h3>the game</h3>
+		<p class="topic">We decided to create FLUX, a mobile game that translates physical activity into game controls.</p>
+		<div class="controls flexBlock">
+			<div class="controlBlock">
+				<video autoplay loop muted>
+					<source src="game/runToStart.mp4" />
+				</video>
+				<!-- <img src="game/startRun.png" /> -->
+				<p class="bold">running in place<br />powers the game</p>
+			</div>
+			<div class="controlBlock">
+				<video autoplay loop muted>
+					<source src="game/tapToJump.mp4" />
+				</video>
+				<!-- <img src="game/tapJump.png" /> -->
+				<p class="bold">tap to jump become<br /> physically jumping</p>
+			</div>
+			<div class="controlBlock">
+				<video autoplay loop muted>
+					<source src="game/swipeToDodge.mp4" />
+				</video>
+				<!-- <img src="game/swipeDodge.png" /> -->
+				<p class="bold">swipe to change direction becomes<br />turning your body</p>
+			</div>
 		</div>
-		<div style="width: 49%; display: inline-block">
-			<h4>Portable Layout</h4>
-			<p>Can be part of interactive exhibits at TED conferences</p>
-			<img src="portableExhibit.png" style="width: 100%; transform: translateX(8%);" />
-		</div>
+		<div class="flexBlock">
+			<div class="wordblock" style="width: 53%;">
+				<h4>Technology</h4><br /><br />
+				<h6>Movement Detection</h6>
+				<p>We used the smartphone’s accelerometers to determine how much force was applied to the phone.</p>
+				<p>We compared the applied force to 2 thresholds. A force in between the thresholds means the player is running. Any force above the higher threshold indicates the player jumped.</p>
+				<br /></br />
+				<h6>Programs</h6>
+				<div class="grid">
+					<p class="bold grid__col grid__col--1-of-2">
+						Game &mdash; Unity<br />
+						HUD graphics &mdash; After Effects
+					</p>
+					<p class="bold grid__col grid__col--1-of-2">
+						Obstacle &mdash; Unity<br />
+						Environment &mdash; Cinema4D
+					</p>
+				</div>
+			</div>
+			<img src="game/accelerometer.png" style="width: 40%;" />
+		</div><br /><br /><br />
+
+		<h4>Information Architecture</h4>
+		<img src="game/FLUXIA.png" />
+		<br /><br /><br /><br />
+		<h4>Features</h4>
 		<br /><br />
-		<div>
-			<h4>Technology</h4><br /><br />
-			<p class='techBlock'>Image recognition to recognize poses</p>
-			<p class='techBlock'>Processor for image recognition and overlaying graphics</p>
-			<p class='techBlock'>No known technology to measure hormone levels (yet)</p>
+		<div class="feature">
+			<div class="pageDesc">
+				<h6>Main Game</h6>
+				<p>As a player, you are running down a path towards the sunset in another world. In this world, the terrain is alive and creates obstacles that you have to jump over.</p>
+			</div>
+			<img src="game/mainScreens/menu.jpg" class="screen" />
+			<img src="game/mainScreens/countdown.jpg" class="screen" />
+			<img src="game/mainScreens/main.jpg" class="screen" />
+			<img src="game/mainScreens/lostLife.jpg" class="screen" />
+		</div>
+		<div class="feature">
+			<div class="pageDesc">
+				<h6>Goals</h6>
+				<p>With each game session, players can see how they've been moving and work their way up to a daily target time. Then, they can keep track of whether they hit that goal with the activity tracker. Here, they can also adjust their goal time.</p>
+			</div>
+			<img src="game/trackerScreens/end.jpg" class="screen" />
+			<img src="game/trackerScreens/graph.jpg" class="screen" />
+		</div>
+		<div class="feature">
+			<div class="pageDesc">
+				<h6>Rewards</h6>
+				<p>To keep players motivated to stay on track to be more active, they can earn FLUX Facts cards at the end of a game. Each of these cards show how exercise can benefit your health. And they can easily be shared to spread the word.</p>
+			</div>
+			<img src="game/cardScreens/getCard.jpg" class="screen" />
+			<img src="game/cardScreens/cards.jpg" class="screen" />
+		</div>
+
+		<h4>Improvements</h4>
+		<div class="flexBlock improvements">
+			<div>
+				<h6>Camera Control</h6>
+				<p>We found that people were confused about how to turn back in the right direction after they veered off path. We should simplify the controls to just running and jumping.</p>
+			</div>
+			<div>
+				<h6>Force Detection</h6>
+				<p>Different people have different forces when they run or jump. For example, an adult running could exert the same force as a child jumping. If we were to add onboarding, we should add a step to detect each player’s forces more accurately.</p>
+			</div>
 		</div>
 	</section>
-	<section id="wireframes" class="beginningBlock landscape">
-		<h3>Wireframes</h3>
-		<script type="text/javascript">
-			var wfSrcs = ['WFintro.png', 'WFstart.png', 'WFpose.png', 'WFclosing.png'];
-
-			var pageNames = ['Introduction', 'Initiate', 'Fetch&nbsp;Data', 'Closing&nbsp;Statement'];
-
-			var pageDescs = ['<p>I wanted to create an experience that stresses the user\'s agency and self reflection. To do this, the user, themself, is displayed on the screen and they control the exhibit through full-body interaction.</p>',
-			'<p>Within a few moments after the user has been recognized, the main display transitions in and the exhibit starts recording data from the user.</p>',
-			'<p>As users pose their body to match the ones displayed on top of the screen, they will see corresponding experiment data as well as how they are responding to the pose.</p>',
-			'<p>After cycling through all poses, the exhibition reveals that the experiment did not necessarily prove anything. Any reactions in the user\'s body happened because of the placebo effect.</p>'];
-
-			var hotspots = ['<div class="hotspots selected">'+
-				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
-				'<circle class="hotspot" cx="248.4" cy="244.1" r="28.3"/>'+
-				'<circle class="hotspot" cx="540" cy="273.9" r="28.3"/>'+
-				'</svg>'+
-			'</div>',
-			'<div class="hotspots">'+
-				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
-				'<circle class="hotspot" cx="580.9" cy="72.5" r="28.3"/>'+
-				'<circle class="hotspot" cx="871.5" cy="287.1" r="28.3"/>'+
-				'<circle class="hotspot" cx="421.5" cy="316.4" r="28.3"/>'+
-				'</svg>'+
-			'</div>',
-			'<div class="hotspots">'+
-				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
-				'<circle class="hotspot" cx="667" cy="68.8" r="28.3"/>'+
-				'<circle class="hotspot" cx="195.5" cy="273.6" r="28.3"/>'+
-				'<circle class="hotspot" cx="458.7" cy="287.1" r="28.3"/>'+
-				'<circle class="hotspot" cx="769" cy="295.6" r="28.3"/>'+
-				'</svg>'+
-			'</div>',
-			'<div class="hotspots">'+
-				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 573.8">'+
-				'<circle class="hotspot" cx="826.4" cy="159.6" r="28.3"/>'+
-				'<circle class="hotspot" cx="180.9" cy="366.8" r="28.3"/>'+
-				'</svg>'+
-			'</div>'];
-
-
-			var hsDescs = [['This first sentence aims to hook users by addressing the problem immediately.',
-			'A mirror image of the user is displayed when they step into frame.'],
-			['Matching the displayed poses will bring up the experiment data corresponding to that pose.',
-			'The user\'s testosterone and cortisol levels are recorded and displayed in real time.',
-			'Floating energy particles represent the user\'s testosterone and cortisol levels.'],
-			['Poses that were not used in the experiment bring up fake data, emphasizing the presence of the placebo effect.',
-			'Simple slope graphs show the difference between each subject\'s hormone levels before and after the experiment.',
-			'A visual change in the user\'s image signifies whether their current pose is a high or low power pose.',
-			'The user\'s hormone levels are recorded throughout their experience showing how they are reacting to different poses.'],
-			['All energy particles are in the high power color to visually empower the user.',
-			'This last sentence aims to leave the user feeling more powerful and in control.']];
-
-			for(var i = 0; i < wfSrcs.length; i++){
-				wfSrcs[i] = '' + wfSrcs[i];
-			}
-			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
-		</script>
-	</section>
-	<section id="moodboard" style="text-align: left;">
-		<h3>art direction</h3>
-		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.png">
-		<div>
-			<p>The exhibit should look like a high-tech experience to catch visitors passing by. Other visuals should empower the user but still give space for reflection.</p>
-			<ul>
-				<li>vivid</li>
-				<li>kinetic</li>
-				<li>contemporary</li>
-				<li>pensive</li>
-			</ul>
+	<section>
+		<h3>website & scoreboard</h3>
+		<div class="flexBlock">
+			<div class="wordblock" style="width: 46%;">
+				<h4>Informational Website</h4>
+				<p>From my teammates' mockups, I developed our website and added interactions like hover effects, parallax scroll, and a 3D model viewer for our handset.</p><br />
+				<a href="teamflux.github.io" class="project__link">Visit the site</a>
+			</div>
+			<img src="FLUXwebsite.png" style="width: 46%;" />
+		</div>
+		<div class="flexBlock">
+			<img src="scoreboard.png" style="width: 47%;" />
+			<div class="wordblock" style="width: 46%;">
+				<h4>Live Scoreboard</h4>
+				<p>I designed and programmed a live scoreboard to show the state of each team and their total times.</p>
+				<p>The game sends data via a PHP script to an SQL database on RIT’s server. Meanwhile, the scoreboard website makes an AJAX call every 30 seconds to display the information.</p>
+				<p>Having this on display in our exhibit gave visitors a competitive edge, and it allowed us to track how many people came and how long they moved.</p>
+			</div>
 		</div>
 	</section>
-	<section id="comps">
-		<div class="wordblock">
-			<h3>Final Design</h3><br />
+	<section>
+		<h3>exhibit</h3>
+		<div class="flexBlock" style="align-items: flex-start;">
+			<img src="exhibit/FluxPoster.jpg" style="width: 33%;" class="addShadow" />
+			<div style="width: 56%" class="wordblock">
+				<p>
+					We demoed FLUX at Imagine RIT, a university festival open to the public community.</p>
+				<p>
+					To create a full experience, we had computers around on which people can learn more about FLUX and our process. And we had extras like a live scoreboard and takeways. 
+				</p><br /><br />
+				<h4>Layout</h4>
+				<img src="exhibit/FLUXexhibit.png" style="width: 100%;" />
+			</div>
+		</div><br />
+		<div class="flexBlock">
+			<div class="wordblock" style="width: 54%;">
+				<h4>Custom Handset</h4>
+				<p>
+					To enhance the experience, our team’s industrial designer 3D printed custom handsets inspired by workout equipment.</p>
+				<p>
+					This made it easier to run with your phone, and acts as a protective case if it drops.</p>
+			</div>
+			<img src="exhibit/handset.png" style="width: 37%;"/>
 		</div>
-		<script type="text/javascript">
-			var compSrcs = ['comp_intro.png', 'initiation', 'pose1', 'pose2', 'comp_result.png'];
-			createComps(compSrcs);
-		</script>
-	</section>
-	<section id="exhibit">
-		<h3>demo exhibit</h3>
+		<div class="flexBlock" style="margin-top: -1em;">
+			<img src="exhibit/fluxCards.png" style="width: 33%;"/>
+			<div class="wordblock" style="width: 54%;">
+				<h4>FLUX Facts</h4>
+				<p>
+					After every player finished a game, they would get a water bottle to stay hydrated and a FLUX Facts card.</p>
+				<p>
+					Each card, like the game reward, shows a fact of how exercise benefits people to motivate players to keep moving.</p>
+			</div>
+		</div>
+		<div class="flexBlock" style="margin-top: -1em;">
+			<div class="wordblock" style="width: 47%;">
+				<h4>Response</h4>
+				<p>
+					About <span class="bold">600 players</span> ranging from age 4 to 84 visited our exhibit. Kids would finish and get back in line to play again, and friends would compete against one another.</p>
+				<p>
+					At the end of the day, we tracked <span class="bold">466 minutes of activity</span> on 2 test phones.</p>
+				<p class="topic">
+					<span class="specialQuo">&ldquo;</span>It’s wonderful seeing my son up and active while on the phone<span class="specialQuo">&rdquo;</span>
+				</p>
+				<p class="topic">
+					<span class="specialQuo">&ldquo;</span>As someone who does not exercise, I would definitely exercise to this!<span class="specialQuo">&rdquo;</span>
+				</p>
+			</div>
+			<img src="exhibit/fluxPlayers.png" style="width: 50%; transform: translateY(-3em);"/>
+		</div>
+	</section><br />
+	<h3>achievements</h3>
+	<section id="achievements" class="flexBlock" style="margin-top: 60px !important;">
+		<img src="fluxmagazine.png" style="width: 45%; margin-left: -5%;" />
+		<div class="wordblock" style="width: 47%;">
+			<h6>Featured in Communication Arts Magazine Interactive 2019</h6>
+			<a href="https://www.commarts.com/project/28528/flux" class="project__link">view article</a><br /><br /><br />
+			<h6>Adobe Design Achievement Awards 2019 Semifinalist</h6>
+			<a href="https://www.behance.net/gallery/66388083/FLUX" class="project__link">view entry</a>
+		</div>
 	</section>
 	<section class="conclusion">
-		<h3>Conclusion</h3>
+		<h3>conclusion</h3>
 		<p class="wordblock">
-			After researching the experiment, this project evolved to a degree I never would have expected. I had to prove the placebo effect, which required putting more thought into the interactions and overarching narrative of the experience. And because that's an abstract goal, I had to put more effort into creating a means to get the message across.
+			This was a project where my role started with no clear boundaries. I learned to figure out what skills the team had, and what I could offer to bring our project to the next level. This was also my first time being part of an exhibit for a project, and it was amazing seeing so many people having fun together playing our game.
 		</p>
 	</section>
 	<section class="goProject"> 

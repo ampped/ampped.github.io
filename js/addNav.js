@@ -7,14 +7,14 @@ function setupWorkPage(){
 }
 
 function addNav(){
-	jQuery('body').prepend("<nav class=\"showing\"><img src=\"../../mobileMenu.svg\" class=\"mobileMenuButton\"><a href=\"../../index.html#work\">Work</a><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
+	jQuery('body').prepend("<nav class=\"showing\"><img src=\"../../mobileMenu.svg\" class=\"mobileMenuButton\"><a href=\"../../index.html#work\">Work</a><a href=\"../../about.html\">About</a><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><a href=\"../../index.html#contact\">Contact</a></nav>");
 
 	jQuery('nav').prepend("<a href=\"../../index.html\"><img src=\"../../logo.svg\" class=\"logo\"></a>");
 
 	jQuery('nav').after("<div class=\"mobileNav\">"+
 		"<img src=\"../../mobileClose.svg\" class=\"mobileClose\">"+
 		"<img src=\"../../logo.svg\" class=\"logo\"><br />"+
-		"<a href=\"../../index.html#work\">Work</a><br /><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><br /><a href=\"../../index.html#contact\">Contact</a><br />"+
+		"<a href=\"../../index.html#work\">Work</a><br /><a href=\"../../about.html\">About</a><a href=\"../../Pham_resume.pdf\" target=\"_blank\">Resume</a><br /><a href=\"../../index.html#contact\">Contact</a><br />"+
 	"</div>");
 	
 	jQuery('.mobileMenuButton').click(function(){
