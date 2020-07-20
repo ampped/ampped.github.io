@@ -190,7 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</section>
 	<section id="wireframes" class="landscape">
-		<h3>Wireframes</h3>
+		<h3>features</h3>
 		<script type="text/javascript">
 			var wfSrcs = ['WFonboard.webp', 'WFsetpoint.webp', 'WFbookmark.webp', 'WFlists.webp'];
 
@@ -200,6 +200,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			'<p>When users bookmark an opened article, they can save their spot by setting a point to start at the next time they open the article. Users can also choose a starting point for others when they share the article.</p>',
 			'<p>To prevent the user from forgetting about their bookmarks, the app will remind the user of the daily goal they set during onboarding and reward them for achieving it.</p>',
 			'<p>Users can browse through playlists of articles curated by USA TODAY on the playlists page. They can also make their own playlists and add articles from the home feed.</p>'];
+
+			var compCode = [
+				'<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"onboardFull_mobile.webm\" type="video/webm"><source src=\"onboardFull_mobile.mp4\" type="video/mp4"></video>',
+				'<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"setPointFull_mobile.webm\" type="video/webm"><source src=\"setPointFull_mobile.mp4\" type="video/mp4"></video>',
+				'<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"bookmarkFull_mobile.webm\" type="video/webm"><source src=\"bookmarkFull_mobile.mp4\" type="video/mp4"></video>',
+				'<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"openLIstFull_mobile.webm\" type="video/webm"><source src=\"openLIstFull_mobile.mp4\" type="video/mp4"></video>' +
+				'<video class="compImg compMobile" style="box-shadow: none;" autoplay loop muted><source src=\"createLIstFull_mobile.webm\" type="video/webm"><source src=\"createLIstFull_mobile.mp4\" type="video/mp4"></video>',
+			]
 
 			var hotspots = [
 				'<div class="hotspots">' +
@@ -230,24 +238,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'</div>'];
 
 			var hsDescs = [
-				['<p>Users can choose to go through the onboarding process or skip it to start reading.</p>',
+				['<p>Tapping topics the user is interested will let the app know how to customize their feed.</p>',
 				'<p>Swiping up or down will increase or decrease the user\'s reading goal.</p>',
-				'<p>Tapping topics the user is interested will let the app know how to customize their feed.</p>'],
+				'<p>Users can choose to go through the onboarding process or skip it to start reading.</p>'],
 				['<p>Tapping either bookmark or share will open the set point mode.</p>',
 				'<p>Users drag this up or down the article to set their starting point.</p>'],
 				['<p>A bar shows how many articles the user has to read before reaching their goal.</p>',
 				'<p>After achieving their daily goal, the user gets a congratulations message.</p>'],
-				['<p>Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>',
-				'<p>Tapping the close button will return the user to look through more playlists.</p>',
+				['<p>Tapping the close button will return the user to look through more playlists.</p>',
+				'<p>Swiping up or down will move through playlists. Tap to see the articles in the playlist.</p>',
 				'<p>Dragging articles over a list thumbnail will add it to that list.</p>']];
 
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs, compCode, true);
 		</script>
 	</section>
-	<section id="comps">
+	<!-- <section id="comps">
 		<div class="wordblock">
 			<h3>Final Design</h3><br />
 		</div>
@@ -259,8 +267,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			// }
 			//createVideoSlider(compSrcs);
 		</script>
-	</section>
-	<section class="conclusion">
+	</section> -->
+	<section class="conclusion afterComps">
 		<h3>Conclusion</h3>
 		<p class="wordblock">
 			What made this project different for me personally was the fact that we were able to get feedback from the actual client we were designing this for. It is very helpful to know what their specific goals are and how they thought. Working with a partner also made the project a lot different than how I would normally go about things. We clashed at points but we resolved our conflicts by asking for outside feedback and compromising.

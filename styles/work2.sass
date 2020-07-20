@@ -443,6 +443,7 @@ a
 .pageDesc
 	display: flex
 	margin-bottom: 2em
+	text-align: left
 	h4, h6
 		float: left
 		margin-right: 3em
@@ -498,8 +499,7 @@ a
 	.wf
 		display: inline-block
 		width: 100%
-		/*width: auto*/
-		/*max-width: 400px*/
+		text-align: center
 		position: relative
 		margin-bottom: 8em
 
@@ -639,6 +639,7 @@ a
 	margin-left: auto
 	margin-right: auto
 .compImg, .wfImg
+	display: inline-block
 	width: 100%
 	margin-bottom: 3vw
 	vertical-align: top
@@ -783,6 +784,8 @@ video.comp
 		left: 0
 
 .conclusion
+	&.afterComps
+		margin-top: 0 !important
 	p
 		max-width: 43em
 		width: 80%

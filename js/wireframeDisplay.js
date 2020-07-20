@@ -1,20 +1,21 @@
 //written by Amy Pham
-function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs){
-	console.dir(hsDescs);
+function setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs, compCode, mobile){
 
 	for(var i = 0; i < wfSrcs.length; i++){
-		jQuery('#wireframes').append('<div class="wf"><div class="pageDesc"><h4>' + pageNames[i] + '</h4>' + pageDescs[i] + '</div><div class="wfImg"><img src="'+wfSrcs[i]+'" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\">' + hotspots[i] + '<div class="desc"></div></div>');
+		jQuery('#wireframes').append('<div class="wf"><div class="pageDesc"><h4>' + pageNames[i] + '</h4>' + pageDescs[i] + '</div><div class="wfImg"><img src="'+wfSrcs[i]+'" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\">' + hotspots[i] + '<div class="desc"></div></div>' + compCode[i]);
+	}
+
+	if(mobile == true) {
+		jQuery('.wfImg').css('box-shadow', 'none');
 	}
 
 	//append hotspot popup
-	console.log(sessionStorage.getItem('hotspotSeen'));
 	jQuery('.wfImg').append('<div class="lookAtMe">Rollover for more info!</div>').each(function(){
 		var thisWF = jQuery(this);
-
+		
 		var hs1 = thisWF.find('.hotspot:first-of-type');
 
-		var viewboxSpecs = thisWF.find('svg').get(0).getAttribute('viewBox').split(' ');
-		console.dir(viewboxSpecs);		
+		var viewboxSpecs = thisWF.find('svg').get(0).getAttribute('viewBox').split(' ');	
 		thisWF.find('.lookAtMe').css('left', ((parseInt(hs1.attr('cx'))/parseInt(viewboxSpecs[2])*100).toFixed(2)) + '%');
 		thisWF.find('.lookAtMe').css('top', ((parseInt(hs1.attr('cy'))/parseInt(viewboxSpecs[3])*100).toFixed(2))+ '%');
 

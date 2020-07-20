@@ -144,10 +144,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</div>
 	</section>
+	<section id="moodboard" style="text-align: left;">
+		<h3>art direction</h3>
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp">
+		<div>
+			<p>This scheduling module should follow Nest's branding and feel closely connected to the thought of home.</p>
+			<ul>
+				<li>friendly</li>
+				<li>fresh</li>
+				<li>bright</li>
+				<li>homey</li>
+			</ul>
+		</div>
+	</section>
 	<section id="wireframes" class="beginningBlock landscape">
-		<h3>Wireframes</h3>
+		<h3>features</h3>
 		<script type="text/javascript">
 			var wfSrcs = ['WFbase.webp', 'WFadd.webp', 'WFpast.webp', 'WFtemplate.webp', 'WFsmart.webp'];
+
+			var compCode = [
+				'<img src="base.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+				'<img src="addNode.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+				'<img src="hoverPast.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+				'<img src="editTemplate.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+				'<img src="smart.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+			]
 
 			var pageNames = ['Base','Add&nbsp;Target','Past&nbsp;Days','Templates','Smart&nbsp;Set'];
 
@@ -210,23 +231,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs, compCode);
 		</script>
 	</section>
-	<section id="moodboard" style="text-align: left;">
-		<h3>art direction</h3>
-		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.webp">
-		<div>
-			<p>This scheduling module should follow Nest's branding and feel closely connected to the thought of home.</p>
-			<ul>
-				<li>friendly</li>
-				<li>fresh</li>
-				<li>bright</li>
-				<li>homey</li>
-			</ul>
-		</div>
-	</section>
-	<section id="comps">
+	<!-- <section id="comps">
 		<div class="wordblock">
 			<h3>Final Design</h3><br />
 		</div>
@@ -234,8 +242,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			var compSrcs = ['base.png', 'addNode.png', 'smart.png', 'editTemplate.png'];
 			createComps(compSrcs);
 		</script>
-	</section>
-	<section class="conclusion">
+	</section> -->
+	<section class="conclusion afterComps">
 		<h3>Conclusion</h3>
 		<p class="wordblock">
 			It was exciting getting to program a web app that theoretically works with a real, existing product. It was also fun to design an interface that's not really conventional. Although, I did have to pull back at times from making interactions too unconventional. I learned that if an interface is new, I have to put more effort into making sure that it is intuitive. 

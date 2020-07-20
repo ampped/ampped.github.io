@@ -157,10 +157,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<p class='techBlock'>No known technology to measure hormone levels (yet)</p>
 		</div>
 	</section>
+	<section id="moodboard" style="text-align: left;">
+		<h3>art direction</h3>
+		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.png">
+		<div>
+			<p>The exhibit should look like a high-tech experience to catch visitors passing by. Other visuals should empower the user but still give space for reflection.</p>
+			<ul>
+				<li>vivid</li>
+				<li>kinetic</li>
+				<li>contemporary</li>
+				<li>pensive</li>
+			</ul>
+		</div>
+	</section>
 	<section id="wireframes" class="beginningBlock landscape">
-		<h3>Wireframes</h3>
+		<h3>screens</h3>
 		<script type="text/javascript">
 			var wfSrcs = ['WFintro.png', 'WFstart.png', 'WFpose.png', 'WFclosing.png'];
+
+			var compCode = [
+				'<img src="comp_intro.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+				'<video class="compImg" autoplay loop muted><source src=\"initiation.webm\" type="video/webm"><source src=\"initiation.mp4\" type="video/mp4"></video>',
+				'<video class="compImg" autoplay loop muted><source src=\"pose1.webm\" type="video/webm"><source src=\"pose1.mp4\" type="video/mp4"></video>' +
+				'<video class="compImg" autoplay loop muted><source src=\"pose2.webm\" type="video/webm"><source src=\"pose2.mp4\" type="video/mp4"></video>',
+				'<img src="comp_result.webp" onerror=\"this.src=(this.src.replace(\'webp\',\'png\'));this.onerror=null;\" class="compImg">',
+			]
 
 			var pageNames = ['Introduction', 'Initiate', 'Fetch&nbsp;Data', 'Closing&nbsp;Statement'];
 
@@ -213,23 +234,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			for(var i = 0; i < wfSrcs.length; i++){
 				wfSrcs[i] = '' + wfSrcs[i];
 			}
-			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs);
+			setupWFDisplay(wfSrcs, pageNames, pageDescs, hotspots, hsDescs, compCode);
 		</script>
 	</section>
-	<section id="moodboard" style="text-align: left;">
-		<h3>art direction</h3>
-		<img onerror="this.src=(this.src.replace('webp','jpg'));this.onerror=null;" src="moodboard.png">
-		<div>
-			<p>The exhibit should look like a high-tech experience to catch visitors passing by. Other visuals should empower the user but still give space for reflection.</p>
-			<ul>
-				<li>vivid</li>
-				<li>kinetic</li>
-				<li>contemporary</li>
-				<li>pensive</li>
-			</ul>
-		</div>
-	</section>
-	<section id="comps">
+	<!-- <section id="comps">
 		<div class="wordblock">
 			<h3>Final Design</h3><br />
 		</div>
@@ -237,7 +245,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			var compSrcs = ['comp_intro.png', 'initiation', 'pose1', 'pose2', 'comp_result.png'];
 			createComps(compSrcs);
 		</script>
-	</section>
+	</section> -->
 	<section class="conclusion">
 		<h3>Conclusion</h3>
 		<p class="wordblock">
