@@ -27,6 +27,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script type="text/javascript">
 		setupWorkPage();
 	</script>
+	<style>
+		.compAnalysis {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.inspo {
+			width: 47%;
+		}
+	</style>
 </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
@@ -89,9 +99,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<p>I redesigned the module to be a <span class="bold">full-fledged experience with an interface that feels more like an extension of the thermostat.</span></p>
 		</div>
 		<div class="preview">
-			<h6>Current</h6><br /><br />
+			<h6 style="margin-bottom: 1.5em;">Current</h6>
 			<img src="nestCurrent.png" /><br /><br /><br />
-			<h6>Redesign</h6><br /><br />
+			<h6 style="margin-bottom: 1.5em;">Redesign</h6>
 			<video autoplay loop muted style="width: 537px;"><source src="addNode.mp4" type="video/mp4"></video>
 		</div>
 	</section>
@@ -101,22 +111,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<h4 style="display: block; text-align: center;">Current Interface</h4><br />
 			<img src="current.png" style="margin: 0 auto; display: block">
 		</div>
-		<br /><br />
-		<h4>Competitive Analysis</h4><br /><br />
-		<div class="researchItem inspo">
-			<img src="engie.png"><!--
-			--><div class="wordblock">
-				<h5>Engie</h5>
-				<p>Set temperatures are displayed as blocks of colors that make up a whole day. Users can visually understand their schedule.</p>
+		<br />
+		<h4>Competitive Analysis</h4>
+		<div class="compAnalysis">
+			<div class="researchItem inspo">
+				<img src="engie.png"><!--
+				--><div class="wordblock">
+					<h5>Engie</h5>
+					<p>Set temperatures are displayed as blocks of colors that make up a whole day. Users can visually understand their schedule.</p>
+				</div>
 			</div>
-		</div>
-		<div class="researchItem inspo">
-			<img src="netatmo.png"><!--
-			--><div class="wordblock">
-				<h5>Netatmo</h5>
-				<p>Users can create temperature presets and connect them to colors they choose.</p>
+			<div class="researchItem inspo">
+				<img src="netatmo.png"><!--
+				--><div class="wordblock">
+					<h5>Netatmo</h5>
+					<p>Users can create temperature presets and connect them to colors they choose.</p>
+				</div>
 			</div>
-		</div><br /><br /><br /><br /><br />
+		</div><br /><br /><br /><br />
 		<div>
 			<h4>User Personas</h4><br /><br /><br />
 			<div class="wordblock persona">
