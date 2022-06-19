@@ -53,7 +53,6 @@ function strokeEffect(){
   playAni();
 
   jQuery(window).focus(function(){
-    console.log('focused');
     if(!playing){
       playing = true;
       playAni();
@@ -82,7 +81,6 @@ function strokeEffect(){
     
     var draw = function() {
       var progress = current_frame/total_frames;
-      console.log(step + " progress: " + progress)
 
       // if(!focused) {
       //   console.log('blurred');
@@ -113,7 +111,6 @@ function strokeEffect(){
     
     var undraw = function() {
       var progress = current_frame/total_frames;
-      console.log(step + " progress: " + progress)
       current_frame--;
 
       //undraw paths
